@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar class="toolbar">
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+    <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password"></ion-input>
+    </ion-item>
 </ion-content>
+
+<ion-footer>
+  <ion-button expand="full" >Login</ion-button>
+  <ion-button expand="full" color="danger" href="/signup">Sign Up</ion-button>
+</ion-footer>
