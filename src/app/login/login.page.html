@@ -1,21 +1,29 @@
-<ion-header >
+<ion-header>
   <ion-toolbar class="toolbar">
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password"></ion-input>
-    </ion-item>
+  
+  <form style="height: 100%">
+      <div style="align-content:space-between;height: 100%; ">
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Email" formContolName="userEmail" style="display: block">
+                <mat-hint>Place your University Email</mat-hint>
+                <mat-error *ngIf="hasError('userEmail', 'required')">Tyre Number is required</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Password" formContolName="userPassword" style="display: block">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="hasError('userPassword', 'required')">Tyre Number is required</mat-error>
+              </mat-form-field>
+        </div>
+        <div style="padding-top: 20%">
+            <ion-button expand="full" type="submit" (click)="loginAction()">Login</ion-button>
+            <ion-button expand="full" color="danger" href="/signup">Sign Up</ion-button>
+          </div>
+        </div>
+  </form>
 </ion-content>
-
-<ion-footer>
-  <ion-button expand="full" >Login</ion-button>
-  <ion-button expand="full" color="danger" href="/signup">Sign Up</ion-button>
-</ion-footer>
