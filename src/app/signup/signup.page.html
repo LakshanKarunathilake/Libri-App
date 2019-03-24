@@ -4,6 +4,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <mat-form-field style="display: block">
+    <input matInput placeholder="Email" formContolName="email" type="password" />
+    <mat-hint>Enter your University email</mat-hint>
+    <mat-error *ngIf="hasError('email', 'required')">Tyre Number is required</mat-error>
+  </mat-form-field>
+  <mat-form-field style="display: block">
+    <input matInput placeholder="password" formContolName="password" />
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="hasError('password', 'required')">Tyre Number is required</mat-error>
+  </mat-form-field>
+  <mat-form-field style="display: block">
+    <input matInput placeholder="Confirm Password" formContolName="confirmPassword" />
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="hasError('confirmPassword', 'required')">Tyre Number is required</mat-error>
+  </mat-form-field>
+  <mat-form-field style="display: block">
+    <input matInput placeholder="Name with initials" formContolName="displayName" />
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="hasError('displayName', 'required')">Tyre Number is required</mat-error>
+  </mat-form-field>
 </ion-content>
