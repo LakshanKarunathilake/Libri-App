@@ -1,5 +1,7 @@
 {
   "name": "Libri",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -5,24 +5,36 @@
 </ion-header>
 
 <ion-content padding>
-  <mat-form-field style="display: block">
-    <input matInput placeholder="Email" formContolName="email" type="password" />
-    <mat-hint>Enter your University email</mat-hint>
-    <mat-error *ngIf="hasError('email', 'required')">Tyre Number is required</mat-error>
-  </mat-form-field>
-  <mat-form-field style="display: block">
-    <input matInput placeholder="password" formContolName="password" />
-    <mat-hint>Errors appear instantly!</mat-hint>
-    <mat-error *ngIf="hasError('password', 'required')">Tyre Number is required</mat-error>
-  </mat-form-field>
-  <mat-form-field style="display: block">
-    <input matInput placeholder="Confirm Password" formContolName="confirmPassword" />
-    <mat-hint>Errors appear instantly!</mat-hint>
-    <mat-error *ngIf="hasError('confirmPassword', 'required')">Tyre Number is required</mat-error>
-  </mat-form-field>
-  <mat-form-field style="display: block">
-    <input matInput placeholder="Name with initials" formContolName="displayName" />
-    <mat-hint>Errors appear instantly!</mat-hint>
-    <mat-error *ngIf="hasError('displayName', 'required')">Tyre Number is required</mat-error>
-  </mat-form-field>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <mat-form-field style="display: block" appearance="outline">
+      <mat-label>Enter your University email</mat-label>
+      <input matInput placeholder="Email" formControlName="email" />
+      <mat-error *ngIf="checkFormControlIsValid('email')">{{ getErrorMessage('email') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field style="display: block" appearance="outline">
+      <input matInput placeholder="password" formControlName="password" />
+      <mat-error *ngIf="checkFormControlIsValid('password')">{{
+        getErrorMessage('password')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field style="display: block" appearance="outline">
+      <input matInput placeholder="Confirm Password" formControlName="confirmPassword" />
+      <mat-error *ngIf="checkFormControlIsValid('confirmPassword')">{{
+        getErrorMessage('confirmPassword')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field style="display: block" appearance="outline">
+      <input matInput placeholder="Name with initials" formControlName="displayName" />
+      <mat-error *ngIf="checkFormControlIsValid('displayName')">{{
+        getErrorMessage('displayName')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field style="display: block" appearance="outline">
+      <input matInput placeholder="Contact Number" formControlName="telephoneNumber" />
+      <mat-error *ngIf="checkFormControlIsValid('telephoneNumber')">{{
+        getErrorMessage('telephoneNumber')
+      }}</mat-error>
+    </mat-form-field>
+    <ion-button type="submit" color="danger">Register</ion-button>
+  </form>
 </ion-content>
