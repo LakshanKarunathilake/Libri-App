@@ -9,7 +9,6 @@ import swal from 'sweetalert';
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
   constructor(private fb: FormBuilder) {}
-
   ngOnInit() {
     this.loginForm = this.fb.group({
       userEmail: ['', Validators.required],
@@ -21,6 +20,20 @@ export class LoginPage implements OnInit {
   }
 
   loginAction() {
-    swal('sdjashdaksjd');
+    swal(this.loginForm.value);
+  }
+
+  getErrorMessage = (controller: string) => {
+    console.log('asdasdsad');
+    const formController = this.loginForm.controls[controller];
+    return formController.hasError('required')
+      ? 'You must enter a value'
+      : formController.hasError('email')
+      ? 'Not a valid email'
+      : '';
+  };
+
+  checkFormControlIsValid(control: string) {
+    return this.loginForm.controls[control].invalid;
   }
 }
