@@ -5,25 +5,31 @@
 </ion-header>
 
 <ion-content padding>
-  
-  <form style="height: 100%">
-      <div style="align-content:space-between;height: 100%; ">
-        <div>
-            <mat-form-field>
-                <input matInput placeholder="Email" formContolName="userEmail" style="display: block">
-                <mat-hint>Place your University Email</mat-hint>
-                <mat-error *ngIf="hasError('userEmail', 'required')">Tyre Number is required</mat-error>
-              </mat-form-field>
-              <mat-form-field>
-                <input matInput placeholder="Password" formContolName="userPassword" style="display: block">
-                <mat-hint>Errors appear instantly!</mat-hint>
-                <mat-error *ngIf="hasError('userPassword', 'required')">Tyre Number is required</mat-error>
-              </mat-form-field>
-        </div>
-        <div style="padding-top: 20%">
-            <ion-button expand="full" type="submit" (click)="loginAction()">Login</ion-button>
-            <ion-button expand="full" color="danger" href="/signup">Sign Up</ion-button>
-          </div>
-        </div>
+  <form [formGroup]="loginForm">
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="userEmail" style="display: block" />
+      <mat-hint>Place your University Email</mat-hint>
+      <mat-error *ngIf="checkFormControlIsValid('userEmail')">{{
+        getErrorMessage('userEmail')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Password"
+        formControlName="userPassword"
+        style="display: block"
+      />
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="checkFormControlIsValid('userPassword')">{{
+        getErrorMessage('userPassword')
+      }}</mat-error>
+    </mat-form-field>
   </form>
 </ion-content>
+<ion-footer>
+  <div>
+    <ion-button expand="full" (click)="loginAction()">Login</ion-button>
+    <ion-button expand="full" color="danger" href="/signup">Sign Up</ion-button>
+  </div>
+</ion-footer>
