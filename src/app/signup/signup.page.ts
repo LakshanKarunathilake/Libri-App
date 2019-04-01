@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import swal from 'sweetalert';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
 import { LoadingController } from '@ionic/angular';
+import { auth } from 'firebase';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -50,10 +50,17 @@ export class SignupPage implements OnInit {
     try {
       this.afa.auth
         .createUserWithEmailAndPassword(userEmail, userPassword)
-        .then(data => {
+        .then(() => {
           this.hideLoading();
-          console.log('data', data);
-          swal('Welcome!', 'We have accepted your registration!', 'success');
+          return auth()
+            .currentUser.sendEmailVerification()
+            .then(() => {
+              swal(
+                'Welcome!',
+                'Regaistraion Successful, please confirm your email address!',
+                'success'
+              );
+            });
         })
         .catch(error => {
           this.hideLoading();
