@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-
+import swal from 'sweetalert';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -8,7 +11,12 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 })
 export class SignupPage implements OnInit {
   signupForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  loading;
+  constructor(
+    private fb: FormBuilder,
+    private afa: AngularFireAuth,
+    private loadingCtrl: LoadingController
+  ) {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -21,7 +29,6 @@ export class SignupPage implements OnInit {
   ngOnInit() {}
 
   getErrorMessage = (controller: string) => {
-    console.log('asdasdsad');
     const formController = this.signupForm.controls[controller];
     return formController.hasError('required')
       ? 'You must enter a value'
@@ -35,6 +42,39 @@ export class SignupPage implements OnInit {
   }
 
   onSubmit() {
-    console.log('clicked', this.signupForm.invalid);
+    const userEmail = this.signupForm.controls['email'].value;
+    const userPassword = this.signupForm.controls['password'].value;
+    console.log('userEmail :', typeof userEmail);
+    console.log('userPassword :', typeof userPassword);
+    this.presentLoading();
+    try {
+      this.afa.auth
+        .createUserWithEmailAndPassword(userEmail, userPassword)
+        .then(data => {
+          this.hideLoading();
+          console.log('data', data);
+          swal('Welcome!', 'We have accepted your registration!', 'success');
+        })
+        .catch(error => {
+          this.hideLoading();
+          console.log('error :', error.message);
+          swal('Error!', error.message, 'error');
+        });
+    } catch (error) {
+      this.hideLoading();
+      console.log('error :', error);
+    }
   }
+
+  presentLoading = async () => {
+    this.loading = await this.loadingCtrl.create({
+      spinner: 'crescent',
+      message: 'Processing your request'
+    });
+    await this.loading.present();
+  };
+
+  hideLoading = () => {
+    this.loading.dismiss();
+  };
 }

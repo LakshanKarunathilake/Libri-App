@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="signupForm">
     <mat-form-field style="display: block" appearance="outline">
       <mat-label>Enter your University email</mat-label>
       <input matInput placeholder="Email" formControlName="email" />
@@ -35,6 +35,8 @@
         getErrorMessage('telephoneNumber')
       }}</mat-error>
     </mat-form-field>
-    <ion-button type="submit" color="danger">Register</ion-button>
+    <ion-button type="submit" color="danger" [disabled]="signupForm.invalid" (click)="onSubmit()"
+      >Register</ion-button
+    >
   </form>
 </ion-content>
