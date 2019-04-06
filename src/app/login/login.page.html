@@ -6,19 +6,20 @@
 
 <ion-content padding>
   <form [formGroup]="loginForm">
-    <mat-form-field>
+    <mat-form-field class="formField">
       <input matInput placeholder="Email" formControlName="userEmail" style="display: block" />
       <mat-hint>Place your University Email</mat-hint>
       <mat-error *ngIf="checkFormControlIsValid('userEmail')">{{
         getErrorMessage('userEmail')
       }}</mat-error>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="formField">
       <input
         matInput
         placeholder="Password"
         formControlName="userPassword"
         style="display: block"
+        type="password"
       />
       <mat-hint>Errors appear instantly!</mat-hint>
       <mat-error *ngIf="checkFormControlIsValid('userPassword')">{{

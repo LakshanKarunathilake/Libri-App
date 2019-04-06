@@ -41,7 +41,6 @@ export class LoginPage implements OnInit {
   }
 
   getErrorMessage = (controller: string) => {
-    console.log('asdasdsad');
     const formController = this.loginForm.controls[controller];
     return formController.hasError('required')
       ? 'You must enter a value'
