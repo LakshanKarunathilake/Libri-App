@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar class="toolbar">
+  <ion-toolbar color="primary" class="toolbar">
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -30,7 +30,9 @@
 </ion-content>
 <ion-footer>
   <div>
-    <ion-button expand="full" (click)="loginAction()">Login</ion-button>
+    <ion-button expand="full" [disabled]="loginForm.invalid" (click)="loginAction()"
+      >Login</ion-button
+    >
     <ion-button expand="full" color="danger" href="/signup">Sign Up</ion-button>
   </div>
 </ion-footer>
