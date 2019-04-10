@@ -24,5 +24,9 @@ export class HomePage implements OnInit {
     });
   }
 
+  isSelectedPath = url => {
+    return this.selectedPath.indexOf(url) >= 0;
+  };
+
   ngOnInit() {}
 }
