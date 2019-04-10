@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
         .signInWithEmailAndPassword(userEmail, userPassword)
         .then(() => {
           swal('Welcome back!', '', 'success');
-          this.router.navigateByUrl('home');
+          this.router.navigateByUrl('menu');
         })
         .catch(error => {
           console.log('error :', error, error.message);

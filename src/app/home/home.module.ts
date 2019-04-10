@@ -10,20 +10,17 @@ import { HomePage } from './home.page';
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
-    children: [
-      { path: 'contact', loadChildren: '../contact/contact.module#ContactPageModule' },
-      { path: 'booksearch', loadChildren: '../booksearch/booksearch.module#BooksearchPageModule' },
-      {
-        path: 'requestbook',
-        loadChildren: '../requestbook/requestbook.module#RequestbookPageModule'
-      }
-    ]
+    component: HomePage
   }
 ];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
+  ],
   declarations: [HomePage]
 })
 export class HomePageModule {}
