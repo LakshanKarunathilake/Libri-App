@@ -5,34 +5,47 @@
 </ion-header>
 
 <ion-content padding>
-  <form [formGroup]="loginForm">
-    <mat-form-field class="formField">
-      <input matInput placeholder="Email" formControlName="userEmail" style="display: block" />
-      <mat-hint>Place your University Email</mat-hint>
-      <mat-error *ngIf="checkFormControlIsValid('userEmail')">{{
-        getErrorMessage('userEmail')
-      }}</mat-error>
-    </mat-form-field>
-    <mat-form-field class="formField">
-      <input
-        matInput
-        placeholder="Password"
-        formControlName="userPassword"
-        style="display: block"
-        type="password"
-      />
-      <mat-hint>Errors appear instantly!</mat-hint>
-      <mat-error *ngIf="checkFormControlIsValid('userPassword')">{{
-        getErrorMessage('userPassword')
-      }}</mat-error>
-    </mat-form-field>
+  <form [formGroup]="loginForm" style="width: 100%;height: 100%;display: flex;align-items: center">
+    <ion-grid>
+      <ion-row align-items-center justify-content-center>
+        <ion-col sizeLg="8" sizeXs="12">
+          <mat-form-field class="formField" appearance="outline">
+            <input matInput placeholder="Email" formControlName="userEmail" />
+            <mat-hint>Place your University Email</mat-hint>
+            <mat-error *ngIf="checkFormControlIsValid('userEmail')">{{
+              getErrorMessage('userEmail')
+            }}</mat-error>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-center>
+        <ion-col sizeLg="8" sizeXs="12">
+          <mat-form-field class="formField" appearance="outline">
+            <input matInput placeholder="Password" formControlName="userPassword" type="password" />
+            <mat-hint>Enter your password</mat-hint>
+            <mat-error *ngIf="checkFormControlIsValid('userPassword')">{{
+              getErrorMessage('userPassword')
+            }}</mat-error>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-center>
+        <ion-col sizeLg="6" sizeXs="12">
+          <ion-button expand="block" [disabled]="loginForm.invalid" (click)="loginAction()"
+            >Login</ion-button
+          >
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-center>
+        <ion-col sizeLg="6" sizeXs="12">
+          <ion-button expand="block" color="danger" href="/signup">Sign Up</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center justify-content-center>
+        <ion-col sizeLg="6" sizeXs="12">
+          <ion-button fill="clear" expand="block">Forget password</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
 </ion-content>
-<ion-footer>
-  <div>
-    <ion-button expand="full" [disabled]="loginForm.invalid" (click)="loginAction()"
-      >Login</ion-button
-    >
-    <ion-button expand="full" color="danger" href="/signup">Sign Up</ion-button>
-  </div>
-</ion-footer>
