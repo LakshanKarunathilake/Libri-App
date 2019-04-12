@@ -13,7 +13,7 @@ export class LoginPage implements OnInit {
   constructor(private fb: FormBuilder, private afa: AngularFireAuth, private router: Router) {}
   ngOnInit() {
     this.loginForm = this.fb.group({
-      userEmail: ['', Validators.required],
+      userEmail: ['', [Validators.required, Validators.email]],
       userPassword: ['', Validators.required]
     });
   }
