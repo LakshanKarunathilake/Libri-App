@@ -12,7 +12,7 @@ export class MenuPage implements OnInit {
     { title: 'Contact Us', url: 'contact', icon: 'home' },
     { title: 'Request Book', url: 'requestbook', icon: 'home' }
   ];
-
+  width = window.innerWidth;
   selectedPath = '';
 
   constructor(private router: Router) {
