@@ -102,7 +102,7 @@
             "styles": [],
             "scripts": [],
             "assets": [
-              "src/serviceWorkers/firebase-messaging-sw.js",
+              "src/firebase-messaging-sw.js",
               {
                 "glob": "favicon.ico",
                 "input": "src/",
