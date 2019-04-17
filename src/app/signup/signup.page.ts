@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { LoadingController } from '@ionic/angular';
 import { auth } from 'firebase';
+import { FcmService } from '../fcm.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -15,7 +16,8 @@ export class SignupPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private afa: AngularFireAuth,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private fcm: FcmService
   ) {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
@@ -60,6 +62,9 @@ export class SignupPage implements OnInit {
                 'Regaistraion Successful, please confirm your email address!',
                 'success'
               );
+              this.fcm.getPermission().subscribe(() => {
+                this.fcm.sub('notices');
+              });
             });
         })
         .catch(error => {
