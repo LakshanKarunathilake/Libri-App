@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FcmService } from './fcm.service';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireMessagingModule,
-    AngularFireFunctionsModule
+    AngularFireFunctionsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,
