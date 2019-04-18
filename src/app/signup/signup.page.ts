@@ -62,9 +62,10 @@ export class SignupPage implements OnInit {
                 'Regaistraion Successful, please confirm your email address!',
                 'success'
               );
-              this.fcm.getPermission().subscribe(() => {
-                this.fcm.sub('notices');
-              });
+              this.fcm
+                .getPermission()
+                .then(() => this.fcm.sub('notices'))
+                .catch(message => console.log('message', message));
             });
         })
         .catch(error => {
