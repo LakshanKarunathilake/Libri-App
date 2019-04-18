@@ -14,7 +14,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FcmService } from './fcm.service';
-import { AngularFireMessaging, AngularFireMessagingModule } from '@angular/fire/messaging';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 @NgModule({
