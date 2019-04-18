@@ -4,8 +4,6 @@ import { AngularFireFunctions } from '@angular/fire/functions';
 import { ToastController } from '@ionic/angular';
 import { tap } from 'rxjs/operators';
 
-// Import firebase to fix temporary bug in AngularFire
-import * as app from 'firebase';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,17 +16,7 @@ export class FcmService {
     private afMessaging: AngularFireMessaging,
     private fun: AngularFireFunctions,
     private toastController: ToastController
-  ) {
-    // Bind methods to fix temporary bug in AngularFire
-    try {
-      const _messaging = app.messaging();
-      _messaging.onTokenRefresh = _messaging.onTokenRefresh.bind(_messaging);
-      _messaging.onMessage = _messaging.onMessage.bind(_messaging);
-    } catch (e) {
-      console.log('error occured');
-      console.error('e', e);
-    }
-  }
+  ) {}
 
   async makeToast(message) {
     const toast = await this.toastController.create({
@@ -41,8 +29,21 @@ export class FcmService {
     toast.present();
   }
 
-  getPermission(): Observable<any> {
-    return this.afMessaging.requestToken.pipe(tap(token => (this.token = token)));
+  getPermission() {
+    return new Promise((resolve, reject) => {
+      this.afMessaging.requestToken.subscribe(
+        token => {
+          console.log('Permission granted and token is ', token);
+          this.token = token;
+          resolve(token);
+        },
+        error => {
+          console.log('error occured when requesting permission');
+          console.error(error);
+          reject('error occured');
+        }
+      );
+    });
   }
 
   showMessages(): Observable<any> {
