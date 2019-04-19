@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FcmService } from '../fcm.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,13 @@ export class HomePage implements OnInit {
 
   getPermission = () => {
     console.log('getting permission');
-    this.fcm.getPermission();
+    this.fcm
+      .getPermission()
+      .then(() => this.fcm.sub('notices'))
+      .catch(error => {
+        console.log('error occured');
+        console.log('error', error);
+        swal('error');
+      });
   };
 }
