@@ -1,0 +1,53 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header class="book-card">
+      <img src="../assets/img/harry_potter.jpg" alt="libri" class="book-image" />
+      <div class="book-header">
+        <div class="book-title">Harry Potter & Deathly Hallows Part 2</div>
+        <div class="book-author">J.K. Rowling</div>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col sizeXs="12" sizeXl="4"><ion-text class="title">Description</ion-text></ion-col>
+          <ion-col sizeXs="12" sizeXl="8">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since the 1500s, when an unknown
+            printer took a galley of type and scrambled it to make a type specimen book. It has
+            survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col sizeXs="12" sizeXl="4">
+            <ion-text class="title">Tags</ion-text>
+          </ion-col>
+          <ion-col sizeXs="12" sizeXl="8">
+            <ion-chip color="secondary">
+              <ion-label color="dark">Science</ion-label>
+            </ion-chip>
+            <ion-chip color="primary">
+              <ion-label color="dark">Fiction</ion-label>
+            </ion-chip>
+            <ion-chip color="warning">
+              <ion-label color="dark">Edutcation</ion-label>
+            </ion-chip>
+            <ion-chip color="danger">
+              <ion-label color="dark">18 +</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer class="button-panel">
+  <ion-button color="danger" (click)="closeModal()" fill="outline">
+    <ion-icon name="close-circle-outline"></ion-icon> close
+  </ion-button>
+  <ion-button color="primary" fill="outline"><ion-icon name="bookmark"></ion-icon>Save</ion-button>
+  <ion-button color="warning" fill="outline"><ion-icon name="basket"></ion-icon>Reserve</ion-button>
+</ion-footer>

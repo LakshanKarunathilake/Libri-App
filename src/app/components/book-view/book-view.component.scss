@@ -1,0 +1,45 @@
+ion-card-header {
+  padding: 0px;
+  position: relative;
+  text-align: left;
+}
+
+.book-title {
+  font-size: 2em;
+  width: 100%;
+  font-weight: bold;
+  color: white;
+}
+
+.book-author {
+  font-size: 1em;
+  width: 100%;
+  color: #fff;
+  opacity: 1;
+}
+
+.book-image {
+  width: 50vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+.book-header {
+  position: absolute;
+  bottom: 2%;
+  opacity: 0.4;
+  background-color: black;
+}
+
+.book-card {
+  margin: 0 auto;
+}
+
+.button-panel {
+  display: flex;
+  justify-content: space-around;
+}
+
+.title {
+  font-weight: bold;
+}
