@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { BooksearchPage } from './booksearch.page';
+import { BookViewComponent } from '../components/book-view/book-view.component';
 
 const routes: Routes = [
   {
@@ -15,12 +16,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [BooksearchPage]
+  imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes)],
+  declarations: [BooksearchPage, BookViewComponent],
+  entryComponents: [BookViewComponent]
 })
 export class BooksearchPageModule {}
