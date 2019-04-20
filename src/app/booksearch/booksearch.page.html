@@ -7,36 +7,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <section>
     <ion-searchbar></ion-searchbar>
   </section>
   <ion-grid>
     <ion-card>
-      <ion-row>
+      <ion-row align-items-center>
         <ion-col sizeXl="4" szieSm="3" sizeXs="3">
-          <img src="../assets/img/icon.png" alt="libri" width="50%" height="auto" />
+          <img src="../assets/img/harry_potter.jpg" alt="libri" width="50%" height="auto" />
         </ion-col>
-        <ion-col sizeXl="8" sizeXs="9">
-          <ion-card-title>Harry Potter & deathly hallows</ion-card-title>
-          <ion-card-subtitle>J.K. Rowling</ion-card-subtitle>
-          <ion-note
-            style="white-space: normal;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          max-width: 75ch;"
-          >
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type specimen book. It has
-            survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </ion-note>
-          <div>
-            <ion-button fill="outline">View</ion-button>
-            <ion-button fill="outline" color="warning">Save</ion-button>
+        <ion-col sizeXl="8" sizeXs="9" align-items-center>
+          <div class="book-title">Harry Potter & deathly hallows</div>
+          <div class="book-author">J.K. Rowling</div>
+          <div class="button-pannel">
+            <ion-button fill="outline" size="small">View</ion-button>
+            <ion-button fill="outline" size="small" color="warning">Save</ion-button>
           </div>
         </ion-col>
       </ion-row>
