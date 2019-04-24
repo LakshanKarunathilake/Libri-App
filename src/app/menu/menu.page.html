@@ -4,18 +4,21 @@
       <ion-toolbar>
         <ion-buttons slot="end">
           <ion-menu-toggle>
-            <ion-button class="home-button" routerLink="home" routerDirection="root">
+            <ion-button class="quick-buttons" routerLink="home" routerDirection="root">
               <ion-icon name="home"></ion-icon>
             </ion-button>
+            <ion-button class="quick-buttons" routerLink="info" routerDirection="root">
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </ion-button>
           </ion-menu-toggle>
-          <ion-button
-            class="home-button"
-            routerLink="home"
-            routerDirection="root"
-            *ngIf="width > 800"
-          >
-            <ion-icon name="home" color="primary"></ion-icon>
-          </ion-button>
+          <span *ngIf="width > 1000">
+            <ion-button class="quick-buttons" routerLink="home" routerDirection="root">
+              <ion-icon name="home" color="primary"></ion-icon>
+            </ion-button>
+            <ion-button class="quick-buttons" routerLink="info" routerDirection="root">
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </ion-button>
+          </span>
         </ion-buttons>
         <ion-title>Home</ion-title>
       </ion-toolbar>
