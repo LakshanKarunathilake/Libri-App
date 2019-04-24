@@ -1,3 +1,4 @@
+import { LoadingController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert';
@@ -10,7 +11,18 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private afa: AngularFireAuth, private router: Router) {}
+  loading;
+  constructor(
+    private fb: FormBuilder,
+    private afa: AngularFireAuth,
+    private router: Router,
+    private loadingController: LoadingController
+  ) {
+    this.loadingController.create({
+      message: 'Please wait verifying!',
+      duration: 2000
+    });
+  }
   ngOnInit() {
     this.loginForm = this.fb.group({
       userEmail: ['', [Validators.required, Validators.email]],
@@ -21,24 +33,26 @@ export class LoginPage implements OnInit {
     return this.loginForm.controls[controlName].hasError(errorName);
   }
 
-  loginAction() {
+  loginAction = async () => {
     const userEmail = this.loginForm.controls['userEmail'].value;
     const userPassword = this.loginForm.controls['userPassword'].value;
-    try {
-      this.afa.auth
-        .signInWithEmailAndPassword(userEmail, userPassword)
-        .then(() => {
-          swal('Welcome back!', '', 'success');
-          this.router.navigateByUrl('menu');
-        })
-        .catch(error => {
-          console.log('error :', error, error.message);
-          this.previewErrorMessage(error);
-        });
-    } catch (error) {
-      console.log('error Occured  :', error, error.message);
-    }
-  }
+    const loading = await this.loadingController.create({
+      message: 'Veryfying your details!'
+    });
+    await loading.present();
+
+    this.afa.auth
+      .signInWithEmailAndPassword(userEmail, userPassword)
+      .then(() => {
+        swal('Welcome back!', '', 'success');
+        this.router.navigateByUrl('menu');
+      })
+      .catch(error => {
+        console.log('error :', error, error.message);
+        this.previewErrorMessage(error);
+      })
+      .finally(() => loading.dismiss());
+  };
 
   getErrorMessage = (controller: string) => {
     const formController = this.loginForm.controls[controller];
