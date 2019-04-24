@@ -1,3 +1,4 @@
+import { MenuTitleComponentModule } from './../components/menu-title/menu-title.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +7,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ProfilePage } from './profile.page';
-import { MenuTitleComponent } from '../components/menu-title/menu-title.component';
 
 const routes: Routes = [
   {
@@ -16,8 +16,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes)],
-  declarations: [ProfilePage, MenuTitleComponent],
-  entryComponents: [MenuTitleComponent]
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes),
+    MenuTitleComponentModule
+  ],
+  declarations: [ProfilePage]
 })
 export class ProfilePageModule {}

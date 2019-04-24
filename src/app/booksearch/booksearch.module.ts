@@ -1,3 +1,4 @@
+import { MenuTitleComponentModule } from './../components/menu-title/menu-title.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +17,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes),
+    MenuTitleComponentModule
+  ],
   declarations: [BooksearchPage, BookViewComponent],
   entryComponents: [BookViewComponent]
 })
