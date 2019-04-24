@@ -19,7 +19,9 @@ const routes: Routes = [
         path: 'requestbook',
         loadChildren: '../requestbook/requestbook.module#RequestbookPageModule'
       },
-      { path: 'home', loadChildren: '../home/home.module#HomePageModule' }
+      { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
+      { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
+      { path: 'profile/account', loadChildren: '../account/account.module#AccountPageModule' }
     ]
   }
 ];

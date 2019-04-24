@@ -8,9 +8,11 @@ import { Router, RouterEvent } from '@angular/router';
 })
 export class MenuPage implements OnInit {
   pages = [
-    { title: 'Search Book', url: 'booksearch', icon: 'home' },
-    { title: 'Contact Us', url: 'contact', icon: 'home' },
-    { title: 'Request Book', url: 'requestbook', icon: 'home' }
+    { title: 'Search Book', url: 'booksearch' },
+    { title: 'Contact Us', url: 'contact' },
+    { title: 'Request Book', url: 'requestbook' },
+    { title: 'My Profile', url: 'profile' },
+    { title: 'Account', url: 'profile/account' }
   ];
   width = window.innerWidth;
   selectedPath = '';
