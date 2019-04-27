@@ -1,9 +1,10 @@
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { ForgetPasswordComponent } from '../components/forget-password/forget-password.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -16,7 +17,8 @@ export class LoginPage implements OnInit {
     private fb: FormBuilder,
     private afa: AngularFireAuth,
     private router: Router,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private modalController: ModalController
   ) {
     this.loadingController.create({
       message: 'Please wait verifying!',
@@ -89,5 +91,12 @@ export class LoginPage implements OnInit {
         break;
     }
     swal(swalProps.title, swalProps.description, swalProps.type);
+  };
+
+  forgetPassword = async () => {
+    const modal = await this.modalController.create({
+      component: ForgetPasswordComponent
+    });
+    modal.present();
   };
 }
