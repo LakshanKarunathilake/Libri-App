@@ -17,13 +17,14 @@ import { FcmService } from './fcm.service';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { ServiceWorkerModule } from '@angular/service-worker';
-
+import { RecaptchaModule } from 'ng-recaptcha';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    RecaptchaModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
