@@ -13,7 +13,7 @@ const routes: Routes = [
     component: MenuPage,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'contact', loadChildren: '../contact/contact.module#ContactPageModule' },
+      { path: 'feedback', loadChildren: '../feedback/feedback.module#FeedbackPageModule' },
       { path: 'booksearch', loadChildren: '../booksearch/booksearch.module#BooksearchPageModule' },
       {
         path: 'requestbook',

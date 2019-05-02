@@ -11,7 +11,7 @@ import { Router, RouterEvent } from '@angular/router';
 export class MenuPage implements OnInit {
   pages = [
     { title: 'Search Book', url: 'booksearch' },
-    { title: 'Contact Us', url: 'contact' },
+    { title: 'Feedback', url: 'feedback' },
     { title: 'Request Book', url: 'requestbook' },
     { title: 'My Profile', url: 'profile' },
     { title: 'Account', url: 'profile/account' }
