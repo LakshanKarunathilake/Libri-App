@@ -1,3 +1,5 @@
+import { LoadingController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
 
@@ -17,7 +19,11 @@ export class MenuPage implements OnInit {
   width = window.innerWidth;
   selectedPath = '';
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private afa: AngularFireAuth,
+    private loadingController: LoadingController
+  ) {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event.url) {
         this.selectedPath = event.url;
@@ -35,4 +41,25 @@ export class MenuPage implements OnInit {
   };
 
   ngOnInit() {}
+
+  logOutUser = async () => {
+    const loading = await this.loadingController.create({
+      message: 'Please wait logging out...',
+      spinner: 'crescent'
+    });
+    loading.present();
+    this.afa.auth
+      .signOut()
+      .then(() => {
+        console.log('Successfully Logged out');
+        this.router.navigateByUrl('login');
+      })
+      .catch(error => {
+        console.log('Error occured while logging out');
+        console.error(error);
+      })
+      .finally(() => {
+        loading.dismiss();
+      });
+  };
 }
