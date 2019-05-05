@@ -150,6 +150,7 @@ import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 import { IonicModule } from &#x27;@ionic/angular&#x27;;
 
 import { RequestbookPage } from &#x27;./requestbook.page&#x27;;
+import { MenuTitleComponentModule } from &#x27;../components/menu-title/menu-title.module&#x27;;
 
 const routes: Routes &#x3D; [
   {
@@ -163,7 +164,8 @@ const routes: Routes &#x3D; [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MenuTitleComponentModule
   ],
   declarations: [RequestbookPage]
 })

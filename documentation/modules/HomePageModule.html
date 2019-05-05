@@ -142,7 +142,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MenuTitleComponentModule } from &#x27;./../components/menu-title/menu-title.module&#x27;;
+import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
@@ -163,7 +164,8 @@ const routes: Routes &#x3D; [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MenuTitleComponentModule
   ],
   declarations: [HomePage]
 })

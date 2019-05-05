@@ -121,6 +121,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#bookPreview">bookPreview</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -151,15 +165,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(modalController: ModalController)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/booksearch/booksearch.page.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/booksearch/booksearch.page.ts:10</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>modalController</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -195,8 +239,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/booksearch/booksearch.page.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/app/booksearch/booksearch.page.ts:13</a></div>
                 </td>
             </tr>
 
@@ -213,40 +257,96 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="bookPreview"></a>
+                        <span class="name">
+                            <b>
+                            bookPreview</b>
+                            <a href="#bookPreview"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/booksearch/booksearch.page.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ModalController } from &#x27;@ionic/angular&#x27;;
+import { BookViewComponent } from &#x27;../components/book-view/book-view.component&#x27;;
 
 @Component({
   selector: &#x27;app-booksearch&#x27;,
   templateUrl: &#x27;./booksearch.page.html&#x27;,
-  styleUrls: [&#x27;./booksearch.page.scss&#x27;],
+  styleUrls: [&#x27;./booksearch.page.scss&#x27;]
 })
 export class BooksearchPage implements OnInit {
+  constructor(private modalController: ModalController) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
+  bookPreview &#x3D; async () &#x3D;&gt; {
+    console.log(&#x27;clicked&#x27;);
+    const modal &#x3D; await this.modalController.create({
+      component: BookViewComponent,
+      componentProps: {
+        bookName: &#x27;dfdsfdsf&#x27;,
+        id: &#x27;dafsdfsd&#x27;
+      }
+    });
+    modal.present();
+  };
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
-  &lt;ion-toolbar color&#x3D;&quot;primary&quot;&gt;
-    &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
-      &lt;ion-menu-button&gt;&lt;/ion-menu-button&gt;
-    &lt;/ion-buttons&gt;
-    &lt;ion-title&gt;booksearch&lt;/ion-title&gt;
-  &lt;/ion-toolbar&gt;
-&lt;/ion-header&gt;
-
-&lt;ion-content padding&gt; &lt;/ion-content&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;app-menu-title title&#x3D;&quot;Search&quot;&gt;&lt;/app-menu-title&gt;
+&lt;ion-content&gt;
+  &lt;section&gt;
+    &lt;ion-searchbar&gt;&lt;/ion-searchbar&gt;
+  &lt;/section&gt;
+  &lt;ion-grid&gt;
+    &lt;ion-card&gt;
+      &lt;ion-row align-items-center&gt;
+        &lt;ion-col sizeXl&#x3D;&quot;4&quot; szieSm&#x3D;&quot;3&quot; sizeXs&#x3D;&quot;3&quot;&gt;
+          &lt;img src&#x3D;&quot;../assets/img/harry_potter.jpg&quot; alt&#x3D;&quot;libri&quot; width&#x3D;&quot;50%&quot; height&#x3D;&quot;auto&quot; /&gt;
+        &lt;/ion-col&gt;
+        &lt;ion-col sizeXl&#x3D;&quot;8&quot; sizeXs&#x3D;&quot;9&quot; align-items-center&gt;
+          &lt;div class&#x3D;&quot;book-title&quot;&gt;Harry Potter &amp; deathly hallows&lt;/div&gt;
+          &lt;div class&#x3D;&quot;book-author&quot;&gt;J.K. Rowling&lt;/div&gt;
+          &lt;div class&#x3D;&quot;button-pannel&quot;&gt;
+            &lt;ion-button fill&#x3D;&quot;outline&quot; size&#x3D;&quot;small&quot; (click)&#x3D;&quot;bookPreview()&quot;&gt;View&lt;/ion-button&gt;
+            &lt;ion-button fill&#x3D;&quot;outline&quot; size&#x3D;&quot;small&quot; color&#x3D;&quot;warning&quot;&gt;Save&lt;/ion-button&gt;
+          &lt;/div&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+    &lt;/ion-card&gt;
+  &lt;/ion-grid&gt;
+&lt;/ion-content&gt;
 </code></pre>
     </div>
 
@@ -254,7 +354,28 @@ export class BooksearchPage implements OnInit {
                 <p class="comment">
                     <code>./booksearch.page.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.book-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: &#x27;#263238&#x27;;
+}
+
+.book-author {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: &#x27;#607D8B&#x27;;
+}
+
+.button-pannel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+ion-grid {
+  --ion-grid-padding: 0px;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -282,8 +403,8 @@ export class BooksearchPage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar color="primary">    <ion-buttons slot="start">      <ion-menu-button></ion-menu-button>    </ion-buttons>    <ion-title>booksearch</ion-title>  </ion-toolbar></ion-header><ion-content padding> </ion-content></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'ContactPage', 'selector': 'app-contact'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'}];
+        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Search"></app-menu-title><ion-content>  <section>    <ion-searchbar></ion-searchbar>  </section>  <ion-grid>    <ion-card>      <ion-row align-items-center>        <ion-col sizeXl="4" szieSm="3" sizeXs="3">          <img src="../assets/img/harry_potter.jpg" alt="libri" width="50%" height="auto" />        </ion-col>        <ion-col sizeXl="8" sizeXs="9" align-items-center>          <div class="book-title">Harry Potter & deathly hallows</div>          <div class="book-author">J.K. Rowling</div>          <div class="button-pannel">            <ion-button fill="outline" size="small" (click)="bookPreview()">View</ion-button>            <ion-button fill="outline" size="small" color="warning">Save</ion-button>          </div>        </ion-col>      </ion-row>    </ion-card>  </ion-grid></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BooksearchPage'};
 </script>

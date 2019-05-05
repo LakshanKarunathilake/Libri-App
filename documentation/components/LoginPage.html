@@ -130,7 +130,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#forgetPassword">forgetPassword</a>
+                            </li>
+                            <li>
                                 <a href="#getErrorMessage">getErrorMessage</a>
+                            </li>
+                            <li>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#loginAction">loginAction</a>
                             </li>
                             <li>
                                 <a href="#loginForm">loginForm</a>
@@ -158,9 +167,6 @@
                                 <a href="#hasError">hasError</a>
                             </li>
                             <li>
-                                <a href="#loginAction">loginAction</a>
-                            </li>
-                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                         </ul>
@@ -181,12 +187,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, afa: AngularFireAuth, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, afa: AngularFireAuth, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, loadingController: LoadingController, modalController: ModalController)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/login/login.page.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/login/login.page.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -239,6 +245,30 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>loadingController</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoadingController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalController</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -279,8 +309,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/login/login.page.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/login/login.page.ts:68</a></div>
                 </td>
             </tr>
 
@@ -351,8 +381,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/login/login.page.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/login/login.page.ts:34</a></div>
                 </td>
             </tr>
 
@@ -415,45 +445,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="loginAction"></a>
-                    <span class="name">
-                        <b>
-                            loginAction
-                        </b>
-                        <a href="#loginAction"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>loginAction()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/login/login.page.ts:24</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
@@ -472,8 +463,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/login/login.page.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/login/login.page.ts:28</a></div>
                 </td>
             </tr>
 
@@ -499,6 +490,32 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="forgetPassword"></a>
+                        <span class="name">
+                            <b>
+                            forgetPassword</b>
+                            <a href="#forgetPassword"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/login/login.page.ts:96</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getErrorMessage"></a>
                         <span class="name">
                             <b>
@@ -514,7 +531,54 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/login/login.page.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/login/login.page.ts:59</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/login/login.page.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginAction"></a>
+                        <span class="name">
+                            <b>
+                            loginAction</b>
+                            <a href="#loginAction"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/login/login.page.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -541,7 +605,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/login/login.page.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/login/login.page.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -567,7 +631,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/login/login.page.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/login/login.page.ts:72</a></div>
                             </td>
                         </tr>
 
@@ -580,11 +644,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { LoadingController, ModalController } from &#x27;@ionic/angular&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
 import swal from &#x27;sweetalert&#x27;;
 import { AngularFireAuth } from &#x27;@angular/fire/auth&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { ForgetPasswordComponent } from &#x27;../components/forget-password/forget-password.component&#x27;;
 @Component({
   selector: &#x27;app-login&#x27;,
   templateUrl: &#x27;./login.page.html&#x27;,
@@ -592,10 +658,22 @@ import { Router } from &#x27;@angular/router&#x27;;
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private afa: AngularFireAuth, private router: Router) {}
+  loading;
+  constructor(
+    private fb: FormBuilder,
+    private afa: AngularFireAuth,
+    private router: Router,
+    private loadingController: LoadingController,
+    private modalController: ModalController
+  ) {
+    this.loadingController.create({
+      message: &#x27;Please wait verifying!&#x27;,
+      duration: 2000
+    });
+  }
   ngOnInit() {
     this.loginForm &#x3D; this.fb.group({
-      userEmail: [&#x27;&#x27;, Validators.required],
+      userEmail: [&#x27;&#x27;, [Validators.required, Validators.email]],
       userPassword: [&#x27;&#x27;, Validators.required]
     });
   }
@@ -603,24 +681,26 @@ export class LoginPage implements OnInit {
     return this.loginForm.controls[controlName].hasError(errorName);
   }
 
-  loginAction() {
+  loginAction &#x3D; async () &#x3D;&gt; {
     const userEmail &#x3D; this.loginForm.controls[&#x27;userEmail&#x27;].value;
     const userPassword &#x3D; this.loginForm.controls[&#x27;userPassword&#x27;].value;
-    try {
-      this.afa.auth
-        .signInWithEmailAndPassword(userEmail, userPassword)
-        .then(() &#x3D;&gt; {
-          swal(&#x27;Welcome back!&#x27;, &#x27;&#x27;, &#x27;success&#x27;);
-          this.router.navigateByUrl(&#x27;menu&#x27;);
-        })
-        .catch(error &#x3D;&gt; {
-          console.log(&#x27;error :&#x27;, error, error.message);
-          this.previewErrorMessage(error);
-        });
-    } catch (error) {
-      console.log(&#x27;error Occured  :&#x27;, error, error.message);
-    }
-  }
+    const loading &#x3D; await this.loadingController.create({
+      message: &#x27;Veryfying your details!&#x27;
+    });
+    await loading.present();
+
+    this.afa.auth
+      .signInWithEmailAndPassword(userEmail, userPassword)
+      .then(() &#x3D;&gt; {
+        swal(&#x27;Welcome back!&#x27;, &#x27;&#x27;, &#x27;success&#x27;);
+        this.router.navigateByUrl(&#x27;menu&#x27;);
+      })
+      .catch(error &#x3D;&gt; {
+        console.log(&#x27;error :&#x27;, error, error.message);
+        this.previewErrorMessage(error);
+      })
+      .finally(() &#x3D;&gt; loading.dismiss());
+  };
 
   getErrorMessage &#x3D; (controller: string) &#x3D;&gt; {
     const formController &#x3D; this.loginForm.controls[controller];
@@ -658,25 +738,29 @@ export class LoginPage implements OnInit {
     }
     swal(swalProps.title, swalProps.description, swalProps.type);
   };
+
+  forgetPassword &#x3D; async () &#x3D;&gt; {
+    const modal &#x3D; await this.modalController.create({
+      component: ForgetPasswordComponent
+    });
+    modal.present();
+  };
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
-  &lt;ion-toolbar color&#x3D;&quot;primary&quot; class&#x3D;&quot;toolbar&quot;&gt;
-    &lt;ion-title&gt;Login&lt;/ion-title&gt;
-  &lt;/ion-toolbar&gt;
-&lt;/ion-header&gt;
-
-&lt;ion-content padding&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content padding&gt;
   &lt;form [formGroup]&#x3D;&quot;loginForm&quot; style&#x3D;&quot;width: 100%;height: 100%;display: flex;align-items: center&quot;&gt;
     &lt;ion-grid&gt;
       &lt;ion-row align-items-center justify-content-center&gt;
+        &lt;img src&#x3D;&quot;../assets/img/icon.png&quot; alt&#x3D;&quot;libri&quot; id&#x3D;&quot;login-image&quot; /&gt;
+      &lt;/ion-row&gt;
+      &lt;ion-row align-items-center justify-content-center&gt;
         &lt;ion-col sizeLg&#x3D;&quot;8&quot; sizeXs&#x3D;&quot;12&quot;&gt;
           &lt;mat-form-field class&#x3D;&quot;formField&quot; appearance&#x3D;&quot;outline&quot;&gt;
-            &lt;input matInput placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;userEmail&quot; /&gt;
             &lt;mat-hint&gt;Place your University Email&lt;/mat-hint&gt;
+            &lt;input matInput placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;userEmail&quot; /&gt;
             &lt;mat-error *ngIf&#x3D;&quot;checkFormControlIsValid(&#x27;userEmail&#x27;)&quot;&gt;{{
               getErrorMessage(&#x27;userEmail&#x27;)
             }}&lt;/mat-error&gt;
@@ -686,8 +770,8 @@ export class LoginPage implements OnInit {
       &lt;ion-row align-items-center justify-content-center&gt;
         &lt;ion-col sizeLg&#x3D;&quot;8&quot; sizeXs&#x3D;&quot;12&quot;&gt;
           &lt;mat-form-field class&#x3D;&quot;formField&quot; appearance&#x3D;&quot;outline&quot;&gt;
-            &lt;input matInput placeholder&#x3D;&quot;Password&quot; formControlName&#x3D;&quot;userPassword&quot; type&#x3D;&quot;password&quot; /&gt;
             &lt;mat-hint&gt;Enter your password&lt;/mat-hint&gt;
+            &lt;input matInput placeholder&#x3D;&quot;Password&quot; formControlName&#x3D;&quot;userPassword&quot; type&#x3D;&quot;password&quot; /&gt;
             &lt;mat-error *ngIf&#x3D;&quot;checkFormControlIsValid(&#x27;userPassword&#x27;)&quot;&gt;{{
               getErrorMessage(&#x27;userPassword&#x27;)
             }}&lt;/mat-error&gt;
@@ -708,7 +792,9 @@ export class LoginPage implements OnInit {
       &lt;/ion-row&gt;
       &lt;ion-row align-items-center justify-content-center&gt;
         &lt;ion-col sizeLg&#x3D;&quot;6&quot; sizeXs&#x3D;&quot;12&quot;&gt;
-          &lt;ion-button fill&#x3D;&quot;clear&quot; expand&#x3D;&quot;block&quot;&gt;Forget password&lt;/ion-button&gt;
+          &lt;ion-button fill&#x3D;&quot;clear&quot; expand&#x3D;&quot;block&quot; (click)&#x3D;&quot;forgetPassword()&quot;
+            &gt;Forget password&lt;/ion-button
+          &gt;
         &lt;/ion-col&gt;
       &lt;/ion-row&gt;
     &lt;/ion-grid&gt;
@@ -730,6 +816,27 @@ export class LoginPage implements OnInit {
   margin-left: 10vw;
   margin-right: 10vw;
   margin-bottom: 5vh;
+}
+
+@media only screen and (min-width: 200px) {
+  #login-image {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #login-image {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  #login-image {
+    width: 40%;
+    height: auto;
+  }
 }
 </code></pre>
     </div>
@@ -759,8 +866,8 @@ export class LoginPage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar color="primary" class="toolbar">    <ion-title>Login</ion-title>  </ion-toolbar></ion-header><ion-content padding>  <form [formGroup]="loginForm" style="width: 100%;height: 100%;display: flex;align-items: center">    <ion-grid>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="8" sizeXs="12">          <mat-form-field class="formField" appearance="outline">            <input matInput placeholder="Email" formControlName="userEmail" />            <mat-hint>Place your University Email</mat-hint>            <mat-error *ngIf="checkFormControlIsValid(\'userEmail\')">{{              getErrorMessage(\'userEmail\')            }}</mat-error>          </mat-form-field>        </ion-col>      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="8" sizeXs="12">          <mat-form-field class="formField" appearance="outline">            <input matInput placeholder="Password" formControlName="userPassword" type="password" />            <mat-hint>Enter your password</mat-hint>            <mat-error *ngIf="checkFormControlIsValid(\'userPassword\')">{{              getErrorMessage(\'userPassword\')            }}</mat-error>          </mat-form-field>        </ion-col>      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="6" sizeXs="12">          <ion-button expand="block" [disabled]="loginForm.invalid" (click)="loginAction()"            >Login</ion-button          >        </ion-col>      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="6" sizeXs="12">          <ion-button expand="block" color="danger" href="/signup">Sign Up</ion-button>        </ion-col>      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="6" sizeXs="12">          <ion-button fill="clear" expand="block">Forget password</ion-button>        </ion-col>      </ion-row>    </ion-grid>  </form></ion-content></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'ContactPage', 'selector': 'app-contact'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'}];
+        var COMPONENT_TEMPLATE = '<div><ion-content padding>  <form [formGroup]="loginForm" style="width: 100%;height: 100%;display: flex;align-items: center">    <ion-grid>      <ion-row align-items-center justify-content-center>        <img src="../assets/img/icon.png" alt="libri" id="login-image" />      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="8" sizeXs="12">          <mat-form-field class="formField" appearance="outline">            <mat-hint>Place your University Email</mat-hint>            <input matInput placeholder="Email" formControlName="userEmail" />            <mat-error *ngIf="checkFormControlIsValid(\'userEmail\')">{{              getErrorMessage(\'userEmail\')            }}</mat-error>          </mat-form-field>        </ion-col>      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="8" sizeXs="12">          <mat-form-field class="formField" appearance="outline">            <mat-hint>Enter your password</mat-hint>            <input matInput placeholder="Password" formControlName="userPassword" type="password" />            <mat-error *ngIf="checkFormControlIsValid(\'userPassword\')">{{              getErrorMessage(\'userPassword\')            }}</mat-error>          </mat-form-field>        </ion-col>      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="6" sizeXs="12">          <ion-button expand="block" [disabled]="loginForm.invalid" (click)="loginAction()"            >Login</ion-button          >        </ion-col>      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="6" sizeXs="12">          <ion-button expand="block" color="danger" href="/signup">Sign Up</ion-button>        </ion-col>      </ion-row>      <ion-row align-items-center justify-content-center>        <ion-col sizeLg="6" sizeXs="12">          <ion-button fill="clear" expand="block" (click)="forgetPassword()"            >Forget password</ion-button          >        </ion-col>      </ion-row>    </ion-grid>  </form></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginPage'};
 </script>

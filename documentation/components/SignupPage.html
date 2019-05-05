@@ -183,12 +183,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, afa: AngularFireAuth, loadingCtrl: LoadingController)</code>
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, afa: AngularFireAuth, loadingCtrl: LoadingController, fcm: <a href="../injectables/FcmService.html">FcmService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/signup/signup.page.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/signup/signup.page.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -241,6 +241,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>fcm</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FcmService.html" target="_self" >FcmService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -281,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/signup/signup.page.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/signup/signup.page.ts:42</a></div>
                 </td>
             </tr>
 
@@ -351,8 +363,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/signup/signup.page.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/signup/signup.page.ts:31</a></div>
                 </td>
             </tr>
 
@@ -390,8 +402,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/signup/signup.page.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/signup/signup.page.ts:46</a></div>
                 </td>
             </tr>
 
@@ -432,7 +444,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/signup/signup.page.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/signup/signup.page.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -458,7 +470,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/signup/signup.page.ts:84</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/signup/signup.page.ts:90</a></div>
                             </td>
                         </tr>
 
@@ -479,7 +491,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/signup/signup.page.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/signup/signup.page.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -505,7 +517,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/signup/signup.page.ts:76</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/signup/signup.page.ts:82</a></div>
                             </td>
                         </tr>
 
@@ -532,7 +544,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/signup/signup.page.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/signup/signup.page.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -551,6 +563,7 @@ import swal from &#x27;sweetalert&#x27;;
 import { AngularFireAuth } from &#x27;@angular/fire/auth&#x27;;
 import { LoadingController } from &#x27;@ionic/angular&#x27;;
 import { auth } from &#x27;firebase&#x27;;
+import { FcmService } from &#x27;../fcm.service&#x27;;
 @Component({
   selector: &#x27;app-signup&#x27;,
   templateUrl: &#x27;./signup.page.html&#x27;,
@@ -562,7 +575,8 @@ export class SignupPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private afa: AngularFireAuth,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private fcm: FcmService
   ) {
     this.signupForm &#x3D; this.fb.group({
       displayName: [&#x27;&#x27;, Validators.required],
@@ -607,6 +621,10 @@ export class SignupPage implements OnInit {
                 &#x27;Regaistraion Successful, please confirm your email address!&#x27;,
                 &#x27;success&#x27;
               );
+              this.fcm
+                .getPermission()
+                .then(() &#x3D;&gt; this.fcm.sub(&#x27;notices&#x27;))
+                .catch(message &#x3D;&gt; console.log(&#x27;message&#x27;, message));
             });
         })
         .catch(error &#x3D;&gt; {
@@ -639,7 +657,9 @@ export class SignupPage implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
   &lt;ion-toolbar color&#x3D;&quot;primary&quot;&gt;
     &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
-      &lt;ion-button routerLink&#x3D;&quot;../&quot;&gt;go back&lt;/ion-button&gt;
+      &lt;ion-button id&#x3D;&quot;back-button&quot; routerLink&#x3D;&quot;../&quot;
+        &gt;&lt;ion-icon name&#x3D;&quot;arrow-back&quot;&gt;&lt;/ion-icon
+      &gt;&lt;/ion-button&gt;
     &lt;/ion-buttons&gt;
     &lt;ion-title&gt;Signup&lt;/ion-title&gt;
   &lt;/ion-toolbar&gt;
@@ -688,7 +708,11 @@ export class SignupPage implements OnInit {
                 <p class="comment">
                     <code>./signup.page.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">#back-button {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -716,8 +740,8 @@ export class SignupPage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar color="primary">    <ion-buttons slot="start">      <ion-button routerLink="../">go back</ion-button>    </ion-buttons>    <ion-title>Signup</ion-title>  </ion-toolbar></ion-header><ion-content padding>  <form [formGroup]="signupForm">    <mat-form-field style="display: block" appearance="outline">      <mat-label>Enter your University email</mat-label>      <input matInput placeholder="Email" formControlName="email" />      <mat-error *ngIf="checkFormControlIsValid(\'email\')">{{ getErrorMessage(\'email\') }}</mat-error>    </mat-form-field>    <mat-form-field style="display: block" appearance="outline">      <input matInput placeholder="password" formControlName="password" />      <mat-error *ngIf="checkFormControlIsValid(\'password\')">{{        getErrorMessage(\'password\')      }}</mat-error>    </mat-form-field>    <mat-form-field style="display: block" appearance="outline">      <input matInput placeholder="Confirm Password" formControlName="confirmPassword" />      <mat-error *ngIf="checkFormControlIsValid(\'confirmPassword\')">{{        getErrorMessage(\'confirmPassword\')      }}</mat-error>    </mat-form-field>    <mat-form-field style="display: block" appearance="outline">      <input matInput placeholder="Name with initials" formControlName="displayName" />      <mat-error *ngIf="checkFormControlIsValid(\'displayName\')">{{        getErrorMessage(\'displayName\')      }}</mat-error>    </mat-form-field>    <mat-form-field style="display: block" appearance="outline">      <input matInput placeholder="Contact Number" formControlName="telephoneNumber" />      <mat-error *ngIf="checkFormControlIsValid(\'telephoneNumber\')">{{        getErrorMessage(\'telephoneNumber\')      }}</mat-error>    </mat-form-field>    <ion-button type="submit" color="danger" [disabled]="signupForm.invalid" (click)="onSubmit()"      >Register</ion-button    >  </form></ion-content></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'ContactPage', 'selector': 'app-contact'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'}];
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar color="primary">    <ion-buttons slot="start">      <ion-button id="back-button" routerLink="../"        ><ion-icon name="arrow-back"></ion-icon      ></ion-button>    </ion-buttons>    <ion-title>Signup</ion-title>  </ion-toolbar></ion-header><ion-content padding>  <form [formGroup]="signupForm">    <mat-form-field style="display: block" appearance="outline">      <mat-label>Enter your University email</mat-label>      <input matInput placeholder="Email" formControlName="email" />      <mat-error *ngIf="checkFormControlIsValid(\'email\')">{{ getErrorMessage(\'email\') }}</mat-error>    </mat-form-field>    <mat-form-field style="display: block" appearance="outline">      <input matInput placeholder="password" formControlName="password" />      <mat-error *ngIf="checkFormControlIsValid(\'password\')">{{        getErrorMessage(\'password\')      }}</mat-error>    </mat-form-field>    <mat-form-field style="display: block" appearance="outline">      <input matInput placeholder="Confirm Password" formControlName="confirmPassword" />      <mat-error *ngIf="checkFormControlIsValid(\'confirmPassword\')">{{        getErrorMessage(\'confirmPassword\')      }}</mat-error>    </mat-form-field>    <mat-form-field style="display: block" appearance="outline">      <input matInput placeholder="Name with initials" formControlName="displayName" />      <mat-error *ngIf="checkFormControlIsValid(\'displayName\')">{{        getErrorMessage(\'displayName\')      }}</mat-error>    </mat-form-field>    <mat-form-field style="display: block" appearance="outline">      <input matInput placeholder="Contact Number" formControlName="telephoneNumber" />      <mat-error *ngIf="checkFormControlIsValid(\'telephoneNumber\')">{{        getErrorMessage(\'telephoneNumber\')      }}</mat-error>    </mat-form-field>    <ion-button type="submit" color="danger" [disabled]="signupForm.invalid" (click)="onSubmit()"      >Register</ion-button    >  </form></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SignupPage'};
 </script>

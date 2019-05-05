@@ -133,6 +133,9 @@
                                 <a href="#isSelectedPath">isSelectedPath</a>
                             </li>
                             <li>
+                                <a href="#logOutUser">logOutUser</a>
+                            </li>
+                            <li>
                                 <a href="#moveToHomePage">moveToHomePage</a>
                             </li>
                             <li>
@@ -140,6 +143,9 @@
                             </li>
                             <li>
                                 <a href="#selectedPath">selectedPath</a>
+                            </li>
+                            <li>
+                                <a href="#width">width</a>
                             </li>
                         </ul>
                     </td>
@@ -174,12 +180,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, afa: AngularFireAuth, loadingController: LoadingController)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/menu/menu.page.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/menu/menu.page.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -201,6 +207,30 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>afa</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireAuth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loadingController</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoadingController</code>
                                                         </td>
                                                   
                                                     <td>
@@ -248,8 +278,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/menu/menu.page.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/menu/menu.page.ts:44</a></div>
                 </td>
             </tr>
 
@@ -290,7 +320,33 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/menu/menu.page.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/menu/menu.page.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="logOutUser"></a>
+                        <span class="name">
+                            <b>
+                            logOutUser</b>
+                            <a href="#logOutUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/menu/menu.page.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -316,7 +372,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/menu/menu.page.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/menu/menu.page.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -344,15 +400,18 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-    { title: &#x27;Search Book&#x27;, url: &#x27;booksearch&#x27;, icon: &#x27;home&#x27; },
-    { title: &#x27;Contact Us&#x27;, url: &#x27;contact&#x27;, icon: &#x27;home&#x27; },
-    { title: &#x27;Request Book&#x27;, url: &#x27;requestbook&#x27;, icon: &#x27;home&#x27; }
+    { title: &#x27;Search Book&#x27;, url: &#x27;booksearch&#x27; },
+    { title: &#x27;My Profile&#x27;, url: &#x27;profile&#x27; },
+    { title: &#x27;Book transfer&#x27;, url: &#x27;transfer&#x27; },
+    { title: &#x27;Feedback&#x27;, url: &#x27;feedback&#x27; },
+    { title: &#x27;Request Book&#x27;, url: &#x27;requestbook&#x27; },
+    { title: &#x27;Account&#x27;, url: &#x27;profile/account&#x27; }
   ]</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/menu/menu.page.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/menu/menu.page.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -384,7 +443,33 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/menu/menu.page.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/menu/menu.page.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="width"></a>
+                        <span class="name">
+                            <b>
+                            width</b>
+                            <a href="#width"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>window.innerWidth</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/menu/menu.page.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -397,7 +482,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { LoadingController } from &#x27;@ionic/angular&#x27;;
+import { AngularFireAuth } from &#x27;@angular/fire/auth&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Router, RouterEvent } from &#x27;@angular/router&#x27;;
 
 @Component({
@@ -407,14 +494,21 @@ import { Router, RouterEvent } from &#x27;@angular/router&#x27;;
 })
 export class MenuPage implements OnInit {
   pages &#x3D; [
-    { title: &#x27;Search Book&#x27;, url: &#x27;booksearch&#x27;, icon: &#x27;home&#x27; },
-    { title: &#x27;Contact Us&#x27;, url: &#x27;contact&#x27;, icon: &#x27;home&#x27; },
-    { title: &#x27;Request Book&#x27;, url: &#x27;requestbook&#x27;, icon: &#x27;home&#x27; }
+    { title: &#x27;Search Book&#x27;, url: &#x27;booksearch&#x27; },
+    { title: &#x27;My Profile&#x27;, url: &#x27;profile&#x27; },
+    { title: &#x27;Book transfer&#x27;, url: &#x27;transfer&#x27; },
+    { title: &#x27;Feedback&#x27;, url: &#x27;feedback&#x27; },
+    { title: &#x27;Request Book&#x27;, url: &#x27;requestbook&#x27; },
+    { title: &#x27;Account&#x27;, url: &#x27;profile/account&#x27; }
   ];
-
+  width &#x3D; window.innerWidth;
   selectedPath &#x3D; &#x27;&#x27;;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private afa: AngularFireAuth,
+    private loadingController: LoadingController
+  ) {
     this.router.events.subscribe((event: RouterEvent) &#x3D;&gt; {
       if (event &amp;&amp; event.url) {
         this.selectedPath &#x3D; event.url;
@@ -432,6 +526,27 @@ export class MenuPage implements OnInit {
   };
 
   ngOnInit() {}
+
+  logOutUser &#x3D; async () &#x3D;&gt; {
+    const loading &#x3D; await this.loadingController.create({
+      message: &#x27;Please wait logging out...&#x27;,
+      spinner: &#x27;crescent&#x27;
+    });
+    loading.present();
+    this.afa.auth
+      .signOut()
+      .then(() &#x3D;&gt; {
+        console.log(&#x27;Successfully Logged out&#x27;);
+        this.router.navigateByUrl(&#x27;login&#x27;);
+      })
+      .catch(error &#x3D;&gt; {
+        console.log(&#x27;Error occured while logging out&#x27;);
+        console.error(error);
+      })
+      .finally(() &#x3D;&gt; {
+        loading.dismiss();
+      });
+  };
 }
 </code></pre>
     </div>
@@ -440,13 +555,24 @@ export class MenuPage implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;ion-split-pane&gt;
   &lt;ion-menu contentId&#x3D;&quot;content&quot;&gt;
     &lt;ion-header&gt;
-      &lt;ion-toolbar color&#x3D;&quot;primary&quot;&gt;
+      &lt;ion-toolbar&gt;
         &lt;ion-buttons slot&#x3D;&quot;end&quot;&gt;
           &lt;ion-menu-toggle&gt;
-            &lt;ion-button class&#x3D;&quot;home-button&quot; routerLink&#x3D;&quot;home&quot; routerDirection&#x3D;&quot;root&quot;&gt;
+            &lt;ion-button class&#x3D;&quot;quick-buttons&quot; routerLink&#x3D;&quot;home&quot; routerDirection&#x3D;&quot;root&quot;&gt;
               &lt;ion-icon name&#x3D;&quot;home&quot;&gt;&lt;/ion-icon&gt;
             &lt;/ion-button&gt;
+            &lt;ion-button class&#x3D;&quot;quick-buttons&quot; routerLink&#x3D;&quot;info&quot; routerDirection&#x3D;&quot;root&quot;&gt;
+              &lt;ion-icon name&#x3D;&quot;information-circle-outline&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
           &lt;/ion-menu-toggle&gt;
+          &lt;span *ngIf&#x3D;&quot;width &gt; 1000&quot;&gt;
+            &lt;ion-button class&#x3D;&quot;quick-buttons&quot; routerLink&#x3D;&quot;home&quot; routerDirection&#x3D;&quot;root&quot;&gt;
+              &lt;ion-icon name&#x3D;&quot;home&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            &lt;ion-button class&#x3D;&quot;quick-buttons&quot; routerLink&#x3D;&quot;info&quot; routerDirection&#x3D;&quot;root&quot;&gt;
+              &lt;ion-icon name&#x3D;&quot;information-circle-outline&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+          &lt;/span&gt;
         &lt;/ion-buttons&gt;
         &lt;ion-title&gt;Home&lt;/ion-title&gt;
       &lt;/ion-toolbar&gt;
@@ -462,11 +588,13 @@ export class MenuPage implements OnInit {
             &lt;ion-label&gt;{{ p.title }}&lt;/ion-label&gt;
           &lt;/ion-item&gt;
         &lt;/ion-menu-toggle&gt;
-        &lt;ion-item tappable routerLink&#x3D;&quot;/login&quot; routerDirection&#x3D;&quot;root&quot;&gt;
-          &lt;ion-icon name&#x3D;&quot;log-out&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;Logout&lt;/ion-item
-        &gt;
       &lt;/ion-list&gt;
     &lt;/ion-content&gt;
+    &lt;ion-footer&gt;
+      &lt;ion-item (click)&#x3D;&quot;logOutUser()&quot;&gt;
+        &lt;ion-icon name&#x3D;&quot;log-out&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;Logout&lt;/ion-item
+      &gt;
+    &lt;/ion-footer&gt;
   &lt;/ion-menu&gt;
 
   &lt;ion-router-outlet id&#x3D;&quot;content&quot; main&gt; &lt;/ion-router-outlet&gt;
@@ -482,8 +610,8 @@ export class MenuPage implements OnInit {
   border-left: 8px solid var(--ion-color-primary);
 }
 
-.home-button {
-  border: 1px solid white;
+.quick-buttons {
+  border: 1px solid #056571;
   border-radius: 5px;
 }
 </code></pre>
@@ -514,8 +642,8 @@ export class MenuPage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-split-pane>  <ion-menu contentId="content">    <ion-header>      <ion-toolbar color="primary">        <ion-buttons slot="end">          <ion-menu-toggle>            <ion-button class="home-button" routerLink="home" routerDirection="root">              <ion-icon name="home"></ion-icon>            </ion-button>          </ion-menu-toggle>        </ion-buttons>        <ion-title>Home</ion-title>      </ion-toolbar>    </ion-header>    <ion-content>      <ion-list>        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">          <ion-item            [routerLink]="p.url"            routerDirection="root"            [class.active-item]="isSelectedPath(p.url)"          >            <ion-label>{{ p.title }}</ion-label>          </ion-item>        </ion-menu-toggle>        <ion-item tappable routerLink="/login" routerDirection="root">          <ion-icon name="log-out" slot="start"></ion-icon>Logout</ion-item        >      </ion-list>    </ion-content>  </ion-menu>  <ion-router-outlet id="content" main> </ion-router-outlet></ion-split-pane></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'ContactPage', 'selector': 'app-contact'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'}];
+        var COMPONENT_TEMPLATE = '<div><ion-split-pane>  <ion-menu contentId="content">    <ion-header>      <ion-toolbar>        <ion-buttons slot="end">          <ion-menu-toggle>            <ion-button class="quick-buttons" routerLink="home" routerDirection="root">              <ion-icon name="home"></ion-icon>            </ion-button>            <ion-button class="quick-buttons" routerLink="info" routerDirection="root">              <ion-icon name="information-circle-outline"></ion-icon>            </ion-button>          </ion-menu-toggle>          <span *ngIf="width > 1000">            <ion-button class="quick-buttons" routerLink="home" routerDirection="root">              <ion-icon name="home" color="primary"></ion-icon>            </ion-button>            <ion-button class="quick-buttons" routerLink="info" routerDirection="root">              <ion-icon name="information-circle-outline"></ion-icon>            </ion-button>          </span>        </ion-buttons>        <ion-title>Home</ion-title>      </ion-toolbar>    </ion-header>    <ion-content>      <ion-list>        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">          <ion-item            [routerLink]="p.url"            routerDirection="root"            [class.active-item]="isSelectedPath(p.url)"          >            <ion-label>{{ p.title }}</ion-label>          </ion-item>        </ion-menu-toggle>      </ion-list>    </ion-content>    <ion-footer>      <ion-item (click)="logOutUser()">        <ion-icon name="log-out" slot="start"></ion-icon>Logout</ion-item      >    </ion-footer>  </ion-menu>  <ion-router-outlet id="content" main> </ion-router-outlet></ion-split-pane></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MenuPage'};
 </script>

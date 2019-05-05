@@ -63,29 +63,41 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_BooksearchPageModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="164,-70 164,-195 332,-195 332,-70 164,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="97,-70 97,-195 399,-195 399,-70 97,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_BooksearchPageModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="185,-78 185,-130 311,-130 311,-78 185,-78"/>
+<polygon fill="none" stroke="#000000" points="105,-78 105,-130 391,-130 391,-78 105,-78"/>
 </g>
-<!-- BooksearchPage -->
+<!-- BookViewComponent -->
 <g id="node1" class="node">
-<title>BooksearchPage</title>
-<polygon fill="#ffffb3" stroke="#000000" points="302.7978,-122 193.2022,-122 193.2022,-86 302.7978,-86 302.7978,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BooksearchPage</text>
+<title>BookViewComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="382.9874,-122 241.0126,-122 241.0126,-86 382.9874,-86 382.9874,-122"/>
+<text text-anchor="middle" x="312" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BookViewComponent</text>
 </g>
 <!-- BooksearchPageModule -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>BooksearchPageModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="324.3473,-187 321.3473,-191 300.3473,-191 297.3473,-187 171.6527,-187 171.6527,-151 324.3473,-151 324.3473,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">BooksearchPageModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="322.3473,-187 319.3473,-191 298.3473,-191 295.3473,-187 169.6527,-187 169.6527,-151 322.3473,-151 322.3473,-187"/>
+<text text-anchor="middle" x="246" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">BooksearchPageModule</text>
+</g>
+<!-- BookViewComponent&#45;&gt;BooksearchPageModule -->
+<g id="edge1" class="edge">
+<title>BookViewComponent&#45;&gt;BooksearchPageModule</title>
+<path fill="none" stroke="#000000" d="M281.715,-122.1061C281.715,-122.1061 281.715,-140.991 281.715,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="278.215,-140.9909 281.715,-150.991 285.215,-140.991 278.215,-140.9909"/>
+</g>
+<!-- BooksearchPage -->
+<g id="node2" class="node">
+<title>BooksearchPage</title>
+<polygon fill="#ffffb3" stroke="#000000" points="222.7978,-122 113.2022,-122 113.2022,-86 222.7978,-86 222.7978,-122"/>
+<text text-anchor="middle" x="168" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BooksearchPage</text>
 </g>
 <!-- BooksearchPage&#45;&gt;BooksearchPageModule -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>BooksearchPage&#45;&gt;BooksearchPageModule</title>
-<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
+<path fill="none" stroke="#000000" d="M196.1126,-122.1061C196.1126,-122.1061 196.1126,-140.991 196.1126,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="192.6126,-140.9909 196.1126,-150.991 199.6126,-140.991 192.6126,-140.9909"/>
 </g>
 </g>
 </svg>
@@ -130,7 +142,19 @@
                             title="Official documentation about module declarations"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
                     <ul class="list-group">
                         <li class="list-group-item">
+                            <a href="../components/BookViewComponent.html">BookViewComponent</a>
+                        </li>
+                        <li class="list-group-item">
                             <a href="../components/BooksearchPage.html">BooksearchPage</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h3>EntryComponents<a href="https://angular.io/api/core/NgModule#entryComponents" target="_blank"
+                            title="Official documentation about module entryComponents"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="../components/BookViewComponent.html">BookViewComponent</a>
                         </li>
                     </ul>
                 </div>
@@ -142,7 +166,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MenuTitleComponentModule } from &#x27;./../components/menu-title/menu-title.module&#x27;;
+import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
@@ -150,6 +175,7 @@ import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 import { IonicModule } from &#x27;@ionic/angular&#x27;;
 
 import { BooksearchPage } from &#x27;./booksearch.page&#x27;;
+import { BookViewComponent } from &#x27;../components/book-view/book-view.component&#x27;;
 
 const routes: Routes &#x3D; [
   {
@@ -163,9 +189,11 @@ const routes: Routes &#x3D; [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MenuTitleComponentModule
   ],
-  declarations: [BooksearchPage]
+  declarations: [BooksearchPage, BookViewComponent],
+  entryComponents: [BookViewComponent]
 })
 export class BooksearchPageModule {}
 </code></pre>

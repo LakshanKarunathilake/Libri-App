@@ -157,13 +157,17 @@ const routes: Routes &#x3D; [
     component: MenuPage,
     children: [
       { path: &#x27;&#x27;, redirectTo: &#x27;home&#x27;, pathMatch: &#x27;full&#x27; },
-      { path: &#x27;contact&#x27;, loadChildren: &#x27;../contact/contact.module#ContactPageModule&#x27; },
+      { path: &#x27;feedback&#x27;, loadChildren: &#x27;../feedback/feedback.module#FeedbackPageModule&#x27; },
       { path: &#x27;booksearch&#x27;, loadChildren: &#x27;../booksearch/booksearch.module#BooksearchPageModule&#x27; },
       {
         path: &#x27;requestbook&#x27;,
         loadChildren: &#x27;../requestbook/requestbook.module#RequestbookPageModule&#x27;
       },
-      { path: &#x27;home&#x27;, loadChildren: &#x27;../home/home.module#HomePageModule&#x27; }
+      { path: &#x27;home&#x27;, loadChildren: &#x27;../home/home.module#HomePageModule&#x27; },
+      { path: &#x27;profile&#x27;, loadChildren: &#x27;../profile/profile.module#ProfilePageModule&#x27; },
+      { path: &#x27;profile/account&#x27;, loadChildren: &#x27;../account/account.module#AccountPageModule&#x27; },
+      { path: &#x27;info&#x27;, loadChildren: &#x27;../LibraryInfo/info/info.module#InfoPageModule&#x27; },
+      { path: &#x27;transfer&#x27;, loadChildren: &#x27;../transfer/transfer.module#TransferPageModule&#x27; }
     ]
   }
 ];
