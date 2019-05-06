@@ -1,3 +1,4 @@
+import { SwalService } from './services/swal/swal.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -40,7 +41,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    FcmService
+    FcmService,
+    SwalService
   ],
   bootstrap: [AppComponent]
 })
