@@ -1,6 +1,6 @@
+import { SwalService } from './../services/swal/swal.service';
 import { Component, OnInit } from '@angular/core';
 import { FcmService } from '../fcm.service';
-import swal from 'sweetalert';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import swal from 'sweetalert';
 })
 export class HomePage implements OnInit {
   sliderOptions = { slidesPerView: 2, spaceBetween: 0 };
-  constructor(public fcm: FcmService) {}
+  constructor(public fcm: FcmService, private swal: SwalService) {}
 
   ngOnInit() {}
 
@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
       .catch(error => {
         console.log('error occured');
         console.log('error', error);
-        swal('error');
+        this.swal.viewErrorMessage('error', 'You have not subscribed for the notices');
       });
   };
 }

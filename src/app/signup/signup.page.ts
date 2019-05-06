@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import swal from 'sweetalert';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { LoadingController } from '@ionic/angular';
 import { auth } from 'firebase';
 import { FcmService } from '../fcm.service';
+import { SwalService } from '../services/swal/swal.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -17,7 +17,8 @@ export class SignupPage implements OnInit {
     private fb: FormBuilder,
     private afa: AngularFireAuth,
     private loadingCtrl: LoadingController,
-    private fcm: FcmService
+    private fcm: FcmService,
+    private swal: SwalService
   ) {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
@@ -57,10 +58,9 @@ export class SignupPage implements OnInit {
           return auth()
             .currentUser.sendEmailVerification()
             .then(() => {
-              swal(
+              this.swal.viewSuccessMessage(
                 'Welcome!',
-                'Regaistraion Successful, please confirm your email address!',
-                'success'
+                'Regaistraion Successful, please confirm your email address!'
               );
               this.fcm
                 .getPermission()
@@ -71,7 +71,7 @@ export class SignupPage implements OnInit {
         .catch(error => {
           this.hideLoading();
           console.log('error :', error.message);
-          swal('Error!', error.message, 'error');
+          this.swal.viewErrorMessage('Error!', error.message);
         });
     } catch (error) {
       this.hideLoading();

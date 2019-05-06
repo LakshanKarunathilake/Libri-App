@@ -1,7 +1,7 @@
+import { SwalService } from './../services/swal/swal.service';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import swal from 'sweetalert';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { ForgetPasswordComponent } from '../components/forget-password/forget-password.component';
@@ -18,7 +18,8 @@ export class LoginPage implements OnInit {
     private afa: AngularFireAuth,
     private router: Router,
     private loadingController: LoadingController,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private swal: SwalService
   ) {
     this.loadingController.create({
       message: 'Please wait verifying!',
@@ -46,7 +47,7 @@ export class LoginPage implements OnInit {
     this.afa.auth
       .signInWithEmailAndPassword(userEmail, userPassword)
       .then(() => {
-        swal('Welcome back!', '', 'success');
+        this.swal.viewSuccessMessage('Welcome back!', '');
         this.router.navigateByUrl('menu');
       })
       .catch(error => {
@@ -70,7 +71,7 @@ export class LoginPage implements OnInit {
   }
 
   previewErrorMessage = ({ code, message }) => {
-    const swalProps = { title: '', type: 'error', description: '' };
+    const swalProps = { title: '', description: '' };
     switch (code) {
       case 'network-request-failed':
         swalProps.description = 'Check your internet Connection';
@@ -90,7 +91,7 @@ export class LoginPage implements OnInit {
         swalProps.title = 'Error';
         break;
     }
-    swal(swalProps.title, swalProps.description, swalProps.type);
+    this.swal.viewErrorMessage(swalProps.title, swalProps.description);
   };
 
   forgetPassword = async () => {
