@@ -1,0 +1,7 @@
+{
+  "appId": "com.laksoft.libri",
+  "appName": "Libri",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
