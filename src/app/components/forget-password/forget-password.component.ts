@@ -1,7 +1,7 @@
+import { SwalService } from './../../services/swal/swal.service';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import swal from 'sweetalert';
 import * as firebase from 'firebase';
 @Component({
   selector: 'app-forget-password',
@@ -13,7 +13,11 @@ export class ForgetPasswordComponent implements OnInit {
   invalidEmail: any = true;
   emptyField = true;
 
-  constructor(private fb: FormBuilder, private modalController: ModalController) {}
+  constructor(
+    private fb: FormBuilder,
+    private modalController: ModalController,
+    private swal: SwalService
+  ) {}
 
   ngOnInit() {
     this.ForgetPasswordForm = this.fb.group({
@@ -43,11 +47,19 @@ export class ForgetPasswordComponent implements OnInit {
         return this.modalController.dismiss();
       })
       .then(() => {
-        swal('Your Password reset email is sent successfully!, Please check your email');
+        this.swal.viewSuccessMessage(
+          'Email sent',
+          'Your Password reset email is sent successfully!, Please check your email'
+        );
       })
       .catch(error => {
         if (error.code === 'auth/user-not-found') {
-          swal('Such user does not exist in our database please check your email again');
+          this.swal.viewErrorMessage(
+            'No such user',
+            'Such user does not exist in our database please check your email again'
+          );
+        } else {
+          this.swal.viewErrorMessage('Error', 'Error occured while sending the email!');
         }
         console.log('error occured while resetting the password');
         console.error(error);
