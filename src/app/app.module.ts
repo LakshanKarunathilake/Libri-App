@@ -18,6 +18,7 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -32,6 +33,7 @@ import { RecaptchaModule } from 'ng-recaptcha';
     AngularFireAuthModule,
     AngularFireMessagingModule,
     AngularFireFunctionsModule,
+    AngularFirestoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
