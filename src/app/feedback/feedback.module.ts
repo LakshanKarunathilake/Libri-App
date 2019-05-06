@@ -9,7 +9,7 @@ import { IonicModule } from '@ionic/angular';
 import { MatButtonModule } from '@angular/material/button';
 import { FeedbackPage } from './feedback.page';
 import { MenuTitleComponentModule } from '../components/menu-title/menu-title.module';
-
+import { MatSelectModule } from '@angular/material/select';
 const routes: Routes = [
   {
     path: '',
@@ -28,7 +28,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     MenuTitleComponentModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   declarations: [FeedbackPage]
 })

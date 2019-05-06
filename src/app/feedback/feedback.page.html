@@ -8,38 +8,45 @@
   <mat-vertical-stepper linear #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
+        <ng-template matStepLabel>Select what kind of feedback you are providing</ng-template>
         <mat-form-field>
-          <input
-            matInput
-            placeholder="Last name, First name"
-            formControlName="firstCtrl"
-            required
-          />
+          <mat-label>Type of feedback</mat-label>
+          <mat-select formControlName="firstCtrl">
+            <mat-option *ngFor="let option of options" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-raised-button matStepperNext color="primary">Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Fill out your address</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Address" formControlName="secondCtrl" required />
+        <ng-template matStepLabel>Give us details</ng-template>
+        <mat-form-field style="width:100%">
+          <textarea matInput placeholder="Details" formControlName="firstCtrl" required></textarea>
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-raised-button matStepperPrevious color="warn" style="margin-right: 2rem;">
+            Back
+          </button>
+          <button mat-raised-button matStepperNext color="primary">Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      You are now done.
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+      <ng-template matStepLabel>Submit</ng-template>
+      Submit your feedback
+      <div style="padding: 5px;">
+        <button mat-raised-button matStepperPrevious color="primary">
+          Back
+        </button>
+        <button mat-raised-button matStepperPrevious color="primary" (click)="submitFeedback()">
+          Submit
+        </button>
+        <button mat-raised-button (click)="stepper.reset()" color="warn">Reset</button>
       </div>
     </mat-step>
   </mat-vertical-stepper>
