@@ -11,6 +11,9 @@
         <ng-template matStepLabel>Select what kind of feedback you are providing</ng-template>
         <mat-form-field>
           <mat-label>Type of feedback</mat-label>
+          <mat-error *ngIf="firstFormGroup.controls['firstCtrl']">
+            Select type of feedback
+          </mat-error>
           <mat-select formControlName="firstCtrl">
             <mat-option *ngFor="let option of options" [value]="option">
               {{ option }}
@@ -26,6 +29,9 @@
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Give us details</ng-template>
         <mat-form-field style="width:100%">
+          <mat-error *ngIf="secondFormGroup.controls['firstCtrl']">
+            Please elaborate more about the feedback
+          </mat-error>
           <textarea matInput placeholder="Details" formControlName="firstCtrl" required></textarea>
         </mat-form-field>
         <div>
@@ -43,7 +49,7 @@
         <button mat-raised-button matStepperPrevious color="primary">
           Back
         </button>
-        <button mat-raised-button matStepperPrevious color="primary" (click)="submitFeedback()">
+        <button mat-raised-button matStepperPrevious color="accent" (click)="submitFeedback()">
           Submit
         </button>
         <button mat-raised-button (click)="stepper.reset()" color="warn">Reset</button>
