@@ -11,11 +11,62 @@
   color: '#607D8B';
 }
 
-.button-pannel {
-  display: flex;
-  justify-content: flex-end;
+.button-panel {
+  padding: 0px;
+}
+
+.icon-button {
+  display: block;
+}
+
+.icon {
+  color: white;
+  font-size: 1rem;
 }
 
 ion-grid {
   --ion-grid-padding: 0px;
+}
+
+.book-description {
+  max-height: 10vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.5rem;
+}
+
+// @media only screen and (max-width: 1800px) {
+//   .book-image {
+//     width: 8.5vw;
+//     height: auto;
+//     margin: 0 auto;
+//   }
+// }
+// @media only screen and (max-width: 1200px) {
+//   .book-image {
+//     width: 10vw;
+//     height: auto;
+//   }
+// }
+// @media only screen and (max-width: 800px) {
+//   .book-image {
+//     width: 10vw;
+//     height: auto;
+//   }
+//   .button-panel {
+//     padding: 0px;
+//     width: 5vw;
+//   }
+// }
+
+// @media only screen and (max-width: 400px) {
+//   .book-image {
+//     width: 22vw;
+//     height: auto;
+//   }
+// }
+
+ion-button {
+  --padding-start: 0;
+  --padding-end: 0;
 }

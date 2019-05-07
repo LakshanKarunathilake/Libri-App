@@ -3,21 +3,34 @@
   <section>
     <ion-searchbar></ion-searchbar>
   </section>
-  <ion-grid>
-    <ion-card>
-      <ion-row align-items-center>
-        <ion-col sizeXl="4" szieSm="3" sizeXs="3">
-          <img src="../assets/img/harry_potter.jpg" alt="libri" width="50%" height="auto" />
+
+  <ion-card
+    class="book-card"
+    style="background-color: teal;display: flex;align-items: center"
+    *ngFor="let book of sampleBooks"
+  >
+    <div style="width: 2rem;margin: 0 auto;height: 100%;">
+      <ion-button fill="clear" (click)="bookPreview()" class="icon-button">
+        <ion-icon slot="icon-only" name="eye" class="icon"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" class="icon-button">
+        <ion-icon slot="icon-only" name="save" class="icon"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" class="icon-button">
+        <ion-icon slot="icon-only" name="briefcase" class="icon"></ion-icon>
+      </ion-button>
+    </div>
+    <ion-grid>
+      <ion-row justify-content-center style="background-color: white">
+        <ion-col sizeXl="2" sizeM="2" sizeSm="2" sizeXs="3" align-self-center style="padding: 0">
+          <img [src]="book.image" alt="libri" class="book-image" />
         </ion-col>
-        <ion-col sizeXl="8" sizeXs="9" align-items-center>
-          <div class="book-title">Harry Potter & deathly hallows</div>
-          <div class="book-author">J.K. Rowling</div>
-          <div class="button-pannel">
-            <ion-button fill="outline" size="small" (click)="bookPreview()">View</ion-button>
-            <ion-button fill="outline" size="small" color="warning">Save</ion-button>
-          </div>
+        <ion-col sizeXl="10" sizeXs="8" style="height: 100%;">
+          <div class="book-title">{{ book.name }}</div>
+          <div class="book-author">{{ book.authors }}</div>
+          <div class="book-description">{{ book.description }}</div>
         </ion-col>
       </ion-row>
-    </ion-card>
-  </ion-grid>
+    </ion-grid>
+  </ion-card>
 </ion-content>
