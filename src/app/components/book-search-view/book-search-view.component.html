@@ -1,4 +1,15 @@
 <ion-card class="book-card" style="background-color: teal;display: flex;">
+  <div class="button-panel">
+    <ion-button fill="clear" (click)="bookPreview()" class="icon-button" size="small">
+      <ion-icon slot="icon-only" name="eye" class="icon"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" class="icon-button" size="small">
+      <ion-icon slot="icon-only" name="save" class="icon"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" class="icon-button" size="small">
+      <ion-icon slot="icon-only" name="briefcase" class="icon"></ion-icon>
+    </ion-button>
+  </div>
   <ion-grid style="background-color: white;display:flex">
     <ion-row justify-content-center align-items-center>
       <ion-col
@@ -20,15 +31,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div class="button-panel">
-    <ion-button fill="clear" (click)="bookPreview()" class="icon-button" size="small">
-      <ion-icon slot="icon-only" name="eye" class="icon"></ion-icon>
-    </ion-button>
-    <ion-button fill="clear" class="icon-button" size="small">
-      <ion-icon slot="icon-only" name="save" class="icon"></ion-icon>
-    </ion-button>
-    <ion-button fill="clear" class="icon-button" size="small">
-      <ion-icon slot="icon-only" name="briefcase" class="icon"></ion-icon>
-    </ion-button>
-  </div>
 </ion-card>
