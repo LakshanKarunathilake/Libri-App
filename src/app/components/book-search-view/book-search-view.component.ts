@@ -18,8 +18,7 @@ export class BookSearchView implements OnInit {
     const modal = await this.modalController.create({
       component: BookViewComponent,
       componentProps: {
-        bookName: 'dfdsfdsf',
-        id: 'dafsdfsd'
+        book: this.book
       },
       cssClass: 'book-view-modal'
     });
