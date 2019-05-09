@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { BooksearchPage } from './booksearch.page';
 import { BookViewComponent } from '../components/book-view/book-view.component';
+import { BookSearchView } from '../components/book-search-view/book-search-view.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MenuTitleComponentModule
   ],
-  declarations: [BooksearchPage, BookViewComponent],
-  entryComponents: [BookViewComponent]
+  declarations: [BooksearchPage, BookViewComponent, BookSearchView],
+  entryComponents: [BookViewComponent, BookSearchView]
 })
 export class BooksearchPageModule {}

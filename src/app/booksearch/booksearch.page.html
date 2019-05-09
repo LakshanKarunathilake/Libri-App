@@ -1,46 +1,7 @@
-<!-- <app-menu-title title="Search"></app-menu-title> -->
+<app-menu-title title="Search"></app-menu-title>
 <ion-content>
   <section>
     <ion-searchbar></ion-searchbar>
   </section>
-
-  <ion-card
-    class="book-card"
-    style="background-color: teal;display: flex;align-items: center"
-    *ngFor="let book of sampleBooks"
-  >
-    <div style="width: 2rem;margin: 0 auto;height: 100%;">
-      <ion-button fill="clear" (click)="bookPreview()" class="icon-button">
-        <ion-icon slot="icon-only" name="eye" class="icon"></ion-icon>
-      </ion-button>
-      <ion-button fill="clear" class="icon-button">
-        <ion-icon slot="icon-only" name="save" class="icon"></ion-icon>
-      </ion-button>
-      <ion-button fill="clear" class="icon-button">
-        <ion-icon slot="icon-only" name="briefcase" class="icon"></ion-icon>
-      </ion-button>
-    </div>
-    <ion-grid>
-      <ion-row justify-content-center style="background-color: white">
-        <ion-col
-          sizeXl="1"
-          sizeLg="1"
-          sizeMd="2"
-          sizeSm="2"
-          sizeXs="3"
-          align-self-center
-          style="padding: 0"
-        >
-          <img [src]="book.image" alt="libri" class="book-image" />
-        </ion-col>
-        <ion-col sizeXl="11" sizeLg="11" sizeMd="10" sizeXs="9" style="height: 100%;">
-          <div class="book-title">{{ book.name }}</div>
-          <div class="book-author">{{ book.authors }}</div>
-          <div barClass="scrollbar" thumbClass="scrollbar-thumbs" class="book-description">
-            {{ book.description }}
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
+  <book-search-view [book]="book" *ngFor="let book of sampleBooks"></book-search-view>
 </ion-content>
