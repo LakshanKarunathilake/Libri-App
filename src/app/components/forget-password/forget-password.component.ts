@@ -2,7 +2,7 @@ import { SwalService } from './../../services/swal/swal.service';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 @Component({
   selector: 'app-forget-password',
   templateUrl: './forget-password.component.html',
