@@ -38,10 +38,11 @@ dependencies {
     implementation project(':capacitor-cordova-android-plugins')
     implementation 'com.google.firebase:firebase-messaging:17.4.0'
     implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
 }
 
 apply from: 'capacitor.build.gradle'
-
+apply plugin: 'com.google.gms.google-services'
 try {
     def servicesJSON = file('google-services.json')
     if (servicesJSON.text) {
