@@ -1,3 +1,4 @@
+import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import swal from 'sweetalert';
@@ -6,19 +7,23 @@ import swal from 'sweetalert';
   providedIn: 'root'
 })
 export class EventLoggerService {
-  constructor(public fba: FirebaseAnalytics) {}
+  device: string;
+  constructor(public fba: FirebaseAnalytics, private platform: Platform) {
+    this.device = platform.is('android') ? 'android' : 'non-android';
+  }
 
   logEvent = (name, value) => {
     console.log('Logging button click event');
-    this.fba
-      .logEvent('button click', { name: 'login' })
-      .then((res: any) => {
-        console.log(res);
-        swal('done');
-      })
-      .catch((error: any) => {
-        swal('error', error);
-        console.error(error);
-      });
+    if (this.device === 'android')
+      this.fba
+        .logEvent('button click', { name: 'login' })
+        .then((res: any) => {
+          console.log(res);
+          swal('done');
+        })
+        .catch((error: any) => {
+          swal('error', error);
+          console.error(error);
+        });
   };
 }
