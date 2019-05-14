@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "696789073783",
+    "firebase_url": "https://libri-238805.firebaseio.com",
+    "project_id": "libri-238805",
+    "storage_bucket": "libri-238805.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696789073783:android:d0f25d8ababcc7a2",
+        "android_client_info": {
+          "package_name": "com.laksoft.libri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696789073783-ce4mupijqvcu28ho00efar0ur3kdc91l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXRDwil59xgIMqs2anaUQ55XeASLxNSiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696789073783-ce4mupijqvcu28ho00efar0ur3kdc91l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
