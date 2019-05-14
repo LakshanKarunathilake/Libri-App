@@ -1,3 +1,4 @@
+import { CapacitorFirebaseAnalytics } from 'capacitor-firebase-analytics';
 import { SwalService } from './../services/swal/swal.service';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
@@ -5,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { ForgetPasswordComponent } from '../components/forget-password/forget-password.component';
+import { EventLoggerService } from '../services/logger/event-logger.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -19,7 +21,8 @@ export class LoginPage implements OnInit {
     private router: Router,
     private loadingController: LoadingController,
     private modalController: ModalController,
-    private swal: SwalService
+    private swal: SwalService,
+    private loggger: EventLoggerService
   ) {
     this.loadingController.create({
       message: 'Please wait verifying!',
@@ -37,6 +40,7 @@ export class LoginPage implements OnInit {
   }
 
   loginAction = async () => {
+    this.loggger.logEvent('action', 'login');
     const userEmail = this.loginForm.controls['userEmail'].value;
     const userPassword = this.loginForm.controls['userPassword'].value;
     const loading = await this.loadingController.create({
@@ -47,7 +51,7 @@ export class LoginPage implements OnInit {
     this.afa.auth
       .signInWithEmailAndPassword(userEmail, userPassword)
       .then(() => {
-        this.swal.viewSuccessMessage('Welcome back!', '');
+        // this.swal.viewSuccessMessage('Welcome back!', '');
         this.router.navigateByUrl('menu');
       })
       .catch(error => {
