@@ -20,6 +20,8 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { EventLoggerService } from './services/logger/event-logger.service';
+import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -42,7 +44,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FcmService,
-    SwalService
+    SwalService,
+    EventLoggerService,
+    FirebaseAnalytics
   ],
   bootstrap: [AppComponent]
 })
