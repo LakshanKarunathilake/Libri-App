@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { IonicModule } from '@ionic/angular';
 import { SignupPage } from './signup.page';
+import { UserService } from '../services/user/user.service';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     MatInputModule,
     ReactiveFormsModule
   ],
-  declarations: [SignupPage]
+  declarations: [SignupPage],
+  providers: [UserService]
 })
 export class SignupPageModule {}

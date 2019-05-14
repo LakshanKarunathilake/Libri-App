@@ -1,3 +1,4 @@
+import { UserService } from './../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -18,7 +19,8 @@ export class SignupPage implements OnInit {
     private afa: AngularFireAuth,
     private loadingCtrl: LoadingController,
     private fcm: FcmService,
-    private swal: SwalService
+    private swal: SwalService,
+    private user: UserService
   ) {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
@@ -47,27 +49,31 @@ export class SignupPage implements OnInit {
   onSubmit() {
     const userEmail = this.signupForm.controls['email'].value;
     const userPassword = this.signupForm.controls['password'].value;
+    const displayName: string = this.signupForm.controls['displayName'].value;
+    const phoneNumber: string = this.signupForm.controls['telephoneNumber'].value;
+
     console.log('userEmail :', typeof userEmail);
     console.log('userPassword :', typeof userPassword);
     this.presentLoading();
     try {
-      this.afa.auth
-        .createUserWithEmailAndPassword(userEmail, userPassword)
+      this.user
+        .createUser(userEmail, userPassword)
         .then(() => {
           this.hideLoading();
-          return auth()
-            .currentUser.sendEmailVerification()
-            .then(() => {
-              this.swal.viewSuccessMessage(
-                'Welcome!',
-                'Regaistraion Successful, please confirm your email address!'
-              );
-              this.fcm
-                .getPermission()
-                .then(() => this.fcm.sub('notices'))
-                .catch(message => console.log('message', message));
-            });
+          return this.user.updateUserDetails(displayName, phoneNumber);
         })
+        .then(() => {
+          console.log('Successfully updated the additional user information');
+          return this.user.sendEmailConfirmation();
+        })
+        .then(() => {
+          this.swal.viewSuccessMessage(
+            'Welcome!',
+            'Registration Successful, please confirm your email address!'
+          );
+          return this.fcm.getPermission();
+        })
+        .then(() => this.fcm.sub('notices'))
         .catch(error => {
           this.hideLoading();
           console.log('error :', error.message);
