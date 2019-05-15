@@ -4,8 +4,8 @@
 
 .formField {
   display: block;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 5vh;
 }
 
@@ -16,10 +16,20 @@
   }
 }
 
+#card {
+  height: 100%;
+
+  background-color: white;
+  margin: 0 auto;
+}
+
 @media only screen and (min-width: 1024px) {
   #login-image {
     width: 50%;
     height: auto;
+  }
+  #card {
+    width: 60%;
   }
 }
 
@@ -28,4 +38,7 @@
     width: 40%;
     height: auto;
   }
+}
+ion-content {
+  --background: linear-gradient(to right, #056571, #649173);
 }
