@@ -9,12 +9,12 @@ import swal from 'sweetalert';
 export class EventLoggerService {
   device: string;
   constructor(public fba: FirebaseAnalytics, private platform: Platform) {
-    this.device = platform.is('android') ? 'android' : 'non-android';
+    this.device = platform.is('cordova') ? 'cordova' : 'non-android';
   }
 
   logEvent = (name, value) => {
     console.log('Logging button click event');
-    if (this.device === 'android')
+    if (this.device === 'cordova')
       this.fba
         .logEvent('button click', { name: 'login' })
         .then((res: any) => {
