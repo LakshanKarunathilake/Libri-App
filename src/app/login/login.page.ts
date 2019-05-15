@@ -1,4 +1,3 @@
-import { CapacitorFirebaseAnalytics } from 'capacitor-firebase-analytics';
 import { SwalService } from './../services/swal/swal.service';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
@@ -7,6 +6,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { ForgetPasswordComponent } from '../components/forget-password/forget-password.component';
 import { EventLoggerService } from '../services/logger/event-logger.service';
+import { FcmService } from '../fcm.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -22,6 +23,7 @@ export class LoginPage implements OnInit {
     private loadingController: LoadingController,
     private modalController: ModalController,
     private swal: SwalService,
+    private fcm: FcmService,
     private loggger: EventLoggerService
   ) {
     this.loadingController.create({
@@ -34,6 +36,12 @@ export class LoginPage implements OnInit {
       userEmail: ['', [Validators.required, Validators.email]],
       userPassword: ['', Validators.required]
     });
+    this.fcm
+      .getPermission()
+      .then(() => this.fcm.sub('notices'))
+      .catch(error => {
+        console.error('Error occured', error);
+      });
   }
   public hasError(controlName: string, errorName: string) {
     return this.loginForm.controls[controlName].hasError(errorName);
@@ -47,15 +55,15 @@ export class LoginPage implements OnInit {
       message: 'Veryfying your details!'
     });
     await loading.present();
-
     this.afa.auth
       .signInWithEmailAndPassword(userEmail, userPassword)
       .then(() => {
-        // this.swal.viewSuccessMessage('Welcome back!', '');
+        this.swal.viewSuccessMessage('Welcome back!', '');
         this.router.navigateByUrl('menu');
       })
       .catch(error => {
         console.log('error :', error, error.message);
+
         this.previewErrorMessage(error);
       })
       .finally(() => loading.dismiss());
