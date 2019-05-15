@@ -1,6 +1,7 @@
 import { SwalService } from './../services/swal/swal.service';
 import { Component, OnInit } from '@angular/core';
 import { FcmService } from '../fcm.service';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,8 @@ import { FcmService } from '../fcm.service';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
-  sliderOptions = { slidesPerView: 2, spaceBetween: 0 };
-  constructor(public fcm: FcmService, private swal: SwalService) {}
+  sliderOptions = { slidesPerView: this.platform.is('cordova') ? 3 : 6, centerdSlides: true };
+  constructor(public fcm: FcmService, private swal: SwalService, private platform: Platform) {}
 
   ngOnInit() {}
 
@@ -21,7 +22,7 @@ export class HomePage implements OnInit {
       .catch(error => {
         console.log('error occured');
         console.log('error', error);
-        this.swal.viewErrorMessage('error', 'You have not subscribed for the notices');
+        this.swal.viewErrorMessage('error', error);
       });
   };
 }
