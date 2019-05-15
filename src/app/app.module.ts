@@ -1,3 +1,4 @@
+import { FirebasePerformanceService } from './services/performance/firebase-performance.service';
 import { SwalService } from './services/swal/swal.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
