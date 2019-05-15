@@ -4,13 +4,12 @@ import * as firebase from 'firebase/app';
   providedIn: 'root'
 })
 export class FirebasePerformanceService {
-  performance: firebase.performance.Performance;
-  screenTrace: firebase.performance.Trace;
-  constructor() {
-    this.performance = firebase.performance();
-  }
+  private performance: firebase.performance.Performance;
+  private screenTrace: firebase.performance.Trace;
+  constructor() {}
 
   startScreenTrace = (name: string) => {
+    this.performance = firebase.performance();
     this.screenTrace = this.performance.trace(name);
     this.screenTrace.start();
   };
