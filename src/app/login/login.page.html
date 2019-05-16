@@ -1,9 +1,6 @@
 <ion-content padding>
   <ion-card id="card">
-    <form
-      [formGroup]="loginForm"
-      style="width: 100%;height: 100%;display: flex;align-items: center"
-    >
+    <form [formGroup]="loginForm" class="form">
       <ion-grid>
         <ion-row align-items-center justify-content-center>
           <img src="../assets/img/icon.png" alt="libri" id="login-image" />
@@ -37,6 +34,13 @@
         </ion-row>
         <ion-row align-items-center justify-content-center>
           <ion-col>
+            <ion-button fill="clear" expand="block" (click)="forgetPassword()"
+              >Forget password</ion-button
+            >
+          </ion-col>
+        </ion-row>
+        <ion-row align-items-center justify-content-center>
+          <ion-col>
             <ion-button expand="block" [disabled]="loginForm.invalid" (click)="loginAction()"
               >Login</ion-button
             >
@@ -45,13 +49,6 @@
         <ion-row align-items-center justify-content-center>
           <ion-col>
             <ion-button expand="block" color="danger" href="/signup">Sign Up</ion-button>
-          </ion-col>
-        </ion-row>
-        <ion-row align-items-center justify-content-center>
-          <ion-col>
-            <ion-button fill="clear" expand="block" (click)="forgetPassword()"
-              >Forget password</ion-button
-            >
           </ion-col>
         </ion-row>
       </ion-grid>
