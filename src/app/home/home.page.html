@@ -1,14 +1,12 @@
 <app-menu-title title="Home"></app-menu-title>
 <ion-content padding>
-  <ion-slides pager="true" (options)="(sliderOptions)">
-    <ion-slide class="slide">
-      <h1>Slide 1</h1>
-    </ion-slide>
-    <ion-slide class="slide">
-      <h1>Slide 2</h1>
-    </ion-slide>
-    <ion-slide class="slide">
-      <h1>Slide 3</h1>
+  <ion-slides [options]="sliderOptions">
+    <ion-slide class="slide" *ngFor="let image of [1, 2, 3, 4, 5, 6, 7, 8]">
+      <img
+        src="../assets/img/sample-covers/{{ image }}.jpg"
+        alt="image-{{ image }}"
+        id="login-image"
+      />
     </ion-slide>
   </ion-slides>
   <section>
@@ -23,6 +21,6 @@
     <ion-item color="warning">Due Books</ion-item>
     <ion-item color="danger">Fined Books</ion-item>
   </ion-list>
-  <ion-button (click)="getPermission()">Access</ion-button>
-  <ion-button (click)="fcm.sub('notices')">Access</ion-button>
+  <ion-button (click)="getPermission()">Permission</ion-button>
+  <ion-button (click)="fcm.sub('notices')">subscribe</ion-button>
 </ion-content>

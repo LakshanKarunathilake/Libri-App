@@ -9,8 +9,10 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
-  sliderOptions = { slidesPerView: this.platform.is('cordova') ? 3 : 6, centerdSlides: true };
-  constructor(public fcm: FcmService, private swal: SwalService, private platform: Platform) {}
+  sliderOptions = { slidesPerView: this.platform.width() < 990 ? 3 : 6, centerdSlides: true };
+  constructor(public fcm: FcmService, private swal: SwalService, private platform: Platform) {
+    console.log(this.platform.width());
+  }
 
   ngOnInit() {}
 
