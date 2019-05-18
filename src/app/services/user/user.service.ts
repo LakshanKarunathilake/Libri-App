@@ -20,11 +20,11 @@ export class UserService {
   /**
    * Update the
    */
-  updateUserDetails = async (phoneNumber, displayName) => {
+  updateUserDetails = async (displayName, phoneNumber) => {
     console.log('updating user details', phoneNumber, displayName);
     const { uid, emailVerified, email, updateProfile } = this.afa.auth.currentUser;
     // Updating the display name in the auth
-    updateProfile(displayName);
+    auth().currentUser.updateProfile({ displayName, photoURL: '' });
     // Updating the details in the firestore document
     this.afs
       .collection('users')
