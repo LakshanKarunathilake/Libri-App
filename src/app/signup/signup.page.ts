@@ -1,7 +1,6 @@
 import { UserService } from './../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
 import { auth } from 'firebase';
 import { FcmService } from '../fcm.service';
@@ -16,7 +15,6 @@ export class SignupPage implements OnInit {
   loading;
   constructor(
     private fb: FormBuilder,
-    private afa: AngularFireAuth,
     private loadingCtrl: LoadingController,
     private fcm: FcmService,
     private swal: SwalService,
