@@ -6,6 +6,16 @@
       (ionChange)="searchForbooks($event.target.value)"
       debounce="2500"
     ></ion-searchbar>
+    <div class="checkbox-panel">
+      <ion-item>
+        <ion-label>Title</ion-label>
+        <ion-checkbox slot="start"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Authors</ion-label>
+        <ion-checkbox slot="start"></ion-checkbox>
+      </ion-item>
+    </div>
   </section>
   <book-search-view [book]="book" *ngFor="let book of sampleBooks"></book-search-view>
 </ion-content>
