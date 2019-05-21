@@ -1,7 +1,11 @@
 <app-menu-title title="Search"></app-menu-title>
 <ion-content>
   <section>
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar
+      animated="true"
+      (ionChange)="searchForbooks($event.target.value)"
+      debounce="2500"
+    ></ion-searchbar>
   </section>
   <book-search-view [book]="book" *ngFor="let book of sampleBooks"></book-search-view>
 </ion-content>
