@@ -45,7 +45,25 @@ export class BooksearchPage implements OnInit {
 
   deviceType: string;
   constructor() {}
+  books: any;
   constructor(private bookService: BookService) {}
 
   ngOnInit() {}
+
+  searchForbooks = value => {
+    this.bookService.searchBooks(value, 'title').then(data => {
+      this.books = JSON.parse(data.data['result']).map(record => {
+        const url = record['url'];
+        if (url) {
+          const alteredURL = this.breakImageUrls(url);
+          console.log('al', alteredURL);
+          record['url'] = alteredURL;
+        }
+        return record;
+      });
+      console.log(this.books);
+    });
+    console.log('value', value);
+  };
+
 }
