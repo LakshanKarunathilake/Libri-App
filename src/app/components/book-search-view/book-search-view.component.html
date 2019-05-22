@@ -20,13 +20,13 @@
         sizeXs="3"
         style="padding: 0;background-color: #056571;"
       >
-        <img [src]="book.image" alt="libri" class="book-image" />
+        <img [src]="book.url" alt="libri" class="book-image" />
       </ion-col>
       <ion-col sizeXl="11" sizeLg="11" sizeMd="10" sizeXs="9" style="height: 100%;">
-        <div class="book-title">{{ book.name }}</div>
-        <div class="book-author">{{ book.authors }}</div>
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-author">{{ book.author }}</div>
         <div barClass="scrollbar" thumbClass="scrollbar-thumbs" class="book-description">
-          {{ book.description }}
+          {{ book.abstract }}
         </div>
       </ion-col>
     </ion-row>
