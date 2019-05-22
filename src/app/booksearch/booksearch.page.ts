@@ -1,3 +1,4 @@
+import { BookService } from './../services/book/book.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
