@@ -45,6 +45,7 @@ export class BooksearchPage implements OnInit {
 
   deviceType: string;
   constructor() {}
+  constructor(private bookService: BookService) {}
 
   ngOnInit() {}
 }
