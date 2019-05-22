@@ -13,6 +13,7 @@
   <ion-grid style="background-color: white;display:flex">
     <ion-row justify-content-center align-items-center>
       <ion-col
+        [hidden]="!getImage(book.url)"
         sizeXl="1"
         sizeLg="1"
         sizeMd="2"
