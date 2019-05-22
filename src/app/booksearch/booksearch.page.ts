@@ -66,4 +66,21 @@ export class BooksearchPage implements OnInit {
     console.log('value', value);
   };
 
+  /**
+   * Split the book image urls
+   * Some books contains array of urls so it should be separated otherwise it may not be able to preview
+   * @param url - url string of the book images
+   */
+  breakImageUrls = (url: string) => {
+    if (url.indexOf('|') !== -1) {
+      const image = url.split('|')[1];
+      console.log('image', image);
+      return image
+        .concat('.jpg')
+        .split(' ')
+        .join('');
+    } else {
+      return url;
+    }
+  };
 }
