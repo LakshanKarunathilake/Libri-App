@@ -18,7 +18,9 @@ export class UserService {
   };
 
   /**
-   * Update the
+   * Update the displayname and the phone number of a user
+   * @param {String} phoneNumber
+   * @param {String} displayName
    */
   updateUserDetails = async (displayName, phoneNumber) => {
     console.log('updating user details', phoneNumber, displayName);
