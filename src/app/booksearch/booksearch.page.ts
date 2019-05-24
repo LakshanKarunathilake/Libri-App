@@ -47,11 +47,13 @@ export class BooksearchPage implements OnInit {
   deviceType: string;
   constructor() {}
   books: any;
+  loading = false;
   constructor(private bookService: BookService) {}
 
   ngOnInit() {}
 
   searchForbooks = value => {
+    this.loading = true;
     this.bookService.searchBooks(value, 'title').then(data => {
       this.books = JSON.parse(data.data['result']).map(record => {
         const url = record['url'];
@@ -63,6 +65,7 @@ export class BooksearchPage implements OnInit {
         return record;
       });
       console.log(this.books);
+      this.loading = false;
     });
     console.log('value', value);
   };
