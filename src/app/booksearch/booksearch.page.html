@@ -17,6 +17,7 @@
       </ion-item>
     </div>
   </section>
+  <div id="no-result" *ngIf="books !== undefined && books.length === 0"></div>
   <book-search-view [book]="book" *ngFor="let book of books"></book-search-view>
   <!-- Skeleton view -->
   <div *ngIf="loading">
