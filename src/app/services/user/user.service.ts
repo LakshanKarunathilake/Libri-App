@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth, User } from 'firebase';
+import { auth } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
@@ -30,5 +30,9 @@ export class UserService {
       .collection('users')
       .doc(uid)
       .set({ phoneNumber, displayName, uid, emailVerified, email });
+  };
+
+  getCurrentUser = () => {
+    return this.afa.auth.currentUser;
   };
 }
