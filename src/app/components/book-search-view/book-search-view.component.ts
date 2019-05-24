@@ -24,4 +24,7 @@ export class BookSearchView implements OnInit {
     });
     modal.present();
   };
-}
+
+  getImage(url: string) {
+    return url.includes('jpg') || url.includes('png') || url.includes('jpeg');
+  }
