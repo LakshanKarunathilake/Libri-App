@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase/app';
+import { performance } from 'firebase/app';
 @Injectable({
   providedIn: 'root'
 })
 export class FirebasePerformanceService {
-  private performance: firebase.performance.Performance;
-  private screenTrace: firebase.performance.Trace;
+  private performance: performance.Performance;
+  private screenTrace: performance.Trace;
   constructor() {}
 
   startScreenTrace = (name: string) => {
-    this.performance = firebase.performance();
+    this.performance = performance();
     this.screenTrace = this.performance.trace(name);
     this.screenTrace.start();
   };
