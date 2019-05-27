@@ -1,10 +1,10 @@
 <ion-content>
   <ion-card>
     <ion-card-header class="book-card">
-      <img [src]="book.image" alt="libri" class="book-image" />
+      <img [src]="book.url" alt="libri" class="book-image" />
       <div class="book-header">
         <div class="book-title">{{ book.title }}</div>
-        <div class="book-author">{{ book.authors }}</div>
+        <div class="book-author">{{ book.author }}</div>
       </div>
     </ion-card-header>
     <ion-card-content>
@@ -12,7 +12,7 @@
         <ion-row>
           <ion-col sizeXs="12" sizeXl="4"><ion-text class="title">Description</ion-text></ion-col>
           <ion-col sizeXs="12" sizeXl="8">
-            {{ book.description }}
+            {{ book.abstract }}
           </ion-col>
         </ion-row>
         <ion-row>
