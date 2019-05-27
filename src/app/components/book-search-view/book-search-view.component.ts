@@ -1,3 +1,4 @@
+import { BookService } from './../../services/book/book.service';
 import { BookViewComponent } from '../book-view/book-view.component';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit, Input } from '@angular/core';
@@ -9,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookSearchView implements OnInit {
   @Input() book;
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController, private bookService: BookService) {}
 
   ngOnInit() {}
 
@@ -28,3 +29,8 @@ export class BookSearchView implements OnInit {
   getImage(url: string) {
     return url.includes('jpg') || url.includes('png') || url.includes('jpeg');
   }
+
+  saveBook() {
+    this.bookService.addBookToShelf(this.book);
+  }
+}
