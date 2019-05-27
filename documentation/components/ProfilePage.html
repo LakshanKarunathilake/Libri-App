@@ -239,8 +239,38 @@ export class ProfilePage implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-menu-title title&#x3D;&quot;Profile&quot;&gt;&lt;/app-menu-title&gt;
 &lt;ion-content padding&gt;
-  &lt;label&gt;sadsad&lt;/label&gt;
-  &lt;captcha&gt;&lt;/captcha&gt;
+  &lt;ion-avatar style&#x3D;&quot;margin: 0 auto&quot;&gt;
+    &lt;img src&#x3D;&quot;https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d&#x3D;identicon&amp;f&#x3D;y&quot; /&gt;
+  &lt;/ion-avatar&gt;
+  &lt;br /&gt;
+  &lt;ion-card&gt;
+    &lt;ion-grid&gt;
+      &lt;ion-row&gt;
+        &lt;ion-col&gt;Name&lt;/ion-col&gt;
+        &lt;ion-col&gt;K.T.A.L. Karunathilake&lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+      &lt;ion-row&gt;
+        &lt;ion-col&gt;Contact Number&lt;/ion-col&gt;
+        &lt;ion-col&gt;071-3745857&lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+      &lt;ion-row&gt;
+        &lt;ion-col&gt;Email&lt;/ion-col&gt;
+        &lt;ion-col&gt;Manualsplash@gmail.com&lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+      &lt;ion-row&gt;
+        &lt;ion-col&gt;Type&lt;/ion-col&gt;
+        &lt;ion-col&gt;Student&lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+      &lt;ion-row&gt;
+        &lt;ion-col&gt;Address&lt;/ion-col&gt;
+        &lt;ion-col&gt;
+          &lt;ion-row&gt;Karawitawatta&lt;/ion-row&gt;
+          &lt;ion-row&gt;Sapugahawatta&lt;/ion-row&gt;
+          &lt;ion-row&gt;Dodangoda&lt;/ion-row&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+    &lt;/ion-grid&gt;
+  &lt;/ion-card&gt;
 &lt;/ion-content&gt;
 </code></pre>
     </div>
@@ -277,8 +307,8 @@ export class ProfilePage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Profile"></app-menu-title><ion-content padding>  <label>sadsad</label>  <captcha></captcha></ion-content></div>'
-    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
+        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Profile"></app-menu-title><ion-content padding>  <ion-avatar style="margin: 0 auto">    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />  </ion-avatar>  <br />  <ion-card>    <ion-grid>      <ion-row>        <ion-col>Name</ion-col>        <ion-col>K.T.A.L. Karunathilake</ion-col>      </ion-row>      <ion-row>        <ion-col>Contact Number</ion-col>        <ion-col>071-3745857</ion-col>      </ion-row>      <ion-row>        <ion-col>Email</ion-col>        <ion-col>Manualsplash@gmail.com</ion-col>      </ion-row>      <ion-row>        <ion-col>Type</ion-col>        <ion-col>Student</ion-col>      </ion-row>      <ion-row>        <ion-col>Address</ion-col>        <ion-col>          <ion-row>Karawitawatta</ion-row>          <ion-row>Sapugahawatta</ion-row>          <ion-row>Dodangoda</ion-row>        </ion-col>      </ion-row>    </ion-grid>  </ion-card></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookSearchView', 'selector': 'book-search-view'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProfilePage'};
 </script>

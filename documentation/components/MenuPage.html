@@ -553,16 +553,16 @@ export class MenuPage implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ion-split-pane&gt;
-  &lt;ion-menu contentId&#x3D;&quot;content&quot;&gt;
+  &lt;ion-menu contentId&#x3D;&quot;content&quot; class&#x3D;&quot;menu&quot;&gt;
     &lt;ion-header&gt;
       &lt;ion-toolbar&gt;
         &lt;ion-buttons slot&#x3D;&quot;end&quot;&gt;
           &lt;ion-menu-toggle&gt;
             &lt;ion-button class&#x3D;&quot;quick-buttons&quot; routerLink&#x3D;&quot;home&quot; routerDirection&#x3D;&quot;root&quot;&gt;
-              &lt;ion-icon name&#x3D;&quot;home&quot;&gt;&lt;/ion-icon&gt;
+              &lt;ion-icon name&#x3D;&quot;home&quot; slot&#x3D;&quot;icon-only&quot;&gt;&lt;/ion-icon&gt;
             &lt;/ion-button&gt;
             &lt;ion-button class&#x3D;&quot;quick-buttons&quot; routerLink&#x3D;&quot;info&quot; routerDirection&#x3D;&quot;root&quot;&gt;
-              &lt;ion-icon name&#x3D;&quot;information-circle-outline&quot;&gt;&lt;/ion-icon&gt;
+              &lt;ion-icon name&#x3D;&quot;information-circle-outline&quot; slot&#x3D;&quot;icon-only&quot;&gt;&lt;/ion-icon&gt;
             &lt;/ion-button&gt;
           &lt;/ion-menu-toggle&gt;
           &lt;span *ngIf&#x3D;&quot;width &gt; 1000&quot;&gt;
@@ -590,7 +590,7 @@ export class MenuPage implements OnInit {
         &lt;/ion-menu-toggle&gt;
       &lt;/ion-list&gt;
     &lt;/ion-content&gt;
-    &lt;ion-footer&gt;
+    &lt;ion-footer style&#x3D;&quot;background-color:#fe5200 &quot;&gt;
       &lt;ion-item (click)&#x3D;&quot;logOutUser()&quot;&gt;
         &lt;ion-icon name&#x3D;&quot;log-out&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;Logout&lt;/ion-item
       &gt;
@@ -613,6 +613,24 @@ export class MenuPage implements OnInit {
 .quick-buttons {
   border: 1px solid #056571;
   border-radius: 5px;
+}
+
+ion-toolbar {
+  --background: #056571;
+  color: white;
+}
+ion-footer {
+  --background: #056571;
+}
+
+ion-icon {
+  --color: white;
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu {
+    max-width: 20%;
+  }
 }
 </code></pre>
     </div>
@@ -642,8 +660,8 @@ export class MenuPage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-split-pane>  <ion-menu contentId="content">    <ion-header>      <ion-toolbar>        <ion-buttons slot="end">          <ion-menu-toggle>            <ion-button class="quick-buttons" routerLink="home" routerDirection="root">              <ion-icon name="home"></ion-icon>            </ion-button>            <ion-button class="quick-buttons" routerLink="info" routerDirection="root">              <ion-icon name="information-circle-outline"></ion-icon>            </ion-button>          </ion-menu-toggle>          <span *ngIf="width > 1000">            <ion-button class="quick-buttons" routerLink="home" routerDirection="root">              <ion-icon name="home" color="primary"></ion-icon>            </ion-button>            <ion-button class="quick-buttons" routerLink="info" routerDirection="root">              <ion-icon name="information-circle-outline"></ion-icon>            </ion-button>          </span>        </ion-buttons>        <ion-title>Home</ion-title>      </ion-toolbar>    </ion-header>    <ion-content>      <ion-list>        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">          <ion-item            [routerLink]="p.url"            routerDirection="root"            [class.active-item]="isSelectedPath(p.url)"          >            <ion-label>{{ p.title }}</ion-label>          </ion-item>        </ion-menu-toggle>      </ion-list>    </ion-content>    <ion-footer>      <ion-item (click)="logOutUser()">        <ion-icon name="log-out" slot="start"></ion-icon>Logout</ion-item      >    </ion-footer>  </ion-menu>  <ion-router-outlet id="content" main> </ion-router-outlet></ion-split-pane></div>'
-    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
+        var COMPONENT_TEMPLATE = '<div><ion-split-pane>  <ion-menu contentId="content" class="menu">    <ion-header>      <ion-toolbar>        <ion-buttons slot="end">          <ion-menu-toggle>            <ion-button class="quick-buttons" routerLink="home" routerDirection="root">              <ion-icon name="home" slot="icon-only"></ion-icon>            </ion-button>            <ion-button class="quick-buttons" routerLink="info" routerDirection="root">              <ion-icon name="information-circle-outline" slot="icon-only"></ion-icon>            </ion-button>          </ion-menu-toggle>          <span *ngIf="width > 1000">            <ion-button class="quick-buttons" routerLink="home" routerDirection="root">              <ion-icon name="home" color="primary"></ion-icon>            </ion-button>            <ion-button class="quick-buttons" routerLink="info" routerDirection="root">              <ion-icon name="information-circle-outline"></ion-icon>            </ion-button>          </span>        </ion-buttons>        <ion-title>Home</ion-title>      </ion-toolbar>    </ion-header>    <ion-content>      <ion-list>        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">          <ion-item            [routerLink]="p.url"            routerDirection="root"            [class.active-item]="isSelectedPath(p.url)"          >            <ion-label>{{ p.title }}</ion-label>          </ion-item>        </ion-menu-toggle>      </ion-list>    </ion-content>    <ion-footer style="background-color:#fe5200 ">      <ion-item (click)="logOutUser()">        <ion-icon name="log-out" slot="start"></ion-icon>Logout</ion-item      >    </ion-footer>  </ion-menu>  <ion-router-outlet id="content" main> </ion-router-outlet></ion-split-pane></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookSearchView', 'selector': 'book-search-view'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MenuPage'};
 </script>

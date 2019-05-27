@@ -130,7 +130,28 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#bookPreview">bookPreview</a>
+                                <a href="#authorCheckbox">authorCheckbox</a>
+                            </li>
+                            <li>
+                                <a href="#books">books</a>
+                            </li>
+                            <li>
+                                <a href="#breakImageUrls">breakImageUrls</a>
+                            </li>
+                            <li>
+                                <a href="#deviceType">deviceType</a>
+                            </li>
+                            <li>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#sampleBooks">sampleBooks</a>
+                            </li>
+                            <li>
+                                <a href="#searchForbooks">searchForbooks</a>
+                            </li>
+                            <li>
+                                <a href="#titleCheckbox">titleCheckbox</a>
                             </li>
                         </ul>
                     </td>
@@ -165,12 +186,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(modalController: ModalController)</code>
+<code>constructor(bookService: <a href="../injectables/BookService.html">BookService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/booksearch/booksearch.page.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/booksearch/booksearch.page.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -188,10 +209,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>modalController</td>
+                                                        <td>bookService</td>
                                                   
                                                         <td>
-                                                                    <code>ModalController</code>
+                                                                        <code><a href="../injectables/BookService.html" target="_self" >BookService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -239,8 +260,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/booksearch/booksearch.page.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/booksearch/booksearch.page.ts:54</a></div>
                 </td>
             </tr>
 
@@ -266,11 +287,64 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="bookPreview"></a>
+                        <a name="authorCheckbox"></a>
                         <span class="name">
                             <b>
-                            bookPreview</b>
-                            <a href="#bookPreview"><span class="icon ion-ios-link"></span></a>
+                            authorCheckbox</b>
+                            <a href="#authorCheckbox"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/booksearch/booksearch.page.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="books"></a>
+                        <span class="name">
+                            <b>
+                            books</b>
+                            <a href="#books"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/booksearch/booksearch.page.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="breakImageUrls"></a>
+                        <span class="name">
+                            <b>
+                            breakImageUrls</b>
+                            <a href="#breakImageUrls"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -281,7 +355,212 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/booksearch/booksearch.page.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/booksearch/booksearch.page.ts:79</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Split the book image urls
+Some books contains array of urls so it should be separated otherwise it may not be able to preview</p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>url</td>
+                                                        <td>
+                                                                <code><ul>
+<li>url string of the book images</li>
+</ul>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deviceType"></a>
+                        <span class="name">
+                            <b>
+                            deviceType</b>
+                            <a href="#deviceType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/booksearch/booksearch.page.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/booksearch/booksearch.page.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sampleBooks"></a>
+                        <span class="name">
+                            <b>
+                            sampleBooks</b>
+                            <a href="#sampleBooks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      name: &#x27;Harry Potter &amp; deathly hallows&#x27;,
+      authors: &#x27;J.K. Rowling&#x27;,
+      description: &#x60;A clash between good and evil awaits as young Harry (Daniel Radcliffe), Ron (Rupert
+        Grint) and Hermione (Emma Watson) prepare for a final battle against Lord Voldemort
+        (Ralph Fiennes). Harry has grown into a steely lad on a mission to rid the world of
+        evil. The friends must search for the Horcruxes that keep the dastardly wizard immortal.
+        Harry and Voldemort meet at Hogwarts Castle for an epic showdown where the forces of
+        darkness may finally meet their match.&#x60;,
+      image: &#x27;../assets/img/harry_potter.jpg&#x27;
+    },
+    {
+      name: &#x27;Game of Thrones&#x27;,
+      authors: &#x27;George R.R. Martin&#x27;,
+      description: &#x60; A Storm of Swords is the third of seven planned novels in A Song of Ice and Fire, a
+      fantasy series by American author George R. R. Martin. It was first published on August
+      8, 2000, in the United Kingdom,[1] with a United States edition following in November
+      2000. Its publication was preceded by a novella called Path of the Dragon, which
+      collects some of the Daenerys Targaryen chapters from the novel into a single book.&#x60;,
+      image: &#x27;../assets/img/gameofthrones.jpg&#x27;
+    },
+    {
+      name: &#x27;Head first Java&#x27;,
+      authors: &#x27;Kathy Sierra, Bert Bates&#x27;,
+      description: &#x60;Between Moore&#x27;s law and the notion of &quot;Internet time,&quot; we&#x27;re constantly being bombarded
+      with more and more information--most of it in the form of disorganized data. Turning
+      this information into useful knowledge is getting harder and harder to do, and it takes
+      time that we just don&#x27;t have. The current economic situation hasn&#x27;t helped either. With
+      money spread thin, who hasn&#x27;t had to take on new tasks and learn new things? And slashed
+      training budgets mean there&#x27;s little to rely on for learning except books- but learning
+      a complex new programming language like Java from a book is no simple task. Maybe your
+      boss is giving you two weeks to come up to speed for a&#x60;,
+      image: &#x27;../assets/img/headfirstjava.jpg&#x27;
+    }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/booksearch/booksearch.page.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchForbooks"></a>
+                        <span class="name">
+                            <b>
+                            searchForbooks</b>
+                            <a href="#searchForbooks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/booksearch/booksearch.page.ts:56</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titleCheckbox"></a>
+                        <span class="name">
+                            <b>
+                            titleCheckbox</b>
+                            <a href="#titleCheckbox"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/booksearch/booksearch.page.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -294,9 +573,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { ModalController } from &#x27;@ionic/angular&#x27;;
-import { BookViewComponent } from &#x27;../components/book-view/book-view.component&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BookService } from &#x27;./../services/book/book.service&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
   selector: &#x27;app-booksearch&#x27;,
@@ -304,20 +582,86 @@ import { BookViewComponent } from &#x27;../components/book-view/book-view.compon
   styleUrls: [&#x27;./booksearch.page.scss&#x27;]
 })
 export class BooksearchPage implements OnInit {
-  constructor(private modalController: ModalController) {}
+  sampleBooks &#x3D; [
+    {
+      name: &#x27;Harry Potter &amp; deathly hallows&#x27;,
+      authors: &#x27;J.K. Rowling&#x27;,
+      description: &#x60;A clash between good and evil awaits as young Harry (Daniel Radcliffe), Ron (Rupert
+        Grint) and Hermione (Emma Watson) prepare for a final battle against Lord Voldemort
+        (Ralph Fiennes). Harry has grown into a steely lad on a mission to rid the world of
+        evil. The friends must search for the Horcruxes that keep the dastardly wizard immortal.
+        Harry and Voldemort meet at Hogwarts Castle for an epic showdown where the forces of
+        darkness may finally meet their match.&#x60;,
+      image: &#x27;../assets/img/harry_potter.jpg&#x27;
+    },
+    {
+      name: &#x27;Game of Thrones&#x27;,
+      authors: &#x27;George R.R. Martin&#x27;,
+      description: &#x60; A Storm of Swords is the third of seven planned novels in A Song of Ice and Fire, a
+      fantasy series by American author George R. R. Martin. It was first published on August
+      8, 2000, in the United Kingdom,[1] with a United States edition following in November
+      2000. Its publication was preceded by a novella called Path of the Dragon, which
+      collects some of the Daenerys Targaryen chapters from the novel into a single book.&#x60;,
+      image: &#x27;../assets/img/gameofthrones.jpg&#x27;
+    },
+    {
+      name: &#x27;Head first Java&#x27;,
+      authors: &#x27;Kathy Sierra, Bert Bates&#x27;,
+      description: &#x60;Between Moore&#x27;s law and the notion of &quot;Internet time,&quot; we&#x27;re constantly being bombarded
+      with more and more information--most of it in the form of disorganized data. Turning
+      this information into useful knowledge is getting harder and harder to do, and it takes
+      time that we just don&#x27;t have. The current economic situation hasn&#x27;t helped either. With
+      money spread thin, who hasn&#x27;t had to take on new tasks and learn new things? And slashed
+      training budgets mean there&#x27;s little to rely on for learning except books- but learning
+      a complex new programming language like Java from a book is no simple task. Maybe your
+      boss is giving you two weeks to come up to speed for a&#x60;,
+      image: &#x27;../assets/img/headfirstjava.jpg&#x27;
+    }
+  ];
+
+  deviceType: string;
+  titleCheckbox &#x3D; true;
+  authorCheckbox &#x3D; true;
+  books: any;
+  loading &#x3D; false;
+  constructor(private bookService: BookService) {}
 
   ngOnInit() {}
 
-  bookPreview &#x3D; async () &#x3D;&gt; {
-    console.log(&#x27;clicked&#x27;);
-    const modal &#x3D; await this.modalController.create({
-      component: BookViewComponent,
-      componentProps: {
-        bookName: &#x27;dfdsfdsf&#x27;,
-        id: &#x27;dafsdfsd&#x27;
-      }
+  searchForbooks &#x3D; value &#x3D;&gt; {
+    this.loading &#x3D; true;
+    this.bookService.searchBooks(value, &#x27;title&#x27;).then(data &#x3D;&gt; {
+      this.books &#x3D; JSON.parse(data.data[&#x27;result&#x27;]).map(record &#x3D;&gt; {
+        const url &#x3D; record[&#x27;url&#x27;];
+        if (url) {
+          const alteredURL &#x3D; this.breakImageUrls(url);
+          console.log(&#x27;al&#x27;, alteredURL);
+          record[&#x27;url&#x27;] &#x3D; alteredURL;
+        }
+        return record;
+      });
+      console.log(this.books);
+      this.loading &#x3D; false;
     });
-    modal.present();
+    console.log(&#x27;value&#x27;, value);
+  };
+
+  /**
+   * Split the book image urls
+   * Some books contains array of urls so it should be separated otherwise it may not be able to preview
+   * @param url - url string of the book images
+   */
+  breakImageUrls &#x3D; (url: string) &#x3D;&gt; {
+    if (url.indexOf(&#x27;|&#x27;) !&#x3D;&#x3D; -1) {
+      const image &#x3D; url.split(&#x27;|&#x27;)[1];
+      console.log(&#x27;image&#x27;, image);
+      return image
+        .concat(&#x27;.jpg&#x27;)
+        .split(&#x27; &#x27;)
+        .join(&#x27;&#x27;);
+    } else {
+      return url;
+    }
   };
 }
 </code></pre>
@@ -327,25 +671,45 @@ export class BooksearchPage implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;app-menu-title title&#x3D;&quot;Search&quot;&gt;&lt;/app-menu-title&gt;
 &lt;ion-content&gt;
   &lt;section&gt;
-    &lt;ion-searchbar&gt;&lt;/ion-searchbar&gt;
+    &lt;ion-searchbar
+      animated&#x3D;&quot;true&quot;
+      (ionChange)&#x3D;&quot;searchForbooks($event.target.value)&quot;
+      debounce&#x3D;&quot;1000&quot;
+    &gt;&lt;/ion-searchbar&gt;
+    &lt;div class&#x3D;&quot;checkbox-panel&quot;&gt;
+      &lt;ion-item&gt;
+        &lt;ion-label&gt;Title&lt;/ion-label&gt;
+        &lt;ion-checkbox slot&#x3D;&quot;start&quot;&gt;&lt;/ion-checkbox&gt;
+      &lt;/ion-item&gt;
+      &lt;ion-item&gt;
+        &lt;ion-label&gt;Authors&lt;/ion-label&gt;
+        &lt;ion-checkbox slot&#x3D;&quot;start&quot;&gt;&lt;/ion-checkbox&gt;
+      &lt;/ion-item&gt;
+    &lt;/div&gt;
   &lt;/section&gt;
-  &lt;ion-grid&gt;
-    &lt;ion-card&gt;
-      &lt;ion-row align-items-center&gt;
-        &lt;ion-col sizeXl&#x3D;&quot;4&quot; szieSm&#x3D;&quot;3&quot; sizeXs&#x3D;&quot;3&quot;&gt;
-          &lt;img src&#x3D;&quot;../assets/img/harry_potter.jpg&quot; alt&#x3D;&quot;libri&quot; width&#x3D;&quot;50%&quot; height&#x3D;&quot;auto&quot; /&gt;
-        &lt;/ion-col&gt;
-        &lt;ion-col sizeXl&#x3D;&quot;8&quot; sizeXs&#x3D;&quot;9&quot; align-items-center&gt;
-          &lt;div class&#x3D;&quot;book-title&quot;&gt;Harry Potter &amp; deathly hallows&lt;/div&gt;
-          &lt;div class&#x3D;&quot;book-author&quot;&gt;J.K. Rowling&lt;/div&gt;
-          &lt;div class&#x3D;&quot;button-pannel&quot;&gt;
-            &lt;ion-button fill&#x3D;&quot;outline&quot; size&#x3D;&quot;small&quot; (click)&#x3D;&quot;bookPreview()&quot;&gt;View&lt;/ion-button&gt;
-            &lt;ion-button fill&#x3D;&quot;outline&quot; size&#x3D;&quot;small&quot; color&#x3D;&quot;warning&quot;&gt;Save&lt;/ion-button&gt;
-          &lt;/div&gt;
-        &lt;/ion-col&gt;
-      &lt;/ion-row&gt;
-    &lt;/ion-card&gt;
-  &lt;/ion-grid&gt;
+  &lt;div id&#x3D;&quot;no-result&quot; *ngIf&#x3D;&quot;books !&#x3D;&#x3D; undefined &amp;&amp; books.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;&lt;/div&gt;
+  &lt;book-search-view [book]&#x3D;&quot;book&quot; *ngFor&#x3D;&quot;let book of books&quot;&gt;&lt;/book-search-view&gt;
+  &lt;!-- Skeleton view --&gt;
+  &lt;div *ngIf&#x3D;&quot;loading&quot;&gt;
+    &lt;ion-list&gt;
+      &lt;ion-item *ngFor&#x3D;&quot;let item of [1, 2, 3, 4, 5, 6]&quot;&gt;
+        &lt;ion-thumbnail slot&#x3D;&quot;start&quot;&gt;
+          &lt;ion-skeleton-text animated&gt;&lt;/ion-skeleton-text&gt;
+        &lt;/ion-thumbnail&gt;
+        &lt;ion-label&gt;
+          &lt;h3&gt;
+            &lt;ion-skeleton-text animated style&#x3D;&quot;width: 50%&quot;&gt;&lt;/ion-skeleton-text&gt;
+          &lt;/h3&gt;
+          &lt;p&gt;
+            &lt;ion-skeleton-text animated style&#x3D;&quot;width: 80%&quot;&gt;&lt;/ion-skeleton-text&gt;
+          &lt;/p&gt;
+          &lt;p&gt;
+            &lt;ion-skeleton-text animated style&#x3D;&quot;width: 60%&quot;&gt;&lt;/ion-skeleton-text&gt;
+          &lt;/p&gt;
+        &lt;/ion-label&gt;
+      &lt;/ion-item&gt;
+    &lt;/ion-list&gt;
+  &lt;/div&gt;
 &lt;/ion-content&gt;
 </code></pre>
     </div>
@@ -354,26 +718,17 @@ export class BooksearchPage implements OnInit {
                 <p class="comment">
                     <code>./booksearch.page.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.book-title {
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: &#x27;#263238&#x27;;
-}
-
-.book-author {
-  font-size: 0.8rem;
-  font-style: italic;
-  color: &#x27;#607D8B&#x27;;
-}
-
-.button-pannel {
+                <pre class="line-numbers"><code class="language-scss">.checkbox-panel {
   display: flex;
-  justify-content: flex-end;
 }
 
-ion-grid {
-  --ion-grid-padding: 0px;
+#no-result {
+  width: 100%;
+  height: 80%;
+  background: url(../../assets/img/backgrounds/no-result.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%, auto;
 }
 </code></pre>
     </div>
@@ -403,8 +758,8 @@ ion-grid {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Search"></app-menu-title><ion-content>  <section>    <ion-searchbar></ion-searchbar>  </section>  <ion-grid>    <ion-card>      <ion-row align-items-center>        <ion-col sizeXl="4" szieSm="3" sizeXs="3">          <img src="../assets/img/harry_potter.jpg" alt="libri" width="50%" height="auto" />        </ion-col>        <ion-col sizeXl="8" sizeXs="9" align-items-center>          <div class="book-title">Harry Potter & deathly hallows</div>          <div class="book-author">J.K. Rowling</div>          <div class="button-pannel">            <ion-button fill="outline" size="small" (click)="bookPreview()">View</ion-button>            <ion-button fill="outline" size="small" color="warning">Save</ion-button>          </div>        </ion-col>      </ion-row>    </ion-card>  </ion-grid></ion-content></div>'
-    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
+        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Search"></app-menu-title><ion-content>  <section>    <ion-searchbar      animated="true"      (ionChange)="searchForbooks($event.target.value)"      debounce="1000"    ></ion-searchbar>    <div class="checkbox-panel">      <ion-item>        <ion-label>Title</ion-label>        <ion-checkbox slot="start"></ion-checkbox>      </ion-item>      <ion-item>        <ion-label>Authors</ion-label>        <ion-checkbox slot="start"></ion-checkbox>      </ion-item>    </div>  </section>  <div id="no-result" *ngIf="books !== undefined && books.length === 0"></div>  <book-search-view [book]="book" *ngFor="let book of books"></book-search-view>  <!-- Skeleton view -->  <div *ngIf="loading">    <ion-list>      <ion-item *ngFor="let item of [1, 2, 3, 4, 5, 6]">        <ion-thumbnail slot="start">          <ion-skeleton-text animated></ion-skeleton-text>        </ion-thumbnail>        <ion-label>          <h3>            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>          </h3>          <p>            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>          </p>          <p>            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>          </p>        </ion-label>      </ion-item>    </ion-list>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookSearchView', 'selector': 'book-search-view'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BooksearchPage'};
 </script>

@@ -22,29 +22,45 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_MenuPageModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="180,-70 180,-195 316,-195 316,-70 180,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="121,-70 121,-195 375,-195 375,-70 121,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_MenuPageModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="202,-78 202,-130 294,-130 294,-78 202,-78"/>
+<polygon fill="none" stroke="#000000" points="275,-78 275,-130 367,-130 367,-78 275,-78"/>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_MenuPageModule_providers</title>
+<polygon fill="none" stroke="#000000" points="129,-78 129,-130 267,-130 267,-78 129,-78"/>
 </g>
 <!-- MenuPage -->
 <g id="node1" class="node">
 <title>MenuPage</title>
-<polygon fill="#ffffb3" stroke="#000000" points="285.8711,-122 210.1289,-122 210.1289,-86 285.8711,-86 285.8711,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuPage</text>
+<polygon fill="#ffffb3" stroke="#000000" points="358.8711,-122 283.1289,-122 283.1289,-86 358.8711,-86 358.8711,-122"/>
+<text text-anchor="middle" x="321" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuPage</text>
 </g>
 <!-- MenuPageModule -->
 <g id="node2" class="node">
 <title>MenuPageModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="307.9215,-187 304.9215,-191 283.9215,-191 280.9215,-187 188.0785,-187 188.0785,-151 307.9215,-151 307.9215,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuPageModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="311.9215,-187 308.9215,-191 287.9215,-191 284.9215,-187 192.0785,-187 192.0785,-151 311.9215,-151 311.9215,-187"/>
+<text text-anchor="middle" x="252" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuPageModule</text>
 </g>
 <!-- MenuPage&#45;&gt;MenuPageModule -->
 <g id="edge1" class="edge">
 <title>MenuPage&#45;&gt;MenuPageModule</title>
-<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
+<path fill="none" stroke="#000000" d="M297.3875,-122.1061C297.3875,-122.1061 297.3875,-140.991 297.3875,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="293.8875,-140.9909 297.3875,-150.991 300.8875,-140.991 293.8875,-140.9909"/>
+</g>
+<!-- BookService -->
+<g id="node3" class="node">
+<title>BookService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="198" cy="-104" rx="60.8352" ry="18"/>
+<text text-anchor="middle" x="198" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BookService</text>
+</g>
+<!-- BookService&#45;&gt;MenuPageModule -->
+<g id="edge2" class="edge">
+<title>BookService&#45;&gt;MenuPageModule</title>
+<path fill="none" stroke="#000000" d="M225.6036,-120.0674C225.6036,-120.0674 225.6036,-140.8237 225.6036,-140.8237"/>
+<polygon fill="#000000" stroke="#000000" points="222.1037,-140.8236 225.6036,-150.8237 229.1037,-140.8237 222.1037,-140.8236"/>
 </g>
 </g>
 </svg>

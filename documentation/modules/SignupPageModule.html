@@ -63,29 +63,45 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_SignupPageModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="177,-70 177,-195 319,-195 319,-70 177,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="121,-70 121,-195 375,-195 375,-70 121,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_SignupPageModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="199,-78 199,-130 297,-130 297,-78 199,-78"/>
+<polygon fill="none" stroke="#000000" points="269,-78 269,-130 367,-130 367,-78 269,-78"/>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_SignupPageModule_providers</title>
+<polygon fill="none" stroke="#000000" points="129,-78 129,-130 261,-130 261,-78 129,-78"/>
 </g>
 <!-- SignupPage -->
 <g id="node1" class="node">
 <title>SignupPage</title>
-<polygon fill="#ffffb3" stroke="#000000" points="289.3851,-122 206.6149,-122 206.6149,-86 289.3851,-86 289.3851,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SignupPage</text>
+<polygon fill="#ffffb3" stroke="#000000" points="359.3851,-122 276.6149,-122 276.6149,-86 359.3851,-86 359.3851,-122"/>
+<text text-anchor="middle" x="318" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SignupPage</text>
 </g>
 <!-- SignupPageModule -->
 <g id="node2" class="node">
 <title>SignupPageModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="311.4356,-187 308.4356,-191 287.4356,-191 284.4356,-187 184.5644,-187 184.5644,-151 311.4356,-151 311.4356,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">SignupPageModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="312.4356,-187 309.4356,-191 288.4356,-191 285.4356,-187 185.5644,-187 185.5644,-151 312.4356,-151 312.4356,-187"/>
+<text text-anchor="middle" x="249" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">SignupPageModule</text>
 </g>
 <!-- SignupPage&#45;&gt;SignupPageModule -->
 <g id="edge1" class="edge">
 <title>SignupPage&#45;&gt;SignupPageModule</title>
-<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
+<path fill="none" stroke="#000000" d="M294.3875,-122.1061C294.3875,-122.1061 294.3875,-140.991 294.3875,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="290.8875,-140.9909 294.3875,-150.991 297.8875,-140.991 290.8875,-140.9909"/>
+</g>
+<!-- UserService -->
+<g id="node3" class="node">
+<title>UserService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="195" cy="-104" rx="58.4415" ry="18"/>
+<text text-anchor="middle" x="195" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">UserService</text>
+</g>
+<!-- UserService&#45;&gt;SignupPageModule -->
+<g id="edge2" class="edge">
+<title>UserService&#45;&gt;SignupPageModule</title>
+<path fill="none" stroke="#000000" d="M219.5015,-120.4022C219.5015,-120.4022 219.5015,-140.5366 219.5015,-140.5366"/>
+<polygon fill="#000000" stroke="#000000" points="216.0016,-140.5366 219.5015,-150.5366 223.0016,-140.5367 216.0016,-140.5366"/>
 </g>
 </g>
 </svg>
@@ -134,6 +150,15 @@
                         </li>
                     </ul>
                 </div>
+                <div class="col-sm-3">
+                    <h3>Providers<a href="https://angular.io/api/core/NgModule#providers" target="_blank"
+                            title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="../injectables/UserService.html">UserService</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -149,6 +174,7 @@ import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 import { MatInputModule } from &#x27;@angular/material/input&#x27;;
 import { IonicModule } from &#x27;@ionic/angular&#x27;;
 import { SignupPage } from &#x27;./signup.page&#x27;;
+import { UserService } from &#x27;../services/user/user.service&#x27;;
 
 const routes: Routes &#x3D; [
   {
@@ -165,7 +191,8 @@ const routes: Routes &#x3D; [
     MatInputModule,
     ReactiveFormsModule
   ],
-  declarations: [SignupPage]
+  declarations: [SignupPage],
+  providers: [UserService]
 })
 export class SignupPageModule {}
 </code></pre>

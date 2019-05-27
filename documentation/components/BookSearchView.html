@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>BookViewComponent</li>
+  <li>BookSearchView</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/components/book-view/book-view.component.ts</code>
+    <code>src/app/components/book-search-view/book-search-view.component.ts</code>
 </p>
 
 
@@ -91,19 +91,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-book-view</code></td>
+                <td class="col-md-9"><code>book-search-view</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./book-view.component.scss</code></td>
+                <td class="col-md-9"><code>./book-search-view.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./book-view.component.html</code></td>
+                <td class="col-md-9"><code>./book-search-view.component.html</code></td>
             </tr>
 
 
@@ -130,10 +130,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#closeModal">closeModal</a>
-                            </li>
-                            <li>
-                                <a href="#saveBook">saveBook</a>
+                                <a href="#bookPreview">bookPreview</a>
                             </li>
                         </ul>
                     </td>
@@ -148,7 +145,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#getImage">getImage</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#saveBook">saveBook</a>
                             </li>
                         </ul>
                     </td>
@@ -187,7 +190,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/book-view/book-view.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/book-search-view/book-search-view.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -249,7 +252,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/book-view/book-view.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/book-search-view/book-search-view.component.ts:12</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -263,6 +266,76 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getImage"></a>
+                    <span class="name">
+                        <b>
+                            getImage
+                        </b>
+                        <a href="#getImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getImage(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/components/book-search-view/book-search-view.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>url</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -285,8 +358,47 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/components/book-view/book-view.component.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/components/book-search-view/book-search-view.component.ts:15</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveBook"></a>
+                    <span class="name">
+                        <b>
+                            saveBook
+                        </b>
+                        <a href="#saveBook"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveBook()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/components/book-search-view/book-search-view.component.ts:33</a></div>
                 </td>
             </tr>
 
@@ -312,11 +424,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="closeModal"></a>
+                        <a name="bookPreview"></a>
                         <span class="name">
                             <b>
-                            closeModal</b>
-                            <a href="#closeModal"><span class="icon ion-ios-link"></span></a>
+                            bookPreview</b>
+                            <a href="#bookPreview"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -327,48 +439,10 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/book-view/book-view.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/book-search-view/book-search-view.component.ts:17</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Closing the book view modal</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="saveBook"></a>
-                        <span class="name">
-                            <b>
-                            saveBook</b>
-                            <a href="#saveBook"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/book-view/book-view.component.ts:25</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Adding book to the personal book shelf</p>
-</div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
@@ -378,131 +452,159 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BookService } from &#x27;./../../services/book/book.service&#x27;;
+import { BookViewComponent } from &#x27;../book-view/book-view.component&#x27;;
 import { ModalController } from &#x27;@ionic/angular&#x27;;
-import { BookService } from &#x27;src/app/services/book/book.service&#x27;;
+import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-book-view&#x27;,
-  templateUrl: &#x27;./book-view.component.html&#x27;,
-  styleUrls: [&#x27;./book-view.component.scss&#x27;]
+  selector: &#x27;book-search-view&#x27;,
+  templateUrl: &#x27;./book-search-view.component.html&#x27;,
+  styleUrls: [&#x27;./book-search-view.component.scss&#x27;]
 })
-export class BookViewComponent implements OnInit {
-  constructor(private modalController: ModalController, private bookService: BookService) {}
+export class BookSearchView implements OnInit {
   @Input() book;
+  constructor(private modalController: ModalController, private bookService: BookService) {}
+
   ngOnInit() {}
 
-  /**
-   * Closing the book view modal
-   */
-  closeModal &#x3D; () &#x3D;&gt; {
-    this.modalController.dismiss();
+  bookPreview &#x3D; async () &#x3D;&gt; {
+    console.log(&#x27;clicked&#x27;);
+    const modal &#x3D; await this.modalController.create({
+      component: BookViewComponent,
+      componentProps: {
+        book: this.book
+      },
+      cssClass: &#x27;book-view-modal&#x27;
+    });
+    modal.present();
   };
 
-  /**
-   * Adding book to the personal book shelf
-   */
-  saveBook &#x3D; () &#x3D;&gt; {
+  getImage(url: string) {
+    return url.includes(&#x27;jpg&#x27;) || url.includes(&#x27;png&#x27;) || url.includes(&#x27;jpeg&#x27;);
+  }
+
+  saveBook() {
     this.bookService.addBookToShelf(this.book);
-  };
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ion-content&gt;
-  &lt;ion-card&gt;
-    &lt;ion-card-header class&#x3D;&quot;book-card&quot;&gt;
-      &lt;img [src]&#x3D;&quot;book.url&quot; alt&#x3D;&quot;libri&quot; class&#x3D;&quot;book-image&quot; /&gt;
-      &lt;div class&#x3D;&quot;book-header&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ion-card class&#x3D;&quot;book-card&quot; style&#x3D;&quot;background-color: teal;display: flex;&quot;&gt;
+  &lt;div class&#x3D;&quot;button-panel&quot;&gt;
+    &lt;ion-button fill&#x3D;&quot;clear&quot; (click)&#x3D;&quot;bookPreview()&quot; class&#x3D;&quot;icon-button&quot; size&#x3D;&quot;small&quot;&gt;
+      &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;eye&quot; class&#x3D;&quot;icon&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/ion-button&gt;
+    &lt;ion-button fill&#x3D;&quot;clear&quot; class&#x3D;&quot;icon-button&quot; size&#x3D;&quot;small&quot; (click)&#x3D;&quot;saveBook()&quot;&gt;
+      &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;save&quot; class&#x3D;&quot;icon&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/ion-button&gt;
+    &lt;ion-button fill&#x3D;&quot;clear&quot; class&#x3D;&quot;icon-button&quot; size&#x3D;&quot;small&quot;&gt;
+      &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;briefcase&quot; class&#x3D;&quot;icon&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/ion-button&gt;
+  &lt;/div&gt;
+  &lt;ion-grid style&#x3D;&quot;background-color: white;display:flex&quot;&gt;
+    &lt;ion-row justify-content-center align-items-center&gt;
+      &lt;ion-col
+        [hidden]&#x3D;&quot;!getImage(book.url)&quot;
+        sizeXl&#x3D;&quot;1&quot;
+        sizeLg&#x3D;&quot;1&quot;
+        sizeMd&#x3D;&quot;2&quot;
+        sizeSm&#x3D;&quot;2&quot;
+        sizeXs&#x3D;&quot;3&quot;
+        style&#x3D;&quot;padding: 0;background-color: #056571;&quot;
+      &gt;
+        &lt;img [src]&#x3D;&quot;book.url&quot; alt&#x3D;&quot;libri&quot; class&#x3D;&quot;book-image&quot; /&gt;
+      &lt;/ion-col&gt;
+      &lt;ion-col sizeXl&#x3D;&quot;11&quot; sizeLg&#x3D;&quot;11&quot; sizeMd&#x3D;&quot;10&quot; sizeXs&#x3D;&quot;9&quot; style&#x3D;&quot;height: 100%;&quot;&gt;
         &lt;div class&#x3D;&quot;book-title&quot;&gt;{{ book.title }}&lt;/div&gt;
         &lt;div class&#x3D;&quot;book-author&quot;&gt;{{ book.author }}&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/ion-card-header&gt;
-    &lt;ion-card-content&gt;
-      &lt;ion-grid&gt;
-        &lt;ion-row&gt;
-          &lt;ion-col sizeXs&#x3D;&quot;12&quot; sizeXl&#x3D;&quot;4&quot;&gt;&lt;ion-text class&#x3D;&quot;title&quot;&gt;Description&lt;/ion-text&gt;&lt;/ion-col&gt;
-          &lt;ion-col sizeXs&#x3D;&quot;12&quot; sizeXl&#x3D;&quot;8&quot;&gt;
-            {{ book.abstract }}
-          &lt;/ion-col&gt;
-        &lt;/ion-row&gt;
-        &lt;ion-row&gt;
-          &lt;ion-col sizeXs&#x3D;&quot;12&quot; sizeXl&#x3D;&quot;4&quot;&gt;
-            &lt;ion-text class&#x3D;&quot;title&quot;&gt;Tags&lt;/ion-text&gt;
-          &lt;/ion-col&gt;
-          &lt;ion-col sizeXs&#x3D;&quot;12&quot; sizeXl&#x3D;&quot;8&quot;&gt;
-            &lt;ion-chip *ngFor&#x3D;&quot;let tag of book.tags&quot; color&#x3D;&quot;tag.color&quot;&gt;
-              &lt;ion-label color&#x3D;&quot;dark&quot;&gt;{{ tag.value }}&lt;/ion-label&gt;
-            &lt;/ion-chip&gt;
-          &lt;/ion-col&gt;
-        &lt;/ion-row&gt;
-      &lt;/ion-grid&gt;
-    &lt;/ion-card-content&gt;
-  &lt;/ion-card&gt;
-&lt;/ion-content&gt;
-&lt;ion-footer class&#x3D;&quot;button-panel&quot;&gt;
-  &lt;ion-button color&#x3D;&quot;danger&quot; (click)&#x3D;&quot;closeModal()&quot; fill&#x3D;&quot;outline&quot; size&#x3D;&quot;small&quot;&gt;
-    &lt;ion-icon name&#x3D;&quot;close-circle-outline&quot;&gt;&lt;/ion-icon&gt; close
-  &lt;/ion-button&gt;
-  &lt;ion-button color&#x3D;&quot;primary&quot; fill&#x3D;&quot;outline&quot; size&#x3D;&quot;small&quot;
-    &gt;&lt;ion-icon name&#x3D;&quot;bookmark&quot;&gt;&lt;/ion-icon&gt;Save&lt;/ion-button
-  &gt;
-  &lt;ion-button color&#x3D;&quot;warning&quot; fill&#x3D;&quot;outline&quot; size&#x3D;&quot;small&quot;
-    &gt;&lt;ion-icon name&#x3D;&quot;basket&quot;&gt;&lt;/ion-icon&gt;Reserve&lt;/ion-button
-  &gt;
-&lt;/ion-footer&gt;
+        &lt;div barClass&#x3D;&quot;scrollbar&quot; thumbClass&#x3D;&quot;scrollbar-thumbs&quot; class&#x3D;&quot;book-description&quot;&gt;
+          {{ book.abstract }}
+        &lt;/div&gt;
+      &lt;/ion-col&gt;
+    &lt;/ion-row&gt;
+  &lt;/ion-grid&gt;
+&lt;/ion-card&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./book-view.component.scss</code>
+                    <code>./book-search-view.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">ion-card-header {
-  padding: 0px;
-  position: relative;
-  text-align: left;
-}
-
-.book-title {
-  font-size: 2em;
-  width: 100%;
+                <pre class="line-numbers"><code class="language-scss">.book-title {
+  font-size: 0.8rem;
   font-weight: bold;
-  color: white;
+  text-transform: uppercase;
+  color: &#x27;#263238&#x27;;
 }
 
 .book-author {
-  font-size: 1em;
-  width: 100%;
-  color: #fff;
-  opacity: 1;
-}
-
-.book-image {
-  width: 50vw;
-  height: auto;
-  margin: 0 auto;
-}
-
-.book-header {
-  position: absolute;
-  bottom: 2%;
-  opacity: 0.4;
-  background-color: black;
-}
-
-.book-card {
-  margin: 0 auto;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: &#x27;#607D8B&#x27;;
 }
 
 .button-panel {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
 }
 
-.title {
-  font-weight: bold;
+.icon-button {
+  display: block;
+}
+
+.icon {
+  color: white;
+  font-size: 1rem;
+}
+
+ion-grid {
+  --ion-grid-padding: 0px;
+}
+
+.book-description {
+  height: 10vh;
+  overflow: hidden;
+  font-size: 0.5rem;
+}
+
+@media only screen and (max-width: 1800px) {
+  .book-description {
+    max-height: 10vh;
+    overflow: hidden;
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 800px) {
+  .button-panel {
+    padding: 0px;
+    width: 5vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .book-description {
+    max-height: 10vh;
+    overflow: hidden;
+    font-size: 0.5rem;
+    font-weight: lighter;
+  }
+}
+
+ion-button {
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+ion-card {
+  margin: 10px;
+  max-height: 20vh;
 }
 </code></pre>
     </div>
@@ -532,10 +634,10 @@ export class BookViewComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-content>  <ion-card>    <ion-card-header class="book-card">      <img [src]="book.url" alt="libri" class="book-image" />      <div class="book-header">        <div class="book-title">{{ book.title }}</div>        <div class="book-author">{{ book.author }}</div>      </div>    </ion-card-header>    <ion-card-content>      <ion-grid>        <ion-row>          <ion-col sizeXs="12" sizeXl="4"><ion-text class="title">Description</ion-text></ion-col>          <ion-col sizeXs="12" sizeXl="8">            {{ book.abstract }}          </ion-col>        </ion-row>        <ion-row>          <ion-col sizeXs="12" sizeXl="4">            <ion-text class="title">Tags</ion-text>          </ion-col>          <ion-col sizeXs="12" sizeXl="8">            <ion-chip *ngFor="let tag of book.tags" color="tag.color">              <ion-label color="dark">{{ tag.value }}</ion-label>            </ion-chip>          </ion-col>        </ion-row>      </ion-grid>    </ion-card-content>  </ion-card></ion-content><ion-footer class="button-panel">  <ion-button color="danger" (click)="closeModal()" fill="outline" size="small">    <ion-icon name="close-circle-outline"></ion-icon> close  </ion-button>  <ion-button color="primary" fill="outline" size="small"    ><ion-icon name="bookmark"></ion-icon>Save</ion-button  >  <ion-button color="warning" fill="outline" size="small"    ><ion-icon name="basket"></ion-icon>Reserve</ion-button  ></ion-footer></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-card class="book-card" style="background-color: teal;display: flex;">  <div class="button-panel">    <ion-button fill="clear" (click)="bookPreview()" class="icon-button" size="small">      <ion-icon slot="icon-only" name="eye" class="icon"></ion-icon>    </ion-button>    <ion-button fill="clear" class="icon-button" size="small" (click)="saveBook()">      <ion-icon slot="icon-only" name="save" class="icon"></ion-icon>    </ion-button>    <ion-button fill="clear" class="icon-button" size="small">      <ion-icon slot="icon-only" name="briefcase" class="icon"></ion-icon>    </ion-button>  </div>  <ion-grid style="background-color: white;display:flex">    <ion-row justify-content-center align-items-center>      <ion-col        [hidden]="!getImage(book.url)"        sizeXl="1"        sizeLg="1"        sizeMd="2"        sizeSm="2"        sizeXs="3"        style="padding: 0;background-color: #056571;"      >        <img [src]="book.url" alt="libri" class="book-image" />      </ion-col>      <ion-col sizeXl="11" sizeLg="11" sizeMd="10" sizeXs="9" style="height: 100%;">        <div class="book-title">{{ book.title }}</div>        <div class="book-author">{{ book.author }}</div>        <div barClass="scrollbar" thumbClass="scrollbar-thumbs" class="book-description">          {{ book.abstract }}        </div>      </ion-col>    </ion-row>  </ion-grid></ion-card></div>'
     var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookSearchView', 'selector': 'book-search-view'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'BookViewComponent'};
+    var ACTUAL_COMPONENT = {'name': 'BookSearchView'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -569,7 +671,7 @@ export class BookViewComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'BookViewComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'BookSearchView.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -75,6 +75,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#device">device</a>
+                            </li>
+                            <li>
                                 <a href="#token">token</a>
                             </li>
                         </ul>
@@ -123,12 +126,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(afMessaging: AngularFireMessaging, fun: AngularFireFunctions, toastController: ToastController)</code>
+<code>constructor(afMessaging: AngularFireMessaging, fun: AngularFireFunctions, toastController: ToastController, platform: Platform)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/fcm.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/fcm.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -181,6 +184,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>platform</td>
+                                                  
+                                                        <td>
+                                                                    <code>Platform</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -217,8 +232,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/fcm.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/fcm.service.ts:34</a></div>
                 </td>
             </tr>
 
@@ -258,8 +273,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/fcm.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/fcm.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -324,8 +339,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/fcm.service.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/fcm.service.ts:65</a></div>
                 </td>
             </tr>
 
@@ -334,7 +349,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -363,8 +378,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/app/fcm.service.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/fcm.service.ts:72</a></div>
                 </td>
             </tr>
 
@@ -429,8 +444,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/fcm.service.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/fcm.service.ts:79</a></div>
                 </td>
             </tr>
 
@@ -483,6 +498,27 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="device"></a>
+                        <span class="name">
+                            <b>
+                            device</b>
+                            <a href="#device"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/fcm.service.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="token"></a>
                         <span class="name">
                             <b>
@@ -493,7 +529,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/fcm.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/fcm.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -509,22 +545,24 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { AngularFireMessaging } from &#x27;@angular/fire/messaging&#x27;;
 import { AngularFireFunctions } from &#x27;@angular/fire/functions&#x27;;
-import { ToastController } from &#x27;@ionic/angular&#x27;;
+import { ToastController, Platform } from &#x27;@ionic/angular&#x27;;
 import { tap } from &#x27;rxjs/operators&#x27;;
-
-import { Observable } from &#x27;rxjs&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class FcmService {
   token;
+  device;
 
   constructor(
     private afMessaging: AngularFireMessaging,
     private fun: AngularFireFunctions,
-    private toastController: ToastController
-  ) {}
+    private toastController: ToastController,
+    private platform: Platform
+  ) {
+    this.device &#x3D; this.platform.is(&#x27;cordova&#x27;) ? &#x27;cordova&#x27; : &#x27;non-cordova&#x27;;
+  }
 
   async makeToast(message) {
     const toast &#x3D; await this.toastController.create({
@@ -539,28 +577,40 @@ export class FcmService {
 
   getPermission() {
     return new Promise((resolve, reject) &#x3D;&gt; {
-      this.afMessaging.requestToken.subscribe(
-        token &#x3D;&gt; {
-          console.log(&#x27;Permission granted and token is &#x27;, token);
-          this.token &#x3D; token;
-          resolve(token);
-        },
-        error &#x3D;&gt; {
-          console.log(&#x27;error occured when requesting permission&#x27;);
-          console.error(error);
-          reject(&#x27;error occured&#x27;);
-        }
-      );
+      if (this.device !&#x3D;&#x3D; &#x27;cordova&#x27;) {
+        this.afMessaging.requestToken.subscribe(
+          token &#x3D;&gt; {
+            console.log(&#x27;Permission granted and token is &#x27;, token);
+            this.token &#x3D; token;
+            resolve(token);
+          },
+          error &#x3D;&gt; {
+            console.log(&#x27;error occured when requesting permission&#x27;);
+            console.error(error);
+            reject(&#x27;error occured&#x27;);
+          }
+        );
+      } else {
+        // this.fm
+        //   .getToken()
+        //   .then(token &#x3D;&gt; {
+        //     this.token &#x3D; token;
+        //     swal(&#x27;token recieved&#x27;, token);
+        //     resolve(token);
+        //   })
+        //   .catch(error &#x3D;&gt; {
+        //     swal(&#x27;error&#x27;, error);
+        //     reject(error);
+        //   });
+      }
     });
   }
 
-  showMessages(): Observable&lt;any&gt; {
-    return this.afMessaging.messages.pipe(
-      tap(msg &#x3D;&gt; {
-        const body: any &#x3D; (msg as any).notification.body;
-        this.makeToast(body);
-      })
-    );
+  showMessages() {
+    return this.afMessaging.messages.subscribe(msg &#x3D;&gt; {
+      const body: any &#x3D; (msg as any).notification.body;
+      this.makeToast(body);
+    });
   }
 
   sub(topic) {

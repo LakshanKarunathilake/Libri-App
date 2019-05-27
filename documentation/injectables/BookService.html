@@ -27,15 +27,18 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>AppComponent</li>
+  <li>Injectables</li>
+  <li>BookService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -45,80 +48,37 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/book/book.service.ts</code>
+        </p>
 
 
 
 
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
-
-
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>app.component.html</code></td>
-            </tr>
-
-
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
+                        <h6><b>Properties</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#initializeApp">initializeApp</a>
+                                <a href="#addBookToShelf">addBookToShelf</a>
+                            </li>
+                            <li>
+                                <a href="#searchBooks">searchBooks</a>
                             </li>
                         </ul>
                     </td>
@@ -128,22 +88,23 @@
 
 
 
+
         </tbody>
     </table>
 </section>
 
-    <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(platform: Platform, splashScreen: SplashScreen, statusBar: StatusBar, fcm: <a href="../injectables/FcmService.html">FcmService</a>)</code>
+<code>constructor(aff: AngularFireFunctions, afs: AngularFirestore, userService: <a href="../injectables/UserService.html">UserService</a>, loadingCtrl: LoadingController, swal: <a href="../injectables/SwalService.html">SwalService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/book/book.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -161,10 +122,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>platform</td>
+                                                        <td>aff</td>
                                                   
                                                         <td>
-                                                                    <code>Platform</code>
+                                                                    <code>AngularFireFunctions</code>
                                                         </td>
                                                   
                                                     <td>
@@ -173,10 +134,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>splashScreen</td>
+                                                        <td>afs</td>
                                                   
                                                         <td>
-                                                                    <code>SplashScreen</code>
+                                                                    <code>AngularFirestore</code>
                                                         </td>
                                                   
                                                     <td>
@@ -185,10 +146,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>statusBar</td>
+                                                        <td>userService</td>
                                                   
                                                         <td>
-                                                                    <code>StatusBar</code>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -197,10 +158,22 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>fcm</td>
+                                                        <td>loadingCtrl</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/FcmService.html" target="_self" >FcmService</a></code>
+                                                                    <code>LoadingController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>swal</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SwalService.html" target="_self" >SwalService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -218,133 +191,146 @@
 </section>
 
 
-
-
-
-    <section>
+            <section>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="initializeApp"></a>
-                    <span class="name">
-                        <b>
-                            initializeApp
-                        </b>
-                        <a href="#initializeApp"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>initializeApp()</code>
-                </td>
-            </tr>
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addBookToShelf"></a>
+                        <span class="name">
+                            <b>
+                            addBookToShelf</b>
+                            <a href="#addBookToShelf"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/services/book/book.service.ts:34</a></div>
+                            </td>
+                        </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Adding books to personal shelf
+This function can be used to add the favorite books of users for future reference or use</p>
+</div>
+                    </td>
+                </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/app.component.ts:22</a></div>
-                </td>
-            </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchBooks"></a>
+                        <span class="name">
+                            <b>
+                            searchBooks</b>
+                            <a href="#searchBooks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/services/book/book.service.ts:25</a></div>
+                            </td>
+                        </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Call for the cloud function requesting the book records matching for the value
+Type can be title or author or both</p>
+</div>
+                    </td>
+                </tr>
 
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 </section>
 
-</div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SwalService } from &#x27;./../swal/swal.service&#x27;;
+import { LoadingController } from &#x27;@ionic/angular&#x27;;
+import { UserService } from &#x27;./../user/user.service&#x27;;
+import { Book } from &#x27;./../../models/Book&#x27;;
+import { AngularFireFunctions } from &#x27;@angular/fire/functions&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
 
-import { Platform } from &#x27;@ionic/angular&#x27;;
-import { SplashScreen } from &#x27;@ionic-native/splash-screen/ngx&#x27;;
-import { StatusBar } from &#x27;@ionic-native/status-bar/ngx&#x27;;
-import { FcmService } from &#x27;./fcm.service&#x27;;
-
-@Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;app.component.html&#x27;
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class AppComponent {
+export class BookService {
   constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private fcm: FcmService
-  ) {
-    this.initializeApp();
-  }
+    private aff: AngularFireFunctions,
+    private afs: AngularFirestore,
+    private userService: UserService,
+    private loadingCtrl: LoadingController,
+    private swal: SwalService
+  ) {}
 
-  initializeApp() {
-    this.platform.ready().then(() &#x3D;&gt; {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.fcm.showMessages();
+  /**
+   * Call for the cloud function requesting the book records matching for the value
+   * Type can be title or author or both
+   */
+  searchBooks &#x3D; (value, type) &#x3D;&gt; {
+    const searchBook &#x3D; this.aff.functions.httpsCallable(&#x27;searchBook&#x27;);
+    return searchBook({ value, type });
+  };
+
+  /**
+   * Adding books to personal shelf
+   * This function can be used to add the favorite books of users for future reference or use
+   */
+  addBookToShelf &#x3D; async (book: Book) &#x3D;&gt; {
+    const { uid } &#x3D; this.userService.getCurrentUser();
+    const loading &#x3D; await this.loadingCtrl.create({
+      message: &#x27;Adding your book to shelf&#x27;,
+      spinner: &#x27;crescent&#x27;
     });
-  }
+    loading.present();
+
+    this.afs
+      .collection(&#x27;users&#x27;)
+      .doc(uid)
+      .collection(&#x27;bookShelf&#x27;)
+      .add(book)
+      .then(() &#x3D;&gt; {
+        loading.dismiss();
+        this.swal.viewSuccessMessage(
+          &#x27;Shelf Update&#x27;,
+          &#x27;The book is added to your shelf successfully!&#x27;
+        );
+      })
+      .catch(error &#x3D;&gt; {
+        console.error(&#x27;error occured while adding book to book shelf&#x27;, error);
+        this.swal.viewErrorMessage(&#x27;Error&#x27;, &#x27;Sorry your book is not added for your shelf&#x27;);
+      });
+  };
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ion-app&gt;
-  &lt;ion-router-outlet&gt;&lt;/ion-router-outlet&gt;
-&lt;/ion-app&gt;
-</code></pre>
-    </div>
-
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><ion-app>  <ion-router-outlet></ion-router-outlet></ion-app></div>'
-    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookSearchView', 'selector': 'book-search-view'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
 
 
 
@@ -372,8 +358,8 @@ export class AppComponent {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'BookService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -138,6 +138,9 @@
                             <li>
                                 <a href="#secondFormGroup">secondFormGroup</a>
                             </li>
+                            <li>
+                                <a href="#submitFeedback">submitFeedback</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -171,12 +174,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+<code>constructor(_formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, afs: AngularFirestore, loadingCtrl: LoadingController, swal: <a href="../injectables/SwalService.html">SwalService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/feedback/feedback.page.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/feedback/feedback.page.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -198,6 +201,42 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>afs</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFirestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loadingCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoadingController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>swal</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SwalService.html" target="_self" >SwalService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -245,8 +284,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/feedback/feedback.page.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/feedback/feedback.page.ts:24</a></div>
                 </td>
             </tr>
 
@@ -288,7 +327,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/feedback/feedback.page.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/feedback/feedback.page.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -320,7 +359,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/feedback/feedback.page.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/feedback/feedback.page.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -347,7 +386,33 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/feedback/feedback.page.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/feedback/feedback.page.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submitFeedback"></a>
+                        <span class="name">
+                            <b>
+                            submitFeedback</b>
+                            <a href="#submitFeedback"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/feedback/feedback.page.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -360,8 +425,12 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SwalService } from &#x27;./../services/swal/swal.service&#x27;;
+import { Feedback } from &#x27;./../models/feedback&#x27;;
+import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
 import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
+import { LoadingController } from &#x27;@ionic/angular&#x27;;
 
 @Component({
   selector: &#x27;app-feedback&#x27;,
@@ -372,16 +441,47 @@ export class FeedbackPage implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   options &#x3D; [&#x27;new feature&#x27;, &#x27;error/bug&#x27;, &#x27;improvement&#x27;];
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private afs: AngularFirestore,
+    private loadingCtrl: LoadingController,
+    private swal: SwalService
+  ) {}
 
   ngOnInit() {
     this.firstFormGroup &#x3D; this._formBuilder.group({
       firstCtrl: [&#x27;&#x27;, Validators.required]
     });
     this.secondFormGroup &#x3D; this._formBuilder.group({
-      secondCtrl: [&#x27;&#x27;, Validators.required]
+      firstCtrl: [&#x27;&#x27;, Validators.required]
     });
   }
+
+  submitFeedback &#x3D; async () &#x3D;&gt; {
+    const loading &#x3D; await this.loadingCtrl.create({
+      message: &#x27;Sending your feedback&#x27;,
+      spinner: &#x27;crescent&#x27;
+    });
+    loading.present();
+    const feedback: Feedback &#x3D; {
+      creationDate: new Date(),
+      type: this.firstFormGroup.controls[&#x27;firstCtrl&#x27;].value,
+      message: this.secondFormGroup.controls[&#x27;firstCtrl&#x27;].value
+    };
+    this.afs
+      .collection(&#x27;Feedback&#x27;)
+      .add({ ...feedback })
+      .then(() &#x3D;&gt; {
+        this.swal.viewSuccessMessage(&#x27;Successful&#x27;, &#x27;Feedback submitted!&#x27;);
+      })
+      .catch(error &#x3D;&gt; {
+        console.error(&#x27;Error occured when sending the feedback&#x27;, error);
+        this.swal.viewErrorMessage(&#x27;Error&#x27;, &#x27;Error occurred while sending feedback!&#x27;);
+      })
+      .finally(() &#x3D;&gt; {
+        loading.dismiss();
+      });
+  };
 }
 </code></pre>
     </div>
@@ -400,6 +500,9 @@ export class FeedbackPage implements OnInit {
         &lt;ng-template matStepLabel&gt;Select what kind of feedback you are providing&lt;/ng-template&gt;
         &lt;mat-form-field&gt;
           &lt;mat-label&gt;Type of feedback&lt;/mat-label&gt;
+          &lt;mat-error *ngIf&#x3D;&quot;firstFormGroup.controls[&#x27;firstCtrl&#x27;]&quot;&gt;
+            Select type of feedback
+          &lt;/mat-error&gt;
           &lt;mat-select formControlName&#x3D;&quot;firstCtrl&quot;&gt;
             &lt;mat-option *ngFor&#x3D;&quot;let option of options&quot; [value]&#x3D;&quot;option&quot;&gt;
               {{ option }}
@@ -415,7 +518,10 @@ export class FeedbackPage implements OnInit {
       &lt;form [formGroup]&#x3D;&quot;secondFormGroup&quot;&gt;
         &lt;ng-template matStepLabel&gt;Give us details&lt;/ng-template&gt;
         &lt;mat-form-field style&#x3D;&quot;width:100%&quot;&gt;
-          &lt;textarea matInput placeholder&#x3D;&quot;Details&quot; formControlName&#x3D;&quot;secondCtrl&quot; required&gt;&lt;/textarea&gt;
+          &lt;mat-error *ngIf&#x3D;&quot;secondFormGroup.controls[&#x27;firstCtrl&#x27;]&quot;&gt;
+            Please elaborate more about the feedback
+          &lt;/mat-error&gt;
+          &lt;textarea matInput placeholder&#x3D;&quot;Details&quot; formControlName&#x3D;&quot;firstCtrl&quot; required&gt;&lt;/textarea&gt;
         &lt;/mat-form-field&gt;
         &lt;div&gt;
           &lt;button mat-raised-button matStepperPrevious color&#x3D;&quot;warn&quot; style&#x3D;&quot;margin-right: 2rem;&quot;&gt;
@@ -428,8 +534,13 @@ export class FeedbackPage implements OnInit {
     &lt;mat-step&gt;
       &lt;ng-template matStepLabel&gt;Submit&lt;/ng-template&gt;
       Submit your feedback
-      &lt;div&gt;
-        &lt;button mat-raised-button matStepperPrevious color&#x3D;&quot;primary&quot;&gt;Back&lt;/button&gt;
+      &lt;div style&#x3D;&quot;padding: 5px;&quot;&gt;
+        &lt;button mat-raised-button matStepperPrevious color&#x3D;&quot;primary&quot;&gt;
+          Back
+        &lt;/button&gt;
+        &lt;button mat-raised-button matStepperPrevious color&#x3D;&quot;accent&quot; (click)&#x3D;&quot;submitFeedback()&quot;&gt;
+          Submit
+        &lt;/button&gt;
         &lt;button mat-raised-button (click)&#x3D;&quot;stepper.reset()&quot; color&#x3D;&quot;warn&quot;&gt;Reset&lt;/button&gt;
       &lt;/div&gt;
     &lt;/mat-step&gt;
@@ -470,8 +581,8 @@ export class FeedbackPage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Feedback"></app-menu-title><ion-content padding>  <ion-text>    We are highly appreciating feedback about the application. You can send us feature request, bug    report or anything related to the application  </ion-text>  <mat-vertical-stepper linear #stepper>    <mat-step [stepControl]="firstFormGroup">      <form [formGroup]="firstFormGroup">        <ng-template matStepLabel>Select what kind of feedback you are providing</ng-template>        <mat-form-field>          <mat-label>Type of feedback</mat-label>          <mat-select formControlName="firstCtrl">            <mat-option *ngFor="let option of options" [value]="option">              {{ option }}            </mat-option>          </mat-select>        </mat-form-field>        <div>          <button mat-raised-button matStepperNext color="primary">Next</button>        </div>      </form>    </mat-step>    <mat-step [stepControl]="secondFormGroup">      <form [formGroup]="secondFormGroup">        <ng-template matStepLabel>Give us details</ng-template>        <mat-form-field style="width:100%">          <textarea matInput placeholder="Details" formControlName="secondCtrl" required></textarea>        </mat-form-field>        <div>          <button mat-raised-button matStepperPrevious color="warn" style="margin-right: 2rem;">            Back          </button>          <button mat-raised-button matStepperNext color="primary">Next</button>        </div>      </form>    </mat-step>    <mat-step>      <ng-template matStepLabel>Submit</ng-template>      Submit your feedback      <div>        <button mat-raised-button matStepperPrevious color="primary">Back</button>        <button mat-raised-button (click)="stepper.reset()" color="warn">Reset</button>      </div>    </mat-step>  </mat-vertical-stepper></ion-content></div>'
-    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
+        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Feedback"></app-menu-title><ion-content padding>  <ion-text>    We are highly appreciating feedback about the application. You can send us feature request, bug    report or anything related to the application  </ion-text>  <mat-vertical-stepper linear #stepper>    <mat-step [stepControl]="firstFormGroup">      <form [formGroup]="firstFormGroup">        <ng-template matStepLabel>Select what kind of feedback you are providing</ng-template>        <mat-form-field>          <mat-label>Type of feedback</mat-label>          <mat-error *ngIf="firstFormGroup.controls[\'firstCtrl\']">            Select type of feedback          </mat-error>          <mat-select formControlName="firstCtrl">            <mat-option *ngFor="let option of options" [value]="option">              {{ option }}            </mat-option>          </mat-select>        </mat-form-field>        <div>          <button mat-raised-button matStepperNext color="primary">Next</button>        </div>      </form>    </mat-step>    <mat-step [stepControl]="secondFormGroup">      <form [formGroup]="secondFormGroup">        <ng-template matStepLabel>Give us details</ng-template>        <mat-form-field style="width:100%">          <mat-error *ngIf="secondFormGroup.controls[\'firstCtrl\']">            Please elaborate more about the feedback          </mat-error>          <textarea matInput placeholder="Details" formControlName="firstCtrl" required></textarea>        </mat-form-field>        <div>          <button mat-raised-button matStepperPrevious color="warn" style="margin-right: 2rem;">            Back          </button>          <button mat-raised-button matStepperNext color="primary">Next</button>        </div>      </form>    </mat-step>    <mat-step>      <ng-template matStepLabel>Submit</ng-template>      Submit your feedback      <div style="padding: 5px;">        <button mat-raised-button matStepperPrevious color="primary">          Back        </button>        <button mat-raised-button matStepperPrevious color="accent" (click)="submitFeedback()">          Submit        </button>        <button mat-raised-button (click)="stepper.reset()" color="warn">Reset</button>      </div>    </mat-step>  </mat-vertical-stepper></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookSearchView', 'selector': 'book-search-view'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FeedbackPage'};
 </script>

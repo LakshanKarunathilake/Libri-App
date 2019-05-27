@@ -172,12 +172,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fcm: <a href="../injectables/FcmService.html">FcmService</a>)</code>
+<code>constructor(fcm: <a href="../injectables/FcmService.html">FcmService</a>, swal: <a href="../injectables/SwalService.html">SwalService</a>, platform: Platform)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/home.page.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/home.page.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -199,6 +199,30 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/FcmService.html" target="_self" >FcmService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>swal</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SwalService.html" target="_self" >SwalService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>platform</td>
+                                                  
+                                                        <td>
+                                                                    <code>Platform</code>
                                                         </td>
                                                   
                                                     <td>
@@ -246,8 +270,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/home/home.page.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/home/home.page.ts:17</a></div>
                 </td>
             </tr>
 
@@ -290,7 +314,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/home.page.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home/home.page.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -316,7 +340,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/home/home.page.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/home/home.page.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -343,12 +367,12 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>{ slidesPerView: 2, spaceBetween: 0 }</code>
+                            <i>Default value : </i><code>{ slidesPerView: this.platform.width() &lt; 990 ? 3 : 6, centerdSlides: true }</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/home.page.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/home.page.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -361,9 +385,10 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SwalService } from &#x27;./../services/swal/swal.service&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { FcmService } from &#x27;../fcm.service&#x27;;
-import swal from &#x27;sweetalert&#x27;;
+import { Platform } from &#x27;@ionic/angular&#x27;;
 
 @Component({
   selector: &#x27;app-home&#x27;,
@@ -371,8 +396,10 @@ import swal from &#x27;sweetalert&#x27;;
   styleUrls: [&#x27;./home.page.scss&#x27;]
 })
 export class HomePage implements OnInit {
-  sliderOptions &#x3D; { slidesPerView: 2, spaceBetween: 0 };
-  constructor(public fcm: FcmService) {}
+  sliderOptions &#x3D; { slidesPerView: this.platform.width() &lt; 990 ? 3 : 6, centerdSlides: true };
+  constructor(public fcm: FcmService, private swal: SwalService, private platform: Platform) {
+    console.log(this.platform.width());
+  }
 
   ngOnInit() {}
 
@@ -384,7 +411,7 @@ export class HomePage implements OnInit {
       .catch(error &#x3D;&gt; {
         console.log(&#x27;error occured&#x27;);
         console.log(&#x27;error&#x27;, error);
-        swal(&#x27;error&#x27;);
+        this.swal.viewErrorMessage(&#x27;error&#x27;, error);
       });
   };
 }
@@ -394,15 +421,13 @@ export class HomePage implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-menu-title title&#x3D;&quot;Home&quot;&gt;&lt;/app-menu-title&gt;
 &lt;ion-content padding&gt;
-  &lt;ion-slides pager&#x3D;&quot;true&quot; (options)&#x3D;&quot;(sliderOptions)&quot;&gt;
-    &lt;ion-slide class&#x3D;&quot;slide&quot;&gt;
-      &lt;h1&gt;Slide 1&lt;/h1&gt;
-    &lt;/ion-slide&gt;
-    &lt;ion-slide class&#x3D;&quot;slide&quot;&gt;
-      &lt;h1&gt;Slide 2&lt;/h1&gt;
-    &lt;/ion-slide&gt;
-    &lt;ion-slide class&#x3D;&quot;slide&quot;&gt;
-      &lt;h1&gt;Slide 3&lt;/h1&gt;
+  &lt;ion-slides [options]&#x3D;&quot;sliderOptions&quot;&gt;
+    &lt;ion-slide class&#x3D;&quot;slide&quot; *ngFor&#x3D;&quot;let image of [1, 2, 3, 4, 5, 6, 7, 8]&quot;&gt;
+      &lt;img
+        src&#x3D;&quot;../assets/img/sample-covers/{{ image }}.jpg&quot;
+        alt&#x3D;&quot;image-{{ image }}&quot;
+        id&#x3D;&quot;login-image&quot;
+      /&gt;
     &lt;/ion-slide&gt;
   &lt;/ion-slides&gt;
   &lt;section&gt;
@@ -417,8 +442,8 @@ export class HomePage implements OnInit {
     &lt;ion-item color&#x3D;&quot;warning&quot;&gt;Due Books&lt;/ion-item&gt;
     &lt;ion-item color&#x3D;&quot;danger&quot;&gt;Fined Books&lt;/ion-item&gt;
   &lt;/ion-list&gt;
-  &lt;ion-button (click)&#x3D;&quot;getPermission()&quot;&gt;Access&lt;/ion-button&gt;
-  &lt;ion-button (click)&#x3D;&quot;fcm.sub(&#x27;notices&#x27;)&quot;&gt;Access&lt;/ion-button&gt;
+  &lt;ion-button (click)&#x3D;&quot;getPermission()&quot;&gt;Permission&lt;/ion-button&gt;
+  &lt;ion-button (click)&#x3D;&quot;fcm.sub(&#x27;notices&#x27;)&quot;&gt;subscribe&lt;/ion-button&gt;
 &lt;/ion-content&gt;
 </code></pre>
     </div>
@@ -427,12 +452,7 @@ export class HomePage implements OnInit {
                 <p class="comment">
                     <code>./home.page.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.slide {
-  height: 20vh;
-  width: 40vw;
-  background-color: aqua;
-}
-</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -460,8 +480,8 @@ export class HomePage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Home"></app-menu-title><ion-content padding>  <ion-slides pager="true" (options)="(sliderOptions)">    <ion-slide class="slide">      <h1>Slide 1</h1>    </ion-slide>    <ion-slide class="slide">      <h1>Slide 2</h1>    </ion-slide>    <ion-slide class="slide">      <h1>Slide 3</h1>    </ion-slide>  </ion-slides>  <section>    <ion-title>Notices</ion-title>    <ion-list>      <ion-item>Library registration notice</ion-item>    </ion-list>  </section>  <ion-list>    <ion-item color="primary">Borrowed Books</ion-item>    <ion-item color="warning">Due Books</ion-item>    <ion-item color="danger">Fined Books</ion-item>  </ion-list>  <ion-button (click)="getPermission()">Access</ion-button>  <ion-button (click)="fcm.sub(\'notices\')">Access</ion-button></ion-content></div>'
-    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
+        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Home"></app-menu-title><ion-content padding>  <ion-slides [options]="sliderOptions">    <ion-slide class="slide" *ngFor="let image of [1, 2, 3, 4, 5, 6, 7, 8]">      <img        src="../assets/img/sample-covers/{{ image }}.jpg"        alt="image-{{ image }}"        id="login-image"      />    </ion-slide>  </ion-slides>  <section>    <ion-title>Notices</ion-title>    <ion-list>      <ion-item>Library registration notice</ion-item>    </ion-list>  </section>  <ion-list>    <ion-item color="primary">Borrowed Books</ion-item>    <ion-item color="warning">Due Books</ion-item>    <ion-item color="danger">Fined Books</ion-item>  </ion-list>  <ion-button (click)="getPermission()">Permission</ion-button>  <ion-button (click)="fcm.sub(\'notices\')">subscribe</ion-button></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookSearchView', 'selector': 'book-search-view'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomePage'};
 </script>
