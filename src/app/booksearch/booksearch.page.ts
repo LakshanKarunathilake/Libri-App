@@ -53,21 +53,23 @@ export class BooksearchPage implements OnInit {
   ngOnInit() {}
 
   searchForbooks = value => {
-    this.loading = true;
-    this.bookService.searchBooks(value, 'title').then(data => {
-      this.books = JSON.parse(data.data['result']).map(record => {
-        const url = record['url'];
-        if (url) {
-          const alteredURL = this.breakImageUrls(url);
-          console.log('al', alteredURL);
-          record['url'] = alteredURL;
-        }
-        return record;
+    if (value !== '') {
+      this.loading = true;
+      this.bookService.searchBooks(value, 'title').then(data => {
+        this.books = JSON.parse(data.data['result']).map(record => {
+          const url = record['url'];
+          if (url) {
+            const alteredURL = this.breakImageUrls(url);
+            console.log('al', alteredURL);
+            record['url'] = alteredURL;
+          }
+          return record;
+        });
+        console.log(this.books);
+        this.loading = false;
       });
-      console.log(this.books);
-      this.loading = false;
-    });
-    console.log('value', value);
+      console.log('value', value);
+    }
   };
 
   /**
