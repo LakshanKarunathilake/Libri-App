@@ -2,7 +2,7 @@ import { SwalService } from './../../services/swal/swal.service';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import * as firebase from 'firebase/app';
+import { auth } from 'firebase/app';
 @Component({
   selector: 'app-forget-password',
   templateUrl: './forget-password.component.html',
@@ -40,8 +40,7 @@ export class ForgetPasswordComponent implements OnInit {
 
   forgetPassword = () => {
     const email = this.ForgetPasswordForm.controls['userEmail'].value;
-    firebase
-      .auth()
+    auth()
       .sendPasswordResetEmail(email)
       .then(() => {
         return this.modalController.dismiss();
