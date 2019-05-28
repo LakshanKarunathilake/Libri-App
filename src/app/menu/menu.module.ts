@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MenuPage } from './menu.page';
+import { BookService } from '../services/book/book.service';
 
 const routes: Routes = [
   {
@@ -20,8 +21,8 @@ const routes: Routes = [
         loadChildren: '../requestbook/requestbook.module#RequestbookPageModule'
       },
       { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
-      { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
-      { path: 'profile/account', loadChildren: '../account/account.module#AccountPageModule' },
+      { path: 'account/profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
+      { path: 'account', loadChildren: '../account/account.module#AccountPageModule' },
       { path: 'info', loadChildren: '../LibraryInfo/info/info.module#InfoPageModule' },
       { path: 'transfer', loadChildren: '../transfer/transfer.module#TransferPageModule' }
     ]
@@ -30,6 +31,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes)],
-  declarations: [MenuPage]
+  declarations: [MenuPage],
+  providers: [BookService]
 })
 export class MenuPageModule {}
