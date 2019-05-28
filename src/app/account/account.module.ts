@@ -1,3 +1,4 @@
+import { MenuPageModule } from './../menu/menu.module';
 import { MenuTitleComponentModule } from './../components/menu-title/menu-title.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,12 +8,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { AccountPage } from './account.page';
-import { AccountTabMenuComponent } from '../components/account-tab-menu/account-tab-menu.component';
+import { AccountTabMenuComponentModule } from '../components/account-tab-menu/account-tab-menu.component.module';
+import { ProfileComponent } from '../components/profile/profile.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AccountPage
+    component: AccountPage,
+    children: [{ path: 'profile', component: ProfileComponent }]
   }
 ];
 
@@ -22,9 +25,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    MenuTitleComponentModule
+    MenuTitleComponentModule,
+    AccountTabMenuComponentModule
   ],
-  declarations: [AccountPage, AccountTabMenuComponent],
-  entryComponents: [AccountTabMenuComponent]
+  declarations: [AccountPage, ProfileComponent]
 })
 export class AccountPageModule {}
