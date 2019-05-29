@@ -21,7 +21,6 @@ const routes: Routes = [
         loadChildren: '../requestbook/requestbook.module#RequestbookPageModule'
       },
       { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
-      { path: 'account/profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
       { path: 'account', loadChildren: '../account/account.module#AccountPageModule' },
       { path: 'info', loadChildren: '../LibraryInfo/info/info.module#InfoPageModule' },
       { path: 'transfer', loadChildren: '../transfer/transfer.module#TransferPageModule' }
