@@ -45,7 +45,8 @@ export class BooksearchPage implements OnInit {
   ];
 
   deviceType: string;
-  constructor() {}
+  titleCheckbox = true;
+  authorCheckbox = true;
   books: any;
   loading = false;
   constructor(private bookService: BookService) {}
