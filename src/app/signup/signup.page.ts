@@ -1,3 +1,4 @@
+import { AngularFireFunctions } from '@angular/fire/functions';
 import { UserService } from './../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -18,18 +19,29 @@ export class SignupPage implements OnInit {
     private loadingCtrl: LoadingController,
     private fcm: FcmService,
     private swal: SwalService,
-    private user: UserService
+    private user: UserService,
+    private aff: AngularFireFunctions
   ) {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      libraryId: ['', [Validators.required]],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
       telephoneNumber: ['', Validators.required]
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const func = this.aff.functions.httpsCallable('isUserIdAvailable');
+    func({ id: '23529000445172' })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
 
   getErrorMessage = (controller: string) => {
     const formController = this.signupForm.controls[controller];
