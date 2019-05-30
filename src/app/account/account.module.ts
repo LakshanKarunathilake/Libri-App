@@ -10,12 +10,16 @@ import { IonicModule } from '@ionic/angular';
 import { AccountPage } from './account.page';
 import { AccountTabMenuComponentModule } from '../components/account-tab-menu/account-tab-menu.component.module';
 import { ProfileComponent } from '../components/profile/profile.component';
+import { BorrowingsComponent } from '../components/borrowings/borrowings.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AccountPage,
-    children: [{ path: 'profile', component: ProfileComponent }]
+    children: [
+      { path: 'profile', component: ProfileComponent },
+      { path: 'borrowings', component: BorrowingsComponent }
+    ]
   }
 ];
 
@@ -28,6 +32,6 @@ const routes: Routes = [
     MenuTitleComponentModule,
     AccountTabMenuComponentModule
   ],
-  declarations: [AccountPage, ProfileComponent]
+  declarations: [AccountPage, ProfileComponent, BorrowingsComponent]
 })
 export class AccountPageModule {}
