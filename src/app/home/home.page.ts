@@ -9,7 +9,11 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
-  sliderOptions = { slidesPerView: this.platform.width() < 990 ? 3 : 6, centerdSlides: true };
+  sliderOptions = {
+    slidesPerView: this.platform.width() < 990 ? 3 : 6,
+    centerdSlides: true,
+    autoplay: { delay: 1500 }
+  };
   constructor(public fcm: FcmService, private swal: SwalService, private platform: Platform) {
     console.log(this.platform.width());
   }
