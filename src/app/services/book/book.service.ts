@@ -10,6 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class BookService {
+  loading;
   constructor(
     private aff: AngularFireFunctions,
     private afs: AngularFirestore,
@@ -17,6 +18,13 @@ export class BookService {
     private loadingCtrl: LoadingController,
     private swal: SwalService
   ) {}
+
+  assignToLoadingView = async (message: string) => {
+    this.loading = await this.loadingCtrl.create({
+      message,
+      spinner: 'crescent'
+    });
+  };
 
   /**
    * Call for the cloud function requesting the book records matching for the value
@@ -33,11 +41,8 @@ export class BookService {
    */
   addBookToShelf = async (book: Book) => {
     const { uid } = this.userService.getCurrentUser();
-    const loading = await this.loadingCtrl.create({
-      message: 'Adding your book to shelf',
-      spinner: 'crescent'
-    });
-    loading.present();
+    await this.assignToLoadingView('Adding your book to shelf');
+    this.loading.present();
 
     this.afs
       .collection('users')
@@ -45,18 +50,22 @@ export class BookService {
       .collection('bookShelf')
       .add(book)
       .then(() => {
-        loading.dismiss();
+        this.loading.dismiss();
         this.swal.viewSuccessMessage(
           'Shelf Update',
           'The book is added to your shelf successfully!'
         );
       })
       .catch(error => {
+        this.loading.dismiss();
         console.error('error occured while adding book to book shelf', error);
         this.swal.viewErrorMessage('Error', 'Sorry your book is not added for your shelf');
       });
   };
 
+  /**
+   * Retrieving the information of book requests already placed by the user
+   */
   getBookRequests = () => {
     const { uid } = this.userService.getCurrentUser();
     try {
