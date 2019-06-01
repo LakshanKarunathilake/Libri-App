@@ -78,4 +78,27 @@ export class BookService {
       console.error('Error occured while querying for book requests', error);
     }
   };
+
+  placingBookRequest = async bookRequest => {
+    const { uid } = this.userService.getCurrentUser();
+    await this.assignToLoadingView('Please wait your request is placing!');
+    this.loading.this.afs
+      .collection('users')
+      .doc(uid)
+      .collection('requests')
+      .add(bookRequest)
+      .then(() => {
+        this.loading.dismiss();
+        this.swal.viewSuccessMessage('Request placement', 'Your request is placed successfully!');
+        console.log('Book request placed successfully');
+      })
+      .catch(error => {
+        this.loading.dismiss();
+        console.error('An error occured while placing a book request', error);
+        this.swal.viewErrorMessage(
+          'Request placement',
+          'Sorry your placement is not successful try again later'
+        );
+      });
+  };
 }
