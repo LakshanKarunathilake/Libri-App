@@ -56,4 +56,17 @@ export class BookService {
         this.swal.viewErrorMessage('Error', 'Sorry your book is not added for your shelf');
       });
   };
+
+  getBookRequests = () => {
+    const { uid } = this.userService.getCurrentUser();
+    try {
+      return this.afs
+        .collection('users')
+        .doc(uid)
+        .collection('requests')
+        .valueChanges();
+    } catch (error) {
+      console.error('Error occured while querying for book requests', error);
+    }
+  };
 }
