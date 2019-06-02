@@ -11,6 +11,7 @@ import { AccountPage } from './account.page';
 import { AccountTabMenuComponentModule } from '../components/account-tab-menu/account-tab-menu.component.module';
 import { ProfileComponent } from '../components/profile/profile.component';
 import { BorrowingsComponent } from '../components/borrowings/borrowings.component';
+import { PenaltyComponent } from '../components/penalty/penalty.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
     component: AccountPage,
     children: [
       { path: 'profile', component: ProfileComponent },
-      { path: 'borrowings', component: BorrowingsComponent }
+      { path: 'borrowings', component: BorrowingsComponent },
+      { path: 'penalty', component: PenaltyComponent }
     ]
   }
 ];
@@ -32,6 +34,6 @@ const routes: Routes = [
     MenuTitleComponentModule,
     AccountTabMenuComponentModule
   ],
-  declarations: [AccountPage, ProfileComponent, BorrowingsComponent]
+  declarations: [AccountPage, ProfileComponent, BorrowingsComponent, PenaltyComponent]
 })
 export class AccountPageModule {}
