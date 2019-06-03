@@ -1,21 +1,23 @@
 <ion-content padding>
   <div>
-    <ion-text style="padding-bottom: 5px;">Late returns</ion-text>
+    <div style="padding-bottom: 5px">Overdues</div>
     <div class="wrapper">
       <ion-card padding>
         <ion-card-title>Harry potter & Deathly Hallows</ion-card-title>
         <ion-card-subtitle class="subtitle">
           <div>
-            <span>Issue date : </span>
+            <span>Issue : </span>
             <span>2019/05/05</span>
           </div>
           <div>
-            <span>Return date : </span>
+            <span>Return: </span>
             <span>2019/05/21</span>
           </div>
         </ion-card-subtitle>
-        <ion-item-divider></ion-item-divider>
-        <ion-card-content style="display: flex;justify-content: space-between;">
+        <hr />
+        <ion-card-content
+          style="display: flex;justify-content: space-between;padding: 0;align-items: flex-end"
+        >
           <div>
             <div>
               <span> Type : </span>
@@ -27,8 +29,10 @@
             </div>
           </div>
           <div>
-            <span> Penalty amount : </span>
-            <span> <button class="square_btn">Rs.350.65</button> </span>
+            <ion-button shape="round" (click)="checkout($event)">
+              <ion-icon slot="start" name="cash"></ion-icon>
+              Rs.250.47
+            </ion-button>
           </div>
         </ion-card-content>
       </ion-card>
