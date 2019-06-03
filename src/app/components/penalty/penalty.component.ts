@@ -1,7 +1,8 @@
 import { AngularFireFunctions } from '@angular/fire/functions';
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { UserService } from 'src/app/services/user/user.service';
+import { SwalService } from 'src/app/services/swal/swal.service';
 
 @Component({
   selector: 'app-penalty',
@@ -12,32 +13,42 @@ export class PenaltyComponent implements OnInit {
   constructor(
     private aff: AngularFireFunctions,
     private loadingCtrl: LoadingController,
+    private swal: SwalService,
     private user: UserService
   ) {}
 
-  @Input() amount;
-  @Input() description;
+  handler: any;
 
-  handler: StripeCheckoutHandler;
-
-  confirmation: any;
   loading = false;
 
   ngOnInit() {
-    this.handler = StripeCheckout.configure({
-      key: 'pk_test_your_key',
-      image: '/your-avatar.png',
+    this.handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_pKqUR1gh4wxiZvBTN41bLsvV00ce1RDELI',
+      image: '../assets/img/icon.png',
       locale: 'auto',
       source: async source => {
         this.loading = true;
         const user = this.user.getCurrentUser();
-        const fun = this.aff.httpsCallable('stripeCreateCharge');
-        this.confirmation = await fun({
+        const fun = this.aff.functions.httpsCallable('penaltyPayment');
+        fun({
           source: source.id,
           uid: user.uid,
-          amount: this.amount
-        }).toPromise();
-        this.loading = false;
+          amount: 250.25
+        })
+          .then(data => {
+            this.swal.viewSuccessMessage(
+              'Payment',
+              'Thanks for the payment wait till the confirmation'
+            );
+            console.log('data', data);
+          })
+          .catch(error => {
+            console.error('error', error);
+            this.swal.viewErrorMessage(
+              'Payment',
+              'Sorry error occured while processing the payment'
+            );
+          });
       }
     });
   }
@@ -47,8 +58,8 @@ export class PenaltyComponent implements OnInit {
     const user = this.user.getCurrentUser();
     this.handler.open({
       name: 'Fireship Store',
-      description: this.description,
-      amount: this.amount,
+      description: 'Late book return',
+      amount: 250.85,
       email: user.email
     });
     e.preventDefault();
