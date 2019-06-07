@@ -22,45 +22,73 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_MenuTitleComponentModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="148,-70 148,-268 348,-268 348,-70 148,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="41,-70 41,-268 455,-268 455,-70 41,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_MenuTitleComponentModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="170,-78 170,-130 326,-130 326,-78 170,-78"/>
+<polygon fill="none" stroke="#000000" points="291,-78 291,-130 447,-130 447,-78 291,-78"/>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_MenuTitleComponentModule_imports</title>
+<polygon fill="none" stroke="#000000" points="49,-78 49,-130 283,-130 283,-78 49,-78"/>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_MenuTitleComponentModule_exports</title>
-<polygon fill="none" stroke="#000000" points="168,-208 168,-260 328,-260 328,-208 168,-208"/>
+<polygon fill="none" stroke="#000000" points="139,-208 139,-260 299,-260 299,-208 139,-208"/>
 </g>
 <!-- MenuTitleComponent -->
 <g id="node1" class="node">
 <title>MenuTitleComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="318.4313,-122 177.5687,-122 177.5687,-86 318.4313,-86 318.4313,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuTitleComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="439.4313,-122 298.5687,-122 298.5687,-86 439.4313,-86 439.4313,-122"/>
+<text text-anchor="middle" x="369" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuTitleComponent</text>
 </g>
 <!-- MenuTitleComponentModule -->
 <g id="node2" class="node">
 <title>MenuTitleComponentModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="339.9804,-187 336.9804,-191 315.9804,-191 312.9804,-187 156.0196,-187 156.0196,-151 339.9804,-151 339.9804,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuTitleComponentModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="310.9804,-187 307.9804,-191 286.9804,-191 283.9804,-187 127.0196,-187 127.0196,-151 310.9804,-151 310.9804,-187"/>
+<text text-anchor="middle" x="219" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuTitleComponentModule</text>
 </g>
 <!-- MenuTitleComponent&#45;&gt;MenuTitleComponentModule -->
 <g id="edge1" class="edge">
 <title>MenuTitleComponent&#45;&gt;MenuTitleComponentModule</title>
-<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
+<path fill="none" stroke="#000000" d="M304.8875,-122.1061C304.8875,-122.1061 304.8875,-140.991 304.8875,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="301.3875,-140.9909 304.8875,-150.991 308.3875,-140.991 301.3875,-140.9909"/>
 </g>
 <!-- MenuTitleComponent  -->
-<g id="node3" class="node">
+<g id="node5" class="node">
 <title>MenuTitleComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="319.9306,-252 176.0694,-252 176.0694,-216 319.9306,-216 319.9306,-252"/>
-<text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuTitleComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="290.9306,-252 147.0694,-252 147.0694,-216 290.9306,-216 290.9306,-252"/>
+<text text-anchor="middle" x="219" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuTitleComponent </text>
 </g>
 <!-- MenuTitleComponentModule&#45;&gt;MenuTitleComponent  -->
-<g id="edge2" class="edge">
+<g id="edge4" class="edge">
 <title>MenuTitleComponentModule&#45;&gt;MenuTitleComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M219,-187.1061C219,-187.1061 219,-205.991 219,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="215.5001,-205.9909 219,-215.991 222.5001,-205.991 215.5001,-205.9909"/>
+</g>
+<!-- CommonModule -->
+<g id="node3" class="node">
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="274.6681,-122 271.6681,-126 250.6681,-126 247.6681,-122 163.3319,-122 163.3319,-86 274.6681,-86 274.6681,-122"/>
+<text text-anchor="middle" x="219" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+</g>
+<!-- CommonModule&#45;&gt;MenuTitleComponentModule -->
+<g id="edge2" class="edge">
+<title>CommonModule&#45;&gt;MenuTitleComponentModule</title>
+<path fill="none" stroke="#000000" d="M219,-122.1061C219,-122.1061 219,-140.991 219,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="215.5001,-140.9909 219,-150.991 222.5001,-140.991 215.5001,-140.9909"/>
+</g>
+<!-- IonicModule -->
+<g id="node4" class="node">
+<title>IonicModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="145.3162,-122 142.3162,-126 121.3162,-126 118.3162,-122 56.6838,-122 56.6838,-86 145.3162,-86 145.3162,-122"/>
+<text text-anchor="middle" x="101" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">IonicModule</text>
+</g>
+<!-- IonicModule&#45;&gt;MenuTitleComponentModule -->
+<g id="edge3" class="edge">
+<title>IonicModule&#45;&gt;MenuTitleComponentModule</title>
+<path fill="none" stroke="#000000" d="M136.0838,-122.1061C136.0838,-122.1061 136.0838,-140.991 136.0838,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="132.5839,-140.9909 136.0838,-150.991 139.5839,-140.991 132.5839,-140.9909"/>
 </g>
 </g>
 </svg>

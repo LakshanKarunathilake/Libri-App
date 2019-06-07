@@ -8,29 +8,530 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">Libri documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">Libri documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AboutPageModule.html" >AboutPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AccountPageModule.html" >AccountPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AccountTabMenuComponentModule.html" >AccountTabMenuComponentModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/BooksearchPageModule.html" >BooksearchPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/CaptchaComponentModule.html" >CaptchaComponentModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/FeedbackPageModule.html" >FeedbackPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/HomePageModule.html" >HomePageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/InfoPageModule.html" >InfoPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/LoginPageModule.html" >LoginPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/MenuPageModule.html" >MenuPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/MenuTitleComponentModule.html" >MenuTitleComponentModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/OverviewPageModule.html" >OverviewPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/RequestbookPageModule.html" >RequestbookPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SignupPageModule.html" >SignupPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/TransferPageModule.html" >TransferPageModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AboutPage.html" >AboutPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AccountPage.html" >AccountPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/BookSearchView.html" >BookSearchView</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/BookViewComponent.html" >BookViewComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/BooksearchPage.html"  class="active" >BooksearchPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/BorrowingsComponent.html" >BorrowingsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CaptchaComponent.html" >CaptchaComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/FeedbackPage.html" >FeedbackPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HomePage.html" >HomePage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InfoPage.html" >InfoPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginPage.html" >LoginPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/MenuPage.html" >MenuPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/MenuTitleComponent.html" >MenuTitleComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/OverviewPage.html" >OverviewPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PenaltyComponent.html" >PenaltyComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/RequestbookPage.html" >RequestbookPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SignupPage.html" >SignupPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TransferPage.html" >TransferPage</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AuthGuard.html" >AuthGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/BookService.html" >BookService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/EventLoggerService.html" >EventLoggerService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/FcmService.html" >FcmService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/FormValidationService.html" >FormValidationService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/SwalService.html" >SwalService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UserService.html" >UserService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/Book.html" >Book</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/Feedback.html" >Feedback</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">Libri documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AboutPageModule.html" >AboutPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AccountPageModule.html" >AccountPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AccountTabMenuComponentModule.html" >AccountTabMenuComponentModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/BooksearchPageModule.html" >BooksearchPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/CaptchaComponentModule.html" >CaptchaComponentModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/FeedbackPageModule.html" >FeedbackPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/HomePageModule.html" >HomePageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/InfoPageModule.html" >InfoPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/LoginPageModule.html" >LoginPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/MenuPageModule.html" >MenuPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/MenuTitleComponentModule.html" >MenuTitleComponentModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/OverviewPageModule.html" >OverviewPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/RequestbookPageModule.html" >RequestbookPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SignupPageModule.html" >SignupPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/TransferPageModule.html" >TransferPageModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AboutPage.html" >AboutPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AccountPage.html" >AccountPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/BookSearchView.html" >BookSearchView</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/BookViewComponent.html" >BookViewComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/BooksearchPage.html"  class="active" >BooksearchPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/BorrowingsComponent.html" >BorrowingsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CaptchaComponent.html" >CaptchaComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/FeedbackPage.html" >FeedbackPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HomePage.html" >HomePage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InfoPage.html" >InfoPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginPage.html" >LoginPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/MenuPage.html" >MenuPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/MenuTitleComponent.html" >MenuTitleComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/OverviewPage.html" >OverviewPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PenaltyComponent.html" >PenaltyComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/RequestbookPage.html" >RequestbookPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SignupPage.html" >SignupPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TransferPage.html" >TransferPage</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AuthGuard.html" >AuthGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/BookService.html" >BookService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/EventLoggerService.html" >EventLoggerService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/FcmService.html" >FcmService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/FormValidationService.html" >FormValidationService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/SwalService.html" >SwalService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UserService.html" >UserService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/Book.html" >Book</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/Feedback.html" >Feedback</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content component">
                    <div class="content-data">
-
-
 
 
 <ol class="breadcrumb">
@@ -38,26 +539,18 @@
   <li>BooksearchPage</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
-</ul>
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -66,18 +559,11 @@
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
-
-
 <section>
     <h3>Metadata</h3>
     <table class="table table-sm table-hover">
         <tbody>
+
 
 
 
@@ -96,484 +582,185 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./booksearch.page.scss</code></td>
+                <td class="col-md-9"><code>booksearch.page.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./booksearch.page.html</code></td>
+                <td class="col-md-9"><code>booksearch.page.html</code></td>
             </tr>
 
 
-
-
-
-
-
-
         </tbody>
     </table>
 </section>
 
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#authorCheckbox">authorCheckbox</a>
-                            </li>
-                            <li>
-                                <a href="#books">books</a>
-                            </li>
-                            <li>
-                                <a href="#breakImageUrls">breakImageUrls</a>
-                            </li>
-                            <li>
-                                <a href="#deviceType">deviceType</a>
-                            </li>
-                            <li>
-                                <a href="#loading">loading</a>
-                            </li>
-                            <li>
-                                <a href="#sampleBooks">sampleBooks</a>
-                            </li>
-                            <li>
-                                <a href="#searchForbooks">searchForbooks</a>
-                            </li>
-                            <li>
-                                <a href="#titleCheckbox">titleCheckbox</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(bookService: <a href="../injectables/BookService.html">BookService</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/booksearch/booksearch.page.ts:51</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>bookService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/BookService.html" target="_self" >BookService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-
 
 
     <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(bookService: <a href="../injectables/BookService.html" >BookService</a>)</code>
+                        </td>
+                    </tr>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
+                </tbody>
+            </table>
+    </section>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/booksearch/booksearch.page.ts:54</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
     <section>
-    
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="authorCheckbox"></a>
-                        <span class="name">
-                            <b>
-                            authorCheckbox</b>
-                            <a href="#authorCheckbox"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>true</code>
+                            <b> authorCheckbox</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>authorCheckbox:     <code>boolean</code>
+    </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/booksearch/booksearch.page.ts:49</a></div>
+                                <i>Default value: </i><code>true</code>
                             </td>
                         </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="books"></a>
-                        <span class="name">
-                            <b>
-                            books</b>
-                            <a href="#books"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
+                            <b> books</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>books:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> breakImageUrls</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>breakImageUrls:     <code>(url: string) &#x3D;&gt; string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Split the book image urls<br>Some books contains array of urls so it should be separated otherwise it may not be able to preview</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> deviceType</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>deviceType:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> loading</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>loading:     <code>boolean</code>
+    </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/booksearch/booksearch.page.ts:50</a></div>
+                                <i>Default value: </i><code>false</code>
                             </td>
                         </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="breakImageUrls"></a>
-                        <span class="name">
-                            <b>
-                            breakImageUrls</b>
-                            <a href="#breakImageUrls"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                            <b> sampleBooks</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>sampleBooks:     <code>{ name: string; authors: string; description: string; image: string; }[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> searchForbooks</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>searchForbooks:     <code>(value: any) &#x3D;&gt; void</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> titleCheckbox</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>titleCheckbox:     <code>boolean</code>
+    </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/booksearch/booksearch.page.ts:79</a></div>
+                                <i>Default value: </i><code>true</code>
                             </td>
                         </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Split the book image urls
-Some books contains array of urls so it should be separated otherwise it may not be able to preview</p>
+                </tbody>
+            </table>
+    </section>
 </div>
-                    </td>
-                </tr>
-
-                    <tr>
-                        <td class="col-md-4">
-                          <div class="io-description">
-                                  <b>Parameters :</b>
-                                  <table class="params">
-                                      <thead>
-                                          <tr>
-                                                <td>Name</td>
-                                                    <td>Description</td>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                                <tr>
-                                                        <td>url</td>
-                                                        <td>
-                                                                <code><ul>
-<li>url string of the book images</li>
-</ul>
-</code>
-                                                        </td>
-                                                </tr>
-                                      </tbody>
-                                  </table>
-                          </div>
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="deviceType"></a>
-                        <span class="name">
-                            <b>
-                            deviceType</b>
-                            <a href="#deviceType"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/booksearch/booksearch.page.ts:47</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="loading"></a>
-                        <span class="name">
-                            <b>
-                            loading</b>
-                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/booksearch/booksearch.page.ts:51</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="sampleBooks"></a>
-                        <span class="name">
-                            <b>
-                            sampleBooks</b>
-                            <a href="#sampleBooks"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>[]</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[
-    {
-      name: &#x27;Harry Potter &amp; deathly hallows&#x27;,
-      authors: &#x27;J.K. Rowling&#x27;,
-      description: &#x60;A clash between good and evil awaits as young Harry (Daniel Radcliffe), Ron (Rupert
-        Grint) and Hermione (Emma Watson) prepare for a final battle against Lord Voldemort
-        (Ralph Fiennes). Harry has grown into a steely lad on a mission to rid the world of
-        evil. The friends must search for the Horcruxes that keep the dastardly wizard immortal.
-        Harry and Voldemort meet at Hogwarts Castle for an epic showdown where the forces of
-        darkness may finally meet their match.&#x60;,
-      image: &#x27;../assets/img/harry_potter.jpg&#x27;
-    },
-    {
-      name: &#x27;Game of Thrones&#x27;,
-      authors: &#x27;George R.R. Martin&#x27;,
-      description: &#x60; A Storm of Swords is the third of seven planned novels in A Song of Ice and Fire, a
-      fantasy series by American author George R. R. Martin. It was first published on August
-      8, 2000, in the United Kingdom,[1] with a United States edition following in November
-      2000. Its publication was preceded by a novella called Path of the Dragon, which
-      collects some of the Daenerys Targaryen chapters from the novel into a single book.&#x60;,
-      image: &#x27;../assets/img/gameofthrones.jpg&#x27;
-    },
-    {
-      name: &#x27;Head first Java&#x27;,
-      authors: &#x27;Kathy Sierra, Bert Bates&#x27;,
-      description: &#x60;Between Moore&#x27;s law and the notion of &quot;Internet time,&quot; we&#x27;re constantly being bombarded
-      with more and more information--most of it in the form of disorganized data. Turning
-      this information into useful knowledge is getting harder and harder to do, and it takes
-      time that we just don&#x27;t have. The current economic situation hasn&#x27;t helped either. With
-      money spread thin, who hasn&#x27;t had to take on new tasks and learn new things? And slashed
-      training budgets mean there&#x27;s little to rely on for learning except books- but learning
-      a complex new programming language like Java from a book is no simple task. Maybe your
-      boss is giving you two weeks to come up to speed for a&#x60;,
-      image: &#x27;../assets/img/headfirstjava.jpg&#x27;
-    }
-  ]</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/booksearch/booksearch.page.ts:10</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="searchForbooks"></a>
-                        <span class="name">
-                            <b>
-                            searchForbooks</b>
-                            <a href="#searchForbooks"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/booksearch/booksearch.page.ts:56</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="titleCheckbox"></a>
-                        <span class="name">
-                            <b>
-                            titleCheckbox</b>
-                            <a href="#titleCheckbox"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>true</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/booksearch/booksearch.page.ts:48</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-</section>
-
-</div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BookService } from &#x27;./../services/book/book.service&#x27;;
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { BookService } from &#x27;./../services/book/book.service&#x27;;
 import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
@@ -629,21 +816,23 @@ export class BooksearchPage implements OnInit {
   ngOnInit() {}
 
   searchForbooks &#x3D; value &#x3D;&gt; {
-    this.loading &#x3D; true;
-    this.bookService.searchBooks(value, &#x27;title&#x27;).then(data &#x3D;&gt; {
-      this.books &#x3D; JSON.parse(data.data[&#x27;result&#x27;]).map(record &#x3D;&gt; {
-        const url &#x3D; record[&#x27;url&#x27;];
-        if (url) {
-          const alteredURL &#x3D; this.breakImageUrls(url);
-          console.log(&#x27;al&#x27;, alteredURL);
-          record[&#x27;url&#x27;] &#x3D; alteredURL;
-        }
-        return record;
+    if (value !&#x3D;&#x3D; &#x27;&#x27;) {
+      this.loading &#x3D; true;
+      this.bookService.searchBooks(value, &#x27;title&#x27;).then(data &#x3D;&gt; {
+        this.books &#x3D; JSON.parse(data.data[&#x27;result&#x27;]).map(record &#x3D;&gt; {
+          const url &#x3D; record[&#x27;url&#x27;];
+          if (url) {
+            const alteredURL &#x3D; this.breakImageUrls(url);
+            console.log(&#x27;al&#x27;, alteredURL);
+            record[&#x27;url&#x27;] &#x3D; alteredURL;
+          }
+          return record;
+        });
+        console.log(this.books);
+        this.loading &#x3D; false;
       });
-      console.log(this.books);
-      this.loading &#x3D; false;
-    });
-    console.log(&#x27;value&#x27;, value);
+      console.log(&#x27;value&#x27;, value);
+    }
   };
 
   /**
@@ -665,109 +854,8 @@ export class BooksearchPage implements OnInit {
   };
 }
 </code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-menu-title title&#x3D;&quot;Search&quot;&gt;&lt;/app-menu-title&gt;
-&lt;ion-content&gt;
-  &lt;section&gt;
-    &lt;ion-searchbar
-      animated&#x3D;&quot;true&quot;
-      (ionChange)&#x3D;&quot;searchForbooks($event.target.value)&quot;
-      debounce&#x3D;&quot;1000&quot;
-    &gt;&lt;/ion-searchbar&gt;
-    &lt;div class&#x3D;&quot;checkbox-panel&quot;&gt;
-      &lt;ion-item&gt;
-        &lt;ion-label&gt;Title&lt;/ion-label&gt;
-        &lt;ion-checkbox slot&#x3D;&quot;start&quot;&gt;&lt;/ion-checkbox&gt;
-      &lt;/ion-item&gt;
-      &lt;ion-item&gt;
-        &lt;ion-label&gt;Authors&lt;/ion-label&gt;
-        &lt;ion-checkbox slot&#x3D;&quot;start&quot;&gt;&lt;/ion-checkbox&gt;
-      &lt;/ion-item&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-  &lt;div id&#x3D;&quot;no-result&quot; *ngIf&#x3D;&quot;books !&#x3D;&#x3D; undefined &amp;&amp; books.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;&lt;/div&gt;
-  &lt;book-search-view [book]&#x3D;&quot;book&quot; *ngFor&#x3D;&quot;let book of books&quot;&gt;&lt;/book-search-view&gt;
-  &lt;!-- Skeleton view --&gt;
-  &lt;div *ngIf&#x3D;&quot;loading&quot;&gt;
-    &lt;ion-list&gt;
-      &lt;ion-item *ngFor&#x3D;&quot;let item of [1, 2, 3, 4, 5, 6]&quot;&gt;
-        &lt;ion-thumbnail slot&#x3D;&quot;start&quot;&gt;
-          &lt;ion-skeleton-text animated&gt;&lt;/ion-skeleton-text&gt;
-        &lt;/ion-thumbnail&gt;
-        &lt;ion-label&gt;
-          &lt;h3&gt;
-            &lt;ion-skeleton-text animated style&#x3D;&quot;width: 50%&quot;&gt;&lt;/ion-skeleton-text&gt;
-          &lt;/h3&gt;
-          &lt;p&gt;
-            &lt;ion-skeleton-text animated style&#x3D;&quot;width: 80%&quot;&gt;&lt;/ion-skeleton-text&gt;
-          &lt;/p&gt;
-          &lt;p&gt;
-            &lt;ion-skeleton-text animated style&#x3D;&quot;width: 60%&quot;&gt;&lt;/ion-skeleton-text&gt;
-          &lt;/p&gt;
-        &lt;/ion-label&gt;
-      &lt;/ion-item&gt;
-    &lt;/ion-list&gt;
-  &lt;/div&gt;
-&lt;/ion-content&gt;
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./booksearch.page.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">.checkbox-panel {
-  display: flex;
-}
-
-#no-result {
-  width: 100%;
-  height: 80%;
-  background: url(../../assets/img/backgrounds/no-result.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%, auto;
-}
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
         </div>
     </div>
-
-    
-</div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-title title="Search"></app-menu-title><ion-content>  <section>    <ion-searchbar      animated="true"      (ionChange)="searchForbooks($event.target.value)"      debounce="1000"    ></ion-searchbar>    <div class="checkbox-panel">      <ion-item>        <ion-label>Title</ion-label>        <ion-checkbox slot="start"></ion-checkbox>      </ion-item>      <ion-item>        <ion-label>Authors</ion-label>        <ion-checkbox slot="start"></ion-checkbox>      </ion-item>    </div>  </section>  <div id="no-result" *ngIf="books !== undefined && books.length === 0"></div>  <book-search-view [book]="book" *ngFor="let book of books"></book-search-view>  <!-- Skeleton view -->  <div *ngIf="loading">    <ion-list>      <ion-item *ngFor="let item of [1, 2, 3, 4, 5, 6]">        <ion-thumbnail slot="start">          <ion-skeleton-text animated></ion-skeleton-text>        </ion-thumbnail>        <ion-label>          <h3>            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>          </h3>          <p>            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>          </p>          <p>            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>          </p>        </ion-label>      </ion-item>    </ion-list>  </div></ion-content></div>'
-    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AccountPage', 'selector': 'app-account'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooksearchPage', 'selector': 'app-booksearch'},{'name': 'BookSearchView', 'selector': 'book-search-view'},{'name': 'BookViewComponent', 'selector': 'app-book-view'},{'name': 'CaptchaComponent', 'selector': 'captcha'},{'name': 'FeedbackPage', 'selector': 'app-feedback'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoPage', 'selector': 'app-info'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MenuTitleComponent', 'selector': 'app-menu-title'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RequestbookPage', 'selector': 'app-requestbook'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransferPage', 'selector': 'app-transfer'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'BooksearchPage'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
 
 
 
@@ -780,7 +868,7 @@ export class BooksearchPage implements OnInit {
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -788,21 +876,8 @@ export class BooksearchPage implements OnInit {
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'BooksearchPage.html';
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -813,17 +888,20 @@ export class BooksearchPage implements OnInit {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>

@@ -8,25 +8,528 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	      <link rel="stylesheet" href="./styles/style.css">
+	    <link rel="stylesheet" href="./styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="./" class="navbar-brand">Libri documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="./">Libri documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="./" >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="modules/AboutPageModule.html" >AboutPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/AccountPageModule.html" >AccountPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/AccountTabMenuComponentModule.html" >AccountTabMenuComponentModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/AppRoutingModule.html" >AppRoutingModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/BooksearchPageModule.html" >BooksearchPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/CaptchaComponentModule.html" >CaptchaComponentModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/FeedbackPageModule.html" >FeedbackPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/HomePageModule.html" >HomePageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/InfoPageModule.html" >InfoPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/LoginPageModule.html" >LoginPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/MenuPageModule.html" >MenuPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/MenuTitleComponentModule.html" >MenuTitleComponentModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/OverviewPageModule.html" >OverviewPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/RequestbookPageModule.html" >RequestbookPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/SignupPageModule.html" >SignupPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="modules/TransferPageModule.html" >TransferPageModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="components/AboutPage.html" >AboutPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/AccountPage.html" >AccountPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/BookSearchView.html" >BookSearchView</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/BookViewComponent.html" >BookViewComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/BooksearchPage.html" >BooksearchPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/BorrowingsComponent.html" >BorrowingsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/CaptchaComponent.html" >CaptchaComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/FeedbackPage.html" >FeedbackPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/HomePage.html" >HomePage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/InfoPage.html" >InfoPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/LoginPage.html" >LoginPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/MenuPage.html" >MenuPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/MenuTitleComponent.html" >MenuTitleComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/OverviewPage.html" >OverviewPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/PenaltyComponent.html" >PenaltyComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/ProfileComponent.html" >ProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/RequestbookPage.html" >RequestbookPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/SignupPage.html" >SignupPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="components/TransferPage.html" >TransferPage</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="injectables/AuthGuard.html" >AuthGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/BookService.html" >BookService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/EventLoggerService.html" >EventLoggerService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/FcmService.html" >FcmService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/FormValidationService.html" >FormValidationService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/SwalService.html" >SwalService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/UserService.html" >UserService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="interfaces/Book.html" >Book</a>
+                                </li>
+                                <li class="link">
+                                    <a href="interfaces/Feedback.html" >Feedback</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./coverage.html"  class="active" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="./">Libri documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="./" >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="modules/AboutPageModule.html" >AboutPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/AccountPageModule.html" >AccountPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/AccountTabMenuComponentModule.html" >AccountTabMenuComponentModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/AppRoutingModule.html" >AppRoutingModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/BooksearchPageModule.html" >BooksearchPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/CaptchaComponentModule.html" >CaptchaComponentModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/FeedbackPageModule.html" >FeedbackPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/HomePageModule.html" >HomePageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/InfoPageModule.html" >InfoPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/LoginPageModule.html" >LoginPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/MenuPageModule.html" >MenuPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/MenuTitleComponentModule.html" >MenuTitleComponentModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/OverviewPageModule.html" >OverviewPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/RequestbookPageModule.html" >RequestbookPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/SignupPageModule.html" >SignupPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="modules/TransferPageModule.html" >TransferPageModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="components/AboutPage.html" >AboutPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/AccountPage.html" >AccountPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/BookSearchView.html" >BookSearchView</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/BookViewComponent.html" >BookViewComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/BooksearchPage.html" >BooksearchPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/BorrowingsComponent.html" >BorrowingsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/CaptchaComponent.html" >CaptchaComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/FeedbackPage.html" >FeedbackPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/HomePage.html" >HomePage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/InfoPage.html" >InfoPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/LoginPage.html" >LoginPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/MenuPage.html" >MenuPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/MenuTitleComponent.html" >MenuTitleComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/OverviewPage.html" >OverviewPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/PenaltyComponent.html" >PenaltyComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/ProfileComponent.html" >ProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/RequestbookPage.html" >RequestbookPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/SignupPage.html" >SignupPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="components/TransferPage.html" >TransferPage</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="injectables/AuthGuard.html" >AuthGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="injectables/BookService.html" >BookService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="injectables/EventLoggerService.html" >EventLoggerService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="injectables/FcmService.html" >FcmService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="injectables/FormValidationService.html" >FormValidationService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="injectables/SwalService.html" >SwalService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="injectables/UserService.html" >UserService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="interfaces/Book.html" >Book</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="interfaces/Feedback.html" >Feedback</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./coverage.html"  class="active" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content coverage">
                    <div class="content-data">
 
@@ -39,402 +542,511 @@
 
 
 
-
-
-
-
-
-
 <ol class="breadcrumb">
-    <li>Documentation coverage</li>
+  <li>Documentation coverage</li> 
 </ol>
 
-<div>
-    <img src="./images/coverage-badge-documentation.svg">
+<div class="coverage-badge">
+    <span>Project</span>
+    <span class="count low">6%</span>
 </div>
 
-<table class="table table-bordered coverage" id="coverage-table">
+<table class="table table-bordered coverage">
     <thead class="coverage-header">
         <tr>
             <th>File</th>
             <th>Type</th>
             <th>Identifier</th>
-            <th style="text-align:right" class="statements" data-sort-default>Statements</th>
+            <th style="text-align:right">Statements</th>
         </tr>
     </thead>
     <tbody>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
                 <a href="./components/AboutPage.html">src/app/LibraryInfo/about/about.page.ts</a>
             </td>
-            <td>component</td>
-            <td>AboutPage</td>
-            <td align="right" data-sort="0">
+            <td>
+                component
+            </td>
+            <td>
+                AboutPage
+            </td>
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/3)</span>
+                <span class="coverage-count">(0/1)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
                 <a href="./components/InfoPage.html">src/app/LibraryInfo/info/info.page.ts</a>
             </td>
-            <td>component</td>
-            <td>InfoPage</td>
-            <td align="right" data-sort="0">
+            <td>
+                component
+            </td>
+            <td>
+                InfoPage
+            </td>
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/3)</span>
+                <span class="coverage-count">(0/1)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
                 <a href="./components/OverviewPage.html">src/app/LibraryInfo/overview/overview.page.ts</a>
             </td>
-            <td>component</td>
-            <td>OverviewPage</td>
-            <td align="right" data-sort="0">
+            <td>
+                component
+            </td>
+            <td>
+                OverviewPage
+            </td>
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/3)</span>
+                <span class="coverage-count">(0/1)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
                 <a href="./components/AccountPage.html">src/app/account/account.page.ts</a>
             </td>
-            <td>component</td>
-            <td>AccountPage</td>
-            <td align="right" data-sort="0">
+            <td>
+                component
+            </td>
+            <td>
+                AccountPage
+            </td>
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/3)</span>
+                <span class="coverage-count">(0/1)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
                 <a href="./components/AppComponent.html">src/app/app.component.ts</a>
             </td>
-            <td>component</td>
-            <td>AppComponent</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/3)</span>
-            </td>
-        </tr>
-        <tr class="low">
             <td>
-                <!-- miscellaneous -->
-                <a href="./components/BooksearchPage.html">src/app/booksearch/booksearch.page.ts</a>
+                component
             </td>
-            <td>component</td>
-            <td>BooksearchPage</td>
-            <td align="right" data-sort="9">
-                <span class="coverage-percent">9 %</span>
-                <span class="coverage-count">(1/11)</span>
-            </td>
-        </tr>
-        <tr class="low">
             <td>
-                <!-- miscellaneous -->
-                <a href="./components/BookSearchView.html">src/app/components/book-search-view/book-search-view.component.ts</a>
+                AppComponent
             </td>
-            <td>component</td>
-            <td>BookSearchView</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/7)</span>
-            </td>
-        </tr>
-        <tr class="medium">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/BookViewComponent.html">src/app/components/book-view/book-view.component.ts</a>
-            </td>
-            <td>component</td>
-            <td>BookViewComponent</td>
-            <td align="right" data-sort="33">
-                <span class="coverage-percent">33 %</span>
-                <span class="coverage-count">(2/6)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/CaptchaComponent.html">src/app/components/captcha/captcha.component.ts</a>
-            </td>
-            <td>component</td>
-            <td>CaptchaComponent</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/3)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/ForgetPasswordComponent.html">src/app/components/forget-password/forget-password.component.ts</a>
-            </td>
-            <td>component</td>
-            <td>ForgetPasswordComponent</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/10)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/MenuTitleComponent.html">src/app/components/menu-title/menu-title.component.ts</a>
-            </td>
-            <td>component</td>
-            <td>MenuTitleComponent</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/4)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./injectables/FcmService.html">src/app/fcm.service.ts</a>
-            </td>
-            <td>injectable</td>
-            <td>FcmService</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/9)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/FeedbackPage.html">src/app/feedback/feedback.page.ts</a>
-            </td>
-            <td>component</td>
-            <td>FeedbackPage</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/7)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/HomePage.html">src/app/home/home.page.ts</a>
-            </td>
-            <td>component</td>
-            <td>HomePage</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/LoginPage.html">src/app/login/login.page.ts</a>
-            </td>
-            <td>component</td>
-            <td>LoginPage</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/11)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/MenuPage.html">src/app/menu/menu.page.ts</a>
-            </td>
-            <td>component</td>
-            <td>MenuPage</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/9)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./interfaces/Book.html">src/app/models/Book.ts</a>
-            </td>
-            <td>interface</td>
-            <td>Book</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./interfaces/Feedback.html">src/app/models/feedback.ts</a>
-            </td>
-            <td>interface</td>
-            <td>Feedback</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/4)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/ProfilePage.html">src/app/profile/profile.page.ts</a>
-            </td>
-            <td>component</td>
-            <td>ProfilePage</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/3)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./components/RequestbookPage.html">src/app/requestbook/requestbook.page.ts</a>
-            </td>
-            <td>component</td>
-            <td>RequestbookPage</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/3)</span>
-            </td>
-        </tr>
-        <tr class="medium">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./injectables/BookService.html">src/app/services/book/book.service.ts</a>
-            </td>
-            <td>injectable</td>
-            <td>BookService</td>
-            <td align="right" data-sort="50">
-                <span class="coverage-percent">50 %</span>
-                <span class="coverage-count">(2/4)</span>
-            </td>
-        </tr>
-        <tr class="low">
-            <td>
-                <!-- miscellaneous -->
-                <a href="./injectables/FormValidationService.html">src/app/services/form-validation.service.ts</a>
-            </td>
-            <td>injectable</td>
-            <td>FormValidationService</td>
-            <td align="right" data-sort="0">
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/2)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
-                <a href="./injectables/EventLoggerService.html">src/app/services/logger/event-logger.service.ts</a>
+                <a href="./components/BooksearchPage.html">src/app/booksearch/booksearch.page.ts</a>
             </td>
-            <td>injectable</td>
-            <td>EventLoggerService</td>
-            <td align="right" data-sort="0">
+            <td>
+                component
+            </td>
+            <td>
+                BooksearchPage
+            </td>
+            <td align="right">
+                <span class="coverage-percent">11 %</span>
+                <span class="coverage-count">(1/9)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/AccountTabMenuComponent.html">src/app/components/account-tab-menu/account-tab-menu.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                AccountTabMenuComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/BookSearchView.html">src/app/components/book-search-view/book-search-view.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                BookSearchView
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <a href="./components/BookViewComponent.html">src/app/components/book-view/book-view.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                BookViewComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(2/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/BorrowingsComponent.html">src/app/components/borrowings/borrowings.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                BorrowingsComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/CaptchaComponent.html">src/app/components/captcha/captcha.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                CaptchaComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/ForgetPasswordComponent.html">src/app/components/forget-password/forget-password.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ForgetPasswordComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/MenuTitleComponent.html">src/app/components/menu-title/menu-title.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                MenuTitleComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/PenaltyComponent.html">src/app/components/penalty/penalty.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                PenaltyComponent
+            </td>
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/5)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
-                <a href="./injectables/FirebasePerformanceService.html">src/app/services/performance/firebase-performance.service.ts</a>
+                <a href="./components/ProfileComponent.html">src/app/components/profile/profile.component.ts</a>
             </td>
-            <td>injectable</td>
-            <td>FirebasePerformanceService</td>
-            <td align="right" data-sort="0">
+            <td>
+                component
+            </td>
+            <td>
+                ProfileComponent
+            </td>
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
+                <span class="coverage-count">(0/1)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
-                <a href="./injectables/SwalService.html">src/app/services/swal/swal.service.ts</a>
+                <a href="./injectables/FcmService.html">src/app/fcm.service.ts</a>
             </td>
-            <td>injectable</td>
-            <td>SwalService</td>
-            <td align="right" data-sort="0">
+            <td>
+                injectable
+            </td>
+            <td>
+                FcmService
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/FeedbackPage.html">src/app/feedback/feedback.page.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                FeedbackPage
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./injectables/AuthGuard.html">src/app/guards/auth.guard.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                AuthGuard
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/0)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/HomePage.html">src/app/home/home.page.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                HomePage
+            </td>
+            <td align="right">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/LoginPage.html">src/app/login/login.page.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                LoginPage
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/MenuPage.html">src/app/menu/menu.page.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                MenuPage
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./interfaces/Book.html">src/app/models/Book.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                Book
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./interfaces/Feedback.html">src/app/models/feedback.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                Feedback
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/RequestbookPage.html">src/app/requestbook/requestbook.page.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                RequestbookPage
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <a href="./injectables/BookService.html">src/app/services/book/book.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                BookService
+            </td>
+            <td align="right">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(3/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./injectables/FormValidationService.html">src/app/services/form-validation.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                FormValidationService
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/0)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <a href="./injectables/EventLoggerService.html">src/app/services/logger/event-logger.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                EventLoggerService
+            </td>
+            <td align="right">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./injectables/FirebasePerformanceService.html">src/app/services/performance/firebase-performance.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                FirebasePerformanceService
+            </td>
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/4)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
+                <a href="./injectables/SwalService.html">src/app/services/swal/swal.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                SwalService
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
                 <a href="./injectables/UserService.html">src/app/services/user/user.service.ts</a>
             </td>
-            <td>injectable</td>
-            <td>UserService</td>
-            <td align="right" data-sort="16">
-                <span class="coverage-percent">16 %</span>
-                <span class="coverage-count">(1/6)</span>
+            <td>
+                injectable
+            </td>
+            <td>
+                UserService
+            </td>
+            <td align="right">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
                 <a href="./components/SignupPage.html">src/app/signup/signup.page.ts</a>
             </td>
-            <td>component</td>
-            <td>SignupPage</td>
-            <td align="right" data-sort="0">
+            <td>
+                component
+            </td>
+            <td>
+                SignupPage
+            </td>
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/10)</span>
+                <span class="coverage-count">(0/8)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
-                <!-- miscellaneous -->
                 <a href="./components/TransferPage.html">src/app/transfer/transfer.page.ts</a>
             </td>
-            <td>component</td>
-            <td>TransferPage</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
-            </td>
-        </tr>
-        <tr class="low">
             <td>
-                <!-- miscellaneous -->
-                <a href="./miscellaneous/variables.html#environment">src/environments/environment.prod.ts</a>
+                component
             </td>
-            <td>variable</td>
-            <td>environment</td>
-            <td align="right" data-sort="0">
-                <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/1)</span>
-            </td>
-        </tr>
-        <tr class="low">
             <td>
-                <!-- miscellaneous -->
-                <a href="./miscellaneous/variables.html#environment">src/environments/environment.ts</a>
+                TransferPage
             </td>
-            <td>variable</td>
-            <td>environment</td>
-            <td align="right" data-sort="0">
+            <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/1)</span>
+                <span class="coverage-count">(0/4)</span>
             </td>
         </tr>
     </tbody>
 </table>
 
-<script src="js/libs/tablesort.min.js"></script>
-<script src="js/libs/tablesort.number.min.js"></script>
-<script>
-    new Tablesort(document.getElementById('coverage-table'));
-</script>
-
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -442,21 +1054,8 @@
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
-            var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
-       </script>
-
-       <script src="./js/libs/custom-elements.min.js"></script>
-       <script src="./js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="./js/menu-wc.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 
@@ -467,17 +1066,20 @@
 
        <script src="./js/compodoc.js"></script>
 
-       <script src="./js/tabs.js"></script>
-       <script src="./js/menu.js"></script>
-       <script src="./js/libs/clipboard.min.js"></script>
-       <script src="./js/libs/prism.js"></script>
-       <script src="./js/sourceCode.js"></script>
-          <script src="./js/search/search.js"></script>
-          <script src="./js/search/lunr.min.js"></script>
-          <script src="./js/search/search-lunr.js"></script>
-          <script src="./js/search/search_index.js"></script>
-       <script src="./js/lazy-load-graphs.js"></script>
+       <script src="./js/search/search.js"></script>
+       <script src="./js/search/lunr.min.js"></script>
+       <script src="./js/search/search-lunr.js"></script>
 
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/highlight.pack.js"></script>
+       <script src="./js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="./js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>
