@@ -20,4 +20,8 @@ export class TransferPage implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
+
+  getTitle = () => {
+    return this.firstFormGroup.controls['firstCtrl'].value || 'Value not found';
+  };
 }

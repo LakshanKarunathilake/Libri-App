@@ -20,7 +20,9 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      You are now done.
+      <ion-card>
+        <ngx-qrcode [qrc-value]="getTitle()"></ngx-qrcode>
+      </ion-card>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
