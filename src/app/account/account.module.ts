@@ -18,6 +18,7 @@ const routes: Routes = [
     path: '',
     component: AccountPage,
     children: [
+      { path: '', redirectTo: 'borrowings' },
       { path: 'profile', component: ProfileComponent },
       { path: 'borrowings', component: BorrowingsComponent },
       { path: 'penalty', component: PenaltyComponent }
