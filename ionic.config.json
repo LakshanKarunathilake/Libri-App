@@ -3,5 +3,11 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/functions",
+      "proxyUrl": "https://us-central1-libri-238805.cloudfunctions.net/penaltyPayment "
+    }
+  ]
 }
