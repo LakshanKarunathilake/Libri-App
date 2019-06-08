@@ -18,6 +18,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FcmService } from './fcm.service';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFirePerformanceModule } from '@angular/fire/performance';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -38,6 +39,7 @@ import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
     AngularFireMessagingModule,
     AngularFireFunctionsModule,
     AngularFirestoreModule,
+    AngularFirePerformanceModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
