@@ -24,6 +24,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { EventLoggerService } from './services/logger/event-logger.service';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
+import { PlatformService } from './services/platform/platform.service';
+import { Device } from '@ionic-native/device/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -49,7 +51,9 @@ import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
     FcmService,
     SwalService,
     EventLoggerService,
-    FirebaseAnalytics
+    FirebaseAnalytics,
+    PlatformService,
+    Device
   ],
   bootstrap: [AppComponent]
 })
