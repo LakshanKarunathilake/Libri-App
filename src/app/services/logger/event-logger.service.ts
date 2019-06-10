@@ -53,5 +53,13 @@ export class EventLoggerService {
       ...deviceInfo
     });
   };
+
+  /**
+   * Logging account forget password change attempt
+   */
+  passwordForgetEvent = () => {
+    this.logEvent('libri_forget_password', { time: new Date() });
+  };
+
   };
 }
