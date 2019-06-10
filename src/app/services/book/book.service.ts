@@ -65,6 +65,7 @@ export class BookService {
 
   /**
    * Retrieving the information of book requests already placed by the user
+   * This will call the firebase and get the book request under users/{userId}/requests/
    */
   getBookRequests = () => {
     const { uid } = this.userService.getCurrentUser();
@@ -79,6 +80,12 @@ export class BookService {
     }
   };
 
+  /**
+   * Place a book request under the user
+   * This will create a firebase document under the collection of requests under user document
+   * @param bookRequest : An object containing the information of a bok request
+   *
+   */
   placingBookRequest = async bookRequest => {
     const { uid } = this.userService.getCurrentUser();
     await this.assignToLoadingView('Please wait your request is placing!');
