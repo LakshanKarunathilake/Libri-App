@@ -12,18 +12,26 @@ export class EventLoggerService {
     this.device = platform.is('cordova') ? 'cordova' : 'non-android';
   }
 
-  logEvent = (name, value) => {
+  /**
+   * Logging event occurred in the application
+   * These logs can be find in the firebase analytics dashboard.
+   * You have the ability to query from the type of the log and values including metadata
+   * @param type : Type of the logging event
+   * @param metadata : Additional data provided for the event
+   */
+  private logEvent = (type: string, metadata: Object = {}) => {
     console.log('Logging button click event');
-    if (this.device === 'cordova')
+    if (this.device === 'cordova') {
       this.fba
-        .logEvent('button click', { name: 'login' })
+        .logEvent(type, metadata)
         .then((res: any) => {
           console.log(res);
-          swal('done');
         })
         .catch((error: any) => {
           swal('error', error);
           console.error(error);
         });
+    }
+  };
   };
 }
