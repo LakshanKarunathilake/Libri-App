@@ -30,7 +30,9 @@
     "@capacitor/android": "^1.0.0-beta.22",
     "@capacitor/cli": "^1.0.0-beta.22",
     "@capacitor/core": "^1.0.0-beta.22",
+    "@ionic-native/barcode-scanner": "^5.7.0",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/device": "^5.7.0",
     "@ionic-native/firebase-analytics": "^5.5.1",
     "@ionic-native/keyboard": "^5.4.0",
     "@ionic-native/qr-scanner": "^5.7.0",
@@ -55,6 +57,7 @@
     "material-icons": "^0.3.1",
     "ng-recaptcha": "^4.2.1",
     "ngx-qrcode2": "0.0.9",
+    "phonegap-plugin-barcodescanner": "8.0.1",
     "rxjs": "^6.5.2",
     "sweetalert": "^2.1.2",
     "zone.js": "~0.8.29"
@@ -108,7 +111,10 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-firebase-analytics": {},
-      "cordova-plugin-qrscanner": {}
+      "cordova-plugin-qrscanner": {},
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
     },
     "platforms": [
       "android"
