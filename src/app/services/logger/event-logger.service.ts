@@ -41,5 +41,17 @@ export class EventLoggerService {
         });
     }
   };
+
+  /**
+   * Logging the login event
+   */
+  loginEvent = () => {
+    const { uid } = this.userService.getCurrentUser();
+    const deviceInfo = this.deviceInfo.getDeviceInfo();
+    this.logEvent('libri_login', {
+      uid,
+      ...deviceInfo
+    });
+  };
   };
 }
