@@ -2,14 +2,22 @@ import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import swal from 'sweetalert';
+import { UserService } from '../user/user.service';
+import { PlatformService } from '../platform/platform.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventLoggerService {
   device: string;
-  constructor(public fba: FirebaseAnalytics, private platform: Platform) {
-    this.device = platform.is('cordova') ? 'cordova' : 'non-android';
+  uid: string;
+  constructor(
+    public fba: FirebaseAnalytics,
+    private platform: Platform,
+    private userService: UserService,
+    private deviceInfo: PlatformService
+  ) {
+    this.device = this.platform.is('cordova') ? 'cordova' : 'non-android';
   }
 
   /**
