@@ -101,4 +101,33 @@ export class BookService {
         );
       });
   };
+
+  /**
+   * Placing a book transfer is taken place in this function
+   * This will only create a document under users/{userId}/transfers/
+   */
+  placeABookTransfer = async request => {
+    const { uid } = this.userService.getCurrentUser();
+    await this.assignToLoadingView('Initiating your transfer');
+    this.loading.present();
+    this.afs
+      .collection('users')
+      .doc(uid)
+      .collection('transfers')
+      .add(request)
+      .then(() => {
+        this.loading.dismiss();
+        this.swal.viewSuccessMessage(
+          'Transfer',
+          'Your transfer initiated successfully now tell your friend to scan the QR code'
+        );
+      })
+      .catch(error => {
+        this.loading.dismiss();
+        this.swal.viewErrorMessage(
+          'Trnasfer error',
+          'Sorry we can not place your transfer at the moment'
+        );
+      });
+  };
 }
