@@ -7,7 +7,7 @@ import { Device } from '@ionic-native/device/ngx';
   providedIn: 'root'
 })
 export class PlatformService {
-  deviceInfo: any;
+  private deviceInfo: any;
 
   /**
    * Querying the information of the device when it is available
@@ -40,5 +40,9 @@ export class PlatformService {
         return platform;
       }
     });
+  };
+
+  getDeviceInfo = () => {
+    return this.deviceInfo;
   };
 }
