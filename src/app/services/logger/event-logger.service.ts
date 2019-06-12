@@ -61,5 +61,7 @@ export class EventLoggerService {
     this.logEvent('libri_forget_password', { time: new Date() });
   };
 
+  bookSearchEVent = () => {
+    this.logEvent('book_search');
   };
 }
