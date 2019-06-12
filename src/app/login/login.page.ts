@@ -38,19 +38,22 @@ export class LoginPage implements OnInit {
       userEmail: ['', [Validators.required, Validators.email]],
       userPassword: ['', Validators.required]
     });
+  }
+
+  private subscribingforNotices = () => {
     this.fcm
       .getPermission()
       .then(() => this.fcm.sub('notices'))
       .catch(error => {
         console.error('Error occured', error);
       });
-  }
+  };
+
   public hasError(controlName: string, errorName: string) {
     return this.loginForm.controls[controlName].hasError(errorName);
   }
 
   loginAction = async () => {
-    this.loggger.logEvent('action', 'login');
     const userEmail = this.loginForm.controls['userEmail'].value;
     const userPassword = this.loginForm.controls['userPassword'].value;
     const loading = await this.loadingController.create({
@@ -60,6 +63,10 @@ export class LoginPage implements OnInit {
     this.afa.auth
       .signInWithEmailAndPassword(userEmail, userPassword)
       .then(() => {
+        // Loggin the event of login
+        this.loggger.loginEvent();
+        // Subscribing for notices
+        this.subscribingforNotices();
         this.swal.viewSuccessMessage('Welcome back!', '');
         this.router.navigateByUrl('menu');
       })
