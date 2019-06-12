@@ -1,3 +1,4 @@
+import { PlatformService } from './../services/platform/platform.service';
 import { SwalService } from './../services/swal/swal.service';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
@@ -24,7 +25,8 @@ export class LoginPage implements OnInit {
     private modalController: ModalController,
     private swal: SwalService,
     private fcm: FcmService,
-    private loggger: EventLoggerService
+    private loggger: EventLoggerService,
+    private platformService: PlatformService
   ) {
     this.loadingController.create({
       message: 'Please wait verifying!',
