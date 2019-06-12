@@ -17,6 +17,18 @@ import { FcmService } from '../fcm.service';
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
   loading;
+  /**
+   *
+   * @param fb Form builder for building the forms in angular material
+   * @param afa Authentication service from the Angular fire
+   * @param router Routing service for the ionic navigation
+   * @param loadingController Loading component service to preview preloader
+   * @param modalController Modal service to present the modal
+   * @param swal Swal service for the custom implementation for the sweet alerts
+   * @param fcm Firebase Cloud Messaging service for the notification creation
+   * @param loggger Logiing service for the analytics dashboard in Firebase
+   * @param platformService Service for retrieve the platform information and device information
+   */
   constructor(
     private fb: FormBuilder,
     private afa: AngularFireAuth,
