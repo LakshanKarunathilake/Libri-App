@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { SwalService } from '../services/swal/swal.service';
+import { BookService } from '../services/book/book.service';
 
 @Component({
   selector: 'app-transfer',
@@ -15,7 +16,8 @@ export class TransferPage implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private scanner: BarcodeScanner,
-    private swal: SwalService
+    private swal: SwalService,
+    private bookService: BookService
   ) {}
 
   ngOnInit() {
@@ -44,5 +46,17 @@ export class TransferPage implements OnInit {
           'You have to be on your iOS or android version inorder to access this service'
         );
       });
+  };
+
+  /**
+   * Placing the transfer request in the firebase
+   * This should contain the sender,book,issue details
+   *
+   */
+  placeATransfer = () => {
+    const book = {};
+    this.bookService.placeABookTransfer({
+      book
+    });
   };
 }
