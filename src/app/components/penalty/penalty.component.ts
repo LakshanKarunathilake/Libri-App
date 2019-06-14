@@ -70,4 +70,20 @@ export class PenaltyComponent implements OnInit {
   onPopstate() {
     this.handler.close();
   }
+
+  displayConfirmationMessage = () => {
+    this.swal.displayConfirmation(
+      'Request',
+      'Are you sure you want to place this book as a lost book',
+      this.onConfirmation
+    );
+  };
+
+  /**
+   * After user confirm the book lost request should be placed, this method should be executed
+   * This will focus on writing the relavant information on the firebase database
+   */
+  onConfirmation = () => {
+    console.log('object', 'confirmed');
+  };
 }
