@@ -12,6 +12,7 @@ import { AccountTabMenuComponentModule } from '../components/account-tab-menu/ac
 import { ProfileComponent } from '../components/profile/profile.component';
 import { BorrowingsComponent } from '../components/borrowings/borrowings.component';
 import { PenaltyComponent } from '../components/penalty/penalty.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     MenuTitleComponentModule,
-    AccountTabMenuComponentModule
+    AccountTabMenuComponentModule,
+    MatExpansionModule
   ],
   declarations: [AccountPage, ProfileComponent, BorrowingsComponent, PenaltyComponent]
 })
