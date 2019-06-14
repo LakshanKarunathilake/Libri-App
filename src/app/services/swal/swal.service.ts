@@ -14,4 +14,13 @@ export class SwalService {
   viewErrorMessage = (title: string, description: string) => {
     swal(title, description, 'error');
   };
+
+  displayConfirmation = (title: string, description: string, callback: Function) => {
+    swal(title, description, 'warning', {
+      buttons: {
+        cancel: true,
+        confirm: true
+      }
+    }).then(ok => callback());
+  };
 }
