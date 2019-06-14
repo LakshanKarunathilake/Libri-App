@@ -5,7 +5,7 @@
     payment may be rejected depending on various reasons.
   </ion-text>
   <div>
-    <div style="padding-bottom: 5px;padding-top:5px;font-weight: bold">Overdues</div>
+    <div style="padding-bottom: 2vh;padding-top:10px;font-weight: bold">Overdues</div>
     <div class="wrapper">
       <ion-card padding>
         <ion-card-title>Harry potter & Deathly Hallows</ion-card-title>
@@ -43,17 +43,29 @@
       </ion-card>
     </div>
   </div>
-  <mat-expansion-panel style="margin-top: 10px;" expanded>
+  <mat-expansion-panel style="margin-top: 2vh;padding: 0;" expanded>
     <mat-expansion-panel-header style="background-color: #056571;color: white">
       File a book-lost
     </mat-expansion-panel-header>
     <mat-panel-description style="background-color: white;">
-      <ion-text style="padding-top: 5px">
-        Select a borrowed book to file a <b>Book Lost request</b>. The library administrative have
-        to accept the request and after that only you can pay the penalty using that book. Please
-        consider the <b>Penalty</b> may exceed the book value and it will add extra charges if it is
-        overdue and depending on the book
-      </ion-text>
+      <div>
+        <ion-text style="padding-top: 5px">
+          Select a borrowed book to file a <b>Book Lost request</b>. The library administrative have
+          to accept the request and after that only you can pay the penalty using that book. Please
+          consider the <b>Penalty</b> may exceed the book value and it will add extra charges if it
+          is overdue and depending on the book
+        </ion-text>
+        <ion-list>
+          <ion-item>
+            <ion-label>Harry potter & Deathly Hallows</ion-label>
+            <ion-checkbox (click)="displayConfirmationMessage()"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Harry potter & Deathly Hallows</ion-label>
+            <ion-checkbox (click)="displayConfirmationMessage()"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </div>
     </mat-panel-description>
   </mat-expansion-panel>
 </ion-content>

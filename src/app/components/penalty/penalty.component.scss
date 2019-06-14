@@ -12,3 +12,7 @@ ion-card {
   background-color: white;
   margin: 1px;
 }
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0 0 0 5px !important;
+}
