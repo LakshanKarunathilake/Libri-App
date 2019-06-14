@@ -51,5 +51,9 @@
         >Register</ion-button
       >
     </form>
+    <ion-button (click)="openFileChooser()">
+      Open
+    </ion-button>
+    <input type="file" accept="image/*" onchange="openFile(event)" /><br />
   </ion-card>
 </ion-content>

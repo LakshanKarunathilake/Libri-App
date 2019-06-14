@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { RequestbookPage } from './requestbook.page';
 import { MenuTitleComponentModule } from '../components/menu-title/menu-title.module';
 import { MatInputModule } from '@angular/material/input';
+import { FileChooser } from '@ionic-native/file-chooser/ngx';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     MenuTitleComponentModule,
     ReactiveFormsModule
   ],
-  declarations: [RequestbookPage]
+  declarations: [RequestbookPage],
+  providers: [FileChooser]
 })
 export class RequestbookPageModule {}
