@@ -27,6 +27,8 @@ import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import { PlatformService } from './services/platform/platform.service';
 import { Device } from '@ionic-native/device/ngx';
 import { DropZoneDirective } from './directives/dropZone/drop-zone.directive';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 @NgModule({
   declarations: [AppComponent, DropZoneDirective],
   entryComponents: [],
@@ -43,6 +45,7 @@ import { DropZoneDirective } from './directives/dropZone/drop-zone.directive';
     AngularFireFunctionsModule,
     AngularFirestoreModule,
     AngularFirePerformanceModule,
+    AngularFireStorageModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
