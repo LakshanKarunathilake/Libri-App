@@ -61,7 +61,11 @@ export class EventLoggerService {
     this.logEvent('libri_forget_password', { time: new Date() });
   };
 
-  bookSearchEVent = () => {
-    this.logEvent('book_search');
+  /**
+   * Logging the book searching event
+   * @param value The value that user entered for searching
+   */
+  bookSearchEVent = value => {
+    this.logEvent('book_search', { value });
   };
 }
