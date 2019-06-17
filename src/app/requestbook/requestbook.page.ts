@@ -35,6 +35,9 @@ export class RequestbookPage implements OnInit {
     return this.requestForm.controls[control].invalid;
   }
 
+  /**
+   * opening file android
+   */
   openFileChooser = () => {
     this.chooser
       .open()
