@@ -54,7 +54,7 @@ export class RequestbookPage implements OnInit {
     reader.onload = function() {
       const dataURL = reader.result;
       const output = document.getElementById('output');
-      output.src = dataURL;
+      // output.src = dataURL;
     };
     reader.readAsDataURL(input.files[0]);
   };
