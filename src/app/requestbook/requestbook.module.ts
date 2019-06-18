@@ -9,6 +9,9 @@ import { RequestbookPage } from './requestbook.page';
 import { MenuTitleComponentModule } from '../components/menu-title/menu-title.module';
 import { MatInputModule } from '@angular/material/input';
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
+import { MatFileUploadModule } from 'angular-material-fileupload';
+import { FileuploadComponent } from '../components/fileupload/fileupload.component';
+import { FileSizePipe } from '../pipes/file-size.pipe';
 
 const routes: Routes = [
   {
@@ -25,9 +28,11 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatInputModule,
     MenuTitleComponentModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFileUploadModule
   ],
-  declarations: [RequestbookPage],
-  providers: [FileChooser]
+  declarations: [RequestbookPage, FileuploadComponent, FileSizePipe],
+  providers: [FileChooser],
+  entryComponents: [FileuploadComponent]
 })
 export class RequestbookPageModule {}
