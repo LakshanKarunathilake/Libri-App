@@ -5,6 +5,7 @@ import { Book } from './../../models/Book';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { EventLoggerService } from '../logger/event-logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ export class BookService {
     private afs: AngularFirestore,
     private userService: UserService,
     private loadingCtrl: LoadingController,
-    private swal: SwalService
+    private swal: SwalService,
+    private logger: EventLoggerService
   ) {}
 
   assignToLoadingView = async (message: string) => {
@@ -32,6 +34,7 @@ export class BookService {
    */
   searchBooks = (value, type) => {
     const searchBook = this.aff.functions.httpsCallable('searchBook');
+    this.logger.bookSearchEVent(value);
     return searchBook({ value, type });
   };
 
