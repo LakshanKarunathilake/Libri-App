@@ -13,12 +13,11 @@ export class RequestbookPage implements OnInit {
 
   ngOnInit() {
     this.requestForm = this.fb.group({
-      displayName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      libraryId: ['', [Validators.required]],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-      telephoneNumber: ['', Validators.required]
+      title: ['', Validators.required],
+      authors: ['', [Validators.required]],
+      category: ['', [Validators.required]],
+      ISBN: ['', [Validators.required]],
+      description: ['', Validators.required]
     });
   }
 
