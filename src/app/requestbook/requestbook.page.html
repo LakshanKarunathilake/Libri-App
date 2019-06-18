@@ -10,41 +10,27 @@
   <ion-card padding>
     <form [formGroup]="requestForm">
       <mat-form-field style="display: block" appearance="outline">
-        <mat-label>Enter your University email</mat-label>
-        <input matInput placeholder="Email" formControlName="email" />
-        <mat-error *ngIf="checkFormControlIsValid('email')">{{
-          getErrorMessage('email')
+        <mat-label>Enter Title of Book</mat-label>
+        <input matInput placeholder="Title" formControlName="title" />
+        <mat-error *ngIf="checkFormControlIsValid('title')">{{
+          getErrorMessage('title')
         }}</mat-error>
       </mat-form-field>
       <mat-form-field style="display: block" appearance="outline">
-        <mat-label>Enter your Library ID</mat-label>
-        <input matInput placeholder="Library ID" formControlName="libraryId" on />
-        <mat-error *ngIf="checkFormControlIsValid('libraryId')">{{
-          getErrorMessage('libraryId')
+        <mat-label>Authors</mat-label>
+        <input matInput placeholder="authors" formControlName="authors" on />
+        <mat-error *ngIf="checkFormControlIsValid('authors')">{{
+          getErrorMessage('authors')
         }}</mat-error>
       </mat-form-field>
       <mat-form-field style="display: block" appearance="outline">
-        <input matInput placeholder="password" formControlName="password" />
-        <mat-error *ngIf="checkFormControlIsValid('password')">{{
-          getErrorMessage('password')
-        }}</mat-error>
+        <input matInput placeholder="ISBN" formControlName="ISBN" />
+        <mat-error *ngIf="checkFormControlIsValid('ISBN')">{{ getErrorMessage('ISBN') }}</mat-error>
       </mat-form-field>
       <mat-form-field style="display: block" appearance="outline">
-        <input matInput placeholder="Confirm Password" formControlName="confirmPassword" />
-        <mat-error *ngIf="checkFormControlIsValid('confirmPassword')">{{
-          getErrorMessage('confirmPassword')
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field style="display: block" appearance="outline">
-        <input matInput placeholder="Name with initials" formControlName="displayName" />
-        <mat-error *ngIf="checkFormControlIsValid('displayName')">{{
-          getErrorMessage('displayName')
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field style="display: block" appearance="outline">
-        <input matInput placeholder="Contact Number" formControlName="telephoneNumber" />
-        <mat-error *ngIf="checkFormControlIsValid('telephoneNumber')">{{
-          getErrorMessage('telephoneNumber')
+        <input matInput placeholder="description" formControlName="description" />
+        <mat-error *ngIf="checkFormControlIsValid('description')">{{
+          getErrorMessage('description')
         }}</mat-error>
       </mat-form-field>
       <ion-button type="submit" color="danger" [disabled]="requestForm.invalid" (click)="onSubmit()"
@@ -55,5 +41,28 @@
       Open
     </ion-button>
     <input type="file" accept="image/*" onchange="openFile(event)" /><br />
+    <div
+      [fileUploadInputFor]="fileUploadQueue"
+      class="upload-drop-zone"
+      style="width: 450px;height: 45px;background-color: violet"
+    >
+      Just drag and drop files here
+    </div>
+
+    <div style="width: 500px">
+      <mat-file-upload-queue
+        #fileUploadQueue
+        [fileAlias]="'file'"
+        [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'"
+        multiple
+      >
+        <mat-file-upload
+          [file]="file"
+          [id]="i"
+          *ngFor="let file of fileUploadQueue.files; let i = index"
+        ></mat-file-upload>
+      </mat-file-upload-queue>
+    </div>
+    <app-fileupload></app-fileupload>
   </ion-card>
 </ion-content>
