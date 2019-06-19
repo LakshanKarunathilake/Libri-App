@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { FileChooser } from '@ionic-native/file-chooser/ngx';
 import { SwalService } from '../services/swal/swal.service';
 @Component({
   selector: 'app-requestbook',
@@ -8,7 +7,7 @@ import { SwalService } from '../services/swal/swal.service';
   styleUrls: ['./requestbook.page.scss']
 })
 export class RequestbookPage implements OnInit {
-  constructor(private fb: FormBuilder, private chooser: FileChooser, private swal: SwalService) {}
+  constructor(private fb: FormBuilder, private swal: SwalService) {}
   requestForm: FormGroup;
 
   ngOnInit() {
@@ -33,33 +32,6 @@ export class RequestbookPage implements OnInit {
   checkFormControlIsValid(control: string) {
     return this.requestForm.controls[control].invalid;
   }
-
-  /**
-   * opening file android
-   */
-  openFileChooser = () => {
-    this.chooser
-      .open()
-      .then(uri => console.log(uri))
-      .catch(e =>
-        this.swal.viewErrorMessage(
-          'Error',
-          'Sorry to upload files you have to be in Android or iOS'
-        )
-      );
-  };
-
-  openFile = file => {
-    const input = file.target;
-
-    const reader = new FileReader();
-    reader.onload = function() {
-      const dataURL = reader.result;
-      const output = document.getElementById('output');
-      // output.src = dataURL;
-    };
-    reader.readAsDataURL(input.files[0]);
-  };
 
   onSubmit = () => {};
 }
