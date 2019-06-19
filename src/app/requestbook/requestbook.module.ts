@@ -9,7 +9,6 @@ import { RequestbookPage } from './requestbook.page';
 import { MenuTitleComponentModule } from '../components/menu-title/menu-title.module';
 import { MatInputModule } from '@angular/material/input';
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
-import { MatFileUploadModule } from 'angular-material-fileupload';
 import { FileuploadComponent } from '../components/fileupload/fileupload.component';
 import { FileSizePipe } from '../pipes/file-size.pipe';
 import { DropZoneDirective } from '../directives/dropZone/drop-zone.directive';
@@ -29,8 +28,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatInputModule,
     MenuTitleComponentModule,
-    ReactiveFormsModule,
-    MatFileUploadModule
+    ReactiveFormsModule
   ],
   declarations: [RequestbookPage, DropZoneDirective, FileuploadComponent, FileSizePipe],
   providers: [FileChooser],
