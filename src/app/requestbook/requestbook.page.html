@@ -40,29 +40,6 @@
     <ion-button (click)="openFileChooser()">
       Open
     </ion-button>
-    <input type="file" accept="image/*" onchange="openFile(event)" /><br />
-    <div
-      [fileUploadInputFor]="fileUploadQueue"
-      class="upload-drop-zone"
-      style="width: 450px;height: 45px;background-color: violet"
-    >
-      Just drag and drop files here
-    </div>
-
-    <div style="width: 500px">
-      <mat-file-upload-queue
-        #fileUploadQueue
-        [fileAlias]="'file'"
-        [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'"
-        multiple
-      >
-        <mat-file-upload
-          [file]="file"
-          [id]="i"
-          *ngFor="let file of fileUploadQueue.files; let i = index"
-        ></mat-file-upload>
-      </mat-file-upload-queue>
-    </div>
     <app-fileupload></app-fileupload>
   </ion-card>
 </ion-content>
