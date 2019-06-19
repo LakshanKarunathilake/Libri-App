@@ -12,6 +12,7 @@ import { FileChooser } from '@ionic-native/file-chooser/ngx';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import { FileuploadComponent } from '../components/fileupload/fileupload.component';
 import { FileSizePipe } from '../pipes/file-size.pipe';
+import { DropZoneDirective } from '../directives/dropZone/drop-zone.directive';
 
 const routes: Routes = [
   {
@@ -31,7 +32,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatFileUploadModule
   ],
-  declarations: [RequestbookPage, FileuploadComponent, FileSizePipe],
+  declarations: [RequestbookPage, DropZoneDirective, FileuploadComponent, FileSizePipe],
   providers: [FileChooser],
   entryComponents: [FileuploadComponent]
 })

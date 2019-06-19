@@ -26,11 +26,10 @@ import { EventLoggerService } from './services/logger/event-logger.service';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import { PlatformService } from './services/platform/platform.service';
 import { Device } from '@ionic-native/device/ngx';
-import { DropZoneDirective } from './directives/dropZone/drop-zone.directive';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
-  declarations: [AppComponent, DropZoneDirective],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
