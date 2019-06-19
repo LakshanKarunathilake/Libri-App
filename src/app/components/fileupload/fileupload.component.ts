@@ -3,6 +3,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
+import { SwalService } from 'src/app/services/swal/swal.service';
 
 @Component({
   selector: 'app-fileupload',
@@ -24,7 +25,11 @@ export class FileuploadComponent implements OnInit {
   // State for dropzone CSS toggling
   isHovering: boolean;
 
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore) {}
+  constructor(
+    private storage: AngularFireStorage,
+    private db: AngularFirestore,
+    private swal: SwalService
+  ) {}
   ngOnInit(): void {}
 
   toggleHover(event: boolean) {
@@ -38,6 +43,10 @@ export class FileuploadComponent implements OnInit {
     // Client-side validation example
     if (file.type.split('/')[0] !== 'image') {
       console.error('unsupported file type :( ');
+      this.swal.viewErrorMessage(
+        'Error',
+        'Sorry only images can be uploaded, please select and image file'
+      );
       return;
     }
 

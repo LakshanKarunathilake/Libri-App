@@ -5,7 +5,7 @@
   (dropped)="startUpload($event)"
   [class.hovering]="isHovering"
 >
-  <h3>AngularFire Drop Zone</h3>
+  <h3>Drop your images here</h3>
 
   <div class="file">
     <label class="file-label">
@@ -32,9 +32,8 @@
   {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}
 
   <div *ngIf="(downloadURL | async) as url">
-    <h3>Results!</h3>
+    <h3>Book Cover</h3>
     <img [src]="url" /><br />
-    <a [href]="url" target="_blank" rel="noopener">Download Me!</a>
   </div>
 
   <button (click)="task.pause()" class="button is-warning" [disabled]="!isActive(snap)">
