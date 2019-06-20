@@ -3,6 +3,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
+import { FileUploadService } from 'src/app/services/file-upload.service';
 
 @Component({
   selector: 'app-fileupload',
@@ -27,7 +28,11 @@ export class FileuploadComponent implements OnInit {
   // State for disable the file drop
   isDropped = false;
 
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore) {}
+  constructor(
+    private storage: AngularFireStorage,
+    private db: AngularFirestore,
+    private uploader: FileUploadService
+  ) {}
   ngOnInit(): void {}
 
   toggleHover(event: boolean) {
