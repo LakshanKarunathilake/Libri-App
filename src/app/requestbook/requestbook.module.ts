@@ -30,13 +30,8 @@ const routes: Routes = [
     MenuTitleComponentModule,
     ReactiveFormsModule
   ],
-  declarations: [
-    RequestbookPage,
-    DropZoneDirective,
-    FileuploadComponent,
-    FileSizePipe,
-    FileUploadService
-  ],
+  declarations: [RequestbookPage, DropZoneDirective, FileuploadComponent, FileSizePipe],
+  providers: [FileUploadService],
   entryComponents: [FileuploadComponent]
 })
 export class RequestbookPageModule {}
