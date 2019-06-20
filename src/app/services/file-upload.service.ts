@@ -11,7 +11,7 @@ export class FileUploadService {
 
   constructor(private afs: AngularFireStorage, private afd: AngularFirestore) {}
 
-  uploadFile = (file: File, setDownloadURL: Function, setSnapshot: Function) => {
+  uploadFile = (file: File, setDownloadURL: Function, setTask: Function) => {
     // Client-side validation example
     if (file.type.split('/')[0] !== 'image') {
       console.error('unsupported file type :( ');
@@ -25,8 +25,9 @@ export class FileUploadService {
     const customMetadata = { app: 'My AngularFire-powered PWA!' };
     const task = this.afs.upload(path, file, { customMetadata });
 
+    setTask(task);
+
     const snapshot = task.snapshotChanges();
-    setSnapshot(snapshot);
 
     // The file's download URL
     snapshot
