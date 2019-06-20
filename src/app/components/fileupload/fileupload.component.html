@@ -4,6 +4,7 @@
   (hovered)="toggleHover($event)"
   (dropped)="startUpload($event)"
   [class.hovering]="isHovering"
+  *ngIf="!isDropped"
 >
   <h3>AngularFire Drop Zone</h3>
 

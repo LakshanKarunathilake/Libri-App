@@ -24,6 +24,9 @@ export class FileuploadComponent implements OnInit {
   // State for dropzone CSS toggling
   isHovering: boolean;
 
+  // State for disable the file drop
+  isDropped = false;
+
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) {}
   ngOnInit(): void {}
 
@@ -32,6 +35,7 @@ export class FileuploadComponent implements OnInit {
   }
 
   startUpload(event: FileList) {
+    this.isDropped = true;
     // The File object
     const file = event.item(0);
 
