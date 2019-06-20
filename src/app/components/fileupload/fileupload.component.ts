@@ -71,9 +71,4 @@ export class FileuploadComponent implements OnInit {
       )
       .subscribe();
   }
-
-  // Determines if the upload task is active
-  isActive(snapshot) {
-    return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes;
-  }
 }
