@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FileuploadComponent } from '../components/fileupload/fileupload.component';
 import { FileSizePipe } from '../pipes/file-size.pipe';
 import { DropZoneDirective } from '../directives/dropZone/drop-zone.directive';
+import { FileUploadService } from '../services/file-upload/file-upload.service';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     ReactiveFormsModule
   ],
   declarations: [RequestbookPage, DropZoneDirective, FileuploadComponent, FileSizePipe],
+  providers: [FileUploadService],
   entryComponents: [FileuploadComponent]
 })
 export class RequestbookPageModule {}
