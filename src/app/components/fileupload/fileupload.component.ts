@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireUploadTask } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
-import { FileUploadService } from 'src/app/services/file-upload.service';
+import { FileUploadService } from 'src/app/services/file-upload/file-upload.service';
 
 @Component({
   selector: 'app-fileupload',
