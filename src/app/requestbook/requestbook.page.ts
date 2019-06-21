@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { SwalService } from '../services/swal/swal.service';
+import { BookService } from '../services/book/book.service';
 @Component({
   selector: 'app-requestbook',
   templateUrl: './requestbook.page.html',
   styleUrls: ['./requestbook.page.scss']
 })
 export class RequestbookPage implements OnInit {
-  constructor(private fb: FormBuilder, private swal: SwalService) {}
+  constructor(
+    private fb: FormBuilder,
+    private swal: SwalService,
+    private bookService: BookService
+  ) {}
   requestForm: FormGroup;
 
   ngOnInit() {
