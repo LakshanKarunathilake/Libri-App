@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
 import { SwalService } from '../services/swal/swal.service';
 import { BookService } from '../services/book/book.service';
 @Component({
@@ -18,7 +18,12 @@ export class RequestbookPage implements OnInit {
   ngOnInit() {
     this.requestForm = this.fb.group({
       title: ['', Validators.required],
-      authors: ['', [Validators.required]],
+      // authors: ['', [Validators.required]],
+      authors: this.fb.array([
+        this.fb.group({
+          author: ['', Validators.required]
+        })
+      ]),
       category: ['', [Validators.required]],
       ISBN: ['', [Validators.required]],
       description: ['', Validators.required]
@@ -34,9 +39,26 @@ export class RequestbookPage implements OnInit {
       : '';
   };
 
+  get authors() {
+    return this.requestForm.get('authors') as FormArray;
+  }
+
+  addAuthor() {
+    const author = this.fb.group({
+      author: ['', Validators.required]
+    });
+    this.authors.push(author);
+  }
+
+  removeAuthor(i) {
+    this.authors.removeAt(i);
+  }
+
   checkFormControlIsValid(control: string) {
     return this.requestForm.controls[control].invalid;
   }
 
-  onSubmit = () => {};
+  onSubmit = () => {
+    // this.bookService.placingBookRequest();
+  };
 }

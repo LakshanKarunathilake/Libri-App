@@ -7,7 +7,10 @@
     <b>Book title, Author, Edition, Publisher, ISBN, Image</b>
   </ion-text>
 
-  <ion-card padding>
+  <ion-card
+    padding
+    style="height: 80vh;display:flex;flex-direction: column;align-content: space-between"
+  >
     <form [formGroup]="requestForm">
       <mat-form-field style="display: block" appearance="outline">
         <mat-label>Enter Title of Book</mat-label>
@@ -16,13 +19,25 @@
           getErrorMessage('title')
         }}</mat-error>
       </mat-form-field>
-      <mat-form-field style="display: block" appearance="outline">
-        <mat-label>Authors</mat-label>
-        <input matInput placeholder="authors" formControlName="authors" on />
-        <mat-error *ngIf="checkFormControlIsValid('authors')">{{
-          getErrorMessage('authors')
-        }}</mat-error>
-      </mat-form-field>
+      <div style="display: flex;align-items: center;">
+        <div style="width: 80%" formArrayName="authors">
+          <div *ngFor="let author of authors.controls; let i = index" [formGroupName]="i">
+            <mat-form-field appearance="outline" style="display: block">
+              <mat-label>Authors</mat-label>
+              <input matInput placeholder="authors" formControlName="author" on />
+              <mat-error *ngIf="checkFormControlIsValid('authors')">{{
+                getErrorMessage('authors')
+              }}</mat-error>
+            </mat-form-field>
+            <ion-button *ngIf="authors.controls.length > 1" (click)="removeAuthor()"
+              >Delete</ion-button
+            >
+          </div>
+        </div>
+        <div style="width: 20%">
+          <ion-button size="small" style="float: right" (click)="addAuthor()">add</ion-button>
+        </div>
+      </div>
       <mat-form-field style="display: block" appearance="outline">
         <input matInput placeholder="ISBN" formControlName="ISBN" />
         <mat-error *ngIf="checkFormControlIsValid('ISBN')">{{ getErrorMessage('ISBN') }}</mat-error>
