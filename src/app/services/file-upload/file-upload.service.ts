@@ -51,4 +51,8 @@ export class FileUploadService {
   getFileDate = () => {
     return this.fileData;
   };
+
+  resetFileDate = () => {
+    this.fileData = { imageURL: '', size: 0 };
+  };
 }
