@@ -48,7 +48,7 @@
           getErrorMessage('description')
         }}</mat-error>
       </mat-form-field>
-      <ion-button type="submit" color="danger" [disabled]="requestForm.invalid" (click)="onSubmit()"
+      <ion-button type="submit" color="danger" [disabled]="requestForm.errors" (click)="onSubmit()"
         >Register</ion-button
       >
     </form>

@@ -1,3 +1,4 @@
+import { BookRequest } from 'src/app/models/BookRequest';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
 import { SwalService } from '../services/swal/swal.service';
@@ -18,16 +19,12 @@ export class RequestbookPage implements OnInit {
   ngOnInit() {
     this.requestForm = this.fb.group({
       title: ['', Validators.required],
-      // authors: ['', [Validators.required]],
-      authors: this.fb.array([
-        this.fb.group({
-          author: ['', Validators.required]
-        })
-      ]),
+      authors: this.fb.array([]),
       category: ['', [Validators.required]],
       ISBN: ['', [Validators.required]],
       description: ['', Validators.required]
     });
+    this.addAuthor();
   }
 
   getErrorMessage = (controller: string) => {
@@ -59,6 +56,16 @@ export class RequestbookPage implements OnInit {
   }
 
   onSubmit = () => {
+    let authors: Array<String> = this.requestForm.get('authors').value;
+    authors = authors.map(authorfield => authorfield['author']);
+    const request: BookRequest = {
+      description: this.requestForm.get('description').value,
+      ISBN: this.requestForm.get('ISBN').value,
+      title: this.requestForm.get('title').value,
+      authors
+    };
+    console.log('request', request);
+    console.log('object', this.requestForm.errors);
     // this.bookService.placingBookRequest();
   };
 }
