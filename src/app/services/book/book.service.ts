@@ -6,6 +6,7 @@ import { AngularFireFunctions } from '@angular/fire/functions';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { EventLoggerService } from '../logger/event-logger.service';
+import { FileUploadService } from '../file-upload/file-upload.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class BookService {
     private userService: UserService,
     private loadingCtrl: LoadingController,
     private swal: SwalService,
-    private logger: EventLoggerService
+    private logger: EventLoggerService,
+    private fileUpload: FileUploadService
   ) {}
 
   assignToLoadingView = async (message: string) => {
