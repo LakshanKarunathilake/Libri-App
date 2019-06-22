@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { EventLoggerService } from '../logger/event-logger.service';
 import { FileUploadService } from '../file-upload/file-upload.service';
+import { BookRequest } from 'src/app/models/BookRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -91,7 +92,7 @@ export class BookService {
    * @param bookRequest : An object containing the information of a bok request
    *
    */
-  placingBookRequest = async bookRequest => {
+  placingBookRequest = async (bookRequest: BookRequest) => {
     const { uid } = this.userService.getCurrentUser();
     await this.assignToLoadingView('Please wait your request is placing!');
     this.loading.this.afs
