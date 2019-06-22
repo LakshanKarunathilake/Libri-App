@@ -1,6 +1,7 @@
 export interface BookRequest {
   title: string;
-  authors: string;
+  authors: Array<String>;
   ISBN: string;
   description: string;
+  file?: JSON;
 }
