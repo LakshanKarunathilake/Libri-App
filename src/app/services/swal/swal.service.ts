@@ -24,4 +24,15 @@ export class SwalService {
     }).then(ok => callback(ok));
   };
 
+  displayAutoHideMessage = (title: string, description: string, icon: string, timer: number) => {
+    swal({
+      title,
+      text: description,
+      icon,
+      timer,
+      buttons: {
+        confirm: { visible: false }
+      }
+    });
+  };
 }
