@@ -1,7 +1,6 @@
 import { BookRequest } from 'src/app/models/BookRequest';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
-import { SwalService } from '../services/swal/swal.service';
 import { BookService } from '../services/book/book.service';
 @Component({
   selector: 'app-requestbook',
@@ -9,11 +8,7 @@ import { BookService } from '../services/book/book.service';
   styleUrls: ['./requestbook.page.scss']
 })
 export class RequestbookPage implements OnInit {
-  constructor(
-    private fb: FormBuilder,
-    private swal: SwalService,
-    private bookService: BookService
-  ) {}
+  constructor(private fb: FormBuilder, private bookService: BookService) {}
   requestForm: FormGroup;
 
   ngOnInit() {
