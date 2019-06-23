@@ -51,12 +51,13 @@
         <mat-error *ngIf="checkFormControlIsValid('ISBN')">{{ getErrorMessage('ISBN') }}</mat-error>
       </mat-form-field>
       <mat-form-field style="display: block" appearance="outline">
+        <mat-label>Enter Description</mat-label>
         <input matInput placeholder="description" formControlName="description" />
         <mat-error *ngIf="checkFormControlIsValid('description')">{{
           getErrorMessage('description')
         }}</mat-error>
       </mat-form-field>
-      <ion-button type="submit" color="danger" [disabled]="requestForm.errors" (click)="onSubmit()"
+      <ion-button type="submit" color="danger" [disabled]="requestForm.invalid" (click)="onSubmit()"
         >Register</ion-button
       >
     </form>
