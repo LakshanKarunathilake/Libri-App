@@ -21,6 +21,7 @@ export class SwalService {
         cancel: true,
         confirm: true
       }
-    }).then(ok => callback());
+    }).then(ok => callback(ok));
   };
+
 }
