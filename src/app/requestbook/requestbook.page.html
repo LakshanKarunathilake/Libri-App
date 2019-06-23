@@ -57,10 +57,17 @@
           getErrorMessage('description')
         }}</mat-error>
       </mat-form-field>
-      <ion-button type="submit" color="danger" [disabled]="requestForm.invalid" (click)="onSubmit()"
-        >Register</ion-button
-      >
     </form>
     <app-fileupload></app-fileupload>
+    <div>
+      <ion-button
+        color="danger"
+        [disabled]="requestForm.invalid"
+        (click)="onSubmit()"
+        class="ion-float-right"
+      >
+        Submit
+      </ion-button>
+    </div>
   </ion-card>
 </ion-content>
