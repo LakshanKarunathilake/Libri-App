@@ -59,8 +59,7 @@ export class RequestbookPage implements OnInit {
       title: this.requestForm.get('title').value,
       authors
     };
-    console.log('request', request);
-    console.log('object', this.requestForm.errors);
-    // this.bookService.placingBookRequest();
+
+    this.bookService.placingBookRequest(request);
   };
 }
