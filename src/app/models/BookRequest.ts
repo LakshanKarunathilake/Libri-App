@@ -3,5 +3,5 @@ export interface BookRequest {
   authors: Array<String>;
   ISBN: string;
   description: string;
-  file?: JSON;
+  file?: any;
 }
