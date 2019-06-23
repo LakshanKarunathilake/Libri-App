@@ -94,10 +94,13 @@ export class BookService {
    */
   placingBookRequest = async (bookRequest: BookRequest) => {
     const imageDetails = this.fileUpload.getFileDate();
-    if (imageDetails.imageURL !== '') {
+    bookRequest.file = imageDetails;
+
+    const updateDB = async () => {
       const { uid } = this.userService.getCurrentUser();
       await this.assignToLoadingView('Please wait your request is placing!');
-      this.loading.this.afs
+      this.loading.present();
+      this.afs
         .collection('users')
         .doc(uid)
         .collection('requests')
@@ -115,11 +118,27 @@ export class BookService {
             'Sorry your placement is not successful try again later'
           );
         });
+    };
+    if (imageDetails.imageURL !== '') {
+      updateDB();
     } else {
       this.swal.displayConfirmation(
-        'Image',
-        'We can provide better service if you can provide an image file',
-        () => {}
+        'Image request',
+        'We can provide a better service if you can provide a picture of the book',
+        ok => {
+          if (ok) {
+            updateDB();
+            console.log('true', ok);
+          } else {
+            console.log('false', ok);
+            this.swal.displayAutoHideMessage(
+              'Waiting...',
+              'Waiting until your upload if you dont have image please click cancel button in confirm menu',
+              '',
+              3000
+            );
+          }
+        }
       );
     }
   };
