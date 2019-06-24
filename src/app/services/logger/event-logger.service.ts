@@ -68,4 +68,12 @@ export class EventLoggerService {
   bookSearchEVent = value => {
     this.logEvent('book_search', { value });
   };
+
+  /**
+   * Logging placing book request event
+   *
+   */
+  bookRequestEvent = value => {
+    this.logEvent('book_request', { value });
+  };
 }
