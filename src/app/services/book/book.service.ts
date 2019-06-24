@@ -171,4 +171,14 @@ export class BookService {
         );
       });
   };
+
+  /**
+   * This method will trigger a firebase cloud function and find out the status of book availability
+   * If the book is available, the method will return the status as available
+   * If the book is on-loan status the method will return the status as onLoan and will notify the approximate date of return
+   * @param biblionumber The number of the biblio or book
+   */
+  checkBookAvailabilityStatus = (biblionumber: string) => {
+    this.aff.functions.httpsCallable('isBookAvailable')({ biblionumber });
+  };
 }
