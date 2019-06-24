@@ -1,5 +1,6 @@
 import { BookService } from './../services/book/book.service';
 import { Component, OnInit } from '@angular/core';
+import { EventLoggerService } from '../services/logger/event-logger.service';
 
 @Component({
   selector: 'app-booksearch',
@@ -49,12 +50,13 @@ export class BooksearchPage implements OnInit {
   authorCheckbox = true;
   books: any;
   loading = false;
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private logger: EventLoggerService) {}
 
   ngOnInit() {}
 
   searchForbooks = value => {
     if (value !== '') {
+      this.logger.bookSearchEVent(value);
       this.loading = true;
       this.bookService.searchBooks(value, 'title').then(data => {
         this.books = JSON.parse(data.data['result']).map(record => {
