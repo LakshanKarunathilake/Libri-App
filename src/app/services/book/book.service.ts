@@ -179,6 +179,6 @@ export class BookService {
    * @param biblionumber The number of the biblio or book
    */
   checkBookAvailabilityStatus = (biblionumber: string) => {
-    this.aff.functions.httpsCallable('isBookAvailable')({ biblionumber });
+    return this.aff.functions.httpsCallable('isBookAvailable')({ biblionumber });
   };
 }
