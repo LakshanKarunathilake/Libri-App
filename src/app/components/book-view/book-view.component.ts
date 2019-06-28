@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { BookService } from 'src/app/services/book/book.service';
+import { Book } from 'src/app/models/Book';
 
 @Component({
   selector: 'app-book-view',
@@ -9,8 +10,13 @@ import { BookService } from 'src/app/services/book/book.service';
 })
 export class BookViewComponent implements OnInit {
   constructor(private modalController: ModalController, private bookService: BookService) {}
-  @Input() book;
-  ngOnInit() {}
+  @Input() book: Book;
+
+  async ngOnInit() {
+    this.bookService
+      .checkBookAvailabilityStatus(this.book.biblionumber)
+      .then(data => console.log('data', data));
+  }
 
   /**
    * Closing the book view modal

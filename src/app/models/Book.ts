@@ -1,7 +1,10 @@
 export interface Book {
+  biblionumber: string;
   title: string;
-  authors: string;
-  copyrightdate: string;
+  author: string;
   abstract: string;
+  copyrightdate: string;
+  biblioitemnumber: string;
+  isbn: string;
   url: string;
 }

@@ -2,6 +2,7 @@ import { BookService } from './../../services/book/book.service';
 import { BookViewComponent } from '../book-view/book-view.component';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit, Input } from '@angular/core';
+import { Book } from 'src/app/models/Book';
 
 @Component({
   selector: 'book-search-view',
@@ -9,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./book-search-view.component.scss']
 })
 export class BookSearchView implements OnInit {
-  @Input() book;
+  @Input() book: Book;
   constructor(private modalController: ModalController, private bookService: BookService) {}
 
   ngOnInit() {}
