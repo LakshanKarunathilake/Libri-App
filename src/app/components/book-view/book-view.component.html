@@ -12,7 +12,13 @@
         <ion-row>
           <ion-col sizeXs="12" sizeXl="4"><ion-text class="title">Availability</ion-text></ion-col>
           <ion-col sizeXs="12" sizeXl="8">
-            {{ book.abstract }}
+            <div *ngIf="availability !== ''" style="display: flex;align-items: center">
+              <span class="dot-unavailable"></span>Back by : {{ availability }}
+            </div>
+            <div *ngIf="availability === ''">
+              <span class="dot-available"> </span>
+              Available
+            </div>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -21,16 +27,22 @@
             {{ book.abstract }}
           </ion-col>
         </ion-row>
-        <!-- <ion-row>
+        <ion-row>
           <ion-col sizeXs="12" sizeXl="4">
-            <ion-text class="title">Tags</ion-text>
+            <ion-text class="title">Copyright date</ion-text>
           </ion-col>
           <ion-col sizeXs="12" sizeXl="8">
-            <ion-chip *ngFor="let tag of book.tags" color="tag.color">
-              <ion-label color="dark">{{ tag.value }}</ion-label>
-            </ion-chip>
+            {{ book.copyrightdate }}
           </ion-col>
-        </ion-row> -->
+        </ion-row>
+        <ion-row>
+          <ion-col sizeXs="12" sizeXl="4">
+            <ion-text class="title">ISBN</ion-text>
+          </ion-col>
+          <ion-col sizeXs="12" sizeXl="8">
+            {{ book.isbn }}
+          </ion-col>
+        </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
