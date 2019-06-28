@@ -57,6 +57,7 @@ export class BooksearchPage implements OnInit {
   searchForbooks = value => {
     if (value !== '') {
       this.logger.bookSearchEVent(value);
+      this.books = undefined;
       this.loading = true;
       this.bookService.searchBooks(value, 'title').then(data => {
         this.books = JSON.parse(data.data['result']).map(record => {
