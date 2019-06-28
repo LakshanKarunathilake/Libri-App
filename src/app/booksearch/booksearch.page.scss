@@ -10,9 +10,13 @@
   background-position: center center;
   background-size: 100% 100%, auto;
 }
-
-ion-content {
-  --backgroundL: url(../../assets/img/backgrounds/search-web.svg) no-repeat center center fixed;
+#before-search {
+  height: 80%;
+  background: url(../../assets/img/backgrounds/search-web.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%, auto;
+  padding: 0;
 }
 
 /* For mobile devices */
