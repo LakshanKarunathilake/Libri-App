@@ -79,7 +79,7 @@ export class LoginPage implements OnInit {
         this.loggger.loginEvent();
         // Subscribing for notices
         this.subscribingforNotices();
-        this.swal.viewSuccessMessage('Welcome back!', '');
+        this.swal.displayAutoHideMessage('Welcome back!', '', 'success', 1500);
         this.router.navigateByUrl('menu');
       })
       .catch(error => {
