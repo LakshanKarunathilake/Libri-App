@@ -2,12 +2,17 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireFunctions } from '@angular/fire/functions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private afa: AngularFireAuth, private afs: AngularFirestore) {}
+  constructor(
+    private afa: AngularFireAuth,
+    private afs: AngularFirestore,
+    private aff: AngularFireFunctions
+  ) {}
 
   /**
    * Creating a user in with the given credentials
