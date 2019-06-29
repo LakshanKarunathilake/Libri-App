@@ -9,18 +9,27 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class UserService {
   constructor(private afa: AngularFireAuth, private afs: AngularFirestore) {}
 
+  /**
+   * Creating a user in with the given credentials
+   * @param userEmail Provide a valid email for registration
+   * @param password Provide a password for the account creation
+   */
   createUser = (userEmail: string, password: string) => {
     return this.afa.auth.createUserWithEmailAndPassword(userEmail, password);
   };
 
+  /**
+   * Initiate a confirmation email for the given user email
+   * This will can be used to activate the user
+   */
   sendEmailConfirmation = () => {
     return auth().currentUser.sendEmailVerification();
   };
 
   /**
    * Update the displayname and the phone number of a user
-   * @param {String} phoneNumber
-   * @param {String} displayName
+   * @param phoneNumber
+   * @param displayName
    */
   updateUserDetails = async (displayName, phoneNumber) => {
     console.log('updating user details', phoneNumber, displayName);
