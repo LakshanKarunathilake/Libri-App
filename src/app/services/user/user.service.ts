@@ -43,6 +43,9 @@ export class UserService {
       .set({ phoneNumber, displayName, uid, emailVerified, email });
   };
 
+  /**
+   * Get the information about the current logged in user
+   */
   getCurrentUser = () => {
     return this.afa.auth.currentUser;
   };
