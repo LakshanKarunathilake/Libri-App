@@ -129,7 +129,7 @@
                                     <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -237,7 +237,7 @@
                                     <a href="../injectables/FcmService.html" >FcmService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/FileUploadService.html" >FileUploadService</a>
+                                    <a href="../injectables/FileUploadService.html"  class="active" >FileUploadService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
@@ -434,7 +434,7 @@
                                            <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -542,7 +542,7 @@
                                            <a href="../injectables/FcmService.html" >FcmService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/FileUploadService.html" >FileUploadService</a>
+                                           <a href="../injectables/FileUploadService.html"  class="active" >FileUploadService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
@@ -624,150 +624,177 @@
                    
                    </nav>
                </div>
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>AppComponent</li>
+  <li>Injectables</li>
+  <li>FileUploadService</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
+</ul>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-        </li>
-        <li>
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="infos"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
-
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/file-upload/file-upload.service.ts</code>
+        </p>
 
 
+            <section>
+                <h3 id="constructor">Constructor</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>constructor(afs: AngularFireStorage, afd: AngularFirestore)</code>
+                                </td>
+                            </tr>
+            
+                        </tbody>
+                    </table>
+            </section>
 
 
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>app.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-    <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>constructor(platform: Platform, splashScreen: SplashScreen, statusBar: StatusBar, fcm: <a href="../injectables/FcmService.html" >FcmService</a>)</code>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-    </section>
-
-    <section>
-        <h3 id="methods">Methods</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> initializeApp</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>initializeApp()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-
-</div>
-        <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;;
-
-import { Platform } from &#x27;@ionic/angular&#x27;;
-import { SplashScreen } from &#x27;@ionic-native/splash-screen/ngx&#x27;;
-import { StatusBar } from &#x27;@ionic-native/status-bar/ngx&#x27;;
-import { FcmService } from &#x27;./fcm.service&#x27;;
-
-@Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;app.component.html&#x27;
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> fileData</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-lock"></span><code>fileData:     <code>{ imageURL: string; size: number; }</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> getFileDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>getFileDate:     <code>() &#x3D;&gt; { imageURL: string; size: number; }</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> resetFileDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>resetFileDate:     <code>() &#x3D;&gt; void</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> uploadFile</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>uploadFile:     <code>(file: File, setDownloadURL: Function, setTask: Function) &#x3D;&gt; void</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { AngularFireStorage } from &#x27;@angular/fire/storage&#x27;;
+import { tap, finalize } from &#x27;rxjs/operators&#x27;;
+import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private fcm: FcmService
-  ) {
-    this.initializeApp();
-  }
+export class FileUploadService {
+  // downloadble image url and size db
+  private fileData &#x3D; { imageURL: &#x27;&#x27;, size: 0 };
 
-  initializeApp() {
-    this.platform.ready().then(() &#x3D;&gt; {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.fcm.showMessages();
-    });
-  }
+  constructor(private afs: AngularFireStorage, private afd: AngularFirestore) {}
+
+  uploadFile &#x3D; (file: File, setDownloadURL: Function, setTask: Function) &#x3D;&gt; {
+    // Client-side validation example
+    if (file.type.split(&#x27;/&#x27;)[0] !&#x3D;&#x3D; &#x27;image&#x27;) {
+      console.error(&#x27;unsupported file type :( &#x27;);
+      return;
+    }
+
+    // The storage path
+    const path &#x3D; &#x60;request_images/${new Date().getTime()}_${file.name}&#x60;;
+
+    // Totally optional metadata
+    const customMetadata &#x3D; { app: &#x27;My AngularFire-powered PWA!&#x27; };
+    const task &#x3D; this.afs.upload(path, file, { customMetadata });
+
+    setTask(task);
+
+    const snapshot &#x3D; task.snapshotChanges();
+
+    // The file&#x27;s download URL
+    snapshot
+      .pipe(
+        tap(async snap &#x3D;&gt; {
+          if (snap.bytesTransferred &#x3D;&#x3D;&#x3D; snap.totalBytes) {
+            this.fileData.size &#x3D; snap.totalBytes;
+          }
+        }),
+        finalize(async () &#x3D;&gt; {
+          this.fileData.imageURL &#x3D; await this.afs
+            .ref(path)
+            .getDownloadURL()
+            .toPromise();
+          setDownloadURL(this.afs.ref(path).getDownloadURL());
+        })
+      )
+      .subscribe();
+  };
+
+  getFileDate &#x3D; () &#x3D;&gt; {
+    return this.fileData;
+  };
+
+  resetFileDate &#x3D; () &#x3D;&gt; {
+    this.fileData &#x3D; { imageURL: &#x27;&#x27;, size: 0 };
+  };
 }
 </code></pre>
-        </div>
     </div>
-
-
-
+</div>
 
 
 

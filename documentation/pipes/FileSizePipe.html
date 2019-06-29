@@ -129,7 +129,7 @@
                                     <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -295,7 +295,7 @@
                                 id="xs-pipes-links"
                             >
                                 <li class="link">
-                                    <a href="../pipes/FileSizePipe.html" >FileSizePipe</a>
+                                    <a href="../pipes/FileSizePipe.html"  class="active" >FileSizePipe</a>
                                 </li>
                         </ul>
                     </li>
@@ -434,7 +434,7 @@
                                            <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -600,7 +600,7 @@
                                        id="pipes-links"
                    >
                                        <li class="link">
-                                           <a href="../pipes/FileSizePipe.html" >FileSizePipe</a>
+                                           <a href="../pipes/FileSizePipe.html"  class="active" >FileSizePipe</a>
                                        </li>
                                </ul>
                            </li>
@@ -624,151 +624,74 @@
                    
                    </nav>
                </div>
-               <div class="content component">
+               <div class="content pipe">
                    <div class="content-data">
 
 
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>AppComponent</li>
+  <li>Pipes</li>
+  <li>FileSizePipe</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
+</ul>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-        </li>
-        <li>
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="infos"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
-
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/pipes/file-size.pipe.ts</code>
+        </p>
 
 
 
+    </div>
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 
+const FILE_SIZE_UNITS &#x3D; [&#x27;B&#x27;, &#x27;KB&#x27;, &#x27;MB&#x27;, &#x27;GB&#x27;, &#x27;TB&#x27;, &#x27;PB&#x27;, &#x27;EB&#x27;, &#x27;ZB&#x27;, &#x27;YB&#x27;];
+const FILE_SIZE_UNITS_LONG &#x3D; [
+  &#x27;Bytes&#x27;,
+  &#x27;Kilobytes&#x27;,
+  &#x27;Megabytes&#x27;,
+  &#x27;Gigabytes&#x27;,
+  &#x27;Pettabytes&#x27;,
+  &#x27;Exabytes&#x27;,
+  &#x27;Zettabytes&#x27;,
+  &#x27;Yottabytes&#x27;
+];
 
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>app.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-    <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>constructor(platform: Platform, splashScreen: SplashScreen, statusBar: StatusBar, fcm: <a href="../injectables/FcmService.html" >FcmService</a>)</code>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-    </section>
-
-    <section>
-        <h3 id="methods">Methods</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> initializeApp</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>initializeApp()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-
-</div>
-        <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;;
-
-import { Platform } from &#x27;@ionic/angular&#x27;;
-import { SplashScreen } from &#x27;@ionic-native/splash-screen/ngx&#x27;;
-import { StatusBar } from &#x27;@ionic-native/status-bar/ngx&#x27;;
-import { FcmService } from &#x27;./fcm.service&#x27;;
-
-@Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;app.component.html&#x27;
+@Pipe({
+  name: &#x27;fileSize&#x27;
 })
-export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private fcm: FcmService
-  ) {
-    this.initializeApp();
-  }
+export class FileSizePipe implements PipeTransform {
+  transform(sizeInBytes: number, longForm: boolean): string {
+    const units &#x3D; longForm ? FILE_SIZE_UNITS_LONG : FILE_SIZE_UNITS;
 
-  initializeApp() {
-    this.platform.ready().then(() &#x3D;&gt; {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.fcm.showMessages();
-    });
+    let power &#x3D; Math.round(Math.log(sizeInBytes) / Math.log(1024));
+    power &#x3D; Math.min(power, units.length - 1);
+
+    const size &#x3D; sizeInBytes / Math.pow(1024, power); // size in new units
+    const formattedSize &#x3D; Math.round(size * 100) / 100; // keep up to 2 decimals
+    const unit &#x3D; units[power];
+
+    return size ? &#x60;${formattedSize} ${unit}&#x60; : &#x27;0&#x27;;
   }
 }
 </code></pre>
-        </div>
     </div>
-
-
-
-
+</div>
 
 
 

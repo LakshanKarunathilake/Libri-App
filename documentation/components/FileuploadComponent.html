@@ -129,7 +129,7 @@
                                     <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -150,7 +150,7 @@
                                     <a href="../components/FeedbackPage.html" >FeedbackPage</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/FileuploadComponent.html" >FileuploadComponent</a>
+                                    <a href="../components/FileuploadComponent.html"  class="active" >FileuploadComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
@@ -434,7 +434,7 @@
                                            <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -455,7 +455,7 @@
                                            <a href="../components/FeedbackPage.html" >FeedbackPage</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/FileuploadComponent.html" >FileuploadComponent</a>
+                                           <a href="../components/FileuploadComponent.html"  class="active" >FileuploadComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
@@ -630,7 +630,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>AppComponent</li>
+  <li>FileuploadComponent</li>
 </ol>
 
 
@@ -648,7 +648,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/app.component.ts</code>
+    <code>src/app/components/fileupload/fileupload.component.ts</code>
 </p>
 
 
@@ -671,15 +671,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
+                <td class="col-md-9"><code>app-fileupload</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>fileupload.component.scss</code></td>
+            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>app.component.html</code></td>
+                <td class="col-md-9"><code>fileupload.component.html</code></td>
             </tr>
 
 
@@ -695,7 +699,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(platform: Platform, splashScreen: SplashScreen, statusBar: StatusBar, fcm: <a href="../injectables/FcmService.html" >FcmService</a>)</code>
+                            <code>constructor(uploader: any)</code>
                         </td>
                     </tr>
     
@@ -709,13 +713,37 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> initializeApp</b>
+                            <b> toggleHover</b>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-    <code>initializeApp()</code>
+    <code>toggleHover(event: boolean)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> startUpload</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>startUpload(event: FileList)</code>
                         </td>
                     </tr>
     
@@ -731,36 +759,185 @@
             </table>
     </section>
 
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> downloadURL</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>downloadURL:     <code>Observable&lt;string&gt;</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> isDropped</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>isDropped:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>false</code>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> isHovering</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>isHovering:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> percentage</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>percentage:     <code>Observable&lt;number&gt;</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> setDownloadbaleURL</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>setDownloadbaleURL:     <code>(url: any) &#x3D;&gt; void</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> setTask</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>setTask:     <code>(task: AngularFireUploadTask) &#x3D;&gt; void</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> snapshot</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>snapshot:     <code>Observable&lt;any&gt;</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> task</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>task:     <code>AngularFireUploadTask</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;;
-
-import { Platform } from &#x27;@ionic/angular&#x27;;
-import { SplashScreen } from &#x27;@ionic-native/splash-screen/ngx&#x27;;
-import { StatusBar } from &#x27;@ionic-native/status-bar/ngx&#x27;;
-import { FcmService } from &#x27;./fcm.service&#x27;;
+            <pre><code class="hljs javascript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { AngularFireUploadTask } from &#x27;@angular/fire/storage&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { FileUploadService } from &#x27;src/app/services/file-upload/file-upload.service&#x27;;
 
 @Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;app.component.html&#x27;
+  selector: &#x27;app-fileupload&#x27;,
+  templateUrl: &#x27;./fileupload.component.html&#x27;,
+  styleUrls: [&#x27;./fileupload.component.scss&#x27;]
 })
-export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private fcm: FcmService
-  ) {
-    this.initializeApp();
+export class FileuploadComponent implements OnInit {
+  // Main task
+  task: AngularFireUploadTask;
+
+  // Progress monitoring
+  percentage: Observable&lt;number&gt;;
+
+  snapshot: Observable&lt;any&gt;;
+
+  // Download URL
+  downloadURL: Observable&lt;string&gt;;
+
+  // State for dropzone CSS toggling
+  isHovering: boolean;
+
+  // State for disable the file drop
+  isDropped &#x3D; false;
+
+  constructor(private uploader: FileUploadService) {}
+  ngOnInit(): void {}
+
+  toggleHover(event: boolean) {
+    this.isHovering &#x3D; event;
   }
 
-  initializeApp() {
-    this.platform.ready().then(() &#x3D;&gt; {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.fcm.showMessages();
-    });
+  startUpload(event: FileList) {
+    this.isDropped &#x3D; true;
+    // The File object
+    const file &#x3D; event.item(0);
+    this.uploader.uploadFile(file, this.setDownloadbaleURL, this.setTask);
   }
+  setTask &#x3D; (task: AngularFireUploadTask) &#x3D;&gt; {
+    this.snapshot &#x3D; task.snapshotChanges();
+    this.percentage &#x3D; task.percentageChanges();
+  };
+
+  setDownloadbaleURL &#x3D; url &#x3D;&gt; {
+    this.downloadURL &#x3D; url;
+  };
 }
 </code></pre>
         </div>

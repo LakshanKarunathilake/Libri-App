@@ -129,7 +129,7 @@
                                     <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -246,7 +246,7 @@
                                     <a href="../injectables/FormValidationService.html" >FormValidationService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/LocalNotificationService.html" >LocalNotificationService</a>
+                                    <a href="../injectables/LocalNotificationService.html"  class="active" >LocalNotificationService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/PlatformService.html" >PlatformService</a>
@@ -434,7 +434,7 @@
                                            <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -551,7 +551,7 @@
                                            <a href="../injectables/FormValidationService.html" >FormValidationService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/LocalNotificationService.html" >LocalNotificationService</a>
+                                           <a href="../injectables/LocalNotificationService.html"  class="active" >LocalNotificationService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/PlatformService.html" >PlatformService</a>
@@ -624,150 +624,109 @@
                    
                    </nav>
                </div>
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>AppComponent</li>
+  <li>Injectables</li>
+  <li>LocalNotificationService</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
+</ul>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-        </li>
-        <li>
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="infos"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
-
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/local-notification/local-notification.service.ts</code>
+        </p>
 
 
+            <section>
+                <h3 id="constructor">Constructor</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>constructor(localNotification: LocalNotifications)</code>
+                                </td>
+                            </tr>
+            
+                        </tbody>
+                    </table>
+            </section>
 
 
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> createANotification</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>createANotification:     <code>(id: number, title: string, text: string, icon: string, delay: number) &#x3D;&gt; void</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Creating a notification which will be visible with the experience of native OS</p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { LocalNotifications } from &#x27;@ionic-native/local-notifications/ngx&#x27;;
 
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>app.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-    <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>constructor(platform: Platform, splashScreen: SplashScreen, statusBar: StatusBar, fcm: <a href="../injectables/FcmService.html" >FcmService</a>)</code>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-    </section>
-
-    <section>
-        <h3 id="methods">Methods</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> initializeApp</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>initializeApp()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-
-</div>
-        <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;;
-
-import { Platform } from &#x27;@ionic/angular&#x27;;
-import { SplashScreen } from &#x27;@ionic-native/splash-screen/ngx&#x27;;
-import { StatusBar } from &#x27;@ionic-native/status-bar/ngx&#x27;;
-import { FcmService } from &#x27;./fcm.service&#x27;;
-
-@Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;app.component.html&#x27;
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private fcm: FcmService
-  ) {
-    this.initializeApp();
-  }
+export class LocalNotificationService {
+  constructor(private localNotification: LocalNotifications) {}
 
-  initializeApp() {
-    this.platform.ready().then(() &#x3D;&gt; {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.fcm.showMessages();
-    });
-  }
+  /**
+   * Creating a notification which will be visible with the experience of native OS
+   * @param id This will be a unique id for the message
+   * @param title This will be the title of the notification
+   * @param text This will be the body of the notification
+   * @param icon The link of the icon of the notification
+   * @param delay Number of hours the notification must be delayed
+   */
+  createANotification &#x3D; (id: number, title: string, text: string, icon: string, delay: number) &#x3D;&gt; {
+    const trigger &#x3D; { at: new Date(new Date().getTime() + 3600 * delay) };
+    this.localNotification.schedule([
+      {
+        id,
+        text,
+        title,
+        trigger
+      }
+    ]);
+  };
 }
 </code></pre>
-        </div>
     </div>
-
-
-
+</div>
 
 
 

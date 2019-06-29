@@ -129,7 +129,7 @@
                                     <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -249,7 +249,7 @@
                                     <a href="../injectables/LocalNotificationService.html" >LocalNotificationService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/PlatformService.html" >PlatformService</a>
+                                    <a href="../injectables/PlatformService.html"  class="active" >PlatformService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/SwalService.html" >SwalService</a>
@@ -434,7 +434,7 @@
                                            <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -554,7 +554,7 @@
                                            <a href="../injectables/LocalNotificationService.html" >LocalNotificationService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/PlatformService.html" >PlatformService</a>
+                                           <a href="../injectables/PlatformService.html"  class="active" >PlatformService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/SwalService.html" >SwalService</a>
@@ -624,150 +624,187 @@
                    
                    </nav>
                </div>
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>AppComponent</li>
+  <li>Injectables</li>
+  <li>PlatformService</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
+</ul>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-        </li>
-        <li>
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="infos"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
-
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/platform/platform.service.ts</code>
+        </p>
 
 
+            <section>
+                <h3 id="constructor">Constructor</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>constructor(platformInfo: Platform, device: Device)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Querying the information of the device when it is available</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>platformInfo</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Information retrieve from the ionic platform service</p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>device</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Information retrieved from the cordova device plugin</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
 
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>app.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-    <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>constructor(platform: Platform, splashScreen: SplashScreen, statusBar: StatusBar, fcm: <a href="../injectables/FcmService.html" >FcmService</a>)</code>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-    </section>
-
-    <section>
-        <h3 id="methods">Methods</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> initializeApp</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>initializeApp()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-
-</div>
-        <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;;
-
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> deviceInfo</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-lock"></span><code>deviceInfo:     <code>any</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> getDeviceInfo</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>getDeviceInfo:     <code>() &#x3D;&gt; any</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> getPlatform</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>getPlatform:     <code>() &#x3D;&gt; void</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Returning the platform of the user</p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { Platform } from &#x27;@ionic/angular&#x27;;
-import { SplashScreen } from &#x27;@ionic-native/splash-screen/ngx&#x27;;
-import { StatusBar } from &#x27;@ionic-native/status-bar/ngx&#x27;;
-import { FcmService } from &#x27;./fcm.service&#x27;;
+import { Platforms } from &#x27;@ionic/core&#x27;;
+import { Device } from &#x27;@ionic-native/device/ngx&#x27;;
 
-@Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;app.component.html&#x27;
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private fcm: FcmService
-  ) {
-    this.initializeApp();
+export class PlatformService {
+  private deviceInfo: any;
+
+  /**
+   * Querying the information of the device when it is available
+   * @param platformInfo Information retrieve from the ionic platform service
+   * @param device Information retrieved from the cordova device plugin
+   */
+  constructor(private platformInfo: Platform, private device: Device) {
+    const { platform, isVirtual, manufacturer, model, version, uuid, serial, cordova } &#x3D; device;
+    this.deviceInfo &#x3D; {
+      platform,
+      isVirtual,
+      manufacturer,
+      model,
+      version,
+      uuid,
+      serial,
+      cordova
+    };
   }
 
-  initializeApp() {
-    this.platform.ready().then(() &#x3D;&gt; {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.fcm.showMessages();
+  /**
+   * Returning the platform of the user
+   * @returns cordova || PWA || ios || android
+   */
+  getPlatform &#x3D; () &#x3D;&gt; {
+    let platforms: Array&lt;Platforms&gt;;
+    platforms &#x3D; [&#x27;cordova&#x27;, &#x27;pwa&#x27;, &#x27;ios&#x27;, &#x27;android&#x27;, &#x27;capacitor&#x27;, &#x27;desktop&#x27;];
+    platforms.forEach(platform &#x3D;&gt; {
+      if (this.platformInfo.is(platform)) {
+        return platform;
+      }
     });
-  }
+  };
+
+  getDeviceInfo &#x3D; () &#x3D;&gt; {
+    return this.deviceInfo;
+  };
 }
 </code></pre>
-        </div>
     </div>
-
-
-
+</div>
 
 
 

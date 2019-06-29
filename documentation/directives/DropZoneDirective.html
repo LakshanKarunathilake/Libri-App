@@ -129,7 +129,7 @@
                                     <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -203,7 +203,7 @@
                                 id="xs-directives-links"
                             >
                                 <li class="link">
-                                    <a href="../directives/DropZoneDirective.html" >DropZoneDirective</a>
+                                    <a href="../directives/DropZoneDirective.html"  class="active" >DropZoneDirective</a>
                                 </li>
                         </ul>
                     </li>
@@ -434,7 +434,7 @@
                                            <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/AppComponent.html"  class="active" >AppComponent</a>
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/BookSearchView.html" >BookSearchView</a>
@@ -508,7 +508,7 @@
                                        id="directives-links"
                    >
                                        <li class="link">
-                                           <a href="../directives/DropZoneDirective.html" >DropZoneDirective</a>
+                                           <a href="../directives/DropZoneDirective.html"  class="active" >DropZoneDirective</a>
                                        </li>
                                </ul>
                            </li>
@@ -624,149 +624,207 @@
                    
                    </nav>
                </div>
-               <div class="content component">
+               <div class="content directive">
                    <div class="content-data">
 
 
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>AppComponent</li>
+  <li>Directives</li>
+  <li>DropZoneDirective</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
+</ul>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-        </li>
-        <li>
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="infos"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
-
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/directives/dropZone/drop-zone.directive.ts</code>
+        </p>
 
 
 
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>app.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-    <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
                 <tbody>
+
                     <tr>
-                        <td class="col-md-4">
-                            <code>constructor(platform: Platform, splashScreen: SplashScreen, statusBar: StatusBar, fcm: <a href="../injectables/FcmService.html" >FcmService</a>)</code>
-                        </td>
+                        <td class="col-md-3">selector</td>
+                        <td class="col-md-9"><code>[DropZone]</code></td>
                     </tr>
-    
+
                 </tbody>
             </table>
-    </section>
+        </section>
 
-    <section>
-        <h3 id="methods">Methods</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> initializeApp</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>initializeApp()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
 
-</div>
-        <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component } from &#x27;@angular/core&#x27;;
+            <section>
+                <h3 id="outputs">Outputs</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
+                                    <code>dropped</code>
+                                </td>
+                                <td class="col-md-10">
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
 
-import { Platform } from &#x27;@ionic/angular&#x27;;
-import { SplashScreen } from &#x27;@ionic-native/splash-screen/ngx&#x27;;
-import { StatusBar } from &#x27;@ionic-native/status-bar/ngx&#x27;;
-import { FcmService } from &#x27;./fcm.service&#x27;;
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
+                                    <code>hovered</code>
+                                </td>
+                                <td class="col-md-10">
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
 
-@Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;app.component.html&#x27;
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+
+            <section>
+                <h3 id="constructor">Constructor</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>constructor()</code>
+                                </td>
+                            </tr>
+            
+                        </tbody>
+                    </table>
+            </section>
+
+            <section>
+                <h3 id="methods">Methods</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> onDrop</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>onDrop($event: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> onDragOver</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>onDragOver($event: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> onDragLeave</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>onDragLeave($event: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+
+
+    </div>
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { Directive, Output, EventEmitter, HostListener } from &#x27;@angular/core&#x27;;
+
+@Directive({
+  selector: &#x27;[DropZone]&#x27;
 })
-export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private fcm: FcmService
-  ) {
-    this.initializeApp();
+export class DropZoneDirective {
+  @Output() dropped &#x3D; new EventEmitter&lt;FileList&gt;();
+  @Output() hovered &#x3D; new EventEmitter&lt;boolean&gt;();
+
+  constructor() {}
+
+  @HostListener(&#x27;drop&#x27;, [&#x27;$event&#x27;])
+  onDrop($event) {
+    $event.preventDefault();
+    this.dropped.emit($event.dataTransfer.files);
+    this.hovered.emit(false);
   }
 
-  initializeApp() {
-    this.platform.ready().then(() &#x3D;&gt; {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.fcm.showMessages();
-    });
+  @HostListener(&#x27;dragover&#x27;, [&#x27;$event&#x27;])
+  onDragOver($event) {
+    $event.preventDefault();
+    this.hovered.emit(true);
+  }
+
+  @HostListener(&#x27;dragleave&#x27;, [&#x27;$event&#x27;])
+  onDragLeave($event) {
+    $event.preventDefault();
+    this.hovered.emit(false);
   }
 }
 </code></pre>
-        </div>
     </div>
-
-
+</div>
 
 
 
