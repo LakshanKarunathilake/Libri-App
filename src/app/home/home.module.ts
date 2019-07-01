@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { HomePage } from './home.page';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 const routes: Routes = [
   {
     path: '',
@@ -21,7 +21,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    MenuTitleComponentModule
+    MenuTitleComponentModule,
+    MatExpansionModule
   ],
   declarations: [HomePage]
 })
