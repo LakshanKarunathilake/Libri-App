@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-collapsible-list',
+  selector: 'collapsible-list',
   templateUrl: './collapsible-list.component.html',
-  styleUrls: ['./collapsible-list.component.scss'],
+  styleUrls: ['./collapsible-list.component.scss']
 })
 export class CollapsibleListComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
+  @Input() title;
 
   ngOnInit() {}
-
 }
