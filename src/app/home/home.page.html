@@ -16,11 +16,12 @@
     </ion-list>
   </section>
 
-  <ion-list>
+  <!-- <ion-list>
     <ion-item color="primary">Borrowed Books</ion-item>
     <ion-item color="warning">Due Books</ion-item>
     <ion-item color="danger">Fined Books</ion-item>
-  </ion-list>
+  </ion-list> -->
+  <collapsible-list title="Borrowings"></collapsible-list>
   <ion-button (click)="getPermission()">Permission</ion-button>
   <ion-button (click)="fcm.sub('notices')">subscribe</ion-button>
 </ion-content>
