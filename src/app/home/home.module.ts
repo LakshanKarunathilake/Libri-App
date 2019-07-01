@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HomePage } from './home.page';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { CollapsibleListComponent } from '../components/collapsible-list/collapsible-list.component';
 const routes: Routes = [
   {
     path: '',
@@ -24,6 +25,6 @@ const routes: Routes = [
     MenuTitleComponentModule,
     MatExpansionModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, CollapsibleListComponent]
 })
 export class HomePageModule {}
