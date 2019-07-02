@@ -61,6 +61,6 @@ export class UserService {
    */
   getUserBorrowings = () => {
     const { uid } = this.getCurrentUser();
-    return this.aff.functions.httpsCallable('getUserBorrowings')({ uid });
+    return this.aff.functions.httpsCallable('getPersonalBorrowings')({ uid });
   };
 }
