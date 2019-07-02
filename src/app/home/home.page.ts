@@ -15,8 +15,14 @@ export class HomePage implements OnInit {
     centerdSlides: true,
     autoplay: { delay: 1500 }
   };
-  constructor(public fcm: FcmService, private swal: SwalService, private platform: Platform) {
-    console.log(this.platform.width());
+  personalInfo;
+  constructor(
+    public fcm: FcmService,
+    private swal: SwalService,
+    private platform: Platform,
+    private userService: UserService
+  ) {
+    this.personalInfo = this.userService.getUserBorrowings();
   }
 
   ngOnInit() {}
