@@ -2,6 +2,7 @@ import { SwalService } from './../services/swal/swal.service';
 import { Component, OnInit } from '@angular/core';
 import { FcmService } from '../fcm.service';
 import { Platform } from '@ionic/angular';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-home',
