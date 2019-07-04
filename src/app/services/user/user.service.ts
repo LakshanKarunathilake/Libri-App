@@ -59,8 +59,9 @@ export class UserService {
    * You can obtain all the transactional data relavant to the user by calling this method
    * The data will include the borrowings, overdues and penalties
    */
-  getUserBorrowings = () => {
-    const { uid } = this.getCurrentUser();
-    return this.aff.functions.httpsCallable('getPersonalBorrowings')({ uid });
+  getUserBorrowings = async () => {
+    // const { uid } = this.getCurrentUser();
+    // console.log('uid', uid);
+    return this.aff.functions.httpsCallable('getPersonalBorrowings')({ uid: 'SE/2014/011' });
   };
 }
