@@ -21,11 +21,11 @@ export class HomePage implements OnInit {
     private swal: SwalService,
     private platform: Platform,
     private userService: UserService
-  ) {
-    this.personalInfo = this.userService.getUserBorrowings();
-  }
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userService.getUserBorrowings().then(data => console.log('data', data));
+  }
 
   getPermission = () => {
     console.log('getting permission');
