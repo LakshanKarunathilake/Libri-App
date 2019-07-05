@@ -65,6 +65,7 @@ export class UserService {
       .doc(uid)
       .valueChanges()
       .toPromise();
+    return user['libraryID'];
     console.log('user', user);
   };
 
