@@ -58,7 +58,15 @@ export class UserService {
   /**
    * Get current user's library id number
    */
-  getLibraryID = () => {};
+  getLibraryID = async () => {
+    const { uid } = this.getCurrentUser();
+    const user = await this.afs
+      .collection('users')
+      .doc(uid)
+      .valueChanges()
+      .toPromise();
+    console.log('user', user);
+  };
 
   /**
    * You can obtain all the transactional data relavant to the user by calling this method
