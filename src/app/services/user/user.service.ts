@@ -56,6 +56,11 @@ export class UserService {
   };
 
   /**
+   * Get current user's library id number
+   */
+  getLibraryID = () => {};
+
+  /**
    * You can obtain all the transactional data relavant to the user by calling this method
    * The data will include the borrowings, overdues and penalties
    */
