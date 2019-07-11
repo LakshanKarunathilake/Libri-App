@@ -74,7 +74,8 @@ export class UserService {
    * The data will include the borrowings, overdues and penalties
    */
   getUserBorrowings = async () => {
-    const id = this.getLibraryID() || 'SE/2014/011';
+    // const id = this.getLibraryID() || 'SE/2014/011';
+    const id = '51';
     return this.aff.functions.httpsCallable('getPersonalBorrowings')({ id });
   };
 }
