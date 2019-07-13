@@ -74,9 +74,11 @@ export class UserService {
    * You can obtain all the transactional data relavant to the user by calling this method
    * The data will include the borrowings, overdues and penalties
    */
-  getUserBorrowings = async () => {
-    // const id = this.getLibraryID() || 'SE/2014/011';
-    const id = '51';
+  getUserBorrowings = async uid => {
+    console.log('uid', uid);
+    const id = await this.getLibraryID(uid);
+    console.log('id', id);
+    // const id = '51';
     return this.aff.functions.httpsCallable('getPersonalBorrowings')({ id });
   };
 }
