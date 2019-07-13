@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FcmService } from '../fcm.service';
 import { Platform } from '@ionic/angular';
 import { UserService } from '../services/user/user.service';
+import { Observable } from 'rxjs';
+import { Notice } from '../models/Notice';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +18,7 @@ export class HomePage implements OnInit {
     autoplay: { delay: 1500 }
   };
   personalInfo;
+  notices: Observable<Notice[]>;
   constructor(
     public fcm: FcmService,
     private swal: SwalService,
@@ -26,6 +29,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     const { uid } = this.userService.getCurrentUser();
     this.userService.getUserBorrowings(uid).then(({ data }) => console.log('data', data['result']));
+    this.notices = this.userService.getNotices();
   }
 
   getPermission = () => {
