@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireFunctions } from '@angular/fire/functions';
+import { Notice } from 'src/app/models/Notice';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -85,7 +87,7 @@ export class UserService {
   /**
    * Get all the notices
    */
-  getNotices = () => {
-    return this.afs.collection('notices').valueChanges();
+  getNotices = (): Observable<Notice[]> => {
+    return this.afs.collection<Notice>('notices').valueChanges();
   };
 }
