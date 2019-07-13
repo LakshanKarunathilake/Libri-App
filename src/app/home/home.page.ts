@@ -24,7 +24,8 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userService.getUserBorrowings().then(data => console.log('data', data));
+    const { uid } = this.userService.getCurrentUser();
+    this.userService.getUserBorrowings(uid).then(({ data }) => console.log('data', data['result']));
   }
 
   getPermission = () => {
