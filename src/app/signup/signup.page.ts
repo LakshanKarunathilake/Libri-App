@@ -61,6 +61,7 @@ export class SignupPage implements OnInit {
     const userPassword = this.signupForm.controls['password'].value;
     const displayName: string = this.signupForm.controls['displayName'].value;
     const phoneNumber: string = this.signupForm.controls['telephoneNumber'].value;
+    const libraryId: string = this.signupForm.controls['libraryId'].value;
 
     console.log('userEmail :', typeof userEmail);
     console.log('userPassword :', typeof userPassword);
@@ -70,7 +71,7 @@ export class SignupPage implements OnInit {
         .createUser(userEmail, userPassword)
         .then(() => {
           this.hideLoading();
-          return this.user.updateUserDetails(displayName, phoneNumber);
+          return this.user.updateUserDetails(displayName, phoneNumber, libraryId);
         })
         .then(() => {
           console.log('Successfully updated the additional user information');
