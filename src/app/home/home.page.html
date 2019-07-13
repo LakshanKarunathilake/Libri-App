@@ -24,4 +24,7 @@
   <collapsible-list title="Borrowings"></collapsible-list>
   <ion-button (click)="getPermission()">Permission</ion-button>
   <ion-button (click)="fcm.sub('notices')">subscribe</ion-button>
+  <div>
+    {{ notices | async | json }}
+  </div>
 </ion-content>
