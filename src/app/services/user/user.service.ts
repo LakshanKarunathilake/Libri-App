@@ -36,7 +36,7 @@ export class UserService {
    * @param phoneNumber
    * @param displayName
    */
-  updateUserDetails = async (displayName, phoneNumber) => {
+  updateUserDetails = async (displayName, phoneNumber, libraryID) => {
     console.log('updating user details', phoneNumber, displayName);
     const { uid, emailVerified, email, updateProfile } = this.afa.auth.currentUser;
     // Updating the display name in the auth
@@ -45,7 +45,7 @@ export class UserService {
     this.afs
       .collection('users')
       .doc(uid)
-      .set({ phoneNumber, displayName, uid, emailVerified, email });
+      .set({ phoneNumber, displayName, uid, emailVerified, email, libraryID });
   };
 
   /**
