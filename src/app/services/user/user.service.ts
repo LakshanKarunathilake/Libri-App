@@ -58,15 +58,16 @@ export class UserService {
   /**
    * Get current user's library id number
    */
-  getLibraryID = async () => {
-    const { uid } = this.getCurrentUser();
-    const user = await this.afs
-      .collection('users')
-      .doc(uid)
-      .valueChanges()
-      .toPromise();
-    return user['libraryID'];
-    console.log('user', user);
+  getLibraryID = uid => {
+    return new Promise((resolve, reject) => {
+      this.afs
+        .collection('users')
+        .doc(uid)
+        .valueChanges()
+        .subscribe(record => {
+          resolve(record['libraryID']);
+        });
+    });
   };
 
   /**
