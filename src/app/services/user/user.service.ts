@@ -81,4 +81,11 @@ export class UserService {
     // const id = '51';
     return this.aff.functions.httpsCallable('getPersonalBorrowings')({ id });
   };
+
+  /**
+   * Get all the notices
+   */
+  getNotices = () => {
+    return this.afs.collection('notices').valueChanges();
+  };
 }
