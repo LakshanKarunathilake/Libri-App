@@ -80,7 +80,7 @@ export class LoginPage implements OnInit {
         // Subscribing for notices
         this.subscribingforNotices();
         this.swal.displayAutoHideMessage('Welcome back!', '', 'success', 1500);
-        this.router.navigateByUrl('menu');
+        this.router.navigateByUrl('menu', { replaceUrl: true });
       })
       .catch(error => {
         console.log('error :', error, error.message);
