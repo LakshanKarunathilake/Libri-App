@@ -25,7 +25,7 @@
   <collapsible-list title="Overdues"></collapsible-list>
   <ion-button (click)="getPermission()">Permission</ion-button>
   <ion-button (click)="fcm.sub('notices')">subscribe</ion-button>
-  <div>
-    {{ notices | async | json }}
+  <div *ngFor="let notice of (notices | async)">
+    {{ notice.message }}
   </div>
 </ion-content>
