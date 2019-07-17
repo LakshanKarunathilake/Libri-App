@@ -12,9 +12,14 @@
   <mat-card id="notice-card">
     <mat-card-title>Notices</mat-card-title>
     <mat-card-content>
-      <mat-card class="news" *ngFor="let notice of (notices | async)">{{
-        notice.message
-      }}</mat-card>
+      <mat-card class="news" *ngFor="let notice of (notices | async)">
+        <div style="display: flex;justify-content: space-between;align-items: center">
+          <span class="notice-title">
+            {{ notice.message }}
+          </span>
+          <ion-button size="small" fill="clear">more</ion-button>
+        </div>
+      </mat-card>
     </mat-card-content>
   </mat-card>
 
