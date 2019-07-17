@@ -9,9 +9,13 @@
       />
     </ion-slide>
   </ion-slides>
-  <mat-card>
+  <mat-card id="notice-card">
     <mat-card-title>Notices</mat-card-title>
-    <div *ngFor="let notice of (notices | async)">{{ notice.message }}</div>
+    <mat-card-content>
+      <mat-card class="news" *ngFor="let notice of (notices | async)">{{
+        notice.message
+      }}</mat-card>
+    </mat-card-content>
   </mat-card>
 
   <collapsible-list title="Borrowed"></collapsible-list>
