@@ -31,16 +31,4 @@ export class HomePage implements OnInit {
     this.userService.getUserBorrowings(uid).then(({ data }) => console.log('data', data['result']));
     this.notices = this.userService.getNotices();
   }
-
-  getPermission = () => {
-    console.log('getting permission');
-    this.fcm
-      .getPermission()
-      .then(() => this.fcm.sub('notices'))
-      .catch(error => {
-        console.log('error occured');
-        console.log('error', error);
-        this.swal.viewErrorMessage('error', error);
-      });
-  };
 }
