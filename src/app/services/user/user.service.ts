@@ -5,6 +5,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { Notice } from 'src/app/models/Notice';
 import { Observable } from 'rxjs';
+import { Borrowing } from 'src/app/models/Borrowings';
 
 @Injectable({
   providedIn: 'root'
@@ -78,7 +79,15 @@ export class UserService {
    */
   getUserBorrowings = async uid => {
     const id = await this.getLibraryID(uid);
-    return this.aff.functions.httpsCallable('getPersonalBorrowings')({ id });
+    return new Promise((resolve, reject) => {
+      this.aff.functions
+        .httpsCallable('getPersonalBorrowings')({ id })
+        .then(({ data }) => {
+          let results: Borrowing[];
+          results = JSON.parse(data['result']);
+          resolve(results);
+        });
+    });
   };
 
   /**
