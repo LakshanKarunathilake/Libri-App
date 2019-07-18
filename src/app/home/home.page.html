@@ -9,22 +9,20 @@
       />
     </ion-slide>
   </ion-slides>
-  <section>
-    <ion-title>Notices</ion-title>
-    <ion-list>
-      <ion-item>Library registration notice</ion-item>
-    </ion-list>
-  </section>
+  <mat-card id="notice-card">
+    <mat-card-title>Notices</mat-card-title>
+    <mat-card-content>
+      <mat-card class="news" *ngFor="let notice of (notices | async)">
+        <div style="display: flex;justify-content: space-between;align-items: center">
+          <span class="notice-title">
+            {{ notice.message }}
+          </span>
+          <ion-button size="small" fill="clear">more</ion-button>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
 
-  <!-- <ion-list>
-    <ion-item color="primary">Borrowed Books</ion-item>
-    <ion-item color="warning">Due Books</ion-item>
-    <ion-item color="danger">Fined Books</ion-item>
-  </ion-list> -->
-  <collapsible-list title="Borrowings"></collapsible-list>
-  <ion-button (click)="getPermission()">Permission</ion-button>
-  <ion-button (click)="fcm.sub('notices')">subscribe</ion-button>
-  <div>
-    {{ notices | async | json }}
-  </div>
+  <collapsible-list title="Borrowed"></collapsible-list>
+  <collapsible-list title="Penalties"></collapsible-list>
 </ion-content>
