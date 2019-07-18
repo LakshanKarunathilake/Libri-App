@@ -1,3 +1,4 @@
+import { Borrowing } from './../models/Borrowings';
 import { SwalService } from './../services/swal/swal.service';
 import { Component, OnInit } from '@angular/core';
 import { FcmService } from '../fcm.service';
@@ -17,6 +18,7 @@ export class HomePage implements OnInit {
     centerdSlides: true,
     autoplay: { delay: 1500 }
   };
+  borrowings: Borrowing[];
   personalInfo;
   notices: Observable<Notice[]>;
   constructor(
@@ -26,9 +28,10 @@ export class HomePage implements OnInit {
     private userService: UserService
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     const { uid } = this.userService.getCurrentUser();
-    this.userService.getUserBorrowings(uid).then(({ data }) => console.log('data', data['result']));
+    // this.borrowings = await this.userService.getUserBorrowings(uid);
+    this.borrowings = await this.userService.getUserBorrowings(uid);
     this.notices = this.userService.getNotices();
   }
 }
