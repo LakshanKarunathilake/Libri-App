@@ -77,10 +77,7 @@ export class UserService {
    * The data will include the borrowings, overdues and penalties
    */
   getUserBorrowings = async uid => {
-    console.log('uid', uid);
     const id = await this.getLibraryID(uid);
-    console.log('id', id);
-    // const id = '51';
     return this.aff.functions.httpsCallable('getPersonalBorrowings')({ id });
   };
 
