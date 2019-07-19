@@ -79,7 +79,7 @@ export class UserService {
    */
   getUserBorrowings = async uid => {
     const id = await this.getLibraryID(uid);
-    return new Promise((resolve, reject) => {
+    return new Promise<Borrowing[]>((resolve, reject) => {
       this.aff.functions
         .httpsCallable('getPersonalBorrowings')({ id })
         .then(({ data }) => {
