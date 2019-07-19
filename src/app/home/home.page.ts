@@ -38,5 +38,7 @@ export class HomePage implements OnInit {
   /**
    * View more information related to the information such as published date and due date
    */
-  noticeMoreDetails = (notice: Notice) => {};
+  noticeMoreDetails = (notice: Notice) => {
+    this.swal.displayNotice(notice);
+  };
 }
