@@ -1,3 +1,4 @@
+import { Notice } from './../../models/Notice';
 import { Injectable } from '@angular/core';
 import swal from 'sweetalert';
 
@@ -35,4 +36,9 @@ export class SwalService {
       }
     });
   };
+
+  /**
+   * Preview the notices using a sweet alert
+   */
+  displayNotice = (notice: Notice) => {};
 }
