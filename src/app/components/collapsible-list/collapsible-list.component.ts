@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Borrowing } from 'src/app/models/Borrowings';
 
 @Component({
   selector: 'collapsible-list',
@@ -9,6 +10,9 @@ export class CollapsibleListComponent implements OnInit {
   constructor() {}
   @Input() title;
   @Input() titleDescription;
+  @Input() borrowings: Borrowing[];
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('borrowings', this.borrowings);
+  }
 }
