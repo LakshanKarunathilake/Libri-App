@@ -17,7 +17,9 @@
           <span class="notice-title">
             {{ notice.message }}
           </span>
-          <ion-button size="small" fill="clear">more</ion-button>
+          <ion-button size="small" fill="clear" (click)="noticeMoreDetails(notice)"
+            >more</ion-button
+          >
         </div>
       </mat-card>
     </mat-card-content>
