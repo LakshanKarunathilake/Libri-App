@@ -40,5 +40,7 @@ export class SwalService {
   /**
    * Preview the notices using a sweet alert
    */
-  displayNotice = (notice: Notice) => {};
+  displayNotice = (notice: Notice) => {
+    swal({ title: notice.title, text: notice.message });
+  };
 }
