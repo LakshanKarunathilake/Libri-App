@@ -8,5 +8,15 @@
         {{ titleDescription }}
       </mat-panel-description>
     </mat-expansion-panel-header>
+    <div>
+      <div class="details">
+        <div>Title</div>
+        <div>Due Date</div>
+      </div>
+      <div class="details" *ngFor="let borrowing of borrowings">
+        <div>{{ borrowing.title }}</div>
+        <div>{{ borrowing.date_due }}</div>
+      </div>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
