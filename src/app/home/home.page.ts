@@ -34,4 +34,9 @@ export class HomePage implements OnInit {
     this.borrowings = await this.userService.getUserBorrowings(uid);
     this.notices = this.userService.getNotices();
   }
+
+  /**
+   * View more information related to the information such as published date and due date
+   */
+  noticeMoreDetails = (notice: Notice) => {};
 }
