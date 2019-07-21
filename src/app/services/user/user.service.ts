@@ -11,6 +11,7 @@ import { Borrowing } from 'src/app/models/Borrowings';
   providedIn: 'root'
 })
 export class UserService {
+  userBorrowings: Borrowing[];
   constructor(
     private afa: AngularFireAuth,
     private afs: AngularFirestore,
@@ -79,15 +80,14 @@ export class UserService {
    */
   getUserBorrowings = async uid => {
     const id = await this.getLibraryID(uid);
-    return new Promise<Borrowing[]>((resolve, reject) => {
-      this.aff.functions
-        .httpsCallable('getPersonalBorrowings')({ id })
-        .then(({ data }) => {
-          let results: Borrowing[];
-          results = JSON.parse(data['result']);
-          resolve(results);
-        });
-    });
+    if (this.userBorrowings === undefined) {
+      console.log('inside');
+      const { data } = await this.aff.functions.httpsCallable('getPersonalBorrowings')({ id });
+      let results: Borrowing[];
+      results = JSON.parse(data['result']);
+      this.userBorrowings = results;
+    }
+    return this.userBorrowings;
   };
 
   /**
