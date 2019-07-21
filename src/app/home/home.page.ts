@@ -29,8 +29,7 @@ export class HomePage implements OnInit {
   ) {}
 
   async ngOnInit() {
-    const { uid } = this.userService.getCurrentUser();
-    this.borrowings = await this.userService.getUserBorrowings(uid);
+    this.borrowings = await this.userService.getUserBorrowings();
     this.notices = this.userService.getNotices();
   }
 

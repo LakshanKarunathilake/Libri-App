@@ -78,7 +78,8 @@ export class UserService {
    * You can obtain all the transactional data relavant to the user by calling this method
    * The data will include the borrowings, overdues and penalties
    */
-  getUserBorrowings = async uid => {
+  getUserBorrowings = async () => {
+    const { uid } = this.getCurrentUser();
     const id = await this.getLibraryID(uid);
     if (this.userBorrowings === undefined) {
       console.log('inside');
