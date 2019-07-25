@@ -12,6 +12,7 @@ import { Borrowing } from 'src/app/models/Borrowings';
 })
 export class UserService {
   userBorrowings: Borrowing[];
+  overDues: Borrowing[];
   constructor(
     private afa: AngularFireAuth,
     private afs: AngularFirestore,
@@ -87,6 +88,7 @@ export class UserService {
       let results: Borrowing[];
       results = JSON.parse(data['result']);
       this.userBorrowings = results;
+      this.filterOverDues(results);
     }
     return this.userBorrowings;
   };
@@ -96,5 +98,17 @@ export class UserService {
    */
   getNotices = (): Observable<Notice[]> => {
     return this.afs.collection<Notice>('notices').valueChanges();
+  };
+
+  /**
+   * Filtering overdues from the borrowing list
+   */
+  filterOverDues = (allBorrowings: Borrowing[]) => {
+    this.overDues = allBorrowings.map(row => {
+      if (Date.parse(row.date_due) - Date.parse(new Date().toString()) < 0) {
+        return row;
+      }
+    });
+    console.log('this.overDues', this.overDues);
   };
 }
