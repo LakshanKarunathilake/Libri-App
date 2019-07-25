@@ -3,4 +3,5 @@ export interface Borrowing {
   date_due: string;
   renewals: number;
   title: string;
+  issuedate: string;
 }
