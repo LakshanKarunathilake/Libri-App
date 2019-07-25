@@ -88,6 +88,11 @@ export class UserService {
       const { data } = await this.aff.functions.httpsCallable('getPersonalBorrowings')({ id });
       let results: Borrowing[];
       results = JSON.parse(data['result']);
+      results = results.map(result => {
+        result.date_due = DateTime.fromISO(result.date_due).toLocaleString(DateTime.DATE_FULL);
+        result.issuedate = DateTime.fromISO(result.issuedate).toLocaleString(DateTime.DATE_FULL);
+        return result;
+      });
       this.userBorrowings = results;
       this.filterOverDues(results);
     }
