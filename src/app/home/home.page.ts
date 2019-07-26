@@ -19,6 +19,7 @@ export class HomePage implements OnInit {
     autoplay: { delay: 1500 }
   };
   borrowings: Borrowing[];
+  overdues: Borrowing[];
   personalInfo;
   notices: Observable<Notice[]>;
   constructor(
@@ -30,6 +31,7 @@ export class HomePage implements OnInit {
 
   async ngOnInit() {
     this.borrowings = await this.userService.getUserBorrowings();
+    this.overdues = this.userService.getOverDues();
     this.notices = this.userService.getNotices();
   }
 
