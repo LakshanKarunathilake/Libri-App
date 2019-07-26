@@ -12,8 +12,8 @@ import DateTime from 'luxon/src/datetime.js';
   providedIn: 'root'
 })
 export class UserService {
-  userBorrowings: Borrowing[];
-  overDues: Borrowing[];
+  private userBorrowings: Borrowing[];
+  private overDues: Borrowing[];
   constructor(
     private afa: AngularFireAuth,
     private afs: AngularFirestore,
