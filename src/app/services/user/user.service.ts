@@ -117,4 +117,12 @@ export class UserService {
     });
     console.log('this.overDues', this.overDues);
   };
+
+  /**
+   * Getter method for overdue
+   * @returns Borrowings[]
+   */
+  getOverDues = () => {
+    return this.overDues;
+  };
 }
