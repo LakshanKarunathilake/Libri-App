@@ -14,6 +14,7 @@ import DateTime from 'luxon/src/datetime.js';
 export class UserService {
   private userBorrowings: Borrowing[];
   private overDues: Borrowing[];
+  private filteredBorrowings: Borrowing[];
   constructor(
     private afa: AngularFireAuth,
     private afs: AngularFirestore,
@@ -110,11 +111,17 @@ export class UserService {
    * Filtering overdues from the borrowing list
    */
   filterOverDues = (allBorrowings: Borrowing[]) => {
-    this.overDues = allBorrowings.map(row => {
+    const overDues = [];
+    const notOverDue = [];
+    allBorrowings.forEach(row => {
       if (Date.parse(row.date_due) - Date.parse(new Date().toString()) < 0) {
-        return row;
+        overDues.push(row);
+      } else {
+        notOverDue.push(row);
       }
     });
+    this.overDues = overDues;
+    this.filteredBorrowings = notOverDue;
     console.log('this.overDues', this.overDues);
   };
 
