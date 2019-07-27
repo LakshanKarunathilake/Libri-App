@@ -11,8 +11,7 @@ export class CollapsibleListComponent implements OnInit {
   @Input() title;
   @Input() titleDescription;
   @Input() borrowings: Borrowing[];
+  @Input() type;
 
-  ngOnInit() {
-    console.log('borrowings', this.borrowings);
-  }
+  ngOnInit() {}
 }
