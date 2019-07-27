@@ -118,6 +118,8 @@ export class UserService {
     console.log('this.overDues', this.overDues);
   };
 
+  filterBorrowings = (allBorrowings: Borrowing[]) => {};
+
   /**
    * Getter method for overdue
    * @returns Borrowings[]
