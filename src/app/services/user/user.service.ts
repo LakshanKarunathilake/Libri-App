@@ -97,7 +97,6 @@ export class UserService {
       this.userBorrowings = results;
       this.filterOverDues(results);
     }
-    return this.userBorrowings;
   };
 
   /**
