@@ -30,7 +30,8 @@ export class HomePage implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.borrowings = await this.userService.getUserBorrowings();
+    await this.userService.getUserBorrowings();
+    this.borrowings = this.userService.getNotOverdues();
     this.overdues = this.userService.getOverDues();
     this.notices = this.userService.getNotices();
   }
