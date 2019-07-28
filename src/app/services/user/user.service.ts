@@ -121,7 +121,6 @@ export class UserService {
     });
     this.overDues = overDues;
     this.filteredBorrowings = notOverDue;
-    console.log('this.overDues', this.overDues);
   };
 
   /**
