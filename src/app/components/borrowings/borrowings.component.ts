@@ -5,7 +5,7 @@ import { Borrowing } from 'src/app/models/Borrowings';
 @Component({
   selector: 'app-borrowings',
   templateUrl: './borrowings.component.html',
-  styleUrls: ['./borrowings.component.scss'],
+  styleUrls: ['./borrowings.component.scss']
 })
 export class BorrowingsComponent implements OnInit {
   borrowings: Borrowing[];
@@ -13,6 +13,9 @@ export class BorrowingsComponent implements OnInit {
 
   constructor(private userService: UserService) {}
 
-  ngOnInit() {}
-
+  async ngOnInit() {
+    await this.userService.getUserBorrowings();
+    this.borrowings = this.userService.getNotOverdues();
+    this.overdues = this.userService.getOverDues();
+  }
 }
