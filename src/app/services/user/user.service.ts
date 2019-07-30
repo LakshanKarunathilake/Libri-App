@@ -130,11 +130,20 @@ export class UserService {
   getOverDues = () => {
     return this.overDues;
   };
+
   /**
    * Getter method for overdue
    * @returns Borrowings[]
    */
   getNotOverdues = () => {
     return this.filteredBorrowings;
+  };
+
+  /**
+   * Getter method for all borrowings
+   * @returns Borrowings[]
+   */
+  getAllBorrowings = () => {
+    return this.userBorrowings;
   };
 }
