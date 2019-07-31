@@ -15,7 +15,7 @@ export class BorrowingsComponent implements OnInit {
 
   async ngOnInit() {
     await this.userService.getUserBorrowings();
-    this.borrowings = this.userService.getNotOverdues();
+    this.borrowings = this.userService.getAllBorrowings();
     this.overdues = this.userService.getOverDues();
   }
 }
