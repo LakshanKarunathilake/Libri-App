@@ -28,82 +28,19 @@
 
   <div padding>
     <div>Borrow list</div>
-    <ion-card class="borrowing-card safe">
+    <ion-card class="borrowing-card safe" *ngFor="let borrow of borrowings">
       <ion-card-header>
-        <ion-card-title>Harry Potter and Deathly Hallows</ion-card-title>
+        <ion-card-title>{{ borrow.title }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <div style="display: flex;justify-content: space-between">
           <div>
             <span>Issue Date : </span>
-            <span>2019/05/05</span>
+            <span>{{ borrow.issuedate }}</span>
           </div>
           <div>
             <span>Due Date : </span>
-            <span>2019/05/21</span>
-          </div>
-        </div>
-        <div>
-          <span>Number of days overdue : </span>
-          <span> 25 </span>
-        </div>
-      </ion-card-content>
-    </ion-card>
-    <ion-card class="borrowing-card safe">
-      <ion-card-header>
-        <ion-card-title>Head first Java</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div style="display: flex;justify-content: space-between">
-          <div>
-            <span>Issue Date : </span>
-            <span>2019/05/05</span>
-          </div>
-          <div>
-            <span>Due Date : </span>
-            <span>2019/05/21</span>
-          </div>
-        </div>
-        <div>
-          <span>Number of days overdue : </span>
-          <span> 25 </span>
-        </div>
-      </ion-card-content>
-    </ion-card>
-    <ion-card class="borrowing-card safe">
-      <ion-card-header>
-        <ion-card-title>Head first Java</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div style="display: flex;justify-content: space-between">
-          <div>
-            <span>Issue Date : </span>
-            <span>2019/05/05</span>
-          </div>
-          <div>
-            <span>Due Date : </span>
-            <span>2019/05/21</span>
-          </div>
-        </div>
-        <div>
-          <span>Number of days overdue : </span>
-          <span> 25 </span>
-        </div>
-      </ion-card-content>
-    </ion-card>
-    <ion-card class="borrowing-card safe">
-      <ion-card-header>
-        <ion-card-title>Head first Java</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div style="display: flex;justify-content: space-between">
-          <div>
-            <span>Issue Date : </span>
-            <span>2019/05/05</span>
-          </div>
-          <div>
-            <span>Due Date : </span>
-            <span>2019/05/21</span>
+            <span>{{ borrow.date_due }}</span>
           </div>
         </div>
         <div>
