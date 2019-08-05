@@ -56,12 +56,8 @@
           is overdue and depending on the book
         </ion-text>
         <ion-list>
-          <ion-item>
-            <ion-label>Harry potter & Deathly Hallows</ion-label>
-            <ion-checkbox (click)="displayConfirmationMessage()"></ion-checkbox>
-          </ion-item>
-          <ion-item>
-            <ion-label>Harry potter & Deathly Hallows</ion-label>
+          <ion-item *ngFor="let borrowing of borrowings">
+            <ion-label>{{ borrowing.title }}</ion-label>
             <ion-checkbox (click)="displayConfirmationMessage()"></ion-checkbox>
           </ion-item>
         </ion-list>
