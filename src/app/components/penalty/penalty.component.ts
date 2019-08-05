@@ -10,16 +10,14 @@ import { SwalService } from 'src/app/services/swal/swal.service';
   styleUrls: ['./penalty.component.scss']
 })
 export class PenaltyComponent implements OnInit {
+  handler: any;
+  loading = false;
   constructor(
     private aff: AngularFireFunctions,
     private loadingCtrl: LoadingController,
     private swal: SwalService,
     private user: UserService
   ) {}
-
-  handler: any;
-
-  loading = false;
 
   ngOnInit() {
     this.handler = (<any>window).StripeCheckout.configure({
