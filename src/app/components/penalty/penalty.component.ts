@@ -3,6 +3,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { UserService } from 'src/app/services/user/user.service';
 import { SwalService } from 'src/app/services/swal/swal.service';
+import { Borrowing } from 'src/app/models/Borrowings';
 
 @Component({
   selector: 'app-penalty',
@@ -12,12 +13,15 @@ import { SwalService } from 'src/app/services/swal/swal.service';
 export class PenaltyComponent implements OnInit {
   handler: any;
   loading = false;
+  borrowings: Borrowing[];
   constructor(
     private aff: AngularFireFunctions,
     private loadingCtrl: LoadingController,
     private swal: SwalService,
     private user: UserService
-  ) {}
+  ) {
+    this.borrowings = user.getAllBorrowings();
+  }
 
   ngOnInit() {
     this.handler = (<any>window).StripeCheckout.configure({
