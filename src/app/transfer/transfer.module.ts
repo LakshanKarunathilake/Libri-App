@@ -40,6 +40,7 @@ const routes: Routes = [
     NgxQRCodeModule
   ],
   declarations: [TransferPage],
-  providers: [BarcodeScanner]
+  providers: [BarcodeScanner],
+  entryComponents: [transferitem]
 })
 export class TransferPageModule {}
