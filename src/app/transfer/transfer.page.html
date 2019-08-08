@@ -5,14 +5,7 @@
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Select a book for transfer</ng-template>
-        <mat-form-field>
-          <input
-            matInput
-            placeholder="Last name, First name"
-            formControlName="firstCtrl"
-            required
-          />
-        </mat-form-field>
+        <item-transfer></item-transfer>
         <div>
           <button mat-button matStepperNext>Next</button>
         </div>
