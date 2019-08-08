@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { ItemTransferComponent } from '../components/item-transfer/item-transfer.component';
 
 const routes: Routes = [
   {
@@ -39,8 +40,8 @@ const routes: Routes = [
     MatIconModule,
     NgxQRCodeModule
   ],
-  declarations: [TransferPage],
+  declarations: [TransferPage, ItemTransferComponent],
   providers: [BarcodeScanner],
-  entryComponents: [transferitem]
+  entryComponents: [ItemTransferComponent]
 })
 export class TransferPageModule {}
