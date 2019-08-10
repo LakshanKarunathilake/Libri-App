@@ -61,4 +61,12 @@ export class TransferPage implements OnInit {
       book
     });
   };
+
+  /**
+   * Move the stepper to next level
+   */
+  moveHeader = () => {
+    console.log('clicked');
+    this.stepper.selectedIndex = 1;
+  };
 }
