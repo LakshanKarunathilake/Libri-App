@@ -7,7 +7,7 @@
         <ng-template matStepLabel>Select a book for transfer</ng-template>
         <item-transfer></item-transfer>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button (click)="moveHeader()">Next</button>
         </div>
       </form>
     </mat-step>
