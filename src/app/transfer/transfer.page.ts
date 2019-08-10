@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { SwalService } from '../services/swal/swal.service';
 import { BookService } from '../services/book/book.service';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-transfer',
@@ -13,6 +14,7 @@ export class TransferPage implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   options = ['new feature', 'error/bug', 'improvement'];
+  @ViewChild('stepper') stepper: MatStepper;
   constructor(
     private _formBuilder: FormBuilder,
     private scanner: BarcodeScanner,
