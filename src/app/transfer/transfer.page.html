@@ -3,13 +3,12 @@
 <ion-content padding>
   <mat-horizontal-stepper linear #stepper>
     <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Select a book for transfer</ng-template>
         <ng-template matStepLabel>Select a book for transfer</ng-template>
         <item-transfer></item-transfer>
         <div>
           <button mat-button (click)="moveHeader()">Next</button>
         </div>
-      </form>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
