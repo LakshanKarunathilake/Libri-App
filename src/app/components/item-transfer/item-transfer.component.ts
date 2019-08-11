@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'item-transfer',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-transfer.component.scss']
 })
 export class ItemTransferComponent implements OnInit {
+  @Input() moveHeader: Function;
   constructor() {}
 
   ngOnInit() {}
