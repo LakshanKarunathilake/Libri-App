@@ -10,4 +10,11 @@ export class ItemTransferComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  /**
+   * Initiate a book transfer
+   */
+  transfer = () => {
+    this.moveHeader();
+  };
 }
