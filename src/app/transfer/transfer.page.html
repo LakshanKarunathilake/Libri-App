@@ -4,11 +4,10 @@
   <mat-horizontal-stepper linear #stepper>
     <mat-step>
       <ng-template matStepLabel>Select a book for transfer</ng-template>
-        <ng-template matStepLabel>Select a book for transfer</ng-template>
-        <item-transfer></item-transfer>
-        <div>
-          <button mat-button (click)="moveHeader()">Next</button>
-        </div>
+      <item-transfer [moveHeader]="moveHeader"></item-transfer>
+      <div>
+        <button mat-button (click)="moveHeader()" type="button">Next</button>
+      </div>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
