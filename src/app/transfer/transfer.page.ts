@@ -20,7 +20,7 @@ export class TransferPage implements OnInit {
   ngOnInit() {}
 
   getTitle = () => {
-    return this.firstFormGroup.controls['firstCtrl'].value || 'Value not found';
+    return 'test data';
   };
 
   scanForQR = () => {
