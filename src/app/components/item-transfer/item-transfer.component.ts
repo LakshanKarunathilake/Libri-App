@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Borrowing } from 'src/app/models/Borrowings';
+import { SwalService } from 'src/app/services/swal/swal.service';
 
 @Component({
   selector: 'item-transfer',
@@ -9,7 +10,7 @@ import { Borrowing } from 'src/app/models/Borrowings';
 export class ItemTransferComponent implements OnInit {
   @Input() moveHeader: Function;
   @Input() borrowDetails: Borrowing;
-  constructor() {}
+  constructor(private swalService: SwalService) {}
 
   ngOnInit() {}
 
