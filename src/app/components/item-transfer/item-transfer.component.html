@@ -1,13 +1,13 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-title>Harry potter</ion-card-title>
+    <ion-card-title>{{ borrowDetails.title }}</ion-card-title>
     <ion-grid>
       <ion-row>
         <ion-col>
-          Issue date - 2018/01/01
+          Issue date - <span>{{ borrowDetails.issuedate }}</span>
         </ion-col>
         <ion-col class="ion-text-end">
-          Due date - 2018/01/8
+          Due date -<span>{{ borrowDetails.date_due }}</span>
         </ion-col>
       </ion-row>
     </ion-grid>
