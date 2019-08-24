@@ -4,6 +4,7 @@ import { SwalService } from '../services/swal/swal.service';
 import { BookService } from '../services/book/book.service';
 import { MatStepper } from '@angular/material/stepper';
 import { UserService } from '../services/user/user.service';
+import { Borrowing } from '../models/Borrowings';
 
 @Component({
   selector: 'app-transfer',
@@ -12,6 +13,8 @@ import { UserService } from '../services/user/user.service';
 })
 export class TransferPage implements OnInit {
   @ViewChild('stepper') stepper: MatStepper;
+  borrowings: Borrowing[];
+
   constructor(
     private scanner: BarcodeScanner,
     private swal: SwalService,
@@ -19,7 +22,10 @@ export class TransferPage implements OnInit {
     private userService: UserService
   ) {}
 
-  ngOnInit() {}
+  async ngOnInit() {
+    await this.userService.getUserBorrowings();
+    this.borrowings = this.userService.getNotOverdues();
+  }
 
   getTitle = () => {
     return 'test data';
