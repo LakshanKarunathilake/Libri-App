@@ -24,7 +24,7 @@ export class TransferPage implements OnInit {
 
   async ngOnInit() {
     await this.userService.getUserBorrowings();
-    this.borrowings = this.userService.getNotOverdues();
+    this.borrowings = this.userService.getAllBorrowings();
   }
 
   getTitle = () => {
