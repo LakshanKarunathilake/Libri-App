@@ -18,6 +18,14 @@ export class ItemTransferComponent implements OnInit {
    * Initiate a book transfer
    */
   transfer = () => {
-    this.moveHeader();
+    this.swalService.displayConfirmation(
+      'Confirm Transfer',
+      'You are about transfer your book would you like to proceed',
+      data => {
+        if (data) {
+          this.moveHeader();
+        }
+      }
+    );
   };
 }
