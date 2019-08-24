@@ -136,6 +136,7 @@ export class UserService {
    * @returns Borrowings[]
    */
   getNotOverdues = () => {
+    console.log('Returning not overdues');
     return this.filteredBorrowings;
   };
 
@@ -144,6 +145,7 @@ export class UserService {
    * @returns Borrowings[]
    */
   getAllBorrowings = () => {
+    console.log('Retunring all the borrowings');
     return this.userBorrowings;
   };
 }
