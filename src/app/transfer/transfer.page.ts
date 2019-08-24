@@ -3,6 +3,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { SwalService } from '../services/swal/swal.service';
 import { BookService } from '../services/book/book.service';
 import { MatStepper } from '@angular/material/stepper';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-transfer',
@@ -14,7 +15,8 @@ export class TransferPage implements OnInit {
   constructor(
     private scanner: BarcodeScanner,
     private swal: SwalService,
-    private bookService: BookService
+    private bookService: BookService,
+    private userService: UserService
   ) {}
 
   ngOnInit() {}
