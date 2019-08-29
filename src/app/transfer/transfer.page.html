@@ -4,7 +4,9 @@
   <mat-horizontal-stepper linear #stepper>
     <mat-step>
       <ng-template matStepLabel>Select a book for transfer</ng-template>
+      <!-- Skeleton view -->
 
+      <!-- End of skelton view -->
       <item-transfer
         [moveHeader]="moveHeader"
         *ngFor="let borrowing of borrowings"
