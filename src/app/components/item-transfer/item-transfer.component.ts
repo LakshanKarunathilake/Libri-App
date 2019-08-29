@@ -27,8 +27,9 @@ export class ItemTransferComponent implements OnInit {
     this.swalService.displayConfirmation(
       'Confirm Transfer',
       'You are about transfer your book would you like to proceed',
-      data => {
+      async data => {
         if (data) {
+          await this.creatingATransferRecord();
           this.moveHeader();
         }
       }
