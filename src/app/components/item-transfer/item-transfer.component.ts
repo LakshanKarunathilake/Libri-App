@@ -34,4 +34,14 @@ export class ItemTransferComponent implements OnInit {
       }
     );
   };
+
+  creatingATransferRecord = async () => {
+    const { uid } = this.userService.getCurrentUser();
+    console.log('uid', uid);
+    await this.afs
+      .collection('users')
+      .doc(uid)
+      .collection('transfers')
+      .add(this.borrowDetails);
+  };
 }
