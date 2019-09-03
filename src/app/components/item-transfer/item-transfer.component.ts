@@ -31,20 +31,10 @@ export class ItemTransferComponent implements OnInit {
       'You are about transfer your book would you like to proceed',
       async data => {
         if (data) {
-          await this.creatingATransferRecord();
+          await this.bookService.placeABookTransfer(this.borrowDetails);
           this.moveHeader();
         }
       }
     );
-  };
-
-  creatingATransferRecord = async () => {
-    const { uid } = this.userService.getCurrentUser();
-    console.log('uid', uid);
-    await this.afs
-      .collection('users')
-      .doc(uid)
-      .collection('transfers')
-      .add(this.borrowDetails);
   };
 }
