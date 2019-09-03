@@ -3,6 +3,7 @@ import { Borrowing } from 'src/app/models/Borrowings';
 import { SwalService } from 'src/app/services/swal/swal.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { BookService } from 'src/app/services/book/book.service';
 
 @Component({
   selector: 'item-transfer',
@@ -15,7 +16,8 @@ export class ItemTransferComponent implements OnInit {
   constructor(
     private swalService: SwalService,
     private afs: AngularFirestore,
-    private userService: UserService
+    private userService: UserService,
+    private bookService: BookService
   ) {}
 
   ngOnInit() {}
