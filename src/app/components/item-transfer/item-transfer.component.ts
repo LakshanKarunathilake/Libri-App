@@ -1,4 +1,3 @@
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit, Input } from '@angular/core';
 import { Borrowing } from 'src/app/models/Borrowings';
 import { SwalService } from 'src/app/services/swal/swal.service';
