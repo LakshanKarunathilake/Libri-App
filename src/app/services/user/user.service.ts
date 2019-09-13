@@ -148,4 +148,20 @@ export class UserService {
     console.log('Retunring all the borrowings');
     return this.userBorrowings;
   };
+
+  /**
+   * Check whether the given userId is registered in the library
+   * This method will be invoked when a user tries to register
+   * Sample id number is
+   */
+  isUserRegistered = () => {
+    const func = this.aff.functions.httpsCallable('isUserIdAvailable');
+    func({ id: '23529000445172' })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 }
