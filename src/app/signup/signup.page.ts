@@ -32,16 +32,7 @@ export class SignupPage implements OnInit {
     });
   }
 
-  ngOnInit() {
-    const func = this.aff.functions.httpsCallable('isUserIdAvailable');
-    func({ id: '23529000445172' })
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }
+  ngOnInit() {}
 
   getErrorMessage = (controller: string) => {
     const formController = this.signupForm.controls[controller];
