@@ -19,8 +19,7 @@ export class SignupPage implements OnInit {
     private loadingCtrl: LoadingController,
     private fcm: FcmService,
     private swal: SwalService,
-    private user: UserService,
-    private aff: AngularFireFunctions
+    private user: UserService
   ) {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
