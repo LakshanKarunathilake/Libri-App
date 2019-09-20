@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MenuPage } from './menu.page';
 import { BookService } from '../services/book/book.service';
+import { FileUploadService } from '../services/file-upload/file-upload.service';
 
 const routes: Routes = [
   {
@@ -31,6 +32,6 @@ const routes: Routes = [
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes)],
   declarations: [MenuPage],
-  providers: [BookService]
+  providers: [BookService, FileUploadService]
 })
 export class MenuPageModule {}
