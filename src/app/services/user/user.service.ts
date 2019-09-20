@@ -136,7 +136,6 @@ export class UserService {
    * @returns Borrowings[]
    */
   getNotOverdues = () => {
-    console.log('Returning not overdues');
     return this.filteredBorrowings;
   };
 
@@ -145,7 +144,6 @@ export class UserService {
    * @returns Borrowings[]
    */
   getAllBorrowings = () => {
-    console.log('Retunring all the borrowings');
     return this.userBorrowings;
   };
 
@@ -154,14 +152,9 @@ export class UserService {
    * This method will be invoked when a user tries to register
    * Sample id number is
    */
-  isUserRegistered = () => {
+  isUserRegistered = async (uid: string) => {
     const func = this.aff.functions.httpsCallable('isUserIdAvailable');
-    func({ id: '23529000445172' })
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    const data = await func({ id: uid });
+    return data;
   };
 }
