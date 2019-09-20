@@ -6,6 +6,7 @@ import { LoadingController } from '@ionic/angular';
 import { auth } from 'firebase';
 import { FcmService } from '../fcm.service';
 import { SwalService } from '../services/swal/swal.service';
+import { CustomValidatorService } from '../services/custom-validator/custom-validator.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -19,12 +20,13 @@ export class SignupPage implements OnInit {
     private loadingCtrl: LoadingController,
     private fcm: FcmService,
     private swal: SwalService,
-    private user: UserService
+    private user: UserService,
+    private customValidation: CustomValidatorService
   ) {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      libraryId: ['', [Validators.required]],
+      libraryId: ['', [Validators.required, this.customValidation.libraryIdValidator]],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
       telephoneNumber: ['', Validators.required]
