@@ -38,10 +38,11 @@ export class FileUploadService {
           }
         }),
         finalize(async () => {
-          this.fileData.imageURL = await this.afs
+          const img_url = await this.afs
             .ref(path)
             .getDownloadURL()
             .toPromise();
+          this.fileData.imageURL = img_url;
           setDownloadURL(this.afs.ref(path).getDownloadURL());
         })
       )
