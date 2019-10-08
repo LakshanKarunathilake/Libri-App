@@ -18,11 +18,12 @@ export class BooksearchPage implements OnInit {
   ngOnInit() {}
 
   searchForbooks = value => {
+    const searchType = this.generateSearchType();
     if (value !== '') {
       this.logger.bookSearchEVent(value);
       this.books = undefined;
       this.loading = true;
-      this.bookService.searchBooks(value, 'title').then(data => {
+      this.bookService.searchBooks(value, searchType).then(data => {
         this.books = JSON.parse(data.data['result']).map(record => {
           const url = record['url'];
           if (url) {
@@ -54,6 +55,16 @@ export class BooksearchPage implements OnInit {
         .join('');
     } else {
       return url;
+    }
+  };
+
+  generateSearchType = () => {
+    if (this.titleCheckbox && this.authorCheckbox) {
+      return 'both';
+    } else if (this.titleCheckbox) {
+      return 'title';
+    } else {
+      return 'author';
     }
   };
 }
