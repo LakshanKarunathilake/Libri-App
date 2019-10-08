@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.laksoft.libri;
 
 import android.os.Bundle;
 

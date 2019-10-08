@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Libri</string>
     <string name="title_activity_main">Libri</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="fileprovider_authority">io.ionic.starter.fileprovider</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">com.laksoft.libri</string>
+    <string name="fileprovider_authority">com.laksoft.libri.fileprovider</string>
+    <string name="custom_url_scheme">com.laksoft.libri</string>
 </resources>
