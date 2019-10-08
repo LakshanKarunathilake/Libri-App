@@ -1,5 +1,5 @@
 {
-  "appId": "com.laksoft.libri",
+  "appId": "io.ionic.starter",
   "appName": "Libri",
   "bundledWebRuntime": false,
   "npmClient": "npm",
