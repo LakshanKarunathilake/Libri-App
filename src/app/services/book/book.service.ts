@@ -50,12 +50,13 @@ export class BookService {
     const { uid } = this.userService.getCurrentUser();
     await this.assignToLoadingView('Adding your book to shelf');
     this.loading.present();
-
+    const { title } = book;
     this.afs
       .collection('users')
       .doc(uid)
       .collection('bookShelf')
-      .add(book)
+      .doc(title)
+      .set(book)
       .then(() => {
         this.loading.dismiss();
         this.swal.viewSuccessMessage(
