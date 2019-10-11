@@ -8,6 +8,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { EventLoggerService } from '../logger/event-logger.service';
 import { FileUploadService } from '../file-upload/file-upload.service';
 import { BookRequest } from 'src/app/models/BookRequest';
+import { Borrowing } from 'src/app/models/Borrowings';
 
 @Injectable({
   providedIn: 'root'
@@ -147,15 +148,17 @@ export class BookService {
    * Placing a book transfer is taken place in this function
    * This will only create a document under users/{userId}/transfers/
    */
-  placeABookTransfer = async request => {
+  placeABookTransfer = async (transfer:Borrowing) => {
     const { uid } = this.userService.getCurrentUser();
     await this.assignToLoadingView('Initiating your transfer');
+    const {title} = transfer;
     this.loading.present();
     this.afs
       .collection('users')
       .doc(uid)
       .collection('transfers')
-      .add(request)
+      .doc(title)
+      .set(transfer)
       .then(() => {
         this.loading.dismiss();
         this.swal.viewSuccessMessage(
