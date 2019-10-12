@@ -47,18 +47,6 @@ export class TransferPage implements OnInit {
   };
 
   /**
-   * Placing the transfer request in the firebase
-   * This should contain the sender,book,issue details
-   *
-   */
-  placeATransfer = () => {
-    const book = {};
-    this.bookService.placeABookTransfer({
-      book
-    });
-  };
-
-  /**
    * Move the stepper to next level
    */
   moveHeader = () => {
