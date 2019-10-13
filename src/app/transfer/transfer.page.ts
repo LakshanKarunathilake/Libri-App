@@ -60,7 +60,6 @@ export class TransferPage implements OnInit {
     const activeTransferObservable = this.bookService.getCurrentActiveTransfer();
     if (activeTransferObservable !== undefined) {
       this.bookService.getCurrentActiveTransfer().valueChanges().subscribe((data:Borrowing)=>{
-        if(data.status === 'tarnsfering'){
         if(data.status === 'transfering'){
           this.moveHeader();
         }
