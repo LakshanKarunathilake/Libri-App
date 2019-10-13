@@ -43,6 +43,21 @@
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="moveHeader()" type="button">Next</button>
+
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <ion-card>
+        <ion-card-header>Status of the request</ion-card-header>
+        <ion-card-content>
+          Please wait
+        </ion-card-content>
+      </ion-card>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>
