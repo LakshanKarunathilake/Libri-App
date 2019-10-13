@@ -4,7 +4,7 @@ import { UserService } from './../user/user.service';
 import { Book } from './../../models/Book';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { Injectable } from '@angular/core';
-import { AngularFirestore,  AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { EventLoggerService } from '../logger/event-logger.service';
 import { FileUploadService } from '../file-upload/file-upload.service';
 import { BookRequest } from 'src/app/models/BookRequest';
@@ -15,7 +15,7 @@ import { Borrowing } from 'src/app/models/Borrowings';
 })
 export class BookService {
   loading;
-  private transferRef:AngularFirestoreDocument;
+  private transferRef: AngularFirestoreDocument;
   constructor(
     private aff: AngularFireFunctions,
     private afs: AngularFirestore,
@@ -150,20 +150,24 @@ export class BookService {
    * Placing a book transfer is taken place in this function
    * This will only create a document under users/{userId}/transfers/
    */
-  placeABookTransfer = async (transfer:Borrowing) => {
+  placeABookTransfer = async (transfer: Borrowing) => {
     const { uid } = this.userService.getCurrentUser();
     await this.assignToLoadingView('Initiating your transfer');
-    const {title} = transfer;
-    const transferRef:AngularFirestoreDocument =this.afs.collection('users').doc(uid).collection('transfers').doc(title)
-    this.setCurrentActiveTransfer(transferRef)
+    const { title } = transfer;
+    const transferRef: AngularFirestoreDocument = this.afs
+      .collection('users')
+      .doc(uid)
+      .collection('transfers')
+      .doc(title);
+    this.setCurrentActiveTransfer(transferRef);
     this.loading.present();
     await this.afs
       .collection('users')
       .doc(uid)
       .collection('transfers')
       .doc(title)
-      .set({...transfer,status:"pending"})
-      .then((data) => {
+      .set({ ...transfer, status: 'pending' })
+      .then(data => {
         this.loading.dismiss();
         this.swal.viewSuccessMessage(
           'Transfer',
@@ -193,9 +197,9 @@ export class BookService {
    * Set current active transfer request document reference
    * this is called when user is initiating an transfer
    */
-  private setCurrentActiveTransfer = (transfer:AngularFirestoreDocument) => {
+  private setCurrentActiveTransfer = (transfer: AngularFirestoreDocument) => {
     this.transferRef = transfer;
-  }
+  };
 
   /**
    * Returning the current active transfer request
@@ -205,21 +209,22 @@ export class BookService {
     if (this.transferRef) {
       return this.transferRef;
     }
-  }
-
+  };
 
   /**
    * Accepting a book transfer
    * When the QR is scanner the relavant document is updated to transferring state
    * Library must accept the transfer then only your transfer is finalized
    */
-  acceptBookTransfer = (path) => {
-    this.afs.doc(path).update({status:"transfering"})
-    .then(()=>{
-      this.swal.viewSuccessMessage('Success','Successfully placed a transfer request')
-    })
-    .catch((error)=>{
-      alert('error',error)
-    })
-  }
+  acceptBookTransfer = path => {
+    this.afs
+      .doc(path)
+      .update({ status: 'transfering' })
+      .then(() => {
+        this.swal.viewSuccessMessage('Success', 'Successfully placed a transfer request');
+      })
+      .catch(error => {
+        alert('error');
+      });
+  };
 }
