@@ -28,9 +28,8 @@ export class TransferPage implements OnInit {
   }
 
   getTransferDocument = () => {
-    // const transferRequestObservable = this.bookService.getCurrentActiveTransfer();
-    console.log('transferRequestObservable')
-    return JSON.stringify('asdasd');
+    const transferDocPath = this.bookService.getCurrentActiveTransfer().ref.path;
+    return transferDocPath;
   };
 
   scanForQR = () => {
@@ -58,8 +57,8 @@ export class TransferPage implements OnInit {
   subscribeToTransferPage = () => {
     console.log('Subscribing')
     const activeTransferObservable = this.bookService.getCurrentActiveTransfer();
-    if (activeTransferObservable != undefined) {
-      this.bookService.getCurrentActiveTransfer().subscribe((data:Borrowing)=>{
+    if (activeTransferObservable !== undefined) {
+      this.bookService.getCurrentActiveTransfer().valueChanges().subscribe((data:Borrowing)=>{
         if(data.status === 'tarnsfering'){
           this.moveHeader();
         }

@@ -203,7 +203,7 @@ export class BookService {
    */
   getCurrentActiveTransfer = () => {
     if (this.transferRef) {
-      return this.transferRef.valueChanges();
+      return this.transferRef;
     }
   }
 }
