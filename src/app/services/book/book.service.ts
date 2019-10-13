@@ -188,4 +188,20 @@ export class BookService {
   checkBookAvailabilityStatus = (biblionumber: string) => {
     return this.aff.functions.httpsCallable('isBookAvailable')({ biblionumber });
   };
+
+  /**
+   * Set current active transfer request document reference
+   * this is called when user is initiating an transfer
+   */
+  private setCurrentActiveTransfer = (transfer:AngularFirestoreDocument) => {
+    this.transferRef = transfer;
+  }
+
+  /**
+   * Returning the current active transfer request
+   * The returing object is document reference for the firestore document
+   */
+  getCurrentActiveTransfer = () => {
+    return this.transferRef.valueChanges();
+  }
 }
