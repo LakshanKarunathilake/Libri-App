@@ -4,4 +4,5 @@ export interface Borrowing {
   renewals: number;
   title: string;
   issuedate: string;
+  status:'pending';
 }

@@ -162,7 +162,7 @@ export class BookService {
       .doc(uid)
       .collection('transfers')
       .doc(title)
-      .set(transfer)
+      .set({...transfer,status:"pending"})
       .then((data) => {
         this.loading.dismiss();
         this.swal.viewSuccessMessage(
