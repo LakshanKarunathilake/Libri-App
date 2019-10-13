@@ -54,10 +54,10 @@ export class TransferPage implements OnInit {
   };
 
   subscribeToTransferPage = () => {
-    this.bookService.getCurrentActiveTransfer().subscribe(data=>{
-      console.log('data', data)
+    this.bookService.getCurrentActiveTransfer().subscribe((data:Borrowing)=>{
+      if(data.status === "tarnsfering"){
+        this.moveHeader();
+      }
     })
   }
-
-  
 }

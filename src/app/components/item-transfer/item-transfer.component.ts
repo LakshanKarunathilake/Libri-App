@@ -12,6 +12,7 @@ import { BookService } from 'src/app/services/book/book.service';
 })
 export class ItemTransferComponent implements OnInit {
   @Input() moveHeader: Function;
+  @Input() subscribeToTransferReq: Function;
   @Input() borrowDetails: Borrowing;
   constructor(
     private swalService: SwalService,
@@ -33,6 +34,7 @@ export class ItemTransferComponent implements OnInit {
         if (data) {
           await this.bookService.placeABookTransfer(this.borrowDetails);
           this.moveHeader();
+          this.subscribeToTransferReq();
         }
       }
     );

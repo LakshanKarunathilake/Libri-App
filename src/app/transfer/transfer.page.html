@@ -28,6 +28,7 @@
       <!-- End of skelton view -->
       <item-transfer
         [moveHeader]="moveHeader"
+        [subscribeToTransferReq]="subscribeToTransferPage"
         *ngFor="let borrowing of borrowings"
         [borrowDetails]="borrowing"
       ></item-transfer>
@@ -44,7 +45,6 @@
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
         <button mat-button (click)="moveHeader()" type="button">Next</button>
-
       </div>
     </mat-step>
     <mat-step>
