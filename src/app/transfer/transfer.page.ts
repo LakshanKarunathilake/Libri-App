@@ -52,4 +52,12 @@ export class TransferPage implements OnInit {
   moveHeader = () => {
     this.stepper.selectedIndex = this.stepper.selectedIndex +1 ;
   };
+
+  subscribeToTransferPage = () => {
+    this.bookService.getCurrentActiveTransfer().subscribe(data=>{
+      console.log('data', data)
+    })
+  }
+
+  
 }
