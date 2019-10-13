@@ -39,7 +39,7 @@
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       <ion-card id="qrcode">
-        <ngx-qrcode [qrc-value]="getTitle()"></ngx-qrcode>
+        <qrcode (qrdata)="getTransferDocument()" [size]="256" [level]="'M'"></qrcode>
       </ion-card>
       <div>
         <button mat-button matStepperPrevious>Back</button>

@@ -27,8 +27,10 @@ export class TransferPage implements OnInit {
     this.borrowings = this.userService.getAllBorrowings();
   }
 
-  getTitle = () => {
-    return 'test data';
+  getTransferDocument = () => {
+    // const transferRequestObservable = this.bookService.getCurrentActiveTransfer();
+    console.log('transferRequestObservable')
+    return JSON.stringify('asdasd');
   };
 
   scanForQR = () => {
@@ -54,10 +56,14 @@ export class TransferPage implements OnInit {
   };
 
   subscribeToTransferPage = () => {
-    this.bookService.getCurrentActiveTransfer().subscribe((data:Borrowing)=>{
-      if(data.status === "tarnsfering"){
-        this.moveHeader();
-      }
-    })
+    console.log('Subscribing')
+    const activeTransferObservable = this.bookService.getCurrentActiveTransfer();
+    if (activeTransferObservable != undefined) {
+      this.bookService.getCurrentActiveTransfer().subscribe((data:Borrowing)=>{
+        if(data.status === 'tarnsfering'){
+          this.moveHeader();
+        }
+      })
+    }
   }
 }

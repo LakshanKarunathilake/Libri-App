@@ -202,6 +202,8 @@ export class BookService {
    * The returing object is document reference for the firestore document
    */
   getCurrentActiveTransfer = () => {
-    return this.transferRef.valueChanges();
+    if (this.transferRef) {
+      return this.transferRef.valueChanges();
+    }
   }
 }
