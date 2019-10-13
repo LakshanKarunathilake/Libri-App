@@ -13,9 +13,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { ItemTransferComponent } from '../components/item-transfer/item-transfer.component';
+import { QRCodeModule } from 'angularx-qrcode';
 
 const routes: Routes = [
   {
@@ -38,7 +38,7 @@ const routes: Routes = [
     MatButtonModule,
     MatSelectModule,
     MatIconModule,
-    NgxQRCodeModule
+    QRCodeModule
   ],
   declarations: [TransferPage, ItemTransferComponent],
   providers: [BarcodeScanner],
