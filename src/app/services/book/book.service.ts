@@ -206,4 +206,20 @@ export class BookService {
       return this.transferRef;
     }
   }
+
+
+  /**
+   * Accepting a book transfer
+   * When the QR is scanner the relavant document is updated to transferring state
+   * Library must accept the transfer then only your transfer is finalized
+   */
+  acceptBookTransfer = (path) => {
+    this.afs.doc(path).update({status:"transfering"})
+    .then(()=>{
+      this.swal.viewSuccessMessage('Success','Successfully placed a transfer request')
+    })
+    .catch((error)=>{
+      alert('error',error)
+    })
+  }
 }

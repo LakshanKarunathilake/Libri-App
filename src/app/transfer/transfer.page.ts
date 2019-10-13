@@ -36,6 +36,7 @@ export class TransferPage implements OnInit {
     this.scanner
       .scan()
       .then(data => {
+        this.bookService.acceptBookTransfer(data.text);
         alert(data.text);
       })
       .catch(error => {
@@ -65,4 +66,6 @@ export class TransferPage implements OnInit {
       })
     }
   }
+
+  
 }
