@@ -50,7 +50,6 @@ export class TransferPage implements OnInit {
    * Move the stepper to next level
    */
   moveHeader = () => {
-    console.log('clicked');
-    this.stepper.selectedIndex = 1;
+    this.stepper.selectedIndex = this.stepper.selectedIndex +1 ;
   };
 }
