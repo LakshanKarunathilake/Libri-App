@@ -4,7 +4,7 @@ import { UserService } from './../user/user.service';
 import { Book } from './../../models/Book';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore,  AngularFirestoreDocument } from '@angular/fire/firestore';
 import { EventLoggerService } from '../logger/event-logger.service';
 import { FileUploadService } from '../file-upload/file-upload.service';
 import { BookRequest } from 'src/app/models/BookRequest';
@@ -15,6 +15,7 @@ import { Borrowing } from 'src/app/models/Borrowings';
 })
 export class BookService {
   loading;
+  private transferRef:AngularFirestoreDocument;
   constructor(
     private aff: AngularFireFunctions,
     private afs: AngularFirestore,
@@ -153,14 +154,16 @@ export class BookService {
     const { uid } = this.userService.getCurrentUser();
     await this.assignToLoadingView('Initiating your transfer');
     const {title} = transfer;
+    const transferRef:AngularFirestoreDocument =this.afs.collection('users').doc(uid).collection('transfers').doc(title)
+    this.setCurrentActiveTransfer(transferRef)
     this.loading.present();
-    this.afs
+    await this.afs
       .collection('users')
       .doc(uid)
       .collection('transfers')
       .doc(title)
       .set(transfer)
-      .then(() => {
+      .then((data) => {
         this.loading.dismiss();
         this.swal.viewSuccessMessage(
           'Transfer',
