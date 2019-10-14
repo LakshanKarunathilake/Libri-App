@@ -28,6 +28,7 @@ export class TransferPage implements OnInit {
   }
 
   getTransferDocument = () => {
+    console.log('hjjh');
     const transferDocPath = this.bookService.getCurrentActiveTransfer().ref.path;
     return transferDocPath;
   };
@@ -52,20 +53,21 @@ export class TransferPage implements OnInit {
    * Move the stepper to next level
    */
   moveHeader = () => {
-    this.stepper.selectedIndex = this.stepper.selectedIndex +1 ;
+    this.stepper.selectedIndex = this.stepper.selectedIndex + 1;
   };
 
   subscribeToTransferPage = () => {
-    console.log('Subscribing')
+    console.log('Subscribing');
     const activeTransferObservable = this.bookService.getCurrentActiveTransfer();
     if (activeTransferObservable !== undefined) {
-      this.bookService.getCurrentActiveTransfer().valueChanges().subscribe((data:Borrowing)=>{
-        if(data.status === 'transfering'){
-          this.moveHeader();
-        }
-      })
+      this.bookService
+        .getCurrentActiveTransfer()
+        .valueChanges()
+        .subscribe((data: Borrowing) => {
+          if (data.status === 'tarnsfering') {
+            this.moveHeader();
+          }
+        });
     }
-  }
-
-  
+  };
 }

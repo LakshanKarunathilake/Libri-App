@@ -39,8 +39,11 @@
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       <ion-card id="qrcode">
-        
-        <qrcode [qrdata]="getTransferDocument()"  [level]="'M'" *ngIf="stepper.selectedIndex == 1"></qrcode>
+        <qrcode
+          [qrdata]="getTransferDocument()"
+          [level]="'M'"
+          *ngIf="stepper.selectedIndex == 1"
+        ></qrcode>
       </ion-card>
       <div>
         <button mat-button matStepperPrevious>Back</button>
