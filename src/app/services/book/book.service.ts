@@ -205,7 +205,7 @@ export class BookService {
    * Returning the current active transfer request
    * The returing object is document reference for the firestore document
    */
-  getCurrentActiveTransfer = () => {
+  getCurrentActiveTransfer = (): AngularFirestoreDocument => {
     if (this.transferRef) {
       return this.transferRef;
     }
@@ -219,7 +219,7 @@ export class BookService {
   acceptBookTransfer = path => {
     this.afs
       .doc(path)
-      .update({ status: 'transfering' })
+      .update({ status: 'toBeApproved' })
       .then(() => {
         this.swal.viewSuccessMessage('Success', 'Successfully placed a transfer request');
       })
