@@ -10,6 +10,7 @@ import { BooksearchPage } from './booksearch.page';
 import { BookViewComponent } from '../components/book-view/book-view.component';
 import { BookSearchView } from '../components/book-search-view/book-search-view.component';
 import { AnimatedTextComponent } from '../components/animated-text/animated-text.component';
+import { AnimatedTextComponentModule } from '../components/animated-text/animated-text.module';
 
 const routes: Routes = [
   {
@@ -24,9 +25,10 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    MenuTitleComponentModule
+    MenuTitleComponentModule,
+    AnimatedTextComponentModule
   ],
-  declarations: [BooksearchPage, BookViewComponent, BookSearchView, AnimatedTextComponent],
+  declarations: [BooksearchPage, BookViewComponent, BookSearchView],
   entryComponents: [BookViewComponent, BookSearchView, AnimatedTextComponent]
 })
 export class BooksearchPageModule {}
