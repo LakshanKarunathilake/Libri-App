@@ -53,12 +53,8 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <ion-card>
-        <ion-card-header>Status of the request</ion-card-header>
-        <ion-card-content>
-          Please wait
-        </ion-card-content>
-      </ion-card>
+      <app-animated-text [text]="acceptanceStatus.title"></app-animated-text>
+      <img [src]="acceptanceStatus.img_url" alt="" id="transfer-status" />
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
