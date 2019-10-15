@@ -5,4 +5,5 @@ export interface Borrowing {
   title: string;
   issuedate: string;
   status?: string;
+  cardNumber: string;
 }
