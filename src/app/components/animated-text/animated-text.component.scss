@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+svg {
+  display: block;
+  font: 5em 'Montserrat';
+  margin: 0 auto;
+}
+
+.text-copy-rejected,
+.text-copy-success {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 2px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+// Rejected
+.text-copy-rejected:nth-child(1) {
+  stroke: #fe5200;
+  animation-delay: -1;
+}
+
+.text-copy-rejected:nth-child(2) {
+  stroke: #840037;
+  animation-delay: -2s;
+}
+
+.text-copy-rejected:nth-child(3) {
+  stroke: #bd0034;
+  animation-delay: -3s;
+}
+
+.text-copy-rejected:nth-child(4) {
+  stroke: #bd0034;
+  animation-delay: -4s;
+}
+
+.text-copy-rejected:nth-child(5) {
+  stroke: #fdb731;
+  animation-delay: -5s;
+}
+
+// Success
+// Rejected
+.text-copy-success:nth-child(1) {
+  stroke: #cddc39;
+  animation-delay: -1;
+}
+
+.text-copy-success:nth-child(2) {
+  stroke: #7cb342;
+  animation-delay: -2s;
+}
+
+.text-copy-success:nth-child(3) {
+  stroke: #388e3c;
+  animation-delay: -3s;
+}
+
+.text-copy-success:nth-child(4) {
+  stroke: #1b5e20;
+  animation-delay: -4s;
+}
+
+.text-copy-success:nth-child(5) {
+  stroke: #fdb731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
