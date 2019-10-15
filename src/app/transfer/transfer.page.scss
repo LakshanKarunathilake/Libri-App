@@ -8,3 +8,19 @@
   right: 10px;
   bottom: 10px;
 }
+
+@media only screen and (max-width: 1980px) {
+  #transfer-status {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #transfer-status {
+    width: 100%;
+    height: auto;
+  }
+}
