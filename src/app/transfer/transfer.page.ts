@@ -15,6 +15,7 @@ export class TransferPage implements OnInit {
   @ViewChild('stepper') stepper: MatStepper;
   borrowings: Borrowing[];
 
+  transferReqeustDocument;
   constructor(
     private scanner: BarcodeScanner,
     private swal: SwalService,
@@ -57,7 +58,8 @@ export class TransferPage implements OnInit {
   };
 
   subscribeToTransferPage = () => {
-    console.log('Subscribing');
+    // Setting the transfer request document path to variable for a QR
+    this.transferReqeustDocument = this.getTransferDocument();
     const activeTransferObservable = this.bookService.getCurrentActiveTransfer();
     if (activeTransferObservable !== undefined) {
       this.bookService

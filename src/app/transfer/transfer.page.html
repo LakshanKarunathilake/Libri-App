@@ -40,7 +40,7 @@
       <ng-template matStepLabel>Done</ng-template>
       <ion-card id="qrcode">
         <qrcode
-          [qrdata]="getTransferDocument()"
+          [qrdata]="transferReqeustDocument"
           [level]="'M'"
           *ngIf="stepper.selectedIndex == 1"
         ></qrcode>
