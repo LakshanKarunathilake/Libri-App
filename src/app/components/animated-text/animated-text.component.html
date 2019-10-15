@@ -1,3 +1,28 @@
-<p>
-  animated-text works!
-</p>
+<svg viewBox="0 0 960 100" #textBox>
+  <symbol id="s-text">
+    <text text-anchor="middle" x="50%" y="80%">{{ text }}</text>
+  </symbol>
+
+  <g class="g-ants">
+    <use
+      xlink:href="#s-text"
+      [ngClass]="text === 'Rejected' ? 'text-copy-rejected' : 'text-copy-success'"
+    ></use>
+    <use
+      xlink:href="#s-text"
+      [ngClass]="text === 'Rejected' ? 'text-copy-rejected' : 'text-copy-success'"
+    ></use>
+    <use
+      xlink:href="#s-text"
+      [ngClass]="text === 'Rejected' ? 'text-copy-rejected' : 'text-copy-success'"
+    ></use>
+    <use
+      xlink:href="#s-text"
+      [ngClass]="text === 'Rejected' ? 'text-copy-rejected' : 'text-copy-success'"
+    ></use>
+    <use
+      xlink:href="#s-text"
+      [ngClass]="text === 'Rejected' ? 'text-copy-rejected' : 'text-copy-success'"
+    ></use>
+  </g>
+</svg>
