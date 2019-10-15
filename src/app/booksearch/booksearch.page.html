@@ -16,6 +16,7 @@
         <ion-checkbox slot="start" [(ngModel)]="authorCheckbox"></ion-checkbox>
       </ion-item>
     </div>
+    <app-animated-text text="Search  💬"></app-animated-text>
   </section>
   <div id="no-result" *ngIf="books !== undefined && books.length === 0"></div>
   <ion-card id="before-search" *ngIf="books === undefined && !loading"></ion-card>
