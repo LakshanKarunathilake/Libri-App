@@ -16,6 +16,11 @@ export class TransferPage implements OnInit {
   borrowings: Borrowing[];
 
   transferReqeustDocument;
+  acceptanceStatus = {
+    img_url: '',
+    title: 'Rejected'
+  };
+
   constructor(
     private scanner: BarcodeScanner,
     private swal: SwalService,
@@ -60,14 +65,33 @@ export class TransferPage implements OnInit {
   subscribeToTransferPage = () => {
     // Setting the transfer request document path to variable for a QR
     this.transferReqeustDocument = this.getTransferDocument();
+
+    // Subscribing for the active transfer document changes and if approved by the user, view will be changed to the next step
     const activeTransferObservable = this.bookService.getCurrentActiveTransfer();
     if (activeTransferObservable !== undefined) {
       this.bookService
         .getCurrentActiveTransfer()
         .valueChanges()
         .subscribe((data: Borrowing) => {
-          if (data.status === 'tarnsfering') {
+          const { status } = data;
+
+          /**
+           * Checking whether the transfer is success or not
+           * This means if the library approved the transaction it produce 'approved' state and if rejected it produce 'toBeApproved' state
+           */
+          if (status === 'toBeApproved') {
             this.moveHeader();
+            this.acceptanceStatus.img_url = '../../assets/img/backgrounds/transfer-pending.svg';
+            this.acceptanceStatus.title = 'Checking';
+          } else if (status === 'approved') {
+            this.acceptanceStatus.title = 'Approved';
+            this.acceptanceStatus.img_url = '../../assets/img/backgrounds/transfer-success.svg';
+          } else if (status === 'rejected') {
+            this.acceptanceStatus.title = 'Rejected';
+            this.acceptanceStatus.img_url = '../../assets/img/backgrounds/transfer-rejected.svg';
+          } else {
+            this.acceptanceStatus.img_url = '../../assets/img/backgrounds/transfer-scan.svg';
+            this.acceptanceStatus.title = 'Scan QR';
           }
         });
     }
