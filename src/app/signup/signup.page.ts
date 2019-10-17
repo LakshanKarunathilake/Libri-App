@@ -1,9 +1,7 @@
-import { AngularFireFunctions } from '@angular/fire/functions';
 import { UserService } from './../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
-import { auth } from 'firebase';
 import { FcmService } from '../fcm.service';
 import { SwalService } from '../services/swal/swal.service';
 import { CustomValidatorService } from '../services/custom-validator/custom-validator.service';
@@ -26,7 +24,11 @@ export class SignupPage implements OnInit {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      libraryId: ['', [Validators.required, this.customValidation.libraryIdValidator]],
+      libraryId: new FormControl( null,{
+        validators: [Validators.required],
+        asyncValidators: this.customValidation.libraryIdValidator,
+        updateOn: 'blur'
+      }),
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
       telephoneNumber: ['', Validators.required]

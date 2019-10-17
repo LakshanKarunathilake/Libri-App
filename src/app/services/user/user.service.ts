@@ -153,8 +153,15 @@ export class UserService {
    * Sample id number is
    */
   isUserRegistered = async (uid: string) => {
-    const func = this.aff.functions.httpsCallable('isUserIdAvailable');
-    const data = await func({ id: uid });
-    return data;
+    console.log('uid', uid)
+    if(uid !== null){
+      const func = this.aff.functions.httpsCallable('isUserIdAvailable');
+      const data = await func({ id: uid });
+      console.log('data', data)
+      return data;
+    } else {
+      return '';
+    }
+    
   };
 }

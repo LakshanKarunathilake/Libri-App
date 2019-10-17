@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ValidatorFn, AbstractControl } from '@angular/forms';
+import {  AbstractControl } from '@angular/forms';
 import { UserService } from '../user/user.service';
 
 @Injectable({
@@ -8,13 +8,22 @@ import { UserService } from '../user/user.service';
 export class CustomValidatorService {
   constructor(private userService: UserService) {}
 
-  libraryIdValidator = (control: AbstractControl): { [key: string]: any } | null => {
+  libraryIdValidator = async (control: AbstractControl) => {
     const id = control.value;
-    const data = this.userService.isUserRegistered(id);
-    if (!data) {
-      return null;
+    const data = await this.userService.isUserRegistered(id);
+    console.log('data', data)
+    if (data) {
+      console.log('not null');
+      const reply: Array<String> = JSON.parse(data['data']['result']);
+      console.log('reply', reply)
+      if (reply.length !== 0) {
+        console.log('not empty')
+        return null;
+      } else {
+        return { userExist : false}
+      }
     } else {
-      return { userRegistered: true };
+      return { error: true };
     }
   };
 }
