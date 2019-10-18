@@ -7,7 +7,11 @@ import { Notice } from 'src/app/models/Notice';
 import { Observable } from 'rxjs';
 import { Borrowing } from 'src/app/models/Borrowings';
 import DateTime from 'luxon/src/datetime.js';
-
+import { User } from 'src/app/models/User';
+import * as firebase from 'firebase';
+import { map } from 'rxjs/operators';
+import { FcmService } from 'src/app/fcm.service';
+import { SwalService } from '../swal/swal.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +22,9 @@ export class UserService {
   constructor(
     private afa: AngularFireAuth,
     private afs: AngularFirestore,
-    private aff: AngularFireFunctions
+    private aff: AngularFireFunctions,
+    private fcm: FcmService,
+    private swal: SwalService
   ) {}
 
   /**
@@ -177,6 +183,46 @@ export class UserService {
       .collection('users')
       .doc<User>(uid)
       .valueChanges();
+  };
+
+  /**
+   * Subscribe to topic for notice distribution
+   * This method can register user for a specific type of notice topics that library is created
+   */
+  subscribeToTopic = (topic: string) => {
+    const { uid } = this.getCurrentUser();
+    this.afs
+      .collection('users')
+      .doc(uid)
+      .update({ topics: firebase.firestore.FieldValue.arrayUnion(topic) })
+      .then(() => {
+        this.fcm.sub(topic);
+        this.swal.viewSuccessMessage('Success', `You have successfully subscribed from ${topic}`);
+      })
+      .catch(error => {
+        console.log('Subscribing error', error);
+        this.swal.viewErrorMessage('Error', `Subscribing to topic ${topic} is not successful`);
+      });
+  };
+
+  /**
+   * Unsubscribe to topic
+   * This method can register user for a specific type of notice topics that library is created
+   */
+  unsubscribeToTopic = (topic: string) => {
+    const { uid } = this.getCurrentUser();
+    this.afs
+      .collection('users')
+      .doc(uid)
+      .update({ topics: firebase.firestore.FieldValue.arrayRemove(topic) })
+      .then(() => {
+        this.fcm.unsub(topic);
+        this.swal.viewSuccessMessage('Success', `You have successfully subscribed from ${topic}`);
+      })
+      .catch(error => {
+        console.log('Unsubscribing error', error);
+        this.swal.viewErrorMessage('Error', `Subscribing to topic ${topic} not successful`);
+      });
   };
 
   /**
