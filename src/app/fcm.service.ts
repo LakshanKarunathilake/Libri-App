@@ -3,6 +3,7 @@ import { AngularFireMessaging } from '@angular/fire/messaging';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { ToastController, Platform } from '@ionic/angular';
 import { tap } from 'rxjs/operators';
+import { SwalService } from './services/swal/swal.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class FcmService {
     private afMessaging: AngularFireMessaging,
     private fun: AngularFireFunctions,
     private toastController: ToastController,
-    private platform: Platform
+    private platform: Platform,
+    private swal: SwalService
   ) {
     this.device = this.platform.is('cordova') ? 'cordova' : 'non-cordova';
   }
@@ -74,17 +76,27 @@ export class FcmService {
   sub(topic) {
     const token = window.localStorage.getItem('fcmToken');
     this.fun
-      .httpsCallable('subscribeToTopic')({ topic, token: this.token })
-      .pipe(tap(_ => this.makeToast(`subscribed to ${topic}`)))
-      .subscribe();
+      .httpsCallable('subscribeToTopic')({ topic, token })
+      .subscribe(
+        () => this.makeToast(`subscribed to ${topic}`),
+        error => {
+          console.log('Subscribing error');
+          this.swal.viewErrorMessage('Error', 'Sorry unsubscribing failure !');
+        }
+      );
   }
 
   unsub(topic) {
     const token = window.localStorage.getItem('fcmToken');
     this.fun
-      .httpsCallable('unsubscribeFromTopic')({ topic, token: this.token })
-      .pipe(tap(_ => this.makeToast(`unsubscribed from ${topic}`)))
-      .subscribe();
+      .httpsCallable('unsubscribeFromTopic')({ topic, token })
+      .subscribe(
+        () => this.makeToast(`unsubscribed to ${topic}`),
+        error => {
+          console.log('Unsubscribing error', error);
+          this.swal.viewErrorMessage('Error', 'Sorry unsubscribing failure !');
+        }
+      );
   }
 
   writeTokenToLocalStorage = token => {
