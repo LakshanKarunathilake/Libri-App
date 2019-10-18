@@ -157,4 +157,13 @@ export class UserService {
     const data = await func({ id: uid });
     return data;
   };
+
+  /**
+   * Send an email to the user registered email
+   * This will contain a link to change the password
+   */
+  resetPassword = () => {
+    const { email } = this.getCurrentUser();
+    this.afa.auth.sendPasswordResetEmail(email);
+  };
 }
