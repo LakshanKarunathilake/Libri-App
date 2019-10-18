@@ -178,4 +178,17 @@ export class UserService {
       .doc<User>(uid)
       .valueChanges();
   };
+
+  /**
+   * Get all users subscribed topic
+   * Loding user currently subscribed topics
+   */
+  getUserTopics = (): Observable<string[]> => {
+    const { uid } = this.getCurrentUser();
+    return this.afs
+      .collection('users')
+      .doc(uid)
+      .valueChanges()
+      .pipe(map((user: User) => user.topics));
+  };
 }
