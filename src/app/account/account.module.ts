@@ -13,6 +13,7 @@ import { ProfileComponent } from '../components/profile/profile.component';
 import { BorrowingsComponent } from '../components/borrowings/borrowings.component';
 import { PenaltyComponent } from '../components/penalty/penalty.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { LoadingComponent } from '../components/loading/loading.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,13 @@ const routes: Routes = [
     AccountTabMenuComponentModule,
     MatExpansionModule
   ],
-  declarations: [AccountPage, ProfileComponent, BorrowingsComponent, PenaltyComponent]
+  declarations: [
+    AccountPage,
+    ProfileComponent,
+    BorrowingsComponent,
+    PenaltyComponent,
+    LoadingComponent
+  ],
+  entryComponents: [LoadingComponent]
 })
 export class AccountPageModule {}
