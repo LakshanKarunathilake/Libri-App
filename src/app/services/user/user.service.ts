@@ -166,4 +166,16 @@ export class UserService {
     const { email } = this.getCurrentUser();
     this.afa.auth.sendPasswordResetEmail(email);
   };
+
+  /**
+   * Return user registration details
+   * This will return the user details stored in the firebase
+   */
+  getCurrentUserInfo = (): Observable<User> => {
+    const { uid } = this.getCurrentUser();
+    return this.afs
+      .collection('users')
+      .doc<User>(uid)
+      .valueChanges();
+  };
 }
