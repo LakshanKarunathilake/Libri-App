@@ -40,5 +40,17 @@
         </ion-row>
       </ion-grid>
     </ion-grid>
-  </ion-card>
+    <app-loading *ngIf="!topics"></app-loading>
+    <ion-card *ngIf="topics">
+      <ion-card-header>Subscribe for Library messages</ion-card-header>
+      <ion-card-content>
+        <ion-item *ngFor="let topic of (topics | async)">
+          <ion-label>{{ topic.name }}</ion-label>
+          <ion-toggle (ionChange)="stateChangeForTopic($event, topic.name)" [checked]="topic.state">
+            Notices
+          </ion-toggle>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </section>
 </ion-content>
