@@ -37,6 +37,8 @@ export class FcmService {
         this.afMessaging.requestToken.subscribe(
           token => {
             console.log('Permission granted and token is ', token);
+            window.localStorage.setItem('fcmToken', token);
+
             this.token = token;
             resolve(token);
           },
@@ -70,6 +72,7 @@ export class FcmService {
   }
 
   sub(topic) {
+    const token = window.localStorage.getItem('fcmToken');
     this.fun
       .httpsCallable('subscribeToTopic')({ topic, token: this.token })
       .pipe(tap(_ => this.makeToast(`subscribed to ${topic}`)))
@@ -77,9 +80,14 @@ export class FcmService {
   }
 
   unsub(topic) {
+    const token = window.localStorage.getItem('fcmToken');
     this.fun
       .httpsCallable('unsubscribeFromTopic')({ topic, token: this.token })
       .pipe(tap(_ => this.makeToast(`unsubscribed from ${topic}`)))
       .subscribe();
   }
+
+  writeTokenToLocalStorage = token => {
+    window.localStorage.setItem('fcmToken', token);
+  };
 }
