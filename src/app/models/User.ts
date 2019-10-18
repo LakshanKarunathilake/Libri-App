@@ -5,4 +5,5 @@ export interface User {
   libraryID: string;
   phoneNumber: string;
   uid: string;
+  topics?: Array<string>;
 }
