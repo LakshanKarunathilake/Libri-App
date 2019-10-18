@@ -44,15 +44,15 @@ export class UserService {
    * @param displayName
    */
   updateUserDetails = async (displayName, phoneNumber, libraryID) => {
-    console.log('updating user details', phoneNumber, displayName);
-    const { uid, emailVerified, email, updateProfile } = this.afa.auth.currentUser;
+    const { uid, emailVerified, email } = this.afa.auth.currentUser;
+    const topics = ['notices'];
     // Updating the display name in the auth
     auth().currentUser.updateProfile({ displayName, photoURL: '' });
     // Updating the details in the firestore document
     this.afs
       .collection('users')
       .doc(uid)
-      .set({ phoneNumber, displayName, uid, emailVerified, email, libraryID });
+      .set({ phoneNumber, displayName, uid, emailVerified, email, libraryID, topics });
   };
 
   /**
