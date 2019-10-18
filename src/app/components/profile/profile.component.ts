@@ -18,4 +18,13 @@ export class ProfileComponent implements OnInit {
     );
   };
 
+  // Subscribing for a topic
+  stateChangeForTopic = (event, topic: string) => {
+    const status = event['detail']['checked'];
+    if (status) {
+      this.user.subscribeToTopic(topic);
+    } else {
+      this.user.unsubscribeToTopic(topic);
+    }
+  };
 }
