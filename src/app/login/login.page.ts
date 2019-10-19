@@ -68,10 +68,10 @@ export class LoginPage implements OnInit {
       .then(() => {
         // Loggin the event of login
         this.loggger.loginEvent();
-        // Subscribing for notices
-        this.subscribingforNotices();
         this.swal.displayAutoHideMessage('Welcome back!', '', 'success', 1500);
         this.router.navigateByUrl('menu', { replaceUrl: true });
+        // Subscribing for user topics
+        this.user.subscribeForUserTopics();
       })
       .catch(error => {
         console.log('error :', error, error.message);
