@@ -23,7 +23,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.fcm.showMessages();
+      this.fcm.getPermission().then(() => this.fcm.showMessages());
     });
   }
 }
