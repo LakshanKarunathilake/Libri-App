@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { ForgetPasswordComponent } from '../components/forget-password/forget-password.component';
 import { EventLoggerService } from '../services/logger/event-logger.service';
 import { FcmService } from '../fcm.service';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -36,9 +37,8 @@ export class LoginPage implements OnInit {
     private loadingController: LoadingController,
     private modalController: ModalController,
     private swal: SwalService,
-    private fcm: FcmService,
     private loggger: EventLoggerService,
-    private platformService: PlatformService
+    private user: UserService
   ) {
     this.loadingController.create({
       message: 'Please wait verifying!',
