@@ -166,7 +166,7 @@ export class BookService {
       .doc(uid)
       .collection('transfers')
       .doc(title)
-      .set({ ...transfer, status: 'pending' })
+      .set({ ...transfer, status: 'pending', sender: uid })
       .then(data => {
         this.loading.dismiss();
         this.swal.viewSuccessMessage(
@@ -216,10 +216,11 @@ export class BookService {
    * When the QR is scanner the relavant document is updated to transferring state
    * Library must accept the transfer then only your transfer is finalized
    */
-  acceptBookTransfer = path => {
+  acceptBookTransfer = async path => {
+    const { uid } = this.userService.getCurrentUser();
     this.afs
       .doc(path)
-      .update({ status: 'toBeApproved' })
+      .update({ status: 'toBeApproved', receiver: uid })
       .then(() => {
         this.swal.viewSuccessMessage('Success', 'Successfully placed a transfer request');
       })
