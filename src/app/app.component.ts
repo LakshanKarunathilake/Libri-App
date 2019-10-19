@@ -17,6 +17,7 @@ export class AppComponent {
     private fcm: FcmService
   ) {
     this.initializeApp();
+    this.fcm.testing();
   }
 
   initializeApp() {
