@@ -32,9 +32,6 @@
         *ngFor="let borrowing of borrowings"
         [borrowDetails]="borrowing"
       ></item-transfer>
-      <div>
-        <button mat-button (click)="moveHeader()" type="button">Next</button>
-      </div>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
