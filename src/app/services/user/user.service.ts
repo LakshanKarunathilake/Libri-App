@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { Borrowing } from 'src/app/models/Borrowings';
 import DateTime from 'luxon/src/datetime.js';
 import { User } from 'src/app/models/User';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 import { map } from 'rxjs/operators';
 import { FcmService } from 'src/app/fcm.service';
 import { SwalService } from '../swal/swal.service';
