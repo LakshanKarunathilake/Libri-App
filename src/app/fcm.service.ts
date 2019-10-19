@@ -3,13 +3,7 @@ import { AngularFireMessaging } from '@angular/fire/messaging';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { ToastController, Platform } from '@ionic/angular';
 import { SwalService } from './services/swal/swal.service';
-import {
-  Plugins,
-  PushNotification,
-  PushNotificationToken,
-  PushNotificationActionPerformed
-} from '@capacitor/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { Plugins, PushNotification, PushNotificationToken } from '@capacitor/core';
 import { FCM } from 'capacitor-fcm';
 import { LocalNotificationService } from './services/local-notification/local-notification.service';
 import { Notice } from './models/Notice';
@@ -29,7 +23,6 @@ export class FcmService {
     private toastController: ToastController,
     private platform: Platform,
     private swal: SwalService,
-    private afs: AngularFirestore,
     private localNotification: LocalNotificationService
   ) {
     this.device = this.platform.is('cordova') ? 'cordova' : 'non-cordova';
@@ -99,7 +92,7 @@ export class FcmService {
     if (this.platform.is('capacitor')) {
       fcm
         .subscribeTo({ topic })
-        .then(r => this.makeToast(`subscribed to ${topic}`))
+        .then(() => this.makeToast(`subscribed to ${topic}`))
         .catch(err => console.log(err));
     } else {
       const token = window.localStorage.getItem('fcmToken');
@@ -119,7 +112,7 @@ export class FcmService {
     if (this.platform.is('capacitor')) {
       fcm
         .unsubscribeFrom({ topic })
-        .then(r => this.makeToast(`unsubscribed to ${topic}`))
+        .then(() => this.makeToast(`unsubscribed to ${topic}`))
         .catch(err => console.log(err));
     } else {
       const token = window.localStorage.getItem('fcmToken');
