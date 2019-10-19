@@ -27,6 +27,9 @@ import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import { PlatformService } from './services/platform/platform.service';
 import { Device } from '@ionic-native/device/ngx';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { FCM } from 'capacitor-fcm';
+import { LocalNotificationService } from './services/local-notification/local-notification.service';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -56,7 +59,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     EventLoggerService,
     FirebaseAnalytics,
     PlatformService,
-    Device
+    Device,
+    FCM,
+    LocalNotificationService,
+    LocalNotifications
   ],
   bootstrap: [AppComponent]
 })
