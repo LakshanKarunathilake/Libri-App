@@ -5,6 +5,7 @@ import { BookService } from '../services/book/book.service';
 import { MatStepper } from '@angular/material/stepper';
 import { UserService } from '../services/user/user.service';
 import { Borrowing } from '../models/Borrowings';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-transfer',
@@ -14,7 +15,8 @@ import { Borrowing } from '../models/Borrowings';
 export class TransferPage implements OnInit {
   @ViewChild('stepper') stepper: MatStepper;
   borrowings: Borrowing[];
-
+  displayedColumns: string[] = ['title', 'status'];
+  dataSource: MatTableDataSource<Borrowing>;
   transferReqeustDocument;
   acceptanceStatus = {
     img_url: '',
@@ -30,7 +32,16 @@ export class TransferPage implements OnInit {
 
   async ngOnInit() {
     await this.userService.getUserBorrowings();
-    this.borrowings = this.userService.getAllBorrowings();
+    this.borrowings = this.userService.getAllBorrowings().map((borrow: Borrowing) => {
+      const { date_due } = borrow;
+      if (new Date(date_due) <= new Date()) {
+        borrow.status = 'overdue';
+      }
+      return borrow;
+    });
+    this.userService.getCurrentTransferDetails().subscribe((data: Borrowing[]) => {
+      this.dataSource = new MatTableDataSource(data);
+    });
   }
 
   getTransferDocument = () => {
