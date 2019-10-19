@@ -237,4 +237,15 @@ export class UserService {
       .valueChanges()
       .pipe(map((user: User) => user.topics));
   };
+
+  /**
+   * Subscribe for registered topics on Login
+   */
+  subscribeForUserTopics = () => {
+    this.getUserTopics().subscribe(data => {
+      data.forEach(element => {
+        this.subscribeToTopic(element);
+      });
+    });
+  };
 }
