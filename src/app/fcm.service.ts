@@ -2,8 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/messaging';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { ToastController, Platform } from '@ionic/angular';
-import { tap } from 'rxjs/operators';
+import { SwalService } from './services/swal/swal.service';
+import { Plugins, PushNotification, PushNotificationToken } from '@capacitor/core';
+import { FCM } from 'capacitor-fcm';
+import { LocalNotificationService } from './services/local-notification/local-notification.service';
+import { Notice } from './models/Notice';
+const fcm = new FCM();
 
+const { PushNotifications } = Plugins;
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +21,9 @@ export class FcmService {
     private afMessaging: AngularFireMessaging,
     private fun: AngularFireFunctions,
     private toastController: ToastController,
-    private platform: Platform
+    private platform: Platform,
+    private swal: SwalService,
+    private localNotification: LocalNotificationService
   ) {
     this.device = this.platform.is('cordova') ? 'cordova' : 'non-cordova';
   }
@@ -32,11 +40,23 @@ export class FcmService {
   }
 
   getPermission() {
-    return new Promise((resolve, reject) => {
-      if (this.device !== 'cordova') {
+    if (this.platform.is('capacitor')) {
+      // Register with Apple / Google to receive push via APNS/FCM
+      PushNotifications.register();
+      // On success, we should be able to receive notifications
+      return new Promise((resolve, reject) => {
+        PushNotifications.addListener('registration', (token: PushNotificationToken) => {
+          window.localStorage.setItem('fcmToken', token.value);
+          resolve(token.value);
+        });
+      });
+    } else {
+      return new Promise((resolve, reject) => {
         this.afMessaging.requestToken.subscribe(
           token => {
             console.log('Permission granted and token is ', token);
+            window.localStorage.setItem('fcmToken', token);
+
             this.token = token;
             resolve(token);
           },
@@ -46,40 +66,69 @@ export class FcmService {
             reject('error occured');
           }
         );
-      } else {
-        // this.fm
-        //   .getToken()
-        //   .then(token => {
-        //     this.token = token;
-        //     swal('token recieved', token);
-        //     resolve(token);
-        //   })
-        //   .catch(error => {
-        //     swal('error', error);
-        //     reject(error);
-        //   });
-      }
-    });
+      });
+    }
   }
 
   showMessages() {
-    return this.afMessaging.messages.subscribe(msg => {
+    if (this.platform.is('capacitor')) {
+      // Show us the notification payload if the app is open on our device
+      PushNotifications.addListener(
+        'pushNotificationReceived',
+        (notification: PushNotification) => {
+          const notice: Notice = JSON.parse(JSON.stringify(notification));
+          const { message, title } = notice;
+          this.localNotification.createANotification(title, message);
+        }
+      );
+    }
+    this.afMessaging.messages.subscribe(msg => {
       const body: any = (msg as any).notification.body;
       this.makeToast(body);
     });
   }
 
   sub(topic) {
-    this.fun
-      .httpsCallable('subscribeToTopic')({ topic, token: this.token })
-      .pipe(tap(_ => this.makeToast(`subscribed to ${topic}`)))
-      .subscribe();
+    if (this.platform.is('capacitor')) {
+      fcm
+        .subscribeTo({ topic })
+        .then(() => this.makeToast(`subscribed to ${topic}`))
+        .catch(err => console.log(err));
+    } else {
+      const token = window.localStorage.getItem('fcmToken');
+      this.fun
+        .httpsCallable('subscribeToTopic')({ topic, token })
+        .subscribe(
+          () => this.makeToast(`subscribed to ${topic}`),
+          error => {
+            console.log('Subscribing error');
+            this.swal.viewErrorMessage('Error', 'Sorry unsubscribing failure !');
+          }
+        );
+    }
   }
 
   unsub(topic) {
-    this.fun
-      .httpsCallable('unsubscribeFromTopic')({ topic, token: this.token })
-      .pipe(tap(_ => this.makeToast(`unsubscribed from ${topic}`)))
-      .subscribe();
+    if (this.platform.is('capacitor')) {
+      fcm
+        .unsubscribeFrom({ topic })
+        .then(() => this.makeToast(`unsubscribed to ${topic}`))
+        .catch(err => console.log(err));
+    } else {
+      const token = window.localStorage.getItem('fcmToken');
+      this.fun
+        .httpsCallable('unsubscribeFromTopic')({ topic, token })
+        .subscribe(
+          () => this.makeToast(`unsubscribed to ${topic}`),
+          error => {
+            console.log('Unsubscribing error', error);
+            this.swal.viewErrorMessage('Error', 'Sorry unsubscribing failure !');
+          }
+        );
+    }
   }
+
+  writeTokenToLocalStorage = token => {
+    window.localStorage.setItem('fcmToken', token);
+  };
 }

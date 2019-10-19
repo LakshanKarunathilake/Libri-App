@@ -13,16 +13,14 @@ export class LocalNotificationService {
    * @param title This will be the title of the notification
    * @param text This will be the body of the notification
    * @param icon The link of the icon of the notification
-   * @param delay Number of hours the notification must be delayed
    */
-  createANotification = (id: number, title: string, text: string, icon: string, delay: number) => {
-    const trigger = { at: new Date(new Date().getTime() + 3600 * delay) };
+  createANotification = (title: string, text: string) => {
+    const id = Math.random() * 1000;
     this.localNotification.schedule([
       {
         id,
         text,
-        title,
-        trigger
+        title
       }
     ]);
   };

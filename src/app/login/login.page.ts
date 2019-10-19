@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { ForgetPasswordComponent } from '../components/forget-password/forget-password.component';
 import { EventLoggerService } from '../services/logger/event-logger.service';
 import { FcmService } from '../fcm.service';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -36,9 +37,8 @@ export class LoginPage implements OnInit {
     private loadingController: LoadingController,
     private modalController: ModalController,
     private swal: SwalService,
-    private fcm: FcmService,
     private loggger: EventLoggerService,
-    private platformService: PlatformService
+    private user: UserService
   ) {
     this.loadingController.create({
       message: 'Please wait verifying!',
@@ -51,15 +51,6 @@ export class LoginPage implements OnInit {
       userPassword: ['', Validators.required]
     });
   }
-
-  private subscribingforNotices = () => {
-    this.fcm
-      .getPermission()
-      .then(() => this.fcm.sub('notices'))
-      .catch(error => {
-        console.error('Error occured', error);
-      });
-  };
 
   public hasError(controlName: string, errorName: string) {
     return this.loginForm.controls[controlName].hasError(errorName);
@@ -77,10 +68,10 @@ export class LoginPage implements OnInit {
       .then(() => {
         // Loggin the event of login
         this.loggger.loginEvent();
-        // Subscribing for notices
-        this.subscribingforNotices();
         this.swal.displayAutoHideMessage('Welcome back!', '', 'success', 1500);
         this.router.navigateByUrl('menu', { replaceUrl: true });
+        // Subscribing for user topics
+        this.user.subscribeForUserTopics();
       })
       .catch(error => {
         console.log('error :', error, error.message);
