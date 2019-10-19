@@ -34,4 +34,8 @@ export class BookSearchView implements OnInit {
   saveBook() {
     this.bookService.addBookToShelf(this.book);
   }
+
+  reserveBook() {
+    this.bookService.reserveBook(this.book);
+  }
 }

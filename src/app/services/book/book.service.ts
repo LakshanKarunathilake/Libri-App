@@ -9,6 +9,7 @@ import { EventLoggerService } from '../logger/event-logger.service';
 import { FileUploadService } from '../file-upload/file-upload.service';
 import { BookRequest } from 'src/app/models/BookRequest';
 import { Borrowing } from 'src/app/models/Borrowings';
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -226,6 +227,29 @@ export class BookService {
       })
       .catch(error => {
         alert('error');
+      });
+  };
+
+  /**
+   * Reserve a book
+   * This will enter the book and user details to a que and based on the que order users will be granted the book
+   */
+  reserveBook = (book: Book) => {
+    const { uid } = this.userService.getCurrentUser();
+    this.afs
+      .collection('users')
+      .doc(uid)
+      .collection('reservations')
+      .add(book)
+      .then(() => {
+        const { title } = book;
+        return this.afs
+          .collection('reservation-que')
+          .doc(title)
+          .set({ users: firebase.firestore.FieldValue.arrayRemove({ uid, date: new Date() }) });
+      })
+      .then(() => {
+        this.swal.viewSuccessMessage('Success', 'Book is susccessfully placed on reservation que');
       });
   };
 }
