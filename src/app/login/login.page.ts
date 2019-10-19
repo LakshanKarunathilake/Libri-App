@@ -52,15 +52,6 @@ export class LoginPage implements OnInit {
     });
   }
 
-  private subscribingforNotices = () => {
-    this.fcm
-      .getPermission()
-      .then(() => this.fcm.sub('notices'))
-      .catch(error => {
-        console.error('Error occured', error);
-      });
-  };
-
   public hasError(controlName: string, errorName: string) {
     return this.loginForm.controls[controlName].hasError(errorName);
   }
