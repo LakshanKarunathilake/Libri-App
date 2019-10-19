@@ -10,6 +10,10 @@ import {
   PushNotificationActionPerformed
 } from '@capacitor/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { FCM } from 'capacitor-fcm';
+import { LocalNotificationService } from './services/local-notification/local-notification.service';
+import { Notice } from './models/Notice';
+const fcm = new FCM();
 
 const { PushNotifications } = Plugins;
 @Injectable({
@@ -25,7 +29,8 @@ export class FcmService {
     private toastController: ToastController,
     private platform: Platform,
     private swal: SwalService,
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    private localNotification: LocalNotificationService
   ) {
     this.device = this.platform.is('cordova') ? 'cordova' : 'non-cordova';
   }
@@ -42,89 +47,95 @@ export class FcmService {
   }
 
   getPermission() {
-    return new Promise((resolve, reject) => {
-      this.afMessaging.requestToken.subscribe(
-        token => {
-          console.log('Permission granted and token is ', token);
-          window.localStorage.setItem('fcmToken', token);
+    if (this.platform.is('capacitor')) {
+      // Register with Apple / Google to receive push via APNS/FCM
+      PushNotifications.register();
+      // On success, we should be able to receive notifications
+      return new Promise((resolve, reject) => {
+        PushNotifications.addListener('registration', (token: PushNotificationToken) => {
+          window.localStorage.setItem('fcmToken', token.value);
+          resolve(token.value);
+        });
+      });
+    } else {
+      return new Promise((resolve, reject) => {
+        this.afMessaging.requestToken.subscribe(
+          token => {
+            console.log('Permission granted and token is ', token);
+            window.localStorage.setItem('fcmToken', token);
 
-          this.token = token;
-          resolve(token);
-        },
-        error => {
-          console.log('error occured when requesting permission');
-          console.error(error);
-          reject('error occured');
-        }
-      );
-    });
+            this.token = token;
+            resolve(token);
+          },
+          error => {
+            console.log('error occured when requesting permission');
+            console.error(error);
+            reject('error occured');
+          }
+        );
+      });
+    }
   }
 
   showMessages() {
-    return this.afMessaging.messages.subscribe(msg => {
+    if (this.platform.is('capacitor')) {
+      // Show us the notification payload if the app is open on our device
+      PushNotifications.addListener(
+        'pushNotificationReceived',
+        (notification: PushNotification) => {
+          const notice: Notice = JSON.parse(JSON.stringify(notification));
+          const { message, title } = notice;
+          this.localNotification.createANotification(title, message);
+        }
+      );
+    }
+    this.afMessaging.messages.subscribe(msg => {
       const body: any = (msg as any).notification.body;
       this.makeToast(body);
     });
   }
 
   sub(topic) {
-    const token = window.localStorage.getItem('fcmToken');
-    this.fun
-      .httpsCallable('subscribeToTopic')({ topic, token })
-      .subscribe(
-        () => this.makeToast(`subscribed to ${topic}`),
-        error => {
-          console.log('Subscribing error');
-          this.swal.viewErrorMessage('Error', 'Sorry unsubscribing failure !');
-        }
-      );
+    if (this.platform.is('capacitor')) {
+      fcm
+        .subscribeTo({ topic })
+        .then(r => this.makeToast(`subscribed to ${topic}`))
+        .catch(err => console.log(err));
+    } else {
+      const token = window.localStorage.getItem('fcmToken');
+      this.fun
+        .httpsCallable('subscribeToTopic')({ topic, token })
+        .subscribe(
+          () => this.makeToast(`subscribed to ${topic}`),
+          error => {
+            console.log('Subscribing error');
+            this.swal.viewErrorMessage('Error', 'Sorry unsubscribing failure !');
+          }
+        );
+    }
   }
 
   unsub(topic) {
-    const token = window.localStorage.getItem('fcmToken');
-    this.fun
-      .httpsCallable('unsubscribeFromTopic')({ topic, token })
-      .subscribe(
-        () => this.makeToast(`unsubscribed to ${topic}`),
-        error => {
-          console.log('Unsubscribing error', error);
-          this.swal.viewErrorMessage('Error', 'Sorry unsubscribing failure !');
-        }
-      );
+    if (this.platform.is('capacitor')) {
+      fcm
+        .unsubscribeFrom({ topic })
+        .then(r => this.makeToast(`unsubscribed to ${topic}`))
+        .catch(err => console.log(err));
+    } else {
+      const token = window.localStorage.getItem('fcmToken');
+      this.fun
+        .httpsCallable('unsubscribeFromTopic')({ topic, token })
+        .subscribe(
+          () => this.makeToast(`unsubscribed to ${topic}`),
+          error => {
+            console.log('Unsubscribing error', error);
+            this.swal.viewErrorMessage('Error', 'Sorry unsubscribing failure !');
+          }
+        );
+    }
   }
 
   writeTokenToLocalStorage = token => {
     window.localStorage.setItem('fcmToken', token);
-  };
-
-  testing = () => {
-    console.log('Initializing HomePage');
-
-    // Register with Apple / Google to receive push via APNS/FCM
-    PushNotifications.register();
-
-    // On success, we should be able to receive notifications
-    PushNotifications.addListener('registration', (token: PushNotificationToken) => {
-      this.afs.collection('dummy').add({ id: token.value, date: new Date() });
-      alert('Push registration success, token: ' + token.value);
-    });
-
-    // Some issue with our setup and push will not work
-    PushNotifications.addListener('registrationError', (error: any) => {
-      alert('Error on registration: ' + JSON.stringify(error));
-    });
-
-    // Show us the notification payload if the app is open on our device
-    PushNotifications.addListener('pushNotificationReceived', (notification: PushNotification) => {
-      alert('Push received: ' + JSON.stringify(notification));
-    });
-
-    // Method called when tapping on a notification
-    PushNotifications.addListener(
-      'pushNotificationActionPerformed',
-      (notification: PushNotificationActionPerformed) => {
-        alert('Push action performed: ' + JSON.stringify(notification));
-      }
-    );
   };
 }
