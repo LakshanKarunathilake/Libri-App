@@ -13,7 +13,8 @@
     </ion-grid>
   </ion-card-header>
   <div class="button-pannel">
-    <ion-button size="small" (click)="transfer()" [disabled]="borrowDetails.status === 'overdue'">
+    <ion-button size="small" (click)="transfer()">
+      <!-- <ion-button size="small" (click)="transfer()" [disabled]="borrowDetails.status === 'overdue'"> -->
       Transfer
     </ion-button>
     <ion-button color="danger" size="small" *ngIf="borrowDetails.status === 'overdue'"

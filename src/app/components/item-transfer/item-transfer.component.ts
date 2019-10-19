@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Borrowing } from 'src/app/models/Borrowings';
 import { SwalService } from 'src/app/services/swal/swal.service';
-import { UserService } from 'src/app/services/user/user.service';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { BookService } from 'src/app/services/book/book.service';
 
 @Component({
@@ -14,12 +12,7 @@ export class ItemTransferComponent implements OnInit {
   @Input() moveHeader: Function;
   @Input() subscribeToTransferReq: Function;
   @Input() borrowDetails: Borrowing;
-  constructor(
-    private swalService: SwalService,
-    private afs: AngularFirestore,
-    private userService: UserService,
-    private bookService: BookService
-  ) {}
+  constructor(private swalService: SwalService, private bookService: BookService) {}
 
   ngOnInit() {}
 
