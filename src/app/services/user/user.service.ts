@@ -254,4 +254,17 @@ export class UserService {
       });
     });
   };
+
+  /**
+   * Retrieve current transfer details
+   * Query from firestore documents and obtain transfer details
+   */
+  getCurrentTransferDetails = () => {
+    const { uid } = this.getCurrentUser();
+    return this.afs
+      .collection('users')
+      .doc(uid)
+      .collection('transfers')
+      .valueChanges();
+  };
 }
