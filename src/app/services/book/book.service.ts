@@ -244,9 +244,12 @@ export class BookService {
       .then(() => {
         const { title } = book;
         return this.afs
-          .collection('reservation-que')
+          .collection('reservation-ques')
           .doc(title)
-          .set({ users: firebase.firestore.FieldValue.arrayRemove({ uid, date: new Date() }) });
+          .set({
+            users: firebase.firestore.FieldValue.arrayUnion({ uid, date: new Date() }),
+            ...book
+          });
       })
       .then(() => {
         this.swal.viewSuccessMessage('Success', 'Book is susccessfully placed on reservation que');
