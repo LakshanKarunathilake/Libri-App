@@ -280,13 +280,13 @@ export class UserService {
   registerToken = () => {
     const { uid } = this.getCurrentUser();
     const token = window.localStorage.getItem('fcmToken');
-    const afs_token = { ios_token: '', android_token: '', web_token: '' };
+    let afs_token;
     if (this.platform.is('android')) {
-      afs_token.android_token = token;
+      afs_token = { android_token: token };
     } else if (this.platform.is('ios')) {
-      afs_token.ios_token = token;
+      afs_token = { ios_token: token };
     } else {
-      afs_token.web_token = token;
+      afs_token = { web_token: token };
     }
     console.log('afs_token', afs_token);
     this.afs
