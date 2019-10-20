@@ -12,6 +12,8 @@ import * as firebase from 'firebase/app';
 import { map } from 'rxjs/operators';
 import { FcmService } from 'src/app/fcm.service';
 import { SwalService } from '../swal/swal.service';
+import { Platform } from '@ionic/angular';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +26,8 @@ export class UserService {
     private afs: AngularFirestore,
     private aff: AngularFireFunctions,
     private fcm: FcmService,
-    private swal: SwalService
+    private swal: SwalService,
+    private platform: Platform
   ) {}
 
   /**
@@ -266,5 +269,27 @@ export class UserService {
       .doc(uid)
       .collection('transfers')
       .valueChanges();
+  };
+
+  /**
+   * Register notification token
+   * This will be updated in the in the user document
+   */
+  registerToken = () => {
+    const { uid } = this.getCurrentUser();
+    const token = window.localStorage.getItem('fcmToken');
+    const afs_token = { ios_token: '', android_token: '', web_token: '' };
+    if (this.platform.is('android')) {
+      afs_token.android_token = token;
+    } else if (this.platform.is('ios')) {
+      afs_token.ios_token = token;
+    } else {
+      afs_token.web_token = token;
+    }
+    console.log('afs_token', afs_token);
+    this.afs
+      .collection('users')
+      .doc(uid)
+      .update({ ...afs_token });
   };
 }

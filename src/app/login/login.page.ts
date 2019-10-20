@@ -72,6 +72,8 @@ export class LoginPage implements OnInit {
         this.router.navigateByUrl('menu', { replaceUrl: true });
         // Subscribing for user topics
         this.user.subscribeForUserTopics();
+        // Update user token
+        this.user.registerToken();
       })
       .catch(error => {
         console.log('error :', error, error.message);
