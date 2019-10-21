@@ -7,26 +7,12 @@ import { Device } from '@ionic-native/device/ngx';
   providedIn: 'root'
 })
 export class PlatformService {
-  private deviceInfo: any;
-
   /**
    * Querying the information of the device when it is available
    * @param platformInfo Information retrieve from the ionic platform service
    * @param device Information retrieved from the cordova device plugin
    */
-  constructor(private platformInfo: Platform, private device: Device) {
-    const { platform, isVirtual, manufacturer, model, version, uuid, serial, cordova } = device;
-    this.deviceInfo = {
-      platform,
-      isVirtual,
-      manufacturer,
-      model,
-      version,
-      uuid,
-      serial,
-      cordova
-    };
-  }
+  constructor(private platformInfo: Platform, private device: Device) {}
 
   /**
    * Returning the platform of the user
@@ -43,6 +29,25 @@ export class PlatformService {
   };
 
   getDeviceInfo = () => {
-    return this.deviceInfo;
+    const {
+      platform,
+      isVirtual,
+      manufacturer,
+      model,
+      version,
+      uuid,
+      serial,
+      cordova
+    } = this.device;
+    return {
+      platform,
+      isVirtual,
+      manufacturer,
+      model,
+      version,
+      uuid,
+      serial,
+      cordova
+    };
   };
 }
