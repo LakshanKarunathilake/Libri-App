@@ -1,6 +1,5 @@
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { Component, OnInit, HostListener } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
 import { UserService } from 'src/app/services/user/user.service';
 import { SwalService } from 'src/app/services/swal/swal.service';
 import { Borrowing } from 'src/app/models/Borrowings';
@@ -16,7 +15,6 @@ export class PenaltyComponent implements OnInit {
   borrowings: Borrowing[];
   constructor(
     private aff: AngularFireFunctions,
-    private loadingCtrl: LoadingController,
     private swal: SwalService,
     private user: UserService
   ) {

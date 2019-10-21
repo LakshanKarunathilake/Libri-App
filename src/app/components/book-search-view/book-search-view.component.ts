@@ -11,13 +11,13 @@ import { Book } from 'src/app/models/Book';
 })
 export class BookSearchView implements OnInit {
   @Input() book: Book;
-  constructor(private modalController: ModalController, private bookService: BookService) {}
+  constructor(private modal: ModalController, private bookService: BookService) {}
 
   ngOnInit() {}
 
   bookPreview = async () => {
     console.log('clicked');
-    const modal = await this.modalController.create({
+    const modal = await this.modal.create({
       component: BookViewComponent,
       componentProps: {
         book: this.book
@@ -27,9 +27,9 @@ export class BookSearchView implements OnInit {
     modal.present();
   };
 
-  getImage(url: string) {
+  getImage = (url: string) => {
     return url.includes('jpg') || url.includes('png') || url.includes('jpeg');
-  }
+  };
 
   saveBook() {
     this.bookService.addBookToShelf(this.book);
