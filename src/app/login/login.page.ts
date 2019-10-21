@@ -1,4 +1,3 @@
-import { PlatformService } from './../services/platform/platform.service';
 import { SwalService } from './../services/swal/swal.service';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
@@ -7,7 +6,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { ForgetPasswordComponent } from '../components/forget-password/forget-password.component';
 import { EventLoggerService } from '../services/logger/event-logger.service';
-import { FcmService } from '../fcm.service';
 import { UserService } from '../services/user/user.service';
 
 @Component({
