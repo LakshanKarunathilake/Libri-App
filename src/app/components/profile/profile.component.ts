@@ -6,7 +6,6 @@ import { User } from 'src/app/models/User';
 import { OverallService } from 'src/app/services/overall/overall.service';
 import { map, mergeMap } from 'rxjs/operators';
 import * as _ from 'lodash';
-import { Topic } from 'src/app/models/Topic';
 
 @Component({
   selector: 'app-profile',

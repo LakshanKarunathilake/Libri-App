@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FileuploadComponent } from './fileupload.component';
-import { FileUploadService } from 'src/app/services/file-upload/file-upload.service';
 
-describe('FileuploadComponent', () => {
-  let component: FileuploadComponent;
-  let fixture: ComponentFixture<FileuploadComponent>;
+import { FileuploadPage } from './fileupload.page';
+
+describe('FileuploadPage', () => {
+  let component: FileuploadPage;
+  let fixture: ComponentFixture<FileuploadPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FileuploadComponent],
+      declarations: [ FileuploadPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [FileUploadService]
-    }).compileComponents();
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FileuploadComponent);
+    fixture = TestBed.createComponent(FileuploadPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,25 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ForgetPasswordComponent } from './forget-password.component';
-import { SwalService } from 'src/app/services/swal/swal.service';
-import { ModalController, AngularDelegate } from '@ionic/angular';
-import { FormBuilder, ReactiveFormsModule, FormsModule, FormGroup } from '@angular/forms';
 
-describe('ForgetPasswordComponent', () => {
-  let component: ForgetPasswordComponent;
-  let fixture: ComponentFixture<ForgetPasswordComponent>;
+import { ForgetPasswordPage } from './forget-password.page';
+
+describe('ForgetPasswordPage', () => {
+  let component: ForgetPasswordPage;
+  let fixture: ComponentFixture<ForgetPasswordPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [ForgetPasswordComponent],
+      declarations: [ ForgetPasswordPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [SwalService, ModalController, AngularDelegate]
-    }).compileComponents();
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ForgetPasswordComponent);
+    fixture = TestBed.createComponent(ForgetPasswordPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { AnimatedTextComponent } from './animated-text.component';
 
-describe('AnimatedTextComponent', () => {
-  let component: AnimatedTextComponent;
-  let fixture: ComponentFixture<AnimatedTextComponent>;
+import { AnimatedTextPage } from './animated-text.page';
+
+describe('AnimatedTextPage', () => {
+  let component: AnimatedTextPage;
+  let fixture: ComponentFixture<AnimatedTextPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AnimatedTextComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
-    }).compileComponents();
+      declarations: [ AnimatedTextPage ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnimatedTextComponent);
+    fixture = TestBed.createComponent(AnimatedTextPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
