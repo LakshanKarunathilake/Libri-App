@@ -23,14 +23,16 @@ export class MenuPage implements OnInit {
     private router: Router,
     private afa: AngularFireAuth,
     private loadingController: LoadingController
-  ) {
+  ) {}
+
+  subscribeToRouterEvents = () => {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event.url) {
         this.selectedPath = event.url;
         console.log('event.url', event.url);
       }
     });
-  }
+  };
 
   isSelectedPath = url => {
     return this.selectedPath.indexOf(url) >= 0;
@@ -40,7 +42,9 @@ export class MenuPage implements OnInit {
     this.router.navigateByUrl('/home');
   };
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subscribeToRouterEvents();
+  }
 
   logOutUser = async () => {
     const loading = await this.loadingController.create({
