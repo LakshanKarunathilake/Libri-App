@@ -15,7 +15,6 @@ const { PushNotifications } = Plugins;
 })
 export class FcmService {
   token;
-  device;
 
   constructor(
     private afMessaging: AngularFireMessaging,
@@ -24,9 +23,7 @@ export class FcmService {
     private platform: Platform,
     private swal: SwalService,
     private localNotification: LocalNotificationService
-  ) {
-    this.device = this.platform.is('cordova') ? 'cordova' : 'non-cordova';
-  }
+  ) {}
 
   async makeToast(message) {
     const toast = await this.toastController.create({
