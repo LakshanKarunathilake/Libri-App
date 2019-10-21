@@ -8,7 +8,6 @@ import { EventLoggerService } from '../services/logger/event-logger.service';
   styleUrls: ['./booksearch.page.scss']
 })
 export class BooksearchPage implements OnInit {
-  deviceType: string;
   titleCheckbox = true;
   authorCheckbox = true;
   books: any;
