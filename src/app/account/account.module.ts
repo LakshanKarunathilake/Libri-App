@@ -1,4 +1,3 @@
-import { MenuPageModule } from './../menu/menu.module';
 import { MenuTitleComponentModule } from './../components/menu-title/menu-title.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
