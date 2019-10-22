@@ -24,7 +24,7 @@ export class SignupPage implements OnInit {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      libraryId: new FormControl( null,{
+      libraryId: new FormControl(null, {
         validators: [Validators.required],
         asyncValidators: this.customValidation.libraryIdValidator,
         updateOn: 'blur'
@@ -69,7 +69,7 @@ export class SignupPage implements OnInit {
         })
         .then(() => {
           console.log('Successfully updated the additional user information');
-          return this.user.sendEmailConfirmation();
+          return this.user.sendConfirmationEmail();
         })
         .then(() => {
           this.swal.viewSuccessMessage(
