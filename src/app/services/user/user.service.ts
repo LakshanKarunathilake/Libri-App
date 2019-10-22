@@ -40,14 +40,6 @@ export class UserService {
   };
 
   /**
-   * Initiate a confirmation email for the given user email
-   * This will can be used to activate the user
-   */
-  sendEmailConfirmation = () => {
-    return auth().currentUser.sendEmailVerification();
-  };
-
-  /**
    * Update the displayname and the phone number of a user
    * @param phoneNumber
    * @param displayName
@@ -293,5 +285,23 @@ export class UserService {
       .collection('users')
       .doc(uid)
       .update({ ...afs_token });
+  };
+
+  /**
+   * Initiate a confirmation email for the given user email
+   * This will can be used to activate the user
+   */
+  sendConfirmationEmail = () => {
+    this.afa.auth.currentUser
+      .sendEmailVerification()
+      .then(() =>
+        this.swal.viewSuccessMessage('Success', 'Email is sent successfully please check !')
+      )
+      .catch(error =>
+        this.swal.viewErrorMessage(
+          'Error',
+          'Error in sending confirmation email please try again later'
+        )
+      );
   };
 }
