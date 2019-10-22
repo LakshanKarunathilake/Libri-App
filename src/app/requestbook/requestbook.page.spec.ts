@@ -35,7 +35,8 @@ describe('RequestbookPage', () => {
         MenuTitleComponentModule,
         ReactiveFormsModule
       ],
-      declarations: [RequestbookPage, DropZoneDirective, FileuploadComponent, FileSizePipe],
+      declarations: [RequestbookPage, DropZoneDirective, FileuploadComponent],
+      providers: [FileSizePipe],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));

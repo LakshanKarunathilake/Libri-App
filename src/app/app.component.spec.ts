@@ -33,16 +33,10 @@ import { FCM } from 'capacitor-fcm';
 import { LocalNotificationService } from './services/local-notification/local-notification.service';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
-const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
-  {
-    path: 'menu',
-    loadChildren: './menu/menu.module#MenuPageModule',
-    canActivate: [AngularFireAuthGuard]
-  }
-];
+import { LoginPageModule } from './login/login.module';
+import { SignupPageModule } from './signup/signup.module';
+import { MenuPageModule } from './menu/menu.module';
+
 describe('AppComponent', () => {
   let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
 
@@ -60,6 +54,7 @@ describe('AppComponent', () => {
         AppRoutingModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
+        LoginPageModule,
         AngularFireModule.initializeApp({
           firebase: {
             apiKey: 'AIzaSyDuPVBd60jVbPw1BRefZsTkWb2AXZsfzNk',
@@ -78,7 +73,7 @@ describe('AppComponent', () => {
         AngularFirePerformanceModule,
         AngularFireStorageModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot([])
       ],
       declarations: [AppComponent],
       providers: [
@@ -94,7 +89,9 @@ describe('AppComponent', () => {
         FCM,
         LocalNotificationService,
         LocalNotifications,
-        IonRouterOutlet
+        IonRouterOutlet,
+
+        ,
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
