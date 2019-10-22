@@ -63,15 +63,23 @@ export class LoginPage implements OnInit {
     await loading.present();
     this.afa.auth
       .signInWithEmailAndPassword(userEmail, userPassword)
-      .then(() => {
-        // Loggin the event of login
-        this.loggger.loginEvent();
-        this.swal.displayAutoHideMessage('Welcome back!', '', 'success', 1500);
-        this.router.navigateByUrl('menu', { replaceUrl: true });
-        // Subscribing for user topics
-        this.user.subscribeForUserTopics();
-        // Update user token
-        this.user.registerToken();
+      .then(data => {
+        if (data.user.emailVerified) {
+          // Loggin the event of login
+          this.loggger.loginEvent();
+          this.swal.displayAutoHideMessage('Welcome back!', '', 'success', 1500);
+          this.router.navigateByUrl('menu', { replaceUrl: true });
+          // Subscribing for user topics
+          this.user.subscribeForUserTopics();
+          // Update user token
+          this.user.registerToken();
+        } else {
+          this.swal.displayConfirmation(
+            'Error',
+            'Please verify your email before login. Click confirm to send the email again',
+            () => this.user.sendConfirmationEmail()
+          );
+        }
       })
       .catch(error => {
         console.log('error :', error, error.message);
