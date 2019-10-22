@@ -235,35 +235,34 @@ export class BookService {
    * This will enter the book and user details to a que and based on the que order users will be granted the book
    */
   reserveBook = (book: Book) => {
-    this.userService
-      .getCurrentUserInfo()
-      .subscribe(data => {
-        this.afs
-          .collection('users')
-          .doc(data.uid)
-          .collection('reservations')
-          .add(book)
-          .then(() => {
-            const { title } = book;
-            return this.afs
-              .collection('reservation-ques')
-              .doc(title)
-              .set({
-                users: firebase.firestore.FieldValue.arrayUnion({
-                  uid: data.uid,
-                  date: new Date(),
-                  cardNumber: data.cardNumber
-                }),
-                ...book
-              });
-          })
-          .then(() => {
-            this.swal.viewSuccessMessage(
-              'Success',
-              'Book is susccessfully placed on reservation que'
-            );
-          });
-      })
-      .unsubscribe();
+    console.log('reserving');
+    this.userService.getCurrentUserInfo().subscribe(data => {
+      console.log('data', data);
+      this.afs
+        .collection('users')
+        .doc(data.uid)
+        .collection('reservations')
+        .add(book)
+        .then(() => {
+          const { title } = book;
+          return this.afs
+            .collection('reservation-ques')
+            .doc(title)
+            .set({
+              users: firebase.firestore.FieldValue.arrayUnion({
+                uid: data.uid,
+                date: new Date(),
+                cardNumber: data.libraryID
+              }),
+              ...book
+            });
+        })
+        .then(() => {
+          this.swal.viewSuccessMessage(
+            'Success',
+            'Book is susccessfully placed on reservation que'
+          );
+        });
+    });
   };
 }
