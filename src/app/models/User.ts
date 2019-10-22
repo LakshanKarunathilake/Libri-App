@@ -6,4 +6,5 @@ export interface User {
   phoneNumber: string;
   uid: string;
   topics?: Array<string>;
+  cardNumber?: string;
 }
