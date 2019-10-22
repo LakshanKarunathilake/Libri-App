@@ -12,7 +12,7 @@ export class BookViewComponent implements OnInit {
   constructor(private modalController: ModalController, private bookService: BookService) {}
   @Input() book: Book;
   availability;
-  async ngOnInit() {
+  ngOnInit() {
     this.bookService.checkBookAvailabilityStatus(this.book.biblionumber).then(data => {
       console.log('data', data['data']['loanDate']);
       this.availability = data['data']['loanDate'];
