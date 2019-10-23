@@ -20,7 +20,8 @@ export class EventLoggerService {
     public fba: FirebaseAnalytics,
     private platform: Platform,
     private userService: UserService,
-    private deviceInfo: PlatformService
+    private deviceInfo: PlatformService,
+    private afs: AngularFirestore
   ) {
     this.device = this.platform.is('cordova') ? 'cordova' : 'non-android';
   }
