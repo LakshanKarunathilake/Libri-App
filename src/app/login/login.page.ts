@@ -65,14 +65,14 @@ export class LoginPage implements OnInit {
       .signInWithEmailAndPassword(userEmail, userPassword)
       .then(data => {
         if (data.user.emailVerified) {
-          // Loggin the event of login
-          this.loggger.loginEvent();
           this.swal.displayAutoHideMessage('Welcome back!', '', 'success', 1500);
           this.router.navigateByUrl('menu', { replaceUrl: true });
           // Subscribing for user topics
           this.user.subscribeForUserTopics();
           // Update user token
           this.user.registerToken();
+          // Record login attempt
+          this.loggger.loginAttempt();
         } else {
           this.swal.displayConfirmation(
             'Error',
