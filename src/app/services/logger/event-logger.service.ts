@@ -4,7 +4,12 @@ import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 import swal from 'sweetalert';
 import { UserService } from '../user/user.service';
 import { PlatformService } from '../platform/platform.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase/app';
+import { environment } from 'src/environments/environment';
+firebase.initializeApp(environment.firebase);
 
+const analytics = firebase.analytics();
 @Injectable({
   providedIn: 'root'
 })
