@@ -40,7 +40,7 @@ export class BookService {
    */
   searchBooks = (value, type) => {
     const searchBook = this.aff.functions.httpsCallable('searchBook');
-    this.logger.bookSearchEVent(value);
+    this.logger.searchAttempt(value);
     return searchBook({ value, type });
   };
 
@@ -174,6 +174,7 @@ export class BookService {
           'Transfer',
           'Your transfer initiated successfully now tell your friend to scan the QR code'
         );
+        this.logger.transferRequestAttempt(title, uid);
       })
       .catch(error => {
         this.loading.dismiss();
@@ -223,6 +224,7 @@ export class BookService {
       .doc(path)
       .update({ status: 'toBeApproved', receiver: uid })
       .then(() => {
+        this.logger.transferAcceptAttempt(uid);
         this.swal.viewSuccessMessage('Success', 'Successfully placed a transfer request');
       })
       .catch(error => {
@@ -236,8 +238,9 @@ export class BookService {
    */
   reserveBook = (book: Book) => {
     console.log('reserving');
+    let cardNumber;
     this.userService.getCurrentUserInfo().subscribe(data => {
-      console.log('data', data);
+      cardNumber = data.libraryID;
       this.afs
         .collection('users')
         .doc(data.uid)
@@ -262,6 +265,7 @@ export class BookService {
             'Success',
             'Book is susccessfully placed on reservation que'
           );
+          this.logger.reservationAttempt(book.title, cardNumber);
         });
     });
   };

@@ -5,6 +5,7 @@ import { LoadingController } from '@ionic/angular';
 import { FcmService } from '../fcm.service';
 import { SwalService } from '../services/swal/swal.service';
 import { CustomValidatorService } from '../services/custom-validator/custom-validator.service';
+import { EventLoggerService } from '../services/logger/event-logger.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -19,7 +20,8 @@ export class SignupPage implements OnInit {
     private fcm: FcmService,
     private swal: SwalService,
     private user: UserService,
-    private customValidation: CustomValidatorService
+    private customValidation: CustomValidatorService,
+    private logger: EventLoggerService
   ) {
     this.signupForm = this.fb.group({
       displayName: ['', Validators.required],
@@ -79,6 +81,7 @@ export class SignupPage implements OnInit {
           return this.fcm.getPermission();
         })
         .then(() => this.fcm.sub('notices'))
+        .then(() => this.logger.registerAttempt())
         .catch(error => {
           this.hideLoading();
           console.log('error :', error.message);

@@ -12,14 +12,13 @@ export class BooksearchPage implements OnInit {
   authorCheckbox = true;
   books: any;
   loading = false;
-  constructor(private bookService: BookService, private logger: EventLoggerService) {}
+  constructor(private bookService: BookService) {}
 
   ngOnInit() {}
 
   searchForbooks = value => {
     const searchType = this.generateSearchType();
     if (value !== '') {
-      this.logger.bookSearchEVent(value);
       this.books = undefined;
       this.loading = true;
       this.bookService.searchBooks(value, searchType).then(data => {

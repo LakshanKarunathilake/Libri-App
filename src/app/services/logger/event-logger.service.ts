@@ -56,14 +56,6 @@ export class EventLoggerService {
   };
 
   /**
-   * Logging the book searching event
-   * @param value The value that user entered for searching
-   */
-  bookSearchEVent = value => {
-    this.logEvent('book_search', { value });
-  };
-
-  /**
    * Logging placing book request event
    *
    */
@@ -128,7 +120,7 @@ export class EventLoggerService {
   /**
    * Increment user Transfer attempts
    */
-  transferAcceptAttempt = (title, cardnumber) => {
+  transferAcceptAttempt = cardnumber => {
     const date = new Date();
     const date_formatted =
       '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
@@ -138,11 +130,13 @@ export class EventLoggerService {
       .collection('transfer_accept')
       .doc(date_formatted)
       .set({ count: firebase.firestore.FieldValue.increment(1) })
-      .then(() => analytics.logEvent('transfer_accept', { title, cardnumber }));
+      .then(() => analytics.logEvent('transfer_accept', { cardnumber }));
   };
 
   /**
-   * Increment user Search attempts
+   * Logging the book searching event
+   * Incrementing the attempts also
+   * @param value The value that user entered for searching
    */
   searchAttempt = value => {
     const date = new Date();
