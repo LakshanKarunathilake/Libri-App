@@ -93,4 +93,64 @@ export class EventLoggerService {
         });
       });
   };
+
+  /**
+   * Increment user Registration attempts
+   */
+  registerAttempt = () => {
+    const date = new Date();
+    const date_formatted =
+      '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    this.afs
+      .collection('admin')
+      .doc('counters')
+      .collection('register')
+      .doc(date_formatted)
+      .set({ count: firebase.firestore.FieldValue.increment(1) });
+  };
+
+  /**
+   * Increment user Transfer attempts
+   */
+  transferAttempt = () => {
+    const date = new Date();
+    const date_formatted =
+      '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    this.afs
+      .collection('admin')
+      .doc('counters')
+      .collection('transfer')
+      .doc(date_formatted)
+      .set({ count: firebase.firestore.FieldValue.increment(1) });
+  };
+
+  /**
+   * Increment user Search attempts
+   */
+  searchAttempt = () => {
+    const date = new Date();
+    const date_formatted =
+      '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    this.afs
+      .collection('admin')
+      .doc('counters')
+      .collection('search')
+      .doc(date_formatted)
+      .set({ count: firebase.firestore.FieldValue.increment(1) });
+  };
+
+  /**
+   * Increment user Search attempts
+   */
+  reservationAttempt = () => {
+    const date = new Date();
+    const date_formatted =
+      '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    this.afs
+      .collection('admin')
+      .doc('counters')
+      .collection('reservation')
+      .doc(date_formatted)
+      .set({ count: firebase.firestore.FieldValue.increment(1) });
+  };
 }
