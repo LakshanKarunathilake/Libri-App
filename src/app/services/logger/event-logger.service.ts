@@ -48,18 +48,6 @@ export class EventLoggerService {
   };
 
   /**
-   * Logging the login event
-   */
-  loginEvent = () => {
-    const { uid } = this.userService.getCurrentUser();
-    const deviceInfo = this.deviceInfo.getDeviceInfo();
-    this.logEvent('libri_login', {
-      uid,
-      ...deviceInfo
-    });
-  };
-
-  /**
    * Logging account forget password change attempt
    */
   passwordForgetEvent = () => {
@@ -80,5 +68,28 @@ export class EventLoggerService {
    */
   bookRequestEvent = value => {
     this.logEvent('book_request', { value });
+  };
+
+  /**
+   * Increment user login attempts
+   */
+  loginAttempt = () => {
+    const date = new Date();
+    const date_formatted =
+      '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    this.afs
+      .collection('admin')
+      .doc('counters')
+      .collection('login')
+      .doc(date_formatted)
+      .set({ count: firebase.firestore.FieldValue.increment(1) })
+      .then(() => {
+        const { uid } = this.userService.getCurrentUser();
+        const deviceInfo = this.deviceInfo.getDeviceInfo();
+        analytics.logEvent('login', {
+          uid,
+          ...deviceInfo
+        });
+      });
   };
 }
