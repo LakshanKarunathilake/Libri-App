@@ -112,22 +112,39 @@ export class EventLoggerService {
   /**
    * Increment user Transfer attempts
    */
-  transferAttempt = () => {
+  transferRequestAttempt = (title, cardnumber) => {
     const date = new Date();
     const date_formatted =
       '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
     this.afs
       .collection('admin')
       .doc('counters')
-      .collection('transfer')
+      .collection('transfer_request')
       .doc(date_formatted)
-      .set({ count: firebase.firestore.FieldValue.increment(1) });
+      .set({ count: firebase.firestore.FieldValue.increment(1) })
+      .then(() => analytics.logEvent('transfer_request', { title, cardnumber }));
+  };
+
+  /**
+   * Increment user Transfer attempts
+   */
+  transferAcceptAttempt = (title, cardnumber) => {
+    const date = new Date();
+    const date_formatted =
+      '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    this.afs
+      .collection('admin')
+      .doc('counters')
+      .collection('transfer_accept')
+      .doc(date_formatted)
+      .set({ count: firebase.firestore.FieldValue.increment(1) })
+      .then(() => analytics.logEvent('transfer_accept', { title, cardnumber }));
   };
 
   /**
    * Increment user Search attempts
    */
-  searchAttempt = () => {
+  searchAttempt = value => {
     const date = new Date();
     const date_formatted =
       '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
@@ -136,13 +153,14 @@ export class EventLoggerService {
       .doc('counters')
       .collection('search')
       .doc(date_formatted)
-      .set({ count: firebase.firestore.FieldValue.increment(1) });
+      .set({ count: firebase.firestore.FieldValue.increment(1) })
+      .then(() => analytics.logEvent('search', { value }));
   };
 
   /**
-   * Increment user Search attempts
+   * Increment user reservation attempts
    */
-  reservationAttempt = () => {
+  reservationAttempt = (title, cardnumber) => {
     const date = new Date();
     const date_formatted =
       '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
@@ -151,6 +169,7 @@ export class EventLoggerService {
       .doc('counters')
       .collection('reservation')
       .doc(date_formatted)
-      .set({ count: firebase.firestore.FieldValue.increment(1) });
+      .set({ count: firebase.firestore.FieldValue.increment(1) })
+      .then(() => analytics.logEvent('reservation', { title, cardnumber }));
   };
 }
