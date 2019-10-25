@@ -77,7 +77,11 @@ export class LoginPage implements OnInit {
           this.swal.displayConfirmation(
             'Error',
             'Please verify your email before login. Click confirm to send the email again',
-            () => this.user.sendConfirmationEmail()
+            reply => {
+              if (reply) {
+                this.user.sendConfirmationEmail();
+              }
+            }
           );
         }
       })
