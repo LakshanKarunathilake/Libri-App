@@ -153,6 +153,7 @@ export class BookService {
    */
   placeABookTransfer = async (transfer: Borrowing) => {
     const { uid } = this.userService.getCurrentUser();
+    const cardNumber = await this.userService.getLibraryID(uid);
     await this.assignToLoadingView('Initiating your transfer');
     const { title } = transfer;
     const transferRef: AngularFirestoreDocument = this.afs
@@ -167,7 +168,7 @@ export class BookService {
       .doc(uid)
       .collection('transfers')
       .doc(title)
-      .set({ ...transfer, status: 'pending', sender: uid })
+      .set({ ...transfer, status: 'pending', sender: cardNumber })
       .then(data => {
         this.loading.dismiss();
         this.swal.viewSuccessMessage(
