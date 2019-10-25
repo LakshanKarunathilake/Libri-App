@@ -12,10 +12,6 @@ import { Device } from '@ionic-native/device/ngx';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { BookService } from 'src/app/services/book/book.service';
 
-class MockUserService {
-  book = { biblionumber: 'Test User' };
-}
-
 describe('BookViewComponent', () => {
   let component: BookViewComponent;
   let fixture: ComponentFixture<BookViewComponent>;
@@ -37,8 +33,7 @@ describe('BookViewComponent', () => {
         { provide: FirebaseAnalytics },
         { provide: Device },
         { provide: LocalNotifications },
-        { provide: ModalController, useValue: modalCtrlSpy },
-        { provide: BookService, useClass: MockUserService }
+        { provide: ModalController, useValue: modalCtrlSpy }
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();

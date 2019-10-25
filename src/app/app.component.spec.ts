@@ -32,7 +32,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FCM } from 'capacitor-fcm';
 import { LocalNotificationService } from './services/local-notification/local-notification.service';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { LoginPageModule } from './login/login.module';
+import { SignupPageModule } from './signup/signup.module';
+import { MenuPageModule } from './menu/menu.module';
 
 describe('AppComponent', () => {
   let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
@@ -46,6 +49,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         BrowserModule,
+        IonicModule.forRoot(),
+        RecaptchaModule.forRoot(),
         AppRoutingModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
@@ -66,7 +71,9 @@ describe('AppComponent', () => {
         AngularFireFunctionsModule,
         AngularFirestoreModule,
         AngularFirePerformanceModule,
-        AngularFireStorageModule
+        AngularFireStorageModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        RouterModule.forRoot([])
       ],
       declarations: [AppComponent],
       providers: [

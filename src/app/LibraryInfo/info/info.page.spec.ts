@@ -3,27 +3,27 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InfoPage } from './info.page';
 import { MenuTitleComponentModule } from './../../components/menu-title/menu-title.module';
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule, RouterOutlet, UrlSerializer } from '@angular/router';
+import { Routes, RouterModule, RouterOutlet } from '@angular/router';
 
-import { IonicModule, IonRouterOutlet } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: InfoPage,
+    children: [
+      { path: '', redirectTo: 'overview', pathMatch: 'full' },
+      { path: 'about', loadChildren: '../about/about.module#AboutPageModule' },
+      { path: 'overview', loadChildren: '../overview/overview.module#OverviewPageModule' }
+    ]
+  }
+];
 
 describe('InfoPage', () => {
   let component: InfoPage;
   let fixture: ComponentFixture<InfoPage>;
-
-  const routes: Routes = [
-    {
-      path: '',
-      component: InfoPage,
-      children: [
-        { path: '', redirectTo: 'overview', pathMatch: 'full' },
-        { path: 'about', loadChildren: '../about/about.module#AboutPageModule' },
-        { path: 'overview', loadChildren: '../overview/overview.module#OverviewPageModule' }
-      ]
-    }
-  ];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -35,7 +35,6 @@ describe('InfoPage', () => {
         MenuTitleComponentModule
       ],
       declarations: [InfoPage],
-      providers: [{ provide: Location }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
@@ -46,7 +45,7 @@ describe('InfoPage', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });
