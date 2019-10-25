@@ -13,7 +13,7 @@
           </ion-menu-toggle>
           <span *ngIf="width > 1000">
             <ion-button class="quick-buttons" routerLink="home" routerDirection="root">
-              <ion-icon name="home" ></ion-icon>
+              <ion-icon name="home"></ion-icon>
             </ion-button>
             <ion-button class="quick-buttons" routerLink="info" routerDirection="root">
               <ion-icon name="information-circle-outline"></ion-icon>
@@ -27,7 +27,7 @@
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
           <ion-item
-            [routerLink]="p.url"
+            (click)="movePage(p.url)"
             routerDirection="root"
             [class.active-item]="isSelectedPath(p.url)"
           >

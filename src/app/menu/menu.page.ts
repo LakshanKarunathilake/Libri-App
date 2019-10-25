@@ -42,6 +42,10 @@ export class MenuPage implements OnInit {
     this.router.navigateByUrl('/home');
   };
 
+  movePage = page => {
+    this.router.navigateByUrl(`/menu/${page}`);
+  };
+
   ngOnInit() {
     this.subscribeToRouterEvents();
   }
