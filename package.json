@@ -44,6 +44,7 @@
     "angularx-qrcode": "^1.6.4",
     "animate.css": "^3.7.2",
     "bulma": "^0.7.5",
+    "capacitor-crashlytics": "0.0.1",
     "capacitor-fcm": "^0.1.0",
     "capacitor-firebase-analytics": "^0.3.2",
     "cordova-android": "8.0.0",

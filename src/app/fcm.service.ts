@@ -37,6 +37,7 @@ export class FcmService {
   }
 
   getPermission() {
+    console.log('calling');
     if (this.platform.is('capacitor')) {
       // Register with Apple / Google to receive push via APNS/FCM
       PushNotifications.register();
@@ -53,7 +54,7 @@ export class FcmService {
           token => {
             console.log('Permission granted and token is ', token);
             window.localStorage.setItem('fcmToken', token);
-
+            console.log('token', token);
             this.token = token;
             resolve(token);
           },

@@ -73,6 +73,8 @@ export class LoginPage implements OnInit {
           this.user.registerToken();
           // Record login attempt
           this.loggger.loginAttempt();
+          // Registering for crashlytics
+          this.user.registerCrashlytics();
         } else {
           this.swal.displayConfirmation(
             'Error',

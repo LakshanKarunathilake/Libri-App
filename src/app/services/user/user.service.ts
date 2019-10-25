@@ -13,6 +13,8 @@ import { map } from 'rxjs/operators';
 import { FcmService } from 'src/app/fcm.service';
 import { SwalService } from '../swal/swal.service';
 import { Platform } from '@ionic/angular';
+import { Crashlytics } from 'capacitor-crashlytics';
+const crashlytics = new Crashlytics();
 
 @Injectable({
   providedIn: 'root'
@@ -280,7 +282,6 @@ export class UserService {
     } else {
       afs_token = { web_token: token };
     }
-    console.log('afs_token', afs_token);
     this.afs
       .collection('users')
       .doc(uid)
@@ -303,5 +304,23 @@ export class UserService {
           'Error in sending confirmation email please try again later'
         )
       );
+  };
+
+  registerCrashlytics = () => {
+    const { displayName, email, uid } = this.getCurrentUser();
+    console.log('registering');
+    if (this.platform.is('cordova')) {
+      crashlytics
+        .logUser({
+          name: displayName,
+          email,
+          id: uid
+        })
+        .then(() => alert(`user logged`))
+        .catch(err => {
+          console.log('Error occured');
+          alert('Error Occured');
+        });
+    }
   };
 }
