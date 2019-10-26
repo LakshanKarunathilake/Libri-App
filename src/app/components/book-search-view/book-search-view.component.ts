@@ -27,15 +27,15 @@ export class BookSearchView implements OnInit {
     modal.present();
   };
 
-  getImage(url: string) {
+  getImage = (url: string) => {
     return url.includes('jpg') || url.includes('png') || url.includes('jpeg');
-  }
+  };
 
-  saveBook() {
+  saveBook = () => {
     this.bookService.addBookToShelf(this.book);
-  }
+  };
 
-  reserveBook() {
+  reserveBook = () => {
     this.bookService.reserveBook(this.book);
-  }
+  };
 }

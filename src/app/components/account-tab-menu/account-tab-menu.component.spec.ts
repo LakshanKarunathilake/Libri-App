@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccountTabMenuComponent } from './account-tab-menu.component';
 
-xdescribe('AccountTabMenuComponent', () => {
+describe('AccountTabMenuComponent', () => {
   let component: AccountTabMenuComponent;
   let fixture: ComponentFixture<AccountTabMenuComponent>;
 
