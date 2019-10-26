@@ -1,4 +1,4 @@
-interface Topic {
+export interface Topic {
   name: string;
   state?;
 }
