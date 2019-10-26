@@ -5,3 +5,8 @@ export class UserServiceStub {
     return [];
   };
 }
+export class BookServiceStub {
+  checkBookAvailabilityStatus = () => {
+    return new Promise((reject, resolve) => {});
+  };
+}
