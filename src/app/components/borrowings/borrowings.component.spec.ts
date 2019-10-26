@@ -2,7 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BorrowingsComponent } from './borrowings.component';
 
-describe('BorrowingsComponent', () => {
+xdescribe('BorrowingsComponent', () => {
   let component: BorrowingsComponent;
   let fixture: ComponentFixture<BorrowingsComponent>;
 

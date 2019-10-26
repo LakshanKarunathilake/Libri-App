@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuPage } from './menu.page';
 
-describe('MenuPage', () => {
+xdescribe('MenuPage', () => {
   let component: MenuPage;
   let fixture: ComponentFixture<MenuPage>;
 

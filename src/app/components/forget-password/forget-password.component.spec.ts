@@ -2,7 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ForgetPasswordComponent } from './forget-password.component';
 
-describe('ForgetPasswordComponent', () => {
+xdescribe('ForgetPasswordComponent', () => {
   let component: ForgetPasswordComponent;
   let fixture: ComponentFixture<ForgetPasswordComponent>;
 
