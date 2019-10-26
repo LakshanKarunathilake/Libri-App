@@ -1,22 +1,20 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ItemTransferComponent } from './item-transfer.component';
 
-import { ItemTransferPage } from './item-transfer.page';
-
-describe('ItemTransferPage', () => {
-  let component: ItemTransferPage;
-  let fixture: ComponentFixture<ItemTransferPage>;
+describe('ItemTransferComponent', () => {
+  let component: ItemTransferComponent;
+  let fixture: ComponentFixture<ItemTransferComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemTransferPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+      declarations: [ItemTransferComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemTransferPage);
+    fixture = TestBed.createComponent(ItemTransferComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

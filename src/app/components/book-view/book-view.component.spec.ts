@@ -1,22 +1,20 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BookViewComponent } from './book-view.component';
 
-import { BookViewPage } from './book-view.page';
-
-describe('BookViewPage', () => {
-  let component: BookViewPage;
-  let fixture: ComponentFixture<BookViewPage>;
+describe('BookViewComponent', () => {
+  let component: BookViewComponent;
+  let fixture: ComponentFixture<BookViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookViewPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+      declarations: [BookViewComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookViewPage);
+    fixture = TestBed.createComponent(BookViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,22 +1,20 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { PenaltyComponent } from './penalty.component';
 
-import { PenaltyPage } from './penalty.page';
-
-describe('PenaltyPage', () => {
-  let component: PenaltyPage;
-  let fixture: ComponentFixture<PenaltyPage>;
+describe('PenaltyComponent', () => {
+  let component: PenaltyComponent;
+  let fixture: ComponentFixture<PenaltyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PenaltyPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+      declarations: [PenaltyComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PenaltyPage);
+    fixture = TestBed.createComponent(PenaltyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,22 +1,21 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccountTabMenuPage } from './account-tab-menu.page';
+import { AccountTabMenuComponent } from './account-tab-menu.component';
 
-describe('AccountTabMenuPage', () => {
-  let component: AccountTabMenuPage;
-  let fixture: ComponentFixture<AccountTabMenuPage>;
+describe('AccountTabMenuComponent', () => {
+  let component: AccountTabMenuComponent;
+  let fixture: ComponentFixture<AccountTabMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccountTabMenuPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+      declarations: [AccountTabMenuComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AccountTabMenuPage);
+    fixture = TestBed.createComponent(AccountTabMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,22 +1,20 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BorrowingsComponent } from './borrowings.component';
 
-import { BorrowingsPage } from './borrowings.page';
-
-describe('BorrowingsPage', () => {
-  let component: BorrowingsPage;
-  let fixture: ComponentFixture<BorrowingsPage>;
+describe('BorrowingsComponent', () => {
+  let component: BorrowingsComponent;
+  let fixture: ComponentFixture<BorrowingsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BorrowingsPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+      declarations: [BorrowingsComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BorrowingsPage);
+    fixture = TestBed.createComponent(BorrowingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
