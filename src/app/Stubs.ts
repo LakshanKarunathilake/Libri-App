@@ -23,3 +23,11 @@ export class BookServiceStub {
     return new Promise((reject, resolve) => {});
   };
 }
+
+export class FileUploadServiceStub {}
+
+export class OverallServiceStub {
+  getNoticeTopics = () => {
+    return of(['topic 1', 'topic 2']);
+  };
+}
