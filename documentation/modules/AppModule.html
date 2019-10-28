@@ -8,634 +8,186 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	    <link rel="stylesheet" href="../styles/style.css">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">Libri documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="../">Libri documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a href="../" >
-                                        <span class="fa fa-th"></span>Overview
-                                    </a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            ></span>
-                        </a>
-                        <ul class="links collapse in"
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="../modules/AboutPageModule.html" >AboutPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/AccountPageModule.html" >AccountPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/AccountTabMenuComponentModule.html" >AccountTabMenuComponentModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/AppModule.html"  class="active" >AppModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/BooksearchPageModule.html" >BooksearchPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/CaptchaComponentModule.html" >CaptchaComponentModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/FeedbackPageModule.html" >FeedbackPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/HomePageModule.html" >HomePageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/InfoPageModule.html" >InfoPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/LoginPageModule.html" >LoginPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/MenuPageModule.html" >MenuPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/MenuTitleComponentModule.html" >MenuTitleComponentModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/OverviewPageModule.html" >OverviewPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/RequestbookPageModule.html" >RequestbookPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/SignupPageModule.html" >SignupPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/TransferPageModule.html" >TransferPageModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="../components/AboutPage.html" >AboutPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/AccountPage.html" >AccountPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/AppComponent.html" >AppComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/BookSearchView.html" >BookSearchView</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/BookViewComponent.html" >BookViewComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/BooksearchPage.html" >BooksearchPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/BorrowingsComponent.html" >BorrowingsComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/CaptchaComponent.html" >CaptchaComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/FeedbackPage.html" >FeedbackPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/FileuploadComponent.html" >FileuploadComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HomePage.html" >HomePage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/InfoPage.html" >InfoPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/LoginPage.html" >LoginPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/MenuPage.html" >MenuPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/MenuTitleComponent.html" >MenuTitleComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/OverviewPage.html" >OverviewPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/PenaltyComponent.html" >PenaltyComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/RequestbookPage.html" >RequestbookPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/SignupPage.html" >SignupPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/TransferPage.html" >TransferPage</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-code"></span>
-                            <span>Directives</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-directives-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-directives-links"
-                            >
-                                <li class="link">
-                                    <a href="../directives/DropZoneDirective.html" >DropZoneDirective</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-long-arrow-down"></span>
-                            <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-injectables-links"
-                            >
-                                <li class="link">
-                                    <a href="../injectables/AuthGuard.html" >AuthGuard</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/BookService.html" >BookService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/EventLoggerService.html" >EventLoggerService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/FcmService.html" >FcmService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/FileUploadService.html" >FileUploadService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/FormValidationService.html" >FormValidationService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/LocalNotificationService.html" >LocalNotificationService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/PlatformService.html" >PlatformService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/SwalService.html" >SwalService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/UserService.html" >UserService</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="../interfaces/Book.html" >Book</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/BookRequest.html" >BookRequest</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/Feedback.html" >Feedback</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-plus"></span>
-                            <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-pipes-links"
-                            >
-                                <li class="link">
-                                    <a href="../pipes/FileSizePipe.html" >FileSizePipe</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-                    <li class="divider"></li>
-                    <li class="copyright">
-                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                            </a>
-                    </li>
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="../">Libri documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a href="../" >
-                                               <span class="fa fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   ></span>
-                               </a>
-                               <ul class="links collapse in"
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="../modules/AboutPageModule.html" >AboutPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/AccountPageModule.html" >AccountPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/AccountTabMenuComponentModule.html" >AccountTabMenuComponentModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/AppModule.html"  class="active" >AppModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/BooksearchPageModule.html" >BooksearchPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/CaptchaComponentModule.html" >CaptchaComponentModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/FeedbackPageModule.html" >FeedbackPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/HomePageModule.html" >HomePageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/InfoPageModule.html" >InfoPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/LoginPageModule.html" >LoginPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/MenuPageModule.html" >MenuPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/MenuTitleComponentModule.html" >MenuTitleComponentModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/OverviewPageModule.html" >OverviewPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/RequestbookPageModule.html" >RequestbookPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/SignupPageModule.html" >SignupPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/TransferPageModule.html" >TransferPageModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="../components/AboutPage.html" >AboutPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/AccountPage.html" >AccountPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/AppComponent.html" >AppComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/BookSearchView.html" >BookSearchView</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/BookViewComponent.html" >BookViewComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/BooksearchPage.html" >BooksearchPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/BorrowingsComponent.html" >BorrowingsComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/CaptchaComponent.html" >CaptchaComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/FeedbackPage.html" >FeedbackPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/FileuploadComponent.html" >FileuploadComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HomePage.html" >HomePage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/InfoPage.html" >InfoPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/LoginPage.html" >LoginPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/MenuPage.html" >MenuPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/MenuTitleComponent.html" >MenuTitleComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/OverviewPage.html" >OverviewPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/PenaltyComponent.html" >PenaltyComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/RequestbookPage.html" >RequestbookPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/SignupPage.html" >SignupPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/TransferPage.html" >TransferPage</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-code"></span>
-                                   <span>Directives</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#directives-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="directives-links"
-                   >
-                                       <li class="link">
-                                           <a href="../directives/DropZoneDirective.html" >DropZoneDirective</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-long-arrow-down"></span>
-                                   <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="injectables-links"
-                   >
-                                       <li class="link">
-                                           <a href="../injectables/AuthGuard.html" >AuthGuard</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/BookService.html" >BookService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/EventLoggerService.html" >EventLoggerService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/FcmService.html" >FcmService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/FileUploadService.html" >FileUploadService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/FormValidationService.html" >FormValidationService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/LocalNotificationService.html" >LocalNotificationService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/PlatformService.html" >PlatformService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/SwalService.html" >SwalService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/UserService.html" >UserService</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="../interfaces/Book.html" >Book</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/BookRequest.html" >BookRequest</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/Feedback.html" >Feedback</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-plus"></span>
-                                   <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="pipes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../pipes/FileSizePipe.html" >FileSizePipe</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                           <li class="copyright">
-                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                                   </a>
-                           </li>
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content module">
                    <div class="content-data">
 
+
+
 <ol class="breadcrumb">
-  <li>Modules</li>
-  <li>AppModule</li>
+    <li>Modules</li>
+    <li>AppModule</li>
 </ol>
 
-<div class="text-center">
-    <object id="demo-svg" type="image/svg+xml" data="../modules/AppModule/dependencies.svg" style="width: 100%; height: 250px;">
-            Your browser does not support SVG
-    </object>
+<div class="text-center module-graph-container">
+    <div id="module-graph-svg">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: dependencies Pages: 1 -->
+<svg width="1188pt" height="284pt"
+ viewBox="0.00 0.00 1188.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
+<title>dependencies</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 1184,-280 1184,4 -4,4"/>
+<text text-anchor="start" x="569.0091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
+<polygon fill="#ffffb3" stroke="transparent" points="356,-10 356,-30 376,-30 376,-10 356,-10"/>
+<text text-anchor="start" x="379.629" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
+<polygon fill="#8dd3c7" stroke="transparent" points="469,-10 469,-30 489,-30 489,-10 469,-10"/>
+<text text-anchor="start" x="492.7251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
+<polygon fill="#80b1d3" stroke="transparent" points="555,-10 555,-30 575,-30 575,-10 555,-10"/>
+<text text-anchor="start" x="578.7812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
+<polygon fill="#fdb462" stroke="transparent" points="652,-10 652,-30 672,-30 672,-10 652,-10"/>
+<text text-anchor="start" x="675.6732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
+<polygon fill="#fb8072" stroke="transparent" points="748,-10 748,-30 768,-30 768,-10 748,-10"/>
+<text text-anchor="start" x="771.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
+<g id="clust1" class="cluster">
+<title>cluster_AppModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-268 1172,-268 1172,-70 8,-70"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_AppModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="1042,-78 1042,-130 1164,-130 1164,-78 1042,-78"/>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_AppModule_imports</title>
+<polygon fill="none" stroke="#000000" points="890,-78 890,-130 1034,-130 1034,-78 890,-78"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_AppModule_bootstrap</title>
+<polygon fill="none" stroke="#000000" points="556,-208 556,-260 680,-260 680,-208 556,-208"/>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_AppModule_providers</title>
+<polygon fill="none" stroke="#000000" points="16,-78 16,-130 882,-130 882,-78 16,-78"/>
+</g>
+<!-- AppComponent -->
+<g id="node1" class="node">
+<title>AppComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1155.9399,-122 1050.0601,-122 1050.0601,-86 1155.9399,-86 1155.9399,-122"/>
+<text text-anchor="middle" x="1103" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent</text>
+</g>
+<!-- AppModule -->
+<g id="node2" class="node">
+<title>AppModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="659.6571,-187 656.6571,-191 635.6571,-191 632.6571,-187 576.3429,-187 576.3429,-151 659.6571,-151 659.6571,-187"/>
+<text text-anchor="middle" x="618" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppModule</text>
+</g>
+<!-- AppComponent&#45;&gt;AppModule -->
+<g id="edge1" class="edge">
+<title>AppComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M1103,-122.2921C1103,-144.2057 1103,-178 1103,-178 1103,-178 669.7706,-178 669.7706,-178"/>
+<polygon fill="#000000" stroke="#000000" points="669.7706,-174.5001 659.7706,-178 669.7706,-181.5001 669.7706,-174.5001"/>
+</g>
+<!-- AppComponent  -->
+<g id="node4" class="node">
+<title>AppComponent </title>
+<polygon fill="#80b1d3" stroke="#000000" points="672.439,-252 563.561,-252 563.561,-216 672.439,-216 672.439,-252"/>
+<text text-anchor="middle" x="618" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent </text>
+</g>
+<!-- AppModule&#45;&gt;AppComponent  -->
+<g id="edge3" class="edge">
+<title>AppModule&#45;&gt;AppComponent </title>
+<path fill="none" stroke="#000000" stroke-dasharray="1,5" d="M618,-187.1061C618,-187.1061 618,-205.991 618,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="614.5001,-205.9909 618,-215.991 621.5001,-205.991 614.5001,-205.9909"/>
+</g>
+<!-- AppRoutingModule -->
+<g id="node3" class="node">
+<title>AppRoutingModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="1026.2744,-122 1023.2744,-126 1002.2744,-126 999.2744,-122 897.7256,-122 897.7256,-86 1026.2744,-86 1026.2744,-122"/>
+<text text-anchor="middle" x="962" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppRoutingModule</text>
+</g>
+<!-- AppRoutingModule&#45;&gt;AppModule -->
+<g id="edge2" class="edge">
+<title>AppRoutingModule&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M962,-122.1061C962,-141.3391 962,-169 962,-169 962,-169 669.8372,-169 669.8372,-169"/>
+<polygon fill="#000000" stroke="#000000" points="669.8373,-165.5001 659.8372,-169 669.8372,-172.5001 669.8373,-165.5001"/>
+</g>
+<!-- EventLoggerService -->
+<g id="node5" class="node">
+<title>EventLoggerService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="784" cy="-104" rx="90.3101" ry="18"/>
+<text text-anchor="middle" x="784" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">EventLoggerService</text>
+</g>
+<!-- EventLoggerService&#45;&gt;AppModule -->
+<g id="edge4" class="edge">
+<title>EventLoggerService&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M784,-122.027C784,-138.3976 784,-160 784,-160 784,-160 669.8888,-160 669.8888,-160"/>
+<polygon fill="#000000" stroke="#000000" points="669.8888,-156.5001 659.8888,-160 669.8888,-163.5001 669.8888,-156.5001"/>
+</g>
+<!-- FcmService -->
+<g id="node6" class="node">
+<title>FcmService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="618" cy="-104" rx="57.3185" ry="18"/>
+<text text-anchor="middle" x="618" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">FcmService</text>
+</g>
+<!-- FcmService&#45;&gt;AppModule -->
+<g id="edge5" class="edge">
+<title>FcmService&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M618,-122.1061C618,-122.1061 618,-140.991 618,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="614.5001,-140.9909 618,-150.991 621.5001,-140.991 614.5001,-140.9909"/>
+</g>
+<!-- LocalNotificationService -->
+<g id="node7" class="node">
+<title>LocalNotificationService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="434" cy="-104" rx="108.7806" ry="18"/>
+<text text-anchor="middle" x="434" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">LocalNotificationService</text>
+</g>
+<!-- LocalNotificationService&#45;&gt;AppModule -->
+<g id="edge6" class="edge">
+<title>LocalNotificationService&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M434,-122.027C434,-138.3976 434,-160 434,-160 434,-160 566.2476,-160 566.2476,-160"/>
+<polygon fill="#000000" stroke="#000000" points="566.2476,-163.5001 576.2476,-160 566.2475,-156.5001 566.2476,-163.5001"/>
+</g>
+<!-- PlatformService -->
+<g id="node8" class="node">
+<title>PlatformService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="234" cy="-104" rx="73.5695" ry="18"/>
+<text text-anchor="middle" x="234" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PlatformService</text>
+</g>
+<!-- PlatformService&#45;&gt;AppModule -->
+<g id="edge7" class="edge">
+<title>PlatformService&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M234,-122.1061C234,-141.3391 234,-169 234,-169 234,-169 566.1743,-169 566.1743,-169"/>
+<polygon fill="#000000" stroke="#000000" points="566.1743,-172.5001 576.1743,-169 566.1742,-165.5001 566.1743,-172.5001"/>
+</g>
+<!-- SwalService -->
+<g id="node9" class="node">
+<title>SwalService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="83" cy="-104" rx="59.1045" ry="18"/>
+<text text-anchor="middle" x="83" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SwalService</text>
+</g>
+<!-- SwalService&#45;&gt;AppModule -->
+<g id="edge8" class="edge">
+<title>SwalService&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M83,-122.2921C83,-144.2057 83,-178 83,-178 83,-178 566.0194,-178 566.0194,-178"/>
+<polygon fill="#000000" stroke="#000000" points="566.0195,-181.5001 576.0194,-178 566.0194,-174.5001 566.0195,-181.5001"/>
+</g>
+</g>
+</svg>
+
+    </div>
+    <i id="fullscreen" class="icon ion-ios-resize module-graph-fullscreen-btn" aria-hidden="true"></i>
     <div class="btn-group">
         <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
         <button id="reset" class="btn btn-default btn-sm">Reset</button>
@@ -646,16 +198,17 @@
 <script src="../js/svg-pan-zoom.controls.js"></script>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
     </li>
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
     </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
+    <div class="tab-pane fade active in" id="c-info">
+
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -664,54 +217,67 @@
         </p>
 
 
+
+
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#declarations-anchor" target="_blank"><span class="fa fa-info-circle"></span></a></h3>
+                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank"
+                            title="Official documentation about module declarations"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
                     <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../components/AppComponent.html">AppComponent</a>
-                            </li>
+                        <li class="list-group-item">
+                            <a href="../components/AppComponent.html">AppComponent</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Providers<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#providers-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
+                    <h3>Providers<a href="https://angular.io/api/core/NgModule#providers" target="_blank"
+                            title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../injectables/FcmService.html" >FcmService</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../injectables/SwalService.html" >SwalService</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../injectables/EventLoggerService.html" >EventLoggerService</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../injectables/PlatformService.html" >PlatformService</a>
-                            </li>
+                        <li class="list-group-item">
+                            <a href="../injectables/EventLoggerService.html">EventLoggerService</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../injectables/FcmService.html">FcmService</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../injectables/LocalNotificationService.html">LocalNotificationService</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../injectables/PlatformService.html">PlatformService</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../injectables/SwalService.html">SwalService</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Imports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#imports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
+                    <h3>Imports<a href="https://angular.io/api/core/NgModule#imports" target="_blank" title="Official documentation about module imports"><span
+                                class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
-                            <li class="list-group-item">
-                                    <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
-                            </li>
+                        <li class="list-group-item">
+                            <a href="../modules/AppRoutingModule.html">AppRoutingModule</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Bootstrap<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#bootstrap-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
+                    <h3>Bootstrap<a href="https://angular.io/api/core/NgModule#bootstrap" target="_blank"
+                            title="Official documentation about module bootstrap"><span class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../components/AppComponent.html" >AppComponent</a>
-                            </li>
+                        <li class="list-group-item">
+                            <a href="../components/AppComponent.html">AppComponent</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+
+
     </div>
-    <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { FirebasePerformanceService } from &#x27;./services/performance/firebase-performance.service&#x27;;
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FirebasePerformanceService } from &#x27;./services/performance/firebase-performance.service&#x27;;
 import { SwalService } from &#x27;./services/swal/swal.service&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
@@ -740,6 +306,9 @@ import { FirebaseAnalytics } from &#x27;@ionic-native/firebase-analytics/ngx&#x2
 import { PlatformService } from &#x27;./services/platform/platform.service&#x27;;
 import { Device } from &#x27;@ionic-native/device/ngx&#x27;;
 import { AngularFireStorageModule } from &#x27;@angular/fire/storage&#x27;;
+import { FCM } from &#x27;capacitor-fcm&#x27;;
+import { LocalNotificationService } from &#x27;./services/local-notification/local-notification.service&#x27;;
+import { LocalNotifications } from &#x27;@ionic-native/local-notifications/ngx&#x27;;
 
 @NgModule({
   declarations: [AppComponent],
@@ -769,7 +338,10 @@ import { AngularFireStorageModule } from &#x27;@angular/fire/storage&#x27;;
     EventLoggerService,
     FirebaseAnalytics,
     PlatformService,
-    Device
+    Device,
+    FCM,
+    LocalNotificationService,
+    LocalNotifications
   ],
   bootstrap: [AppComponent]
 })
@@ -787,9 +359,13 @@ export class AppModule {}
 
 
 
+
+
+
+
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -797,8 +373,21 @@ export class AppModule {}
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppModule.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -809,20 +398,17 @@ export class AppModule {}
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
+       <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
-       <script src="../js/libs/highlight.pack.js"></script>
-       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
-       <script src="../js/search/search_index.js"></script>
-       <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                hljs.initHighlightingOnLoad();
-                hljs.initLineNumbersOnLoad();
-            });
-       </script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
 
     </body>
 </html>

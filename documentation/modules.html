@@ -8,919 +8,346 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	    <link rel="stylesheet" href="./styles/style.css">
+	      <link rel="stylesheet" href="./styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="./" class="navbar-brand">Libri documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="./">Libri documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a href="./" >
-                                        <span class="fa fa-th"></span>Overview
-                                    </a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html"  class="active" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            ></span>
-                        </a>
-                        <ul class="links collapse in"
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="modules/AboutPageModule.html" >AboutPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/AccountPageModule.html" >AccountPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/AccountTabMenuComponentModule.html" >AccountTabMenuComponentModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/AppModule.html" >AppModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/AppRoutingModule.html" >AppRoutingModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/BooksearchPageModule.html" >BooksearchPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/CaptchaComponentModule.html" >CaptchaComponentModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/FeedbackPageModule.html" >FeedbackPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/HomePageModule.html" >HomePageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/InfoPageModule.html" >InfoPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/LoginPageModule.html" >LoginPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/MenuPageModule.html" >MenuPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/MenuTitleComponentModule.html" >MenuTitleComponentModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/OverviewPageModule.html" >OverviewPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/RequestbookPageModule.html" >RequestbookPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/SignupPageModule.html" >SignupPageModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="modules/TransferPageModule.html" >TransferPageModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="components/AboutPage.html" >AboutPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/AccountPage.html" >AccountPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/AppComponent.html" >AppComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/BookSearchView.html" >BookSearchView</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/BookViewComponent.html" >BookViewComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/BooksearchPage.html" >BooksearchPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/BorrowingsComponent.html" >BorrowingsComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/CaptchaComponent.html" >CaptchaComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/FeedbackPage.html" >FeedbackPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/FileuploadComponent.html" >FileuploadComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/HomePage.html" >HomePage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/InfoPage.html" >InfoPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/LoginPage.html" >LoginPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/MenuPage.html" >MenuPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/MenuTitleComponent.html" >MenuTitleComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/OverviewPage.html" >OverviewPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/PenaltyComponent.html" >PenaltyComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/ProfileComponent.html" >ProfileComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/RequestbookPage.html" >RequestbookPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/SignupPage.html" >SignupPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="components/TransferPage.html" >TransferPage</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-code"></span>
-                            <span>Directives</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-directives-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-directives-links"
-                            >
-                                <li class="link">
-                                    <a href="directives/DropZoneDirective.html" >DropZoneDirective</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-long-arrow-down"></span>
-                            <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-injectables-links"
-                            >
-                                <li class="link">
-                                    <a href="injectables/AuthGuard.html" >AuthGuard</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/BookService.html" >BookService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/EventLoggerService.html" >EventLoggerService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/FcmService.html" >FcmService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/FileUploadService.html" >FileUploadService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/FormValidationService.html" >FormValidationService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/LocalNotificationService.html" >LocalNotificationService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/PlatformService.html" >PlatformService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/SwalService.html" >SwalService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/UserService.html" >UserService</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="interfaces/Book.html" >Book</a>
-                                </li>
-                                <li class="link">
-                                    <a href="interfaces/BookRequest.html" >BookRequest</a>
-                                </li>
-                                <li class="link">
-                                    <a href="interfaces/Feedback.html" >Feedback</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-plus"></span>
-                            <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-pipes-links"
-                            >
-                                <li class="link">
-                                    <a href="pipes/FileSizePipe.html" >FileSizePipe</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-                    <li class="divider"></li>
-                    <li class="copyright">
-                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                        <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
-                            </a>
-                    </li>
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="./">Libri documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a href="./" >
-                                               <span class="fa fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html"  class="active" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   ></span>
-                               </a>
-                               <ul class="links collapse in"
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="modules/AboutPageModule.html" >AboutPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/AccountPageModule.html" >AccountPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/AccountTabMenuComponentModule.html" >AccountTabMenuComponentModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/AppModule.html" >AppModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/AppRoutingModule.html" >AppRoutingModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/BooksearchPageModule.html" >BooksearchPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/CaptchaComponentModule.html" >CaptchaComponentModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/FeedbackPageModule.html" >FeedbackPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/HomePageModule.html" >HomePageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/InfoPageModule.html" >InfoPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/LoginPageModule.html" >LoginPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/MenuPageModule.html" >MenuPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/MenuTitleComponentModule.html" >MenuTitleComponentModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/OverviewPageModule.html" >OverviewPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/RequestbookPageModule.html" >RequestbookPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/SignupPageModule.html" >SignupPageModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="modules/TransferPageModule.html" >TransferPageModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="components/AboutPage.html" >AboutPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/AccountPage.html" >AccountPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/AccountTabMenuComponent.html" >AccountTabMenuComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/AppComponent.html" >AppComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/BookSearchView.html" >BookSearchView</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/BookViewComponent.html" >BookViewComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/BooksearchPage.html" >BooksearchPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/BorrowingsComponent.html" >BorrowingsComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/CaptchaComponent.html" >CaptchaComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/FeedbackPage.html" >FeedbackPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/FileuploadComponent.html" >FileuploadComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/ForgetPasswordComponent.html" >ForgetPasswordComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/HomePage.html" >HomePage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/InfoPage.html" >InfoPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/LoginPage.html" >LoginPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/MenuPage.html" >MenuPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/MenuTitleComponent.html" >MenuTitleComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/OverviewPage.html" >OverviewPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/PenaltyComponent.html" >PenaltyComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/ProfileComponent.html" >ProfileComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/RequestbookPage.html" >RequestbookPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/SignupPage.html" >SignupPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="components/TransferPage.html" >TransferPage</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-code"></span>
-                                   <span>Directives</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#directives-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="directives-links"
-                   >
-                                       <li class="link">
-                                           <a href="directives/DropZoneDirective.html" >DropZoneDirective</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-long-arrow-down"></span>
-                                   <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="injectables-links"
-                   >
-                                       <li class="link">
-                                           <a href="injectables/AuthGuard.html" >AuthGuard</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/BookService.html" >BookService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/EventLoggerService.html" >EventLoggerService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/FcmService.html" >FcmService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/FileUploadService.html" >FileUploadService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/FirebasePerformanceService.html" >FirebasePerformanceService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/FormValidationService.html" >FormValidationService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/LocalNotificationService.html" >LocalNotificationService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/PlatformService.html" >PlatformService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/SwalService.html" >SwalService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="injectables/UserService.html" >UserService</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="interfaces/Book.html" >Book</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="interfaces/BookRequest.html" >BookRequest</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="interfaces/Feedback.html" >Feedback</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-plus"></span>
-                                   <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="pipes-links"
-                   >
-                                       <li class="link">
-                                           <a href="pipes/FileSizePipe.html" >FileSizePipe</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                           <li class="copyright">
-                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                               <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
-                                   </a>
-                           </li>
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content modules">
                    <div class="content-data">
 
-<h3>Modules</h3>
+
+
+<ol class="breadcrumb">
+    <li>Modules</li>
+</ol>
 <div class="container-fluid modules">
     <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">AboutPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/AboutPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/AboutPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">AccountPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/AccountPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/AccountPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">AboutPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/AboutPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/AboutPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">AccountTabMenuComponentModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/AccountTabMenuComponentModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/AccountTabMenuComponentModule.html" class="btn btn-default">Browse</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">AppModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/AppModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/AppModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">AccountPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/AccountPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/AccountPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">AppRoutingModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/AppRoutingModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/AppRoutingModule.html" class="btn btn-default">Browse</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">BooksearchPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/BooksearchPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/BooksearchPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">AccountTabMenuComponentModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/AccountTabMenuComponentModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/AccountTabMenuComponentModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">CaptchaComponentModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/CaptchaComponentModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/CaptchaComponentModule.html" class="btn btn-default">Browse</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">FeedbackPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/FeedbackPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/FeedbackPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">AnimatedTextComponentModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/AnimatedTextComponentModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/AnimatedTextComponentModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">HomePageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/HomePageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/HomePageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">InfoPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/InfoPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/InfoPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">AppModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/AppModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/AppModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">LoginPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/LoginPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/LoginPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">AppRoutingModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p class="no-graph">
+                                    No graph available.
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/AppRoutingModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">MenuPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/MenuPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/MenuPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">MenuTitleComponentModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/MenuTitleComponentModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/MenuTitleComponentModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">BooksearchPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/BooksearchPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/BooksearchPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">OverviewPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/OverviewPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/OverviewPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">RequestbookPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/RequestbookPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/RequestbookPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">CaptchaComponentModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/CaptchaComponentModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/CaptchaComponentModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">SignupPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/SignupPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/SignupPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">TransferPageModule</h4>
-                </div>
-                <div class="card-block">
-                    <p>
-                        <object id="demo-svg" type="image/svg+xml" data="./modules/TransferPageModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                Your browser does not support SVG
-                        </object>
-                    </p>
-                    <footer class="text-center">
-                        <a href="./modules/TransferPageModule.html" class="btn btn-default">Browse</a>
-                    </footer>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">FeedbackPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/FeedbackPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/FeedbackPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">HomePageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/HomePageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/HomePageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">InfoPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/InfoPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/InfoPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">LoginPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/LoginPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/LoginPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">MenuPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/MenuPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/MenuPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">MenuTitleComponentModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/MenuTitleComponentModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/MenuTitleComponentModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">OverviewPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/OverviewPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/OverviewPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">RequestbookPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/RequestbookPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/RequestbookPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">SignupPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/SignupPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/SignupPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-module">
+                    <div class="card-header">
+                        <h4 class="card-title">TransferPageModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" lazy="./modules/TransferPageModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                        Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/TransferPageModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
+
+
+
+
+
 
 
 
@@ -933,7 +360,7 @@
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -941,8 +368,21 @@
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'modules';
+            var COMPODOC_CURRENT_PAGE_URL = 'modules.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 
@@ -953,20 +393,17 @@
 
        <script src="./js/compodoc.js"></script>
 
-       <script src="./js/search/search.js"></script>
-       <script src="./js/search/lunr.min.js"></script>
-       <script src="./js/search/search-lunr.js"></script>
-
+       <script src="./js/tabs.js"></script>
        <script src="./js/menu.js"></script>
-       <script src="./js/libs/highlight.pack.js"></script>
-       <script src="./js/libs/highlightjs-line-numbers.min.js"></script>
-       <script src="./js/search/search_index.js"></script>
-       <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                hljs.initHighlightingOnLoad();
-                hljs.initLineNumbersOnLoad();
-            });
-       </script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
 
     </body>
 </html>
