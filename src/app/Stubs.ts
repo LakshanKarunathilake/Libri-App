@@ -1,6 +1,7 @@
 import { of } from 'rxjs';
 
 export class AngularFireFunctionsStub {}
+export class AngularFireAuthStub {}
 export class SwalServiceStub {}
 export class UserServiceStub {
   getAllBorrowings = () => {
@@ -31,3 +32,10 @@ export class OverallServiceStub {
     return of(['topic 1', 'topic 2']);
   };
 }
+
+export class FcmServiceStub {
+  getPermission = () => {
+    return new Promise((res, rej) => {});
+  };
+}
+export class EventLoggerServiceStub {}
