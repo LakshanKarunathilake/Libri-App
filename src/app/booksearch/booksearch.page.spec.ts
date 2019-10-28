@@ -5,7 +5,7 @@ import { BooksearchPage } from './booksearch.page';
 import { BookService } from '../services/book/book.service';
 import { BookServiceStub } from '../Stubs';
 
-xdescribe('BooksearchPage', () => {
+describe('BooksearchPage', () => {
   let component: BooksearchPage;
   let fixture: ComponentFixture<BooksearchPage>;
 

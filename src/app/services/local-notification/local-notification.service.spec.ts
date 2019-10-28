@@ -1,9 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
 import { LocalNotificationService } from './local-notification.service';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
-xdescribe('LocalNotificationService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+describe('LocalNotificationService', () => {
+  beforeEach(() => TestBed.configureTestingModule({ providers: [LocalNotifications] }));
 
   it('should be created', () => {
     const service: LocalNotificationService = TestBed.get(LocalNotificationService);
