@@ -2,14 +2,17 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuPage } from './menu.page';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 
-xdescribe('MenuPage', () => {
+describe('MenuPage', () => {
   let component: MenuPage;
   let fixture: ComponentFixture<MenuPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MenuPage],
+      providers: [{ provide: Router }, { provide: AngularFireAuth }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
@@ -17,6 +20,7 @@ xdescribe('MenuPage', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MenuPage);
     component = fixture.componentInstance;
+    component.subscribeToRouterEvents = () => {};
     fixture.detectChanges();
   });
 
