@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CaptchaComponent } from './captcha.component';
 
-xdescribe('ReCaptchaPage', () => {
+describe('ReCaptchaPage', () => {
   let component: CaptchaComponent;
   let fixture: ComponentFixture<CaptchaComponent>;
 
