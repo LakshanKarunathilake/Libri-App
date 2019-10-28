@@ -2,6 +2,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BooksearchPage } from './booksearch.page';
+import { BookService } from '../services/book/book.service';
+import { BookServiceStub } from '../Stubs';
 
 xdescribe('BooksearchPage', () => {
   let component: BooksearchPage;
@@ -9,10 +11,10 @@ xdescribe('BooksearchPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BooksearchPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+      declarations: [BooksearchPage],
+      providers: [{ provide: BookService, useClass: BookServiceStub }],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
