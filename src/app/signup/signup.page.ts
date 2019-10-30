@@ -14,6 +14,7 @@ import { EventLoggerService } from '../services/logger/event-logger.service';
 export class SignupPage implements OnInit {
   signupForm: FormGroup;
   loading;
+  hide = true; // Toggling password visibility
   constructor(
     private fb: FormBuilder,
     private loadingCtrl: LoadingController,
@@ -32,7 +33,6 @@ export class SignupPage implements OnInit {
         updateOn: 'blur'
       }),
       password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
       telephoneNumber: ['', Validators.required]
     });
   }

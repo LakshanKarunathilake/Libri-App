@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { IonicModule } from '@ionic/angular';
 import { SignupPage } from './signup.page';
 import { UserService } from '../services/user/user.service';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   declarations: [SignupPage],
   providers: [UserService]
