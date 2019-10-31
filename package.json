@@ -11,8 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compodoc": "npx compodoc -p src/tsconfig.app.json",
-    "deploy": "ionic build --prod && firebase deploy",
-    "capacitor": "ionic capacitor run android"
+    "deploy": "ionic build --prod && firebase deploy"
   },
   "private": true,
   "dependencies": {

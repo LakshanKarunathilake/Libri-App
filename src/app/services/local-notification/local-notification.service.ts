@@ -24,13 +24,4 @@ export class LocalNotificationService {
       }
     ]);
   };
-
-  dummyNotification = () => {
-    alert('sadsad');
-    this.localNotification.schedule({
-      id: 1,
-      text: 'Single ILocalNotification',
-      title: 'sadkasjds'
-    });
-  };
 }

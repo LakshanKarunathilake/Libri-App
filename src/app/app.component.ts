@@ -20,9 +20,7 @@ export class AppComponent {
   }
 
   initializeApp() {
-    this.fcm.showMessages().subscribe();
     this.platform.ready().then(() => {
-      console.log('calling');
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.fcm.getPermission().then(() => this.fcm.showMessages());
