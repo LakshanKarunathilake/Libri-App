@@ -114,7 +114,7 @@ Before replacing the firebase configurations you have to make sure you have crea
 
 The above features must be enabled prior to the installation. The sample configuration file will be as below.
 
-```json
+```javascript
 	 firebase: {
 		apiKey: 'TEST _KEY',
 		authDomain: 'TEST _KEY',
