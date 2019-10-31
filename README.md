@@ -112,7 +112,7 @@ Before replacing the firebase configurations you have to make sure you have crea
 - Firebase Performance
 - Firebase Storage bucket
 
-The above features must be enabled prior to the installation. The sample configuration file will be as below.
+The above features must be enabled prior to the installation. The sample configuration file will be as below. This is for the web development. Refer the android area for your android implmentation
 
 ```javascript
 	 firebase: {
@@ -126,3 +126,7 @@ The above features must be enabled prior to the installation. The sample configu
 		measurementId: 'TEST _KEY'
   }
 ```
+
+Additionally you have to add the google-servises.json file which you can download from the firebase console to use the services in the android application.
+
+This **google-services.json** file should be in the directory of **android/app/**
