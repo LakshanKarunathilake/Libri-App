@@ -33,11 +33,11 @@
 - Any library have existing system can plug this application if the current system is based on Koha Library Management System or Ever green library system
 - Library staff can embed a brief introduction about the statistics of the library
 
-##System sub components
+## System sub components
 
 Aparat from the mobile application the application support a custom build dashboard called [Dashboard][dashboard] and a backend server with server deployed according to the serverless architecture called [Server][server]
 
-###Installation Guide
+### Installation Guide
 
 ** Pre-requisits**
 
