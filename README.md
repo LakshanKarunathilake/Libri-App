@@ -1,6 +1,6 @@
-<p align="center">
-  <img width="460" " src="https://firebasestorage.googleapis.com/v0/b/libri-238805.appspot.com/o/libri%20logo.png?alt=media&token=bec48934-d1c2-467f-b6d3-af1538aecaeb" />
-</p>
+  <p align="center">
+    <img width="460" " src="https://firebasestorage.googleapis.com/v0/b/libri-238805.appspot.com/o/libri%20logo.png?alt=media&token=bec48934-d1c2-467f-b6d3-af1538aecaeb" />
+  </p>
 
 # Remote Library Assistant
 
@@ -11,14 +11,14 @@
 
 ## Technologies
 
-<p align="center" > 
-<img width="150" " src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ionic-logo-landscape.svg/1200px-Ionic-logo-landscape.svg.png" />
-  <img width="100" " src="https://angular.io/assets/images/logos/angular/angular.png" />
-    <img width="150" " src="https://raw.githubusercontent.com/t4t5/sweetalert/e3c2085473a0eb5a6b022e43eb22e746380bb955/assets/logotype.png" />
-	<img width="80" " src="https://icon-library.net/images/stripe-icon/stripe-icon-3.jpg" />
-<img width="80" " src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" />
+  <p align="center" > 
+  <img width="150" " src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ionic-logo-landscape.svg/1200px-Ionic-logo-landscape.svg.png" />
+    <img width="100" " src="https://angular.io/assets/images/logos/angular/angular.png" />
+      <img width="150" " src="https://raw.githubusercontent.com/t4t5/sweetalert/e3c2085473a0eb5a6b022e43eb22e746380bb955/assets/logotype.png" />
+    <img width="80" " src="https://icon-library.net/images/stripe-icon/stripe-icon-3.jpg" />
+  <img width="80" " src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" />
 
-</p>
+  </p>
 
 ## Features
 
@@ -63,10 +63,16 @@ $ npm start
 
 This will launch an application preview inside your preffered browser
 
-#### 3. Run test cases
+#### Run test cases
 
 ```sh
 $ npm test
+```
+
+#### Build application using angular
+
+```sh
+$ npm run build
 ```
 
 This will run the basic test cases enabled for your sample application. You have to write your own test cases when you implement new features or update the existing features
@@ -115,15 +121,15 @@ Before replacing the firebase configurations you have to make sure you have crea
 The above features must be enabled prior to the installation. The sample configuration file will be as below. This is for the web development. Refer the android area for your android implmentation
 
 ```javascript
-	 firebase: {
-		apiKey: 'TEST _KEY',
-		authDomain: 'TEST _KEY',
-		databaseURL: 'TEST _KEY',
-		projectId: 'TEST _KEY',
-		storageBucket: 'TEST _KEY',
-		messagingSenderId: 'TEST _KEY',
-		appId: 'TEST _KEY',
-		measurementId: 'TEST _KEY'
+  firebase: {
+    apiKey: 'TEST _KEY',
+    authDomain: 'TEST _KEY',
+    databaseURL: 'TEST _KEY',
+    projectId: 'TEST _KEY',
+    storageBucket: 'TEST _KEY',
+    messagingSenderId: 'TEST _KEY',
+    appId: 'TEST _KEY',
+    measurementId: 'TEST _KEY'
   }
 ```
 
