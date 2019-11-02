@@ -37,6 +37,10 @@
 
 Aparat from the mobile application the application support a custom build dashboard called [Dashboard][dashboard] and a backend server with server deployed according to the serverless architecture called [Server][server]
 
+[![PWA](https://miro.medium.com/max/3360/1*AhFm0XyjfG7A_ZG5hC-Hyg.png 'PWA')](https://libri-238805.web.app/login 'PWA')
+
+<p align="center">Click the icon to see the Hosted Progressive Web Application</p>
+
 ### Installation Guide
 
 ** Pre-requisits**
